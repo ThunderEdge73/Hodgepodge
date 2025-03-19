@@ -48,7 +48,7 @@ REND.mod_card_values = function (table_in, config)
             if type(v) == "number" then -- If it's a number
                 if (keywords[k] or (REND.table_true_size(keywords) < 1)) and not unkeyword[k] then -- If it's in the keywords, OR there's no keywords and it isn't in the unkeywords
                     if ref and ref[k] then -- If it exists in the reference
-                        if not (x_protect and REND.starts_with(k,"x_") and ref[k] == 1) then
+                        if not (x_protect and (REND.starts_with(k,"x_") or REND.starts_with(k,"h_x_")) and ref[k] == 1) then
                             table_in[k] = (ref[k] + add) * multiply -- Set it to (reference's value + add) * multiply
                         end
                     end

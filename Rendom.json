@@ -1,11 +1,11 @@
 {
     "id":"rendom",
-    "name":"Ren's Dumb Randoms",
+    "name":"Rendoms",
     "author": ["PokeRen"],
     "description": "Random nonsense for your enjoyment!",
     "prefix":"rendom",
     "main_file":"rendom.lua",
     "version": "1.0.0",
-    "badge_colour": "E1EB34",
-    "badge_text_colour": "FFFFFF"
+    "badge_colour": "222222",
+    "badge_text_colour": "ffff000"
 }
