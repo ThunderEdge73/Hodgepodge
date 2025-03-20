@@ -21,7 +21,7 @@ function Card:save()
     local c = cardSave(self)
     c.rendom_orig_ability = self.rendom_orig_ability
     c.rendom_upgrade_big = self.rendom_upgrade_big
-    return C
+    return c
 end
 
 local cardLoad = Card.load
