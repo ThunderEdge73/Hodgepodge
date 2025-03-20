@@ -18,7 +18,6 @@ end
 -- Save/Load the custom attributes given to a card
 local cardSave = Card.save
 function Card:save()
-    print("SAVE CARD -------------------------------------")
     local c = cardSave(self)
     c.rendom_orig_ability = self.rendom_orig_ability
     c.rendom_upgrade_big = self.rendom_upgrade_big
@@ -27,7 +26,6 @@ end
 
 local cardLoad = Card.load
 function Card:load(cardTable,other_card)
-    print("LOAD CARD -------------------------------------")
     local c = cardLoad(self,cardTable,other_card)
     self.rendom_orig_ability = cardTable.rendom_orig_ability
     self.rendom_upgrade_big = cardTable.rendom_upgrade_big
