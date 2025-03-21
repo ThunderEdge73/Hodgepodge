@@ -6,6 +6,6 @@
     "prefix":"rendom",
     "main_file":"rendom.lua",
     "version": "1.0.0",
-    "badge_colour": "222222",
-    "badge_text_colour": "ffff000"
+    "badge_colour": "444444",
+    "badge_text_colour": "FFFF00"
 }
