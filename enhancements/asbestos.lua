@@ -23,7 +23,7 @@ SMODS.Enhancement {
     pos = {x=1,y=0},
     config = {
         extra = {
-            h_x_mult = -5,
+            h_x_mult = 5,
             decrease_rate = 0.2,
             disturb_odds = 2/3, -- Put the full fraction in! For example 2/3 is a 2 in 3 chance
             ignore_mult_restrictions = true -- The patches check for this bool
