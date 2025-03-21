@@ -24,8 +24,9 @@ SMODS.Enhancement {
     config = {
         extra = {
             h_x_mult = 5,
-            decrease_rate = 0.2,
+            decrease_rate = 0.5,
             disturb_odds = 2/3, -- Put the full fraction in! For example 2/3 is a 2 in 3 chance
+            disturb_decay = 0.5,
             ignore_mult_restrictions = true -- The patches check for this bool
         }
     },
@@ -48,7 +49,7 @@ SMODS.Enhancement {
             local disturb = rand < card.ability.extra.disturb_odds
             local funny_message = ((rand < 0.1) and "Told you!") or "Disturbed!"
             if disturb then
-                card.ability.extra.decrease_rate = card.ability.extra.decrease_rate + 0.2
+                card.ability.extra.decrease_rate = card.ability.extra.decrease_rate + card.ability.extra.disturb_decay
                 G.E_MANAGER:add_event(Event({
                     func = function()
                         draw_card(G.discard,G.hand,nil,nil,nil,card)

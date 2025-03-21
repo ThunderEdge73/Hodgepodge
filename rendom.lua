@@ -122,3 +122,4 @@ REND.load_script("enhancements/blackhole.lua")
 REND.load_script("seals/revive.lua")
 --- Decks ---
 REND.load_script("decks/jumbo.lua")
+REND.load_script("decks/condemned.lua")
