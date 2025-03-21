@@ -1,5 +1,6 @@
 REND = SMODS.current_mod
 
+SMODS.optional_features.cardareas.discard = true
 -----------------------------
 ----- UTILITY FUNCTIONS -----
 -----------------------------
@@ -100,8 +101,8 @@ SMODS.Atlas {
 SMODS.Atlas {
     key = "enhancements_atlas",
     path = "enhancements.png",
-    px = 69,
-    py = 93
+    px = 71,
+    py = 95
 }
 
 -----------------------------
@@ -115,6 +116,7 @@ REND.load_script("consumables/slamdown.lua")
 --- Editions ---
 REND.load_script("editions/big.lua")
 --- Enhancements ---
+REND.load_script("enhancements/asbestos.lua")
 REND.load_script("enhancements/blackhole.lua")
 --- Seals ---
 REND.load_script("seals/revive.lua")
