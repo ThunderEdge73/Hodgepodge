@@ -2,10 +2,6 @@ SMODS.Shader {
     key = "slime",
     path = "slime.fs"
 }
-SMODS.Shader { --Testing what this example shader looks like
-    key = "laminated",
-    path = "laminated.fs"
-}
 
 SMODS.Edition {
     key = "terry",
