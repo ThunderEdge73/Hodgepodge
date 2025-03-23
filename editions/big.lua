@@ -25,7 +25,7 @@ SMODS.Edition {
         end
     end,
     config = {
-        card_limit = -1
+        card_limit = -1 -- ?? what does this do again
     },
     in_shop = true,
     weight = 10,
