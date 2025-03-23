@@ -119,6 +119,7 @@ REND.load_script("editions/terry.lua")
 --- Enhancements ---
 REND.load_script("enhancements/asbestos.lua")
 REND.load_script("enhancements/blackhole.lua")
+REND.load_script("enhancements/waterdamage.lua")
 --- Seals ---
 REND.load_script("seals/revive.lua")
 --- Decks ---
