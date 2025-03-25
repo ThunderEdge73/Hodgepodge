@@ -1,6 +1,7 @@
 return {
 	["misc"] = {
 		["dictionary"] = {
+			["k_rendom_power_booster"] = "Power Pack",
 			["k_booster_group_p_rendom_power_booster_2"] = {
 				"Power Cards",
 			},
@@ -12,7 +13,6 @@ return {
 				"Power Cards",
 			},
 			["k_power"] = "Power Card",
-			["k_power_pack"] = "Power Pack",
 			["k_booster_group_p_rendom_power_booster_jumbo"] = {
 				"Power Cards",
 			},

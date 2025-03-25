@@ -5,7 +5,7 @@ SMODS.Enhancement {
         name = "Water Damaged",
         text = {
             "{C:chips}+#1#{} bonus chips",
-            "{C:green}#2#/100{} chance to",
+            "{C:green}#2#%{} chance to",
             "destroy card",
             "Values increase when scored"
         }
@@ -27,7 +27,7 @@ SMODS.Enhancement {
     calculate = function(self,card,context)
         if context.main_scoring and context.cardarea == G.play then
             card.ability.chips = card.ability.chips + 10
-            card.ability.extra = card.ability.extra + 1
+            card.ability.extra = card.ability.extra + 5
             return {
                 chips = card.ability.chips
             }

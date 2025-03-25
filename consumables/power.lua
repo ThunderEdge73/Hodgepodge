@@ -277,12 +277,13 @@ SMODS.Booster {
     config = {extra = 2, choose = 1},
     weight = 0.5,
     draw_hand = true,
-    group_key = "power_booster",
+    group_key = "k_rendom_power_booster",
     create_card = function(self,card,i)
         return {
             set = "power",
             key_append = "power_booster",
-            skip_materialize = true
+            skip_materialize = true,
+            area = G.pack_cards
         }
     end
 }
@@ -295,12 +296,13 @@ SMODS.Booster {
     config = {extra = 2, choose = 1},
     weight = 0.5,
     draw_hand = true,
-    group_key = "power_booster",
+    group_key = "k_rendom_power_booster",
     create_card = function(self,card,i)
         return {
             set = "power",
             key_append = "power_booster",
-            skip_materialize = true
+            skip_materialize = true,
+            area = G.pack_cards
         }
     end
 }
@@ -313,12 +315,13 @@ SMODS.Booster {
     config = {extra = 4, choose = 1},
     weight = 0.5,
     draw_hand = true,
-    group_key = "power_booster",
+    group_key = "k_rendom_power_booster",
     create_card = function(self,card,i)
         return {
             set = "power",
             key_append = "power_booster",
-            skip_materialize = true
+            skip_materialize = true,
+            area = G.pack_cards
         }
     end
 }
@@ -331,12 +334,13 @@ SMODS.Booster {
     config = {extra = 4, choose = 2},
     weight = 0.2,
     draw_hand = true,
-    group_key = "power_booster",
+    group_key = "k_rendom_power_booster",
     create_card = function(self,card,i)
         return {
             set = "power",
             key_append = "power_booster",
-            skip_materialize = true
+            skip_materialize = true,
+            area = G.pack_cards
         }
     end
 }

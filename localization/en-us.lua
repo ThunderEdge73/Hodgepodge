@@ -11,11 +11,11 @@ return {
 				"Power Cards",
 			},
 			["k_power"] = "Power Card",
-            ["k_power_pack"] = "Power Pack",
 			["b_power_cards"] = "Power Cards",
 			["k_booster_group_p_rendom_power_booster_jumbo"] = {
 				"Power Cards",
 			},
+			["k_rendom_power_booster"] = "Power Pack",
 		},
 		["labels"] = {
 			["rendom_big"] = "Big",
