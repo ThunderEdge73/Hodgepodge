@@ -16,12 +16,16 @@ SMODS.Edition {
         }
     },
     loc_vars = function(self, info_queue, card)
-        if card.ability.set == "Joker" or card.ability.set == "Edition" then --"Edition" for the collection menu
-            return {vars = {"Joker slots"}}
-        elseif card.ability.set == "Default" then
-            return {vars = {"hand size"}}
-        else -- Each consumable has a different card.ability.set so im just taking a gamble here
-            return {vars = {"consumable slots"}}
+        if card and card.ability then
+            if card.ability.set == "Joker" or card.ability.set == "Edition" then --"Edition" for the collection menu
+                return {vars = {"Joker slots"}}
+            elseif card.ability.set == "Default" then
+                return {vars = {"hand size"}}
+            else -- Each consumable has a different card.ability.set so im just taking a gamble here
+                return {vars = {"consumable slots"}}
+            end
+        else
+            return {vars = {"card slots"}}
         end
     end,
     config = {

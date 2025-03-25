@@ -92,9 +92,24 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
-    key = "slamdown_atlas",
-    path = "slamdown.png",
-    px = 68,
+    key = "power_atlas",
+    path = "powers.png",
+    px = 71,
+    py = 95
+}
+SMODS.Atlas {
+    atlas_table = 'ANIMATION_ATLAS',
+    key = "anim_power_atlas",
+    path = "animated_powers.png",
+    px = 71,
+    py = 95,
+    frames = 15
+}
+
+SMODS.Atlas {
+    key = "booster_atlas",
+    path = "boosters.png",
+    px = 71,
     py = 95
 }
 
@@ -112,7 +127,7 @@ SMODS.Atlas {
 --- Hooks ---
 REND.load_script("hooks/general.lua")
 --- Consumeables ---
-REND.load_script("consumables/slamdown.lua")
+REND.load_script("consumables/power.lua")
 --- Editions ---
 REND.load_script("editions/big.lua")
 REND.load_script("editions/terry.lua")
