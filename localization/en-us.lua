@@ -187,8 +187,8 @@ return {
 					"{C:attention}Asbestos{} enhancement",
 				},
 			},
-			["c_rendom_size"] = {
-				["name"] = "Size",
+			["c_rendom_dimension"] = {
+				["name"] = "Dimension",
 				["text"] = {
 					"Apply {C:attention}Big{} to",
 					"a random Joker",

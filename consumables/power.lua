@@ -99,8 +99,8 @@ SMODS.Consumable { -- Umbrakinesis (Applies Black Hole)
     end
 }
 
-SMODS.Consumable { -- Size (Applies Big)
-    key = "size",
+SMODS.Consumable { -- Dimension (Applies Big)
+    key = "dimension",
     set = "power",
     atlas = "power_atlas",
     pos = {x=0,y=1},
@@ -133,7 +133,7 @@ SMODS.Consumable { -- Size (Applies Big)
         local temp_pool = eligible_editionless_jokers or {}
         G.E_MANAGER:add_event(Event({trigger = 'after', delay = 0.4, func = function()
             local over = false
-            local eligible_card = pseudorandom_element(temp_pool, pseudoseed("size"))
+            local eligible_card = pseudorandom_element(temp_pool, pseudoseed("dimension"))
             eligible_card:set_edition({["rendom_big"] = true}, true)
             check_for_unlock({type = 'have_edition'})
         return true end }))
