@@ -28,7 +28,7 @@ SMODS.Edition {
     config = {
         x_mult = 3,
         extra = {
-            decrease = 0.5,
+            decrease = 0.2,
             floor = 1,
             has_scored = false
         }
