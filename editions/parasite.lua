@@ -6,17 +6,17 @@ SMODS.Shader {
 SMODS.Edition {
     key = "parasite",
     shader = "parasite",
-    loc_txt = {
-        label = "Parasite",
-        name = "Parasite",
-        text = {
-            "{X:mult,C:white}X#1#{} Mult",
-            "{X:mult,C:white}-X#2#{} every round",
-            "{s:0.8}At {s:0.8,X:mult,C:white}X#3#{s:0.8}, destroy this joker",
-            "{s:0.8}and apply {s:0.8,C:attention}Parasite{s:0.8} to{}",
-            "{s:0.8}an editionless joker{}"
-        }
-    },
+    -- loc_txt = {
+    --     label = "Parasite",
+    --     name = "Parasite",
+    --     text = {
+    --         "{X:mult,C:white}X#1#{} Mult",
+    --         "{X:mult,C:white}-X#2#{} every round",
+    --         "{s:0.8}At {s:0.8,X:mult,C:white}X#3#{s:0.8}, destroy this joker",
+    --         "{s:0.8}and apply {s:0.8,C:attention}Parasite{s:0.8} to{}",
+    --         "{s:0.8}an editionless joker{}"
+    --     }
+    -- },
     loc_vars = function(self, info_queue, card)
         --info_queue[#info_queue+1] = G.P_CENTERS["e_rendom_parasite"]
         local vals = self.config

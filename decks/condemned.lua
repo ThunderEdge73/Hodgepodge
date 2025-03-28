@@ -3,14 +3,14 @@ SMODS.Back {
     key = "condemned",
     pos = {x=3,y=3},
     config = {rendom_big = true},
-    loc_txt = {
-        name = "Condemned Deck",
-        text = {
-            "Random cards are missing",
-            "Random cards are {C:attention,T:m_rendom_asbestos}Asbestos{}",
-            "Random cards are {C:attention,T:m_rendom_waterdamage}Water Damaged{}"
-        }
-    },
+    -- loc_txt = {
+    --     name = "Condemned Deck",
+    --     text = {
+    --         "Random cards are missing",
+    --         "Random cards are {C:attention,T:m_rendom_asbestos}Asbestos{}",
+    --         "Random cards are {C:attention,T:m_rendom_waterdamage}Water Damaged{}"
+    --     }
+    -- },
     apply = function()
         G.E_MANAGER:add_event(Event({
             func = function()

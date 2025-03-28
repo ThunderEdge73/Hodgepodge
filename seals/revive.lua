@@ -6,14 +6,14 @@ SMODS.Seal {
             copies = 2
         }
     },
-    loc_txt = {
-        label = "Revive",
-        name = "Revive",
-        text = {
-            "Creates {C:attention}#1#{} copies of this",
-            "card when {C:attention}destroyed{}"
-        }
-    },
+    -- loc_txt = {
+    --     label = "Revive",
+    --     name = "Revive",
+    --     text = {
+    --         "Creates {C:attention}#1#{} copies of this",
+    --         "card when {C:attention}destroyed{}"
+    --     }
+    -- },
     loc_vars = function(self,info_queue,card)
         return {vars = {(card.ability.seal or self.config).extra.copies}}
     end,

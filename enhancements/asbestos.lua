@@ -1,16 +1,16 @@
 SMODS.Enhancement {
     key = "asbestos",
-    loc_txt = {
-        label = "Asbestos",
-        name = "Asbestos",
-        text = {
-            "{X:mult,C:white}X#1#{} mult while in hand",
-            "Loses {X:mult,C:white}X#2#{} per hand played",
-            "{E:2,C:mult}Can go negative{}",
-            "{E:1,C:mult}Negative values DON'T cancel out{}",
-            "{C:mult,s:0.8}Discards and destructions may fail{}", "{C:mult,s:0.8}and increase degradation rate{}",
-        }
-    },
+    -- loc_txt = {
+    --     label = "Asbestos",
+    --     name = "Asbestos",
+    --     text = {
+    --         "{X:mult,C:white}X#1#{} mult while in hand",
+    --         "Loses {X:mult,C:white}X#2#{} per hand played",
+    --         "{E:2,C:mult}Can go negative{}",
+    --         "{E:1,C:mult}Negative values DON'T cancel out{}",
+    --         "{C:mult,s:0.8}Discards and destructions may fail{}", "{C:mult,s:0.8}and increase degradation rate{}",
+    --     }
+    -- },
     loc_vars = function(self,info_queue,card)
         return {
             vars = {

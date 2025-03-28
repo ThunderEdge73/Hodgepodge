@@ -3,15 +3,15 @@ SMODS.Back {
     key = "jumbo",
     pos = {x=0,y=0},
     config = {rendom_big = true},
-    loc_txt = {
-        name = "Jumbo Deck",
-        text = {
-            "Start run with",
-            "only {C:attention}Big{} cards",
-            "{C:attention}+4{} hand size",
-            "{C:inactive}(Hand can hold {C:attention}6{C:inactive} Big cards){}"
-        }
-    },
+    -- loc_txt = {
+    --     name = "Jumbo Deck",
+    --     text = {
+    --         "Start run with",
+    --         "only {C:attention}Big{} cards",
+    --         "{C:attention}+4{} hand size",
+    --         "{C:inactive}(Hand can hold {C:attention}6{C:inactive} Big cards){}"
+    --     }
+    -- },
     apply = function()
         G.GAME.starting_params.hand_size = 12
         G.E_MANAGER:add_event(Event({

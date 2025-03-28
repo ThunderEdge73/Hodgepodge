@@ -1,19 +1,19 @@
 SMODS.Enhancement {
     key = "blackhole",
-    loc_txt = {
-        label = "Black Hole",
-        name = "Black Hole",
-        text = {
-            "When scored, destroy",
-            "other played cards and",
-            "gain their values.",
-            "{C:inactive,s:0.8}Currently:",
-            "{C:chips,s:0.8}+#1#{s:0.8} Chips",
-            "{C:mult,s:0.8}+#2#{s:0.8} Mult",
-            "{X:mult,C:white,s:0.8}x#3#{s:0.8} Mult"
-            --"{C:money,s:0.8}$#4#{s:0.8}"
-        }
-    },
+    -- loc_txt = {
+    --     label = "Black Hole",
+    --     name = "Black Hole",
+    --     text = {
+    --         "When scored, destroy",
+    --         "other played cards and",
+    --         "gain their values.",
+    --         "{C:inactive,s:0.8}Currently:",
+    --         "{C:chips,s:0.8}+#1#{s:0.8} Chips",
+    --         "{C:mult,s:0.8}+#2#{s:0.8} Mult",
+    --         "{X:mult,C:white,s:0.8}x#3#{s:0.8} Mult"
+    --         --"{C:money,s:0.8}$#4#{s:0.8}"
+    --     }
+    -- },
     loc_vars = function(self,info_queue,card)
         return {
             vars = {

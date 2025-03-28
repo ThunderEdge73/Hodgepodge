@@ -1,15 +1,15 @@
 SMODS.Enhancement {
     key = "waterdamage",
-    loc_txt = {
-        label = "Water Damaged",
-        name = "Water Damaged",
-        text = {
-            "{C:chips}+#1#{} bonus chips",
-            "{C:green}#2#%{} chance to",
-            "destroy card",
-            "Values increase when scored"
-        }
-    },
+    -- loc_txt = {
+    --     label = "Water Damaged",
+    --     name = "Water Damaged",
+    --     text = {
+    --         "{C:chips}+#1#{} bonus chips",
+    --         "{C:green}#2#%{} chance to",
+    --         "destroy card",
+    --         "Values increase when scored"
+    --     }
+    -- },
     loc_vars = function(self,info_queue,card)
         return {
             vars = {

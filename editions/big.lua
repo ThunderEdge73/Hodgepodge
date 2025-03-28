@@ -6,15 +6,15 @@ SMODS.Shader {
 SMODS.Edition {
     key = "big",
     shader = "big", -- Big shader currently doesn't do anything, as scale is handled in on_apply, on_load, etc.
-    loc_txt = {
-        label = "Big",
-        name = "Big",
-        text = {
-            "Takes {C:dark_edition}2{} #1#",
-            "{C:attention}Doubles{} all* values",
-            "{s:0.8,C:inactive}*Where possible"
-        }
-    },
+    -- loc_txt = {
+    --     label = "Big",
+    --     name = "Big",
+    --     text = {
+    --         "Takes {C:dark_edition}2{} #1#",
+    --         "{C:attention}Doubles{} all* values",
+    --         "{s:0.8,C:inactive}*Where possible"
+    --     }
+    -- },
     loc_vars = function(self, info_queue, card)
         if card and card.ability then
             if card.ability.set == "Joker" or card.ability.set == "Edition" then --"Edition" for the collection menu

@@ -6,14 +6,14 @@ SMODS.Shader {
 SMODS.Edition {
     key = "terry",
     shader = "slime",
-    loc_txt = {
-        label = "Terry",
-        name = "Terry",
-        text = {
-            "{X:mult,C:white}X#1#{} Mult",
-            "{s:0.8,C:inactive}Randomly chosen when scored{}"
-        }
-    },
+    -- loc_txt = {
+    --     label = "Terry",
+    --     name = "Terry",
+    --     text = {
+    --         "{X:mult,C:white}X#1#{} Mult",
+    --         "{s:0.8,C:inactive}Randomly chosen when scored{}"
+    --     }
+    -- },
     loc_vars = function(self, info_queue, card)
         local vals = self.config
         if (card.edition and card.edition.extra) then
