@@ -20,6 +20,7 @@ return {
 		["labels"] = {
 			["rendom_big"] = "Big",
 			["rendom_terry"] = "Terry",
+			["rendom_parasite"] = "Parasite",
 			["rendom_revive_seal"] = "Revive",
 		},
 		["collab_palettes"] = {
@@ -165,18 +166,11 @@ return {
 					"a random Joker",
 				},
 			},
-			["c_rendom_immortality"] = {
-				["name"] = "Immortality",
-				["text"] = {
-					"Select {C:attention}#1#{} card to",
-					"apply {C:attention}Revive{}",
-				},
-			},
-			["c_rendom_aquakinesis"] = {
-				["name"] = "Water Damage",
+			["c_rendom_umbrakinesis"] = {
+				["name"] = "Umbrakinesis",
 				["text"] = {
 					"Select {C:attention}#1#{} card to apply",
-					"{C:attention}Water Damage{} enhancement",
+					"{C:attention}Black Hole{} enhancement",
 				},
 			},
 			["c_rendom_toxigenesis"] = {
@@ -186,6 +180,13 @@ return {
 					"{C:attention}Asbestos{} enhancement",
 				},
 			},
+			["c_rendom_aquakinesis"] = {
+				["name"] = "Water Damage",
+				["text"] = {
+					"Select {C:attention}#1#{} card to apply",
+					"{C:attention}Water Damage{} enhancement",
+				},
+			},
 			["c_rendom_size"] = {
 				["name"] = "Size",
 				["text"] = {
@@ -193,11 +194,18 @@ return {
 					"a random Joker",
 				},
 			},
-			["c_rendom_umbrakinesis"] = {
-				["name"] = "Umbrakinesis",
+			["c_rendom_immortality"] = {
+				["name"] = "Immortality",
 				["text"] = {
-					"Select {C:attention}#1#{} card to apply",
-					"{C:attention}Black Hole{} enhancement",
+					"Select {C:attention}#1#{} card to",
+					"apply {C:attention}Revive{}",
+				},
+			},
+			["c_rendom_symbiosis"] = {
+				["name"] = "Symbiosis",
+				["text"] = {
+					"Apply {C:attention}Symbiosis{} to",
+					"a random Joker",
 				},
 			},
 		},
@@ -316,6 +324,17 @@ return {
 					"Takes {C:dark_edition}2{} #1#",
 					"{C:attention}Doubles{} all* values",
 					"{s:0.8,C:inactive}*Where possible",
+				},
+			},
+			["e_rendom_parasite"] = {
+				["name"] = "Parasite",
+				["label"] = "Parasite",
+				["text"] = {
+					"{X:mult,C:white}X#1#{} Mult",
+					"{X:mult,C:white}-X#2#{} every round",
+					"{s:0.8}At {s:0.8,X:mult,C:white}X#3#{s:0.8}, destroy this joker",
+					"{s:0.8}and apply {s:0.8,C:attention}Parasite{s:0.8} to{}",
+					"{s:0.8}an editionless joker{}",
 				},
 			},
 			["e_rendom_terry"] = {

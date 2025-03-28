@@ -42,7 +42,7 @@ SMODS.Edition {
     apply_to_float = false,
     disable_base_shader = true,
     calculate = function(self, card, context)
-        if (context.main_scoring and context.cardarea == G.play) or context.pre_joker then
+        if (context.main_scoring and context.cardarea == G.play) or context.post_joker then
             local rand = math.random()
             local inc = card.edition.extra.increment
             local min = card.edition.extra.lower_bound

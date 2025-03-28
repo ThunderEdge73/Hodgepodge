@@ -1,9 +1,11 @@
 return {
 	["misc"] = {
 		["dictionary"] = {
+			["k_rendom_power_booster"] = "Power Pack",
 			["k_booster_group_p_rendom_power_booster_2"] = {
 				"Power Cards",
 			},
+			["b_power_cards"] = "Power Cards",
 			["k_booster_group_p_rendom_power_booster_mega"] = {
 				"Power Cards",
 			},
@@ -11,15 +13,14 @@ return {
 				"Power Cards",
 			},
 			["k_power"] = "Power Card",
-			["b_power_cards"] = "Power Cards",
 			["k_booster_group_p_rendom_power_booster_jumbo"] = {
 				"Power Cards",
 			},
-			["k_rendom_power_booster"] = "Power Pack",
 		},
 		["labels"] = {
 			["rendom_big"] = "Big",
 			["rendom_terry"] = "Terry",
+			["rendom_parasite"] = "Parasite",
 			["rendom_revive_seal"] = "Revive",
 		},
 		["collab_palettes"] = {
@@ -200,6 +201,13 @@ return {
 					"{C:attention}Black Hole{} enhancement",
 				},
 			},
+			["c_rendom_symbiosis"] = {
+				["name"] = "Symbiosis",
+				["text"] = {
+					"Apply {C:attention}Symbiosis{} to",
+					"a random Joker",
+				},
+			},
 		},
 		["Blind"] = {
 			["bl_wheel"] = {
@@ -240,6 +248,17 @@ return {
 					"be used immediately",
 				},
 			},
+			["p_rendom_power_booster_jumbo"] = {
+				["group_name"] = {
+					"Power Cards",
+				},
+				["name"] = "Jumbo Power Pack",
+				["text"] = {
+					"Choose {C:attention}1{} of up to",
+					"{C:attention}4 Power Cards{} to",
+					"be used immediately",
+				},
+			},
 			["p_rendom_power_booster_mega"] = {
 				["group_name"] = {
 					"Power Cards",
@@ -257,17 +276,6 @@ return {
 				["text"] = {
 					"Creates {C:attention}#1#{} copies of this",
 					"card when {C:attention}destroyed{}",
-				},
-			},
-			["p_rendom_power_booster_jumbo"] = {
-				["group_name"] = {
-					"Power Cards",
-				},
-				["name"] = "Jumbo Power Pack",
-				["text"] = {
-					"Choose {C:attention}1{} of up to",
-					"{C:attention}4 Power Cards{} to",
-					"be used immediately",
 				},
 			},
 		},
@@ -316,6 +324,17 @@ return {
 					"Takes {C:dark_edition}2{} #1#",
 					"{C:attention}Doubles{} all* values",
 					"{s:0.8,C:inactive}*Where possible",
+				},
+			},
+			["e_rendom_parasite"] = {
+				["name"] = "Parasite",
+				["label"] = "Parasite",
+				["text"] = {
+					"{X:mult,C:white}X#1#{} Mult",
+					"{X:mult,C:white}-X#2#{} every round",
+					"{s:0.8}At {s:0.8,X:mult,C:white}X#3#{s:0.8}, destroy this joker",
+					"{s:0.8}and apply {s:0.8,C:attention}Parasite{s:0.8} to{}",
+					"{s:0.8}an editionless joker{}",
 				},
 			},
 			["e_rendom_terry"] = {

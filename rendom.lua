@@ -131,6 +131,7 @@ REND.load_script("consumables/power.lua")
 --- Editions ---
 REND.load_script("editions/big.lua")
 REND.load_script("editions/terry.lua")
+REND.load_script("editions/parasite.lua")
 --- Enhancements ---
 REND.load_script("enhancements/asbestos.lua")
 REND.load_script("enhancements/blackhole.lua")

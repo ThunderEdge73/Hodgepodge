@@ -11,7 +11,8 @@ SMODS.ConsumableType {
         ["immortality"] = true,
         ["aquakinesis"] = true,
         ["toxigenesis"] = true,
-        ["glitch"] = true
+        ["symbiosis"] = true
+        -- ["glitch"] = true
     },
     shop_rate = 1,
 
@@ -239,6 +240,47 @@ SMODS.Consumable { -- Toxigenesis (Applies Asbestos)
             delay(0.5)
         end
         G.E_MANAGER:add_event(Event({trigger = 'after', delay = 0.2, func = function() G.hand:unhighlight_all(); return true end}))
+    end
+}
+
+SMODS.Consumable { -- Symbiosis (Applies Parasite)
+    key = "symbiosis",
+    set = "power",
+    atlas = "power_atlas",
+    pos = {x=0,y=2},
+    cost = 3,
+    config = {
+        max_highlighted = 0,
+        extra = "e_rendom_parasite"
+    },
+
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue+1] = G.P_CENTERS[(card.edition or self.config).extra]
+        return {vars = {}}
+    end,
+    can_use = function(self,card)
+        local eligible_editionless_jokers = {}
+        for k, v in pairs(G.jokers.cards) do
+            if v.ability.set == 'Joker' and (not v.edition) then
+                table.insert(eligible_editionless_jokers, v)
+            end
+        end
+        return (REND.table_true_size(eligible_editionless_jokers) > 0) and (#G.jokers.cards < G.jokers.config.card_limit-1)
+    end,
+    use = function(self,card,area,copier)
+        local eligible_editionless_jokers = {}
+        for k, v in pairs(G.jokers.cards) do
+            if v.ability.set == 'Joker' and (not v.edition) then
+                table.insert(eligible_editionless_jokers, v)
+            end
+        end
+        local temp_pool = eligible_editionless_jokers or {}
+        G.E_MANAGER:add_event(Event({trigger = 'after', delay = 0.4, func = function()
+            local over = false
+            local eligible_card = pseudorandom_element(temp_pool, pseudoseed("size"))
+            eligible_card:set_edition({["rendom_parasite"] = true}, true)
+            check_for_unlock({type = 'have_edition'})
+        return true end }))
     end
 }
 
