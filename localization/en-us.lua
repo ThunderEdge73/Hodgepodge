@@ -1,5 +1,16 @@
 return {
 	["misc"] = {
+		["suits_plural"] = {
+			["rendom_snake"] = "Snakes",
+		},
+		["collabs"] = {
+			["rendom_snake"] = {
+				["1"] = "Default",
+			},
+		},
+		["suits_singular"] = {
+			["rendom_snake"] = "Snake",
+		},
 		["dictionary"] = {
 			["k_rendom_power_booster"] = "Power Pack",
 			["k_booster_group_p_rendom_power_booster_2"] = {
@@ -21,12 +32,16 @@ return {
 			["rendom_big"] = "Big",
 			["rendom_terry"] = "Terry",
 			["rendom_parasite"] = "Parasite",
+			["rendom_loyalty_seal"] = "Element of Loyalty",
 			["rendom_revive_seal"] = "Revive",
 		},
 		["collab_palettes"] = {
 			["collab_CL"] = {
 				["1"] = "Low Contrast Colors",
 				["2"] = "High Contrast Colors",
+			},
+			["default_rendom_snake"] = {
+				["1"] = "Default Colors",
 			},
 			["collab_CR"] = {
 				["1"] = "Low Contrast Colors",
@@ -166,18 +181,11 @@ return {
 					"a random Joker",
 				},
 			},
-			["c_rendom_immortality"] = {
-				["name"] = "Immortality",
-				["text"] = {
-					"Select {C:attention}#1#{} card to",
-					"apply {C:attention}Revive{}",
-				},
-			},
-			["c_rendom_aquakinesis"] = {
-				["name"] = "Water Damage",
+			["c_rendom_umbrakinesis"] = {
+				["name"] = "Umbrakinesis",
 				["text"] = {
 					"Select {C:attention}#1#{} card to apply",
-					"{C:attention}Water Damage{} enhancement",
+					"{C:attention}Black Hole{} enhancement",
 				},
 			},
 			["c_rendom_toxigenesis"] = {
@@ -187,6 +195,13 @@ return {
 					"{C:attention}Asbestos{} enhancement",
 				},
 			},
+			["c_rendom_aquakinesis"] = {
+				["name"] = "Water Damage",
+				["text"] = {
+					"Select {C:attention}#1#{} card to apply",
+					"{C:attention}Water Damage{} enhancement",
+				},
+			},
 			["c_rendom_dimension"] = {
 				["name"] = "Dimension",
 				["text"] = {
@@ -194,11 +209,11 @@ return {
 					"a random Joker",
 				},
 			},
-			["c_rendom_umbrakinesis"] = {
-				["name"] = "Umbrakinesis",
+			["c_rendom_immortality"] = {
+				["name"] = "Immortality",
 				["text"] = {
-					"Select {C:attention}#1#{} card to apply",
-					"{C:attention}Black Hole{} enhancement",
+					"Select {C:attention}#1#{} card to",
+					"apply {C:attention}Revive{}",
 				},
 			},
 			["c_rendom_symbiosis"] = {
@@ -237,6 +252,14 @@ return {
 					"learn what it does",
 				},
 			},
+			["rendom_loyalty_seal"] = {
+				["name"] = "Element of Loyalty",
+				["label"] = "Element of Loyalty",
+				["text"] = {
+					"{C:green}#1# in #2#{} chance to",
+					"return to hand when played",
+				},
+			},
 			["p_rendom_power_booster_1"] = {
 				["group_name"] = {
 					"Power Cards",
@@ -245,6 +268,25 @@ return {
 				["text"] = {
 					"Choose {C:attention}1{} of up to",
 					"{C:attention}2 Power Cards{} to",
+					"be used immediately",
+				},
+			},
+			["rendom_revive_seal"] = {
+				["label"] = "Revive",
+				["name"] = "Revive",
+				["text"] = {
+					"Creates {C:attention}#1#{} copies of this",
+					"card when {C:attention}destroyed{}",
+				},
+			},
+			["p_rendom_power_booster_mega"] = {
+				["group_name"] = {
+					"Power Cards",
+				},
+				["name"] = "Mega Power Pack",
+				["text"] = {
+					"Choose {C:attention}2{} of up to",
+					"{C:attention}4 Power Cards{} to",
 					"be used immediately",
 				},
 			},
@@ -259,30 +301,11 @@ return {
 					"be used immediately",
 				},
 			},
-			["p_rendom_power_booster_mega"] = {
-				["group_name"] = {
-					"Power Cards",
-				},
-				["name"] = "Mega Power Pack",
-				["text"] = {
-					"Choose {C:attention}2{} of up to",
-					"{C:attention}4 Power Cards{} to",
-					"be used immediately",
-				},
-			},
-			["rendom_revive_seal"] = {
-				["name"] = "Revive",
-				["label"] = "Revive",
-				["text"] = {
-					"Creates {C:attention}#1#{} copies of this",
-					"card when {C:attention}destroyed{}",
-				},
-			},
 		},
 		["Enhanced"] = {
 			["m_rendom_blackhole"] = {
-				["name"] = "Black Hole",
 				["label"] = "Black Hole",
+				["name"] = "Black Hole",
 				["text"] = {
 					"When scored, destroy",
 					"other played cards and",
@@ -294,8 +317,8 @@ return {
 				},
 			},
 			["m_rendom_asbestos"] = {
-				["name"] = "Asbestos",
 				["label"] = "Asbestos",
+				["name"] = "Asbestos",
 				["text"] = {
 					"{X:mult,C:white}X#1#{} mult while in hand",
 					"Loses {X:mult,C:white}X#2#{} per hand played",
@@ -306,8 +329,8 @@ return {
 				},
 			},
 			["m_rendom_waterdamage"] = {
-				["name"] = "Water Damaged",
 				["label"] = "Water Damaged",
+				["name"] = "Water Damaged",
 				["text"] = {
 					"{C:chips}+#1#{} bonus chips",
 					"{C:green}#2#/100{} chance to",
@@ -318,8 +341,8 @@ return {
 		},
 		["Edition"] = {
 			["e_rendom_big"] = {
-				["name"] = "Big",
 				["label"] = "Big",
+				["name"] = "Big",
 				["text"] = {
 					"Takes {C:dark_edition}2{} #1#",
 					"{C:attention}Doubles{} all* values",
@@ -327,8 +350,8 @@ return {
 				},
 			},
 			["e_rendom_parasite"] = {
-				["name"] = "Parasite",
 				["label"] = "Parasite",
+				["name"] = "Parasite",
 				["text"] = {
 					"{X:mult,C:white}X#1#{} Mult",
 					"{X:mult,C:white}-X#2#{} every round",
@@ -338,8 +361,8 @@ return {
 				},
 			},
 			["e_rendom_terry"] = {
-				["name"] = "Terry",
 				["label"] = "Terry",
+				["name"] = "Terry",
 				["text"] = {
 					"{X:mult,C:white}X#1#{} Mult",
 					"{s:0.8,C:inactive}Randomly chosen when scored{}",

@@ -152,6 +152,7 @@ REND.load_script("enhancements/blackhole.lua")
 REND.load_script("enhancements/waterdamage.lua")
 --- Seals ---
 REND.load_script("seals/revive.lua")
+REND.load_script("seals/mlp/loyalty.lua")
 --- Decks ---
 REND.load_script("decks/jumbo.lua")
 REND.load_script("decks/condemned.lua")
