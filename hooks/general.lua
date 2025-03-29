@@ -31,3 +31,15 @@ function Card:load(cardTable,other_card)
     self.rendom_upgrade_big = cardTable.rendom_upgrade_big
     return c
 end
+
+
+-- Element of Honesty cannot be flipped
+local blindStayFlipped = Blind.stay_flipped
+function Blind:stay_flipped(area,card,from_area)
+    local r = blindStayFlipped(self,area,card,from_area)
+    if card and card.seal == "rendom_honesty" then
+        return false
+    else
+        return r
+    end
+end
