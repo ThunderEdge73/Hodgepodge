@@ -134,6 +134,13 @@ SMODS.Atlas {
     py = 18
 }
 
+SMODS.Atlas {
+    key = "decks_atlas",
+    path = "decks.png",
+    px = 71,
+    py = 95
+}
+
 -----------------------------
 ----- LOADING SCRIPTS!! -----
 -----------------------------
@@ -156,5 +163,6 @@ REND.load_script("seals/mlp/loyalty.lua")
 --- Decks ---
 REND.load_script("decks/jumbo.lua")
 REND.load_script("decks/condemned.lua")
+REND.load_script("decks/snake.lua")
 --- Suits ---
 REND.load_script("suits/snake.lua")

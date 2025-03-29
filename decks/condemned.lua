@@ -1,7 +1,8 @@
 SMODS.Back {
     name = "Condemned Deck",
     key = "condemned",
-    pos = {x=3,y=3},
+    atlas = "decks_atlas",
+    pos = {x=1,y=0},
     config = {rendom_big = true},
     -- loc_txt = {
     --     name = "Condemned Deck",

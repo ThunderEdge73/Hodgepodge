@@ -1,6 +1,7 @@
 SMODS.Back {
     name = "Jumbo Deck",
     key = "jumbo",
+    atlas = "decks_atlas",
     pos = {x=0,y=0},
     config = {rendom_big = true},
     -- loc_txt = {
