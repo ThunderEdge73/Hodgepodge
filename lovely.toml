@@ -51,3 +51,17 @@ payload = '''
 not (card.ability.consumeable and #G.consumeables.cards < G.consumeables.config.card_limit + ((card.edition and card.edition.negative) and 1 or 0) - ((card.edition and card.edition.rendom_big) and 1 or 0)) then
 '''
 match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = "functions/common_events.lua"
+pattern = "generate_card_ui(v, full_UI_table)"
+position = "at"
+payload = '''
+if v.key == "rendom_honesty" then
+    generate_card_ui(v, full_UI_table, nil, nil, nil, nil, nil, nil, card)
+else
+    generate_card_ui(v, full_UI_table)
+end
+'''
+match_indent = true

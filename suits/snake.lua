@@ -3,10 +3,10 @@ SMODS.Suit {
     card_key = "SNAKE",
     pos = {y=0},
     ui_pos = {x=0,y=0},
-    loc_txt = {
-        singular = "Snake",
-        plural = "Snakes"
-    },
+    -- loc_txt = {
+    --     singular = "Snake",
+    --     plural = "Snakes"
+    -- },
     lc_atlas = 'suits_atlas',
     hc_atlas = 'suits_atlas',
     lc_ui_atlas = 'icons_atlas',

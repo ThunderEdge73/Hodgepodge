@@ -1,6 +1,20 @@
 REND = SMODS.current_mod
 
-SMODS.optional_features.cardareas.discard = true
+REND.optional_features = function()
+    return {
+        retrigger_joker = true,
+        cardareas = {
+            discard = true
+        }
+    }
+end
+
+----------------------------
+----- GLOBAL VARIABLES -----
+----------------------------
+
+REND.elements_of_harmony = {"rendom_kindness","rendom_honesty","rendom_loyalty","rendom_laughter","rendom_generosity","rendom_magic"}
+
 -----------------------------
 ----- UTILITY FUNCTIONS -----
 -----------------------------
@@ -66,18 +80,29 @@ REND.mod_card_values = function (table_in, config)
 end
 
 -- Thanks also for this function, aiko
-REND.deep_copy = function(orig)
+REND.deep_copy = function(orig,cutoff_value)
+    cutoff_value = cutoff_value or orig
     local orig_type = type(orig)
     local copy
     if orig_type == 'table' then
-        copy = {}
-        for orig_key, orig_value in next, orig, nil do
-            copy[REND.deep_copy(orig_key)] = REND.deep_copy(orig_value)
+        if orig_type ~= cutoff_value then
+            copy = {}
+            for orig_key, orig_value in next, orig, nil do
+                copy[REND.deep_copy(orig_key)] = REND.deep_copy(orig_value)
+            end
         end
     else
         copy = orig
     end
     return copy
+end
+
+REND.reverse_table = function(table)
+    local tab = REND.deep_copy(table)
+    for i = 1, math.floor(#tab/2), 1 do
+        tab[i], tab[#tab-i+1] = tab[#tab-i+i], tab[i]
+    end
+    return tab
 end
 
 ---------------------------
@@ -161,7 +186,10 @@ REND.load_script("enhancements/waterdamage.lua")
 REND.load_script("seals/revive.lua")
 REND.load_script("seals/mlp/loyalty.lua")
 REND.load_script("seals/mlp/honesty.lua")
-REND.load_script("seals/mlp/friendship.lua")
+REND.load_script("seals/mlp/kindness.lua")
+REND.load_script("seals/mlp/generosity.lua")
+REND.load_script("seals/mlp/laughter.lua")
+REND.load_script("seals/mlp/magic.lua")
 --- Decks ---
 REND.load_script("decks/jumbo.lua")
 REND.load_script("decks/condemned.lua")

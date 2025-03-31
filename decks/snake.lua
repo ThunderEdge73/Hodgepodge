@@ -4,12 +4,12 @@ SMODS.Back {
     atlas = "decks_atlas",
     pos = {x=2,y=0},
     config = {},
-    loc_txt = {
-        name = "Snake Deck",
-        text = {
-            "Includes cards with","the Snake suit"
-        }
-    },
+    -- loc_txt = {
+    --     name = "Snake Deck",
+    --     text = {
+    --         "Includes cards with","the Snake suit"
+    --     }
+    -- },
     apply = function()
     end
 }

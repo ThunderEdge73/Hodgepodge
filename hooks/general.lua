@@ -33,13 +33,35 @@ function Card:load(cardTable,other_card)
 end
 
 
--- Element of Honesty cannot be flipped
-local blindStayFlipped = Blind.stay_flipped
-function Blind:stay_flipped(area,card,from_area)
-    local r = blindStayFlipped(self,area,card,from_area)
-    if card and card.seal == "rendom_honesty" then
-        return false
-    else
-        return r
+-- -- THIS IS NO LONGER ITS EFFECT - Element of Honesty cannot be flipped
+-- local blindStayFlipped = Blind.stay_flipped
+-- function Blind:stay_flipped(area,card,from_area)
+--     local r = blindStayFlipped(self,area,card,from_area)
+--     if card and card.seal == "rendom_honesty" then
+--         return false
+--     else
+--         return r
+--     end
+-- end
+
+-- Element of Laughter Retriggers other elements
+local calculateSeal = Card.calculate_seal
+function Card:calculate_seal(context)
+    local ret = calculateSeal(self,context)
+    if context.repetition then
+        if context.scoring_hand and REND and REND.table_contains and REND.table_contains(REND.elements_of_harmony,self.seal) then
+            for k,v in ipairs(context.scoring_hand) do
+                if v.seal == "rendom_laughter" and v ~= self then
+                    return {
+                        message = "Haha!",
+                        repetitions = 1,
+                        card = self
+                    }
+                -- elseif v.seal == "rendom_generosity" then
+                --     self.ability.bonus = self.ability.bonus + 10
+                end
+            end
+        end
     end
+    return ret
 end
