@@ -57,8 +57,6 @@ function Card:calculate_seal(context)
                         repetitions = 1,
                         card = self
                     }
-                -- elseif v.seal == "rendom_generosity" then
-                --     self.ability.bonus = self.ability.bonus + 10
                 end
             end
         end

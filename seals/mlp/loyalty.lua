@@ -36,7 +36,9 @@ SMODS.Seal {
                             G.E_MANAGER:add_event(Event({ -- Add to queue
                                 trigger = 'immediate',
                                 func = function()
-                                    draw_card(G.discard, G.hand, nil, nil, nil, c, nil, nil, false, nil, nil) --from, to, percent, dir, sort, card, delay, mute, stay_flipped, vol, discarded_only
+                                    if not card.destroyed then
+                                        draw_card(G.discard, G.hand, nil, nil, nil, c, nil, nil, false, nil, nil) --from, to, percent, dir, sort, card, delay, mute, stay_flipped, vol, discarded_only
+                                    end
                                     return true
                                 end
                             }))

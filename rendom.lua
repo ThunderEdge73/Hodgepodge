@@ -166,6 +166,13 @@ SMODS.Atlas {
     py = 95
 }
 
+SMODS.Atlas {
+    key = "jokers_atlas",
+    path = "jokers.png",
+    px = 71,
+    py = 95
+}
+
 -----------------------------
 ----- LOADING SCRIPTS!! -----
 -----------------------------
@@ -194,5 +201,11 @@ REND.load_script("seals/mlp/magic.lua")
 REND.load_script("decks/jumbo.lua")
 REND.load_script("decks/condemned.lua")
 REND.load_script("decks/snake.lua")
+REND.load_script("decks/friendship.lua")
 --- Suits ---
 REND.load_script("suits/snake.lua")
+REND.load_script("suits/suns.lua")
+REND.load_script("suits/moons.lua")
+--- Jokers ---
+REND.load_script("jokers/cupcakes.lua")
+REND.load_script("jokers/blownaway.lua")
