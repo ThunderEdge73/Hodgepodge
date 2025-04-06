@@ -33,5 +33,8 @@ SMODS.Joker {
             end
         end
         return false
+    end,
+    set_badges = function(self,card,badges)
+        badges[#badges+1] = create_badge(localize('k_badge_mlp'), G.C.PURPLE, G.C.WHITE, 1.2)
     end
 }

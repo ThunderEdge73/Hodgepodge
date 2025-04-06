@@ -1,15 +1,25 @@
 return {
 	["misc"] = {
 		["suits_plural"] = {
+			["rendom_suns"] = "Suns",
 			["rendom_snake"] = "Snakes",
+			["rendom_moons"] = "Moons",
 		},
 		["collabs"] = {
+			["rendom_moons"] = {
+				["1"] = "Default",
+			},
 			["rendom_snake"] = {
+				["1"] = "Default",
+			},
+			["rendom_suns"] = {
 				["1"] = "Default",
 			},
 		},
 		["suits_singular"] = {
+			["rendom_suns"] = "Sun",
 			["rendom_snake"] = "Snake",
+			["rendom_moons"] = "Moon",
 		},
 		["dictionary"] = {
 			["carto_deck_view_stack_chips"] = "Stack different chip values",
@@ -66,7 +76,7 @@ return {
 			},
 			["carto_jokers_show"] = "Show",
 			["carto_flames_volume"] = "Flames volume ",
-			["carto_deck_view_stack_pos"] = "Alignment ",
+			["carto_hide_deck"] = "Hide deck",
 			["carto_jokers_controls_buttons"] = "Show joker area buttons",
 			["carto_deck_view_stack_background_opacity"] = "Opacity ",
 			["carto_deck_view_unique_cards"] = "Unique cards:",
@@ -76,20 +86,25 @@ return {
 				"middle",
 				"right",
 			},
-			["carto_hide_deck"] = "Hide deck",
+			["carto_deck_view_stack_pos"] = "Alignment ",
 			["carto_kb_toggle_jokers_buttons"] = "Toggle jokers buttons",
+			["k_badge_hamilton"] = "Hamilton",
+			["k_badge_mlp"] = "MLP:FiM",
+			["k_badge_fnf"] = "FNF",
+			["k_badge_wof"] = "Wings of Fire",
+			["k_badge_joke"] = "Joke",
 		},
 		["labels"] = {
 			["rendom_honesty_seal"] = "Element of Harmony",
 			["rendom_kindness_seal"] = "Element of Harmony",
 			["rendom_magic_seal"] = "Element of Harmony",
-			["rendom_loyalty_seal"] = "Element of Loyalty",
+			["rendom_loyalty_seal"] = "Element of Harmony",
 			["rendom_revive_seal"] = "Revive",
 			["rendom_big"] = "Big",
-			["rendom_terry"] = "Terry",
+			["rendom_laughter_seal"] = "Element of Harmony",
 			["rendom_parasite"] = "Parasite",
 			["rendom_generosity_seal"] = "Element of Harmony",
-			["rendom_laughter_seal"] = "Element of Harmony",
+			["rendom_terry"] = "Terry"
 		},
 		["collab_palettes"] = {
 			["collab_CL"] = {
@@ -99,9 +114,16 @@ return {
 			["default_rendom_snake"] = {
 				["1"] = "Default Colors",
 			},
+			["collab_AC"] = {
+				["1"] = "Low Contrast Colors",
+				["2"] = "High Contrast Colors",
+			},
 			["collab_CR"] = {
 				["1"] = "Low Contrast Colors",
 				["2"] = "High Contrast Colors",
+			},
+			["default_rendom_suns"] = {
+				["1"] = "Default Colors",
 			},
 			["collab_DBD"] = {
 				["1"] = "Low Contrast Colors",
@@ -195,9 +217,8 @@ return {
 				["1"] = "Low Contrast Colors",
 				["2"] = "High Contrast Colors",
 			},
-			["collab_AC"] = {
-				["1"] = "Low Contrast Colors",
-				["2"] = "High Contrast Colors",
+			["default_rendom_moons"] = {
+				["1"] = "Default Colors",
 			},
 			["collab_STP"] = {
 				["1"] = "Low Contrast Colors",
@@ -225,6 +246,14 @@ return {
 					"only {C:attention}Big{} cards",
 					"{C:attention}+4{} hand size",
 					"{C:inactive}(Hand can hold {C:attention}6{C:inactive} Big cards){}",
+				},
+			},
+			["b_rendom_friendship"] = {
+				["name"] = "Friendship Deck",
+				["text"] = {
+					"Includes {C:rendom_suns}Sun{} and {C:rendom_moons}Moon{} suits",
+					"Includes 1 of each",
+					"{C:attention}Element of Harmony{}",
 				},
 			},
 			["b_rendom_condemned"] = {
@@ -293,11 +322,18 @@ return {
 					"#1# in 7 cards get",
 				},
 			},
+			["bl_rendom_name"] = {
+				["name"] = "The Name",
+				["text"] = {
+					"Debuffs all",
+					"Elements of Harmony",
+				},
+			},
 		},
 		["Other"] = {
 			["rendom_honesty_seal"] = {
-				["name"] = "Element of Honesty",
 				["label"] = "Element of Harmony",
+				["name"] = "Element of Honesty",
 				["text"] = {
 					"Reveals the positions of",
 					"up to {C:attention}3{} upcoming",
@@ -328,8 +364,8 @@ return {
 				},
 			},
 			["rendom_loyalty_seal"] = {
-				["name"] = "Element of Loyalty",
 				["label"] = "Element of Harmony",
+				["name"] = "Element of Loyalty",
 				["text"] = {
 					"Other played",
 					"{C:attention}Elements of Harmony{}",
@@ -349,8 +385,8 @@ return {
 				},
 			},
 			["rendom_generosity_seal"] = {
-				["name"] = "Element of Generosity",
 				["label"] = "Element of Harmony",
+				["name"] = "Element of Generosity",
 				["text"] = {
 					"Other scored",
 					"{C:attention}Elements of Harmony{}",
@@ -358,8 +394,8 @@ return {
 				},
 			},
 			["rendom_kindness_seal"] = {
-				["name"] = "Element of Kindness",
 				["label"] = "Element of Harmony",
+				["name"] = "Element of Kindness",
 				["text"] = {
 					"{C:chips}+10{} Chips for every",
 					"{C:attention}Element of Harmony{}",
@@ -379,8 +415,8 @@ return {
 				},
 			},
 			["rendom_laughter_seal"] = {
-				["name"] = "Element of Laughter",
 				["label"] = "Element of Harmony",
+				["name"] = "Element of Laughter",
 				["text"] = {
 					"Retrigger other scoring",
 					"{C:attention}Elements of Harmony",
@@ -398,8 +434,8 @@ return {
 				},
 			},
 			["rendom_magic_seal"] = {
-				["name"] = "Element of Magic",
 				["label"] = "Element of Harmony",
+				["name"] = "Element of Magic",
 				["text"] = {
 					"Apply a random",
 					"{C:attention}Element of Harmony{}",
@@ -407,18 +443,65 @@ return {
 				},
 			},
 			["rendom_revive_seal"] = {
-				["label"] = "Revive",
 				["name"] = "Revive",
+				["label"] = "Revive",
 				["text"] = {
 					"Creates {C:attention}#1#{} copies of this",
 					"card when {C:attention}destroyed{}",
 				},
 			},
 		},
+		["Joker"] = {
+			["j_rendom_david"] = {
+				["name"] = "David",
+				["text"] = {
+					"On Blind selected:",
+					"{C:green}90%{} to create Negative Ice Cream",
+					"{C:green}10%{} to create Negative David",
+					"If {C:attention}#1#{} scored, {C:attention}destroy{} this card",
+					"{C:inactive,s:0.85}Rank chosen on Blind selected{}",
+				},
+			},
+			["j_rendom_nightmarenight"] = {
+				["name"] = "Nightmare Night",
+				["text"] = {
+					"Played cards with",
+					"{C:rendom_moons}Moon{} suit give",
+					"{C:mult}+3{} Mult when scored",
+				},
+			},
+			["j_rendom_summersun"] = {
+				["name"] = "Summer Sun Celebration",
+				["text"] = {
+					"Played cards with",
+					"{C:rendom_suns}Sun{} suit give",
+					"{C:mult}+3{} Mult when scored",
+				},
+			},
+			["j_rendom_cupcakes"] = {
+				["name"] = "Cupcakes",
+				["text"] = {
+					"{X:mult,C:white}X#1#{} Mult, loses {X:mult,C:white}X#2#{} Mult",
+					"per hand played",
+					"Gains {X:mult,C:white}X#3#{} per scoring card",
+					"with {C:attention}Element of Loyalty{} and",
+					"destroys the card",
+				},
+			},
+			["j_rendom_blownaway"] = {
+				["name"] = "Blown Away",
+				["text"] = {
+					"If played hand contains a",
+					"{C:attention}Straight{}, destroy highest",
+					"scoring card and reduce",
+					"blind by {C:attention}#1#%{}",
+				},
+			},
+		},
 		["Enhanced"] = {
 			["m_rendom_blackhole"] = {
-				["label"] = "Black Hole",
 				["name"] = "Black Hole",
+				["label"] = "Black Hole",
 				["text"] = {
 					"When scored, destroy",
 					"other played cards and",
@@ -430,8 +513,8 @@ return {
 				},
 			},
 			["m_rendom_asbestos"] = {
-				["label"] = "Asbestos",
 				["name"] = "Asbestos",
+				["label"] = "Asbestos",
 				["text"] = {
 					"{X:mult,C:white}X#1#{} mult while in hand",
 					"Loses {X:mult,C:white}X#2#{} per hand played",
@@ -442,8 +525,8 @@ return {
 				},
 			},
 			["m_rendom_waterdamage"] = {
-				["label"] = "Water Damaged",
 				["name"] = "Water Damaged",
+				["label"] = "Water Damaged",
 				["text"] = {
 					"{C:chips}+#1#{} bonus chips",
 					"{C:green}#2#/100{} chance to",
@@ -454,8 +537,8 @@ return {
 		},
 		["Edition"] = {
 			["e_rendom_big"] = {
-				["label"] = "Big",
 				["name"] = "Big",
+				["label"] = "Big",
 				["text"] = {
 					"Takes {C:dark_edition}2{} #1#",
 					"{C:attention}Doubles{} all* values",
@@ -463,8 +546,8 @@ return {
 				},
 			},
 			["e_rendom_parasite"] = {
-				["label"] = "Parasite",
 				["name"] = "Parasite",
+				["label"] = "Parasite",
 				["text"] = {
 					"{X:mult,C:white}X#1#{} Mult",
 					"{X:mult,C:white}-X#2#{} every round",
@@ -474,8 +557,8 @@ return {
 				},
 			},
 			["e_rendom_terry"] = {
-				["label"] = "Terry",
 				["name"] = "Terry",
+				["label"] = "Terry",
 				["text"] = {
 					"{X:mult,C:white}X#1#{} Mult",
 					"{s:0.8,C:inactive}Randomly chosen when scored{}",

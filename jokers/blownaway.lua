@@ -85,5 +85,8 @@ SMODS.Joker {
                 }
             end
         end
+    end,
+    set_badges = function(self,card,badges)
+        badges[#badges+1] = create_badge(localize('k_badge_hamilton'), G.C.GOLD, G.C.WHITE, 1.2)
     end
 }

@@ -21,7 +21,8 @@ SMODS.Joker {
     },
     atlas = "jokers_atlas",
     pos = {x=7,y=0},
-    rarity = 3,
+    soul_pos = {x=8,y=0},
+    rarity = 4,
     calculate = function(self,card,context)
         if context.setting_blind then
             if REND.david_last_set ~= G.GAME.round or not REND.david_rank then
@@ -63,7 +64,7 @@ SMODS.Joker {
                     G.GAME.joker_buffer = 0
                     card:start_dissolve(nil, nil, 1.6)
                 return true end }))
-                return {message = "AAAAAAAAA"}
+                return {message = "AAAAAAAAA", message_card = card}
             end
         end
     end,
@@ -78,5 +79,8 @@ SMODS.Joker {
                 G.david_rank = pseudorandom_element(ranks, pseudoseed("david"))
             end
         end
+    end,
+    set_badges = function(self,card,badges)
+        badges[#badges+1] = create_badge(localize('k_badge_joke'), G.C.GREEN, G.C.WHITE, 1.2)
     end
 }
