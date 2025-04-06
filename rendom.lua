@@ -173,6 +173,15 @@ SMODS.Atlas {
     py = 95
 }
 
+SMODS.Atlas {
+    atlas_table = 'ANIMATION_ATLAS',
+    key = "blinds_atlas",
+    path = "blinds.png",
+    px = 34,
+    py = 34,
+    frames = 21
+}
+
 -----------------------------
 ----- LOADING SCRIPTS!! -----
 -----------------------------
@@ -207,5 +216,10 @@ REND.load_script("suits/snake.lua")
 REND.load_script("suits/suns.lua")
 REND.load_script("suits/moons.lua")
 --- Jokers ---
-REND.load_script("jokers/cupcakes.lua")
 REND.load_script("jokers/blownaway.lua")
+REND.load_script("jokers/cupcakes.lua")
+REND.load_script("jokers/david.lua")
+REND.load_script("jokers/summersun.lua")
+REND.load_script("jokers/nightmarenight.lua")
+--- Blinds ---
+REND.load_script("blinds/name.lua") -- I CURSE THE NAME THE ONE BEHIND IT ALLLLLLLLLLLLLLLLLLLLLLL

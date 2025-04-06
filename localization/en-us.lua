@@ -215,7 +215,7 @@ return {
 				["name"] = "Snake Deck",
 				["text"] = {
 					"Includes cards with",
-					"the Snake suit",
+					"the {C:rendom_snake}Snake{} suit",
 				},
 			},
 			["b_rendom_jumbo"] = {

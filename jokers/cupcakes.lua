@@ -27,7 +27,7 @@ SMODS.Joker {
         }
     },
     atlas = "jokers_atlas",
-    pos = {x=0,y=0},
+    pos = {x=1,y=0},
     rarity = 2,
     calculate = function(self,card,context)
         if context.final_scoring_step and context.cardarea == G.jokers then

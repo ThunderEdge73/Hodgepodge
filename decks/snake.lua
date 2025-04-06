@@ -2,7 +2,7 @@ SMODS.Back {
     name = "Snake Deck",
     key = "snake",
     atlas = "decks_atlas",
-    pos = {x=2,y=0},
+    pos = {x=3,y=0},
     config = {},
     -- loc_txt = {
     --     name = "Snake Deck",
