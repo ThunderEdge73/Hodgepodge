@@ -65,3 +65,122 @@ else
 end
 '''
 match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS _ "src/card_draw.lua"]'
+pattern =  "elseif self.ability.name == 'Hologram' then"
+position = "before"
+payload = '''
+elseif self.ability.name == "j_rendom_missingno" then
+    local x_mod = math.cos(1.8*G.TIMERS.REAL)*0.3
+    local y_mod = math.sin(3.6*G.TIMERS.REAL)*0.3
+    rotate_mod = (x_mod * 0.5) + ((math.random()-0.5) * 0.1)
+    self.children.floating_sprite:draw_shader('dissolve',0, nil, nil, self.children.center,scale_mod, rotate_mod, x_mod, y_mod+(0.1 + 0.03*math.sin(1.8*G.TIMERS.REAL)),nil, 0.6)
+    self.children.floating_sprite:draw_shader('dissolve', nil, nil, nil, self.children.center, scale_mod, rotate_mod,x_mod,y_mod)
+elseif self.ability.name == "j_rendom_badegg" then
+    local ramp = math.pow((math.cos(math.mod(G.TIMERS.REAL,math.pi))+1)/2,2)
+    rotate_mod = (math.sin(G.TIMERS.REAL*12)*math.sin(G.TIMERS.REAL)*ramp) * 0.4
+    self.children.floating_sprite:draw_shader('dissolve',0, nil, nil, self.children.center,scale_mod, rotate_mod, 0, 0.22 + (0.1 + 0.03*math.sin(1.8*G.TIMERS.REAL)),nil, 0.6)
+    self.children.floating_sprite:draw_shader('dissolve', nil, nil, nil, self.children.center, scale_mod, rotate_mod,0,0.22)
+'''
+match_indent = true
+overwrite = false
+
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = '''
+if self.ability.name == 'Hanging Chad' and (
+context.other_card == context.scoring_hand[1]) then
+    return {
+        message = localize('k_again_ex'),
+        repetitions = self.ability.extra,
+        card = self
+    }
+end
+'''
+position = "at"
+payload = '''
+if self.ability.name == 'Hanging Chad' and (
+REND.table_contains(REND.first_card_merge_down(context.scoring_hand),context.other_card)) then
+    print('chad trigger')
+    print(#REND.first_card_merge_down(context.scoring_hand))
+    return {
+        message = localize('k_again_ex'),
+        repetitions = self.ability.extra,
+        card = self
+    }
+end
+'''
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = '''
+if self.ability.name == 'Photograph' then
+    local first_face = nil
+    for i = 1, #context.scoring_hand do
+        if context.scoring_hand[i]:is_face() then first_face = context.scoring_hand[i]; break end
+    end
+    if context.other_card == first_face then
+        return {
+            x_mult = self.ability.extra,
+            colour = G.C.RED,
+            card = self
+        }
+    end
+end
+'''
+position = "at"
+payload = '''
+if self.ability.name == 'Photograph' then
+
+    local merge = false
+    for _,j in ipairs(G.jokers.cards) do
+        if j.ability and j.ability.name == "j_rendom_mergedown" then
+            merge = true
+        end 
+    end
+
+    local first_face = {}
+    for i = 1, #context.scoring_hand do
+        if context.scoring_hand[i]:is_face() then
+            table.insert(first_face,context.scoring_hand[i]);
+            if not merge then
+                break
+            end
+        end
+    end
+    if REND.table_contains(first_face,context.other_card) then
+        return {
+            x_mult = self.ability.extra,
+            colour = G.C.RED,
+            card = self
+        }
+    end
+end
+'''
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = "self.sell_cost = math.max(1, math.floor(self.cost/2)) + (self.ability.extra_value or 0)"
+position = "at"
+payload = "self.sell_cost = (self.ability.name == 'j_rendom_badegg' and -256) or math.max(1, math.floor(self.cost/2)) + (self.ability.extra_value or 0)"
+match_indent = true
+
+
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = '''
+if self.ability.d_size > 0 then
+'''
+position = "at"
+payload = '''
+if self.ability.d_size ~= 0 then
+'''
+match_indent = true

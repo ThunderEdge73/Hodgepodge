@@ -22,3 +22,35 @@ SMODS.Suit {
         end
     end
 }
+
+SMODS.DeckSkin {
+    key = "mlp_snake",
+    suit = "rendom_snake",
+    palettes = {
+        {
+            key = 'lc',
+            ranks = {2,3,4,5,6,7,8,9,10,"Jack","Queen","King","Ace"},
+            display_ranks = {"King","Queen","Jack"},
+            atlas = "rendom_modded_mlp_suits_atlas",
+            pos_style = "deck",
+            colour = HEX("21A888"),
+            suit_icon = {
+                atlas = "icons_atlas",
+                pos = 0
+            }
+        },
+        {
+            key = 'lc_con',
+            ranks = {2,3,4,5,6,7,8,9,10,"Jack","Queen","King","Ace"},
+            display_ranks = {"King","Queen","Jack"},
+            atlas = "rendom_modded_mlp_suits_2_atlas",
+            pos_style = "deck",
+            colour = HEX("21A888"),
+            suit_icon = {
+                atlas = "rendom_base_suit_icon_atlas",
+                pos = 0
+            }
+        }
+    },
+    loc_txt = "My Little Pony"
+}

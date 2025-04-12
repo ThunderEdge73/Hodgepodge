@@ -24,6 +24,7 @@ SMODS.Joker {
     atlas = "jokers_atlas",
     pos = {x=2,y=0},
     rarity = 3,
+    cost = 7,
     calculate = function(self,card,context)
         if context.before and context.cardarea == G.jokers and not context.blueprint then
             if (#context.poker_hands["Straight"] > 0) then
@@ -87,6 +88,6 @@ SMODS.Joker {
         end
     end,
     set_badges = function(self,card,badges)
-        badges[#badges+1] = create_badge(localize('k_badge_hamilton'), G.C.GOLD, G.C.WHITE, 1.2)
+        badges[#badges+1] = create_badge(localize('k_badge_misc'), G.C.CHIPS, G.C.WHITE, 1.2)
     end
 }

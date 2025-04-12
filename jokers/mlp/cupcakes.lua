@@ -29,6 +29,7 @@ SMODS.Joker {
     atlas = "jokers_atlas",
     pos = {x=1,y=0},
     rarity = 2,
+    cost = 6,
     calculate = function(self,card,context)
         if context.final_scoring_step and context.cardarea == G.jokers then
             card.ability.x_mult = card.ability.x_mult - card.ability.extra.mult_loss

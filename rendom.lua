@@ -105,6 +105,29 @@ REND.reverse_table = function(table)
     return tab
 end
 
+REND.first_card_merge_down = function(cards,merge) -- Get first card, with compatibility for Merge Down joker
+    if merge == nil then
+        merge = false
+        for _,j in ipairs(G.jokers.cards) do
+            if j.ability and j.ability.name == "j_rendom_mergedown" then
+                merge = true
+            end 
+        end
+    end
+    if merge then
+        print("all cards")
+        return cards
+    else
+        if cards[1] then
+            print("first card")
+            return {cards[1]}
+        else
+            print("no cards")
+            return {}
+        end
+    end
+end
+
 ---------------------------
 ----- Texture Atlases -----
 ---------------------------
@@ -122,6 +145,14 @@ SMODS.Atlas {
     px = 71,
     py = 95
 }
+
+SMODS.Atlas {
+    key = "tarot_atlas",
+    path = "tarots.png",
+    px = 71,
+    py = 95
+}
+
 SMODS.Atlas {
     atlas_table = 'ANIMATION_ATLAS',
     key = "anim_power_atlas",
@@ -148,6 +179,18 @@ SMODS.Atlas {
 SMODS.Atlas {
     key = "suits_atlas",
     path = "suits.png",
+    px = 71,
+    py = 95
+}
+SMODS.Atlas {
+    key = "modded_mlp_suits_atlas",
+    path = "modded_mlp_suits.png",
+    px = 71,
+    py = 95
+}
+SMODS.Atlas {
+    key = "modded_mlp_suits_2_atlas",
+    path = "modded_mlp_suits_2.png",
     px = 71,
     py = 95
 }
@@ -182,44 +225,227 @@ SMODS.Atlas {
     frames = 21
 }
 
+SMODS.Atlas {
+    key = "modicon",
+    px = 32,
+    py = 32,
+    path = "modicon.png"
+}
+
 -----------------------------
 ----- LOADING SCRIPTS!! -----
 -----------------------------
 
---- Hooks ---
+------ Hooks ------
 REND.load_script("hooks/general.lua")
---- Consumeables ---
+
+------ Consumables ------
+-- Custom Types
 REND.load_script("consumables/power.lua")
---- Editions ---
+-- Planets
+REND.load_script("consumables/avalon.lua")
+
+------ Editions ------
 REND.load_script("editions/big.lua")
 REND.load_script("editions/terry.lua")
 REND.load_script("editions/parasite.lua")
---- Enhancements ---
+
+------ Enhancements ------
 REND.load_script("enhancements/asbestos.lua")
 REND.load_script("enhancements/blackhole.lua")
 REND.load_script("enhancements/waterdamage.lua")
---- Seals ---
+
+------ Seals ------
+-- Misc
 REND.load_script("seals/revive.lua")
+-- MLP
 REND.load_script("seals/mlp/loyalty.lua")
 REND.load_script("seals/mlp/honesty.lua")
 REND.load_script("seals/mlp/kindness.lua")
 REND.load_script("seals/mlp/generosity.lua")
 REND.load_script("seals/mlp/laughter.lua")
 REND.load_script("seals/mlp/magic.lua")
---- Decks ---
+
+------ Decks ------
 REND.load_script("decks/jumbo.lua")
 REND.load_script("decks/condemned.lua")
 REND.load_script("decks/snake.lua")
 REND.load_script("decks/friendship.lua")
---- Suits ---
+
+----- Suits ------
+-- Creatures
 REND.load_script("suits/snake.lua")
+-- MLP
 REND.load_script("suits/suns.lua")
 REND.load_script("suits/moons.lua")
---- Jokers ---
-REND.load_script("jokers/blownaway.lua")
-REND.load_script("jokers/cupcakes.lua")
-REND.load_script("jokers/david.lua")
-REND.load_script("jokers/summersun.lua")
-REND.load_script("jokers/nightmarenight.lua")
---- Blinds ---
+
+------ Jokers ------
+-- Misc
+REND.load_script("jokers/misc/combo.lua")
+REND.load_script("jokers/misc/mergedown.lua")
+REND.load_script("jokers/misc/blownaway.lua")
+-- Joke
+REND.load_script("jokers/joke/catapult.lua")
+REND.load_script("jokers/joke/cocksley.lua")
+-- MLP
+REND.load_script("jokers/mlp/cupcakes.lua")
+REND.load_script("jokers/mlp/summersun.lua")
+REND.load_script("jokers/mlp/nightmarenight.lua")
+-- Legendaries!
+REND.load_script("jokers/joke/david.lua")
+REND.load_script("jokers/pokemon/missingno.lua")
+REND.load_script("jokers/pokemon/badegg.lua") -- does... does this count?
+
+------ Blinds ------
 REND.load_script("blinds/name.lua") -- I CURSE THE NAME THE ONE BEHIND IT ALLLLLLLLLLLLLLLLLLLLLLL
+
+
+-- MOVE THIS TO A SEPERATE MOD!!
+
+SMODS.Atlas {
+    key = "base_suit_icon_atlas",
+    path = "base_suit_icons.png",
+    px = 18,
+    py = 18
+}
+
+SMODS.Atlas {
+    key = "mlp_suits_atlas",
+    path = "mlp_suits.png",
+    px = 71,
+    py = 95
+}
+SMODS.Atlas {
+    key = "mlp_suits_2_atlas",
+    path = "mlp_suits_2.png",
+    px = 71,
+    py = 95
+}
+
+SMODS.DeckSkin {
+    key = "mlp_spades",
+    suit = "Spades",
+    palettes = {
+        {
+            key = 'lc',
+            ranks = {2,3,4,5,6,7,8,9,10,"Jack","Queen","King","Ace"},
+            display_ranks = {"King","Queen","Jack"},
+            atlas = "rendom_mlp_suits_atlas",
+            pos_style = "deck",
+            colour = HEX("3C4368"),
+            suit_icon = {
+                atlas = "rendom_base_suit_icon_atlas",
+                pos = 0
+            }
+        },
+        {
+            key = 'lc_con',
+            ranks = {2,3,4,5,6,7,8,9,10,"Jack","Queen","King","Ace"},
+            display_ranks = {"King","Queen","Jack"},
+            atlas = "rendom_mlp_suits_2_atlas",
+            pos_style = "deck",
+            colour = HEX("3C4368"),
+            suit_icon = {
+                atlas = "rendom_base_suit_icon_atlas",
+                pos = 0
+            }
+        }
+    },
+    loc_txt = "My Little Pony"
+}
+
+SMODS.DeckSkin {
+    key = "mlp_hearts",
+    suit = "Hearts",
+    palettes = {
+        {
+            key = 'lc',
+            ranks = {2,3,4,5,6,7,8,9,10,"Jack","Queen","King","Ace"},
+            display_ranks = {"King","Queen","Jack"},
+            atlas = "rendom_mlp_suits_atlas",
+            pos_style = "deck",
+            colour = HEX("F03464"),
+            suit_icon = {
+                atlas = "rendom_base_suit_icon_atlas",
+                pos = 0
+            }
+        },
+        {
+            key = 'lc_con',
+            ranks = {2,3,4,5,6,7,8,9,10,"Jack","Queen","King","Ace"},
+            display_ranks = {"King","Queen","Jack"},
+            atlas = "rendom_mlp_suits_2_atlas",
+            pos_style = "deck",
+            colour = HEX("F03464"),
+            suit_icon = {
+                atlas = "rendom_base_suit_icon_atlas",
+                pos = 0
+            }
+        }
+    },
+    loc_txt = "My Little Pony"
+}
+
+SMODS.DeckSkin {
+    key = "mlp_diamonds",
+    suit = "Diamonds",
+    palettes = {
+        {
+            key = 'lc',
+            ranks = {2,3,4,5,6,7,8,9,10,"Jack","Queen","King","Ace"},
+            display_ranks = {"King","Queen","Jack"},
+            atlas = "rendom_mlp_suits_atlas",
+            pos_style = "deck",
+            colour = HEX("F06B3F"),
+            suit_icon = {
+                atlas = "rendom_base_suit_icon_atlas",
+                pos = 0
+            }
+        },
+        {
+            key = 'lc_con',
+            ranks = {2,3,4,5,6,7,8,9,10,"Jack","Queen","King","Ace"},
+            display_ranks = {"King","Queen","Jack"},
+            atlas = "rendom_mlp_suits_2_atlas",
+            pos_style = "deck",
+            colour = HEX("F06B3F"),
+            suit_icon = {
+                atlas = "rendom_base_suit_icon_atlas",
+                pos = 0
+            }
+        }
+    },
+    loc_txt = "My Little Pony"
+}
+
+SMODS.DeckSkin {
+    key = "mlp_clubs",
+    suit = "Clubs",
+    palettes = {
+        {
+            key = 'lc',
+            ranks = {2,3,4,5,6,7,8,9,10,"Jack","Queen","King","Ace"},
+            display_ranks = {"King","Queen","Jack"},
+            atlas = "rendom_mlp_suits_atlas",
+            pos_style = "deck",
+            colour = HEX("235955"),
+            suit_icon = {
+                atlas = "rendom_base_suit_icon_atlas",
+                pos = 0
+            }
+        },
+        {
+            key = 'lc_con',
+            ranks = {2,3,4,5,6,7,8,9,10,"Jack","Queen","King","Ace"},
+            display_ranks = {"King","Queen","Jack"},
+            atlas = "rendom_mlp_suits_2_atlas",
+            pos_style = "deck",
+            colour = HEX("235955"),
+            suit_icon = {
+                atlas = "rendom_base_suit_icon_atlas",
+                pos = 0
+            }
+        }
+    },
+    loc_txt = "My Little Pony"
+}

@@ -19,7 +19,6 @@ SMODS.Blind {
     boss_colour = HEX("5f312d"),
     in_pool = function(self)
         if G.playing_cards then
-            print("playing cards")
             local elements = 0
             for k,card in ipairs(G.playing_cards) do
                 if REND.table_contains(REND.elements_of_harmony,card.seal) then

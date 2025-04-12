@@ -6,8 +6,20 @@ return {
 			["rendom_moons"] = "Moons",
 		},
 		["collabs"] = {
+			["Clubs"] = {
+				["8"] = "My Little Pony",
+			},
+			["Spades"] = {
+				["8"] = "My Little Pony",
+			},
+			["Diamonds"] = {
+				["8"] = "My Little Pony",
+			},
 			["rendom_moons"] = {
 				["1"] = "Default",
+			},
+			["Hearts"] = {
+				["8"] = "My Little Pony",
 			},
 			["rendom_snake"] = {
 				["1"] = "Default",
@@ -23,20 +35,21 @@ return {
 		},
 		["dictionary"] = {
 			["carto_deck_view_stack_chips"] = "Stack different chip values",
+			["k_badge_joke"] = "Joke",
 			["carto_deck_view_hide_drawn_cards"] = "Hide drawn cards",
 			["carto_settings_keybinds"] = "Keybinds",
 			["carto_flames_intensity_max"] = "Max intensity ",
+			["k_badge_misc"] = "Misc",
 			["carto_hide_jokers"] = "Hide jokers",
 			["carto_flames_intensity_min"] = "Min intensity ",
 			["carto_jokers_hide"] = "Hide",
 			["carto_deck_view_stack_enabled"] = "Stack cards in deck view",
 			["carto_compact_deck_enabled"] = "Limit cards in deck pile",
 			["carto_settings_compact_deck"] = "Compact deck",
+			["k_badge_pokemon"] = "Pokémon",
 			["carto_flames_intensity_vanilla"] = "Ignore min/max intensity",
 			["carto_flames_gasoline"] = "",
-			["k_booster_group_p_rendom_power_booster_2"] = {
-				"Power Cards",
-			},
+			["k_badge_fnf"] = "FNF",
 			["b_power_cards"] = "Power Cards",
 			["carto_hide_tags"] = "Hide tags",
 			["carto_settings_jokers"] = "Jokers",
@@ -67,32 +80,33 @@ return {
 				"Power Cards",
 			},
 			["carto_deck_view_stack_modifiers"] = "Stack all modifiers",
-			["k_rendom_power_booster"] = "Power Pack",
+			["k_badge_wof"] = "Wings of Fire",
 			["carto_kb_toggle_jokers"] = "Toggle jokers visibility",
 			["carto_deck_view_stack_pos_vertical_options"] = {
 				"top",
 				"center",
 				"bottom",
 			},
+			["k_badge_pokemon_maybe"] = "Pokémon?",
 			["carto_jokers_show"] = "Show",
+			["k_rendom_power_booster"] = "Power Pack",
+			["k_booster_group_p_rendom_power_booster_2"] = {
+				"Power Cards",
+			},
+			["carto_deck_view_stack_pos"] = "Alignment ",
+			["carto_jokers_controls_buttons"] = "Show joker area buttons",
+			["carto_kb_toggle_consumables"] = "Toggle consumables visibility",
+			["carto_deck_view_stack_background_opacity"] = "Opacity ",
 			["carto_flames_volume"] = "Flames volume ",
 			["carto_hide_deck"] = "Hide deck",
-			["carto_jokers_controls_buttons"] = "Show joker area buttons",
-			["carto_deck_view_stack_background_opacity"] = "Opacity ",
-			["carto_deck_view_unique_cards"] = "Unique cards:",
-			["carto_kb_toggle_consumables"] = "Toggle consumables visibility",
+			["carto_kb_toggle_jokers_buttons"] = "Toggle jokers buttons",
 			["carto_deck_view_stack_pos_horizontal_options"] = {
 				"left",
 				"middle",
 				"right",
 			},
-			["carto_deck_view_stack_pos"] = "Alignment ",
-			["carto_kb_toggle_jokers_buttons"] = "Toggle jokers buttons",
-			["k_badge_hamilton"] = "Hamilton",
 			["k_badge_mlp"] = "MLP:FiM",
-			["k_badge_fnf"] = "FNF",
-			["k_badge_wof"] = "Wings of Fire",
-			["k_badge_joke"] = "Joke",
+			["carto_deck_view_unique_cards"] = "Unique cards:",
 		},
 		["labels"] = {
 			["rendom_honesty_seal"] = "Element of Harmony",
@@ -101,55 +115,27 @@ return {
 			["rendom_loyalty_seal"] = "Element of Harmony",
 			["rendom_revive_seal"] = "Revive",
 			["rendom_big"] = "Big",
-			["rendom_laughter_seal"] = "Element of Harmony",
+			["rendom_terry"] = "Terry",
 			["rendom_parasite"] = "Parasite",
 			["rendom_generosity_seal"] = "Element of Harmony",
-			["rendom_terry"] = "Terry"
+			["rendom_laughter_seal"] = "Element of Harmony",
 		},
 		["collab_palettes"] = {
-			["collab_CL"] = {
-				["1"] = "Low Contrast Colors",
-				["2"] = "High Contrast Colors",
-			},
 			["default_rendom_snake"] = {
 				["1"] = "Default Colors",
 			},
-			["collab_AC"] = {
+			["rendom_mlp_spades"] = {
 				["1"] = "Low Contrast Colors",
-				["2"] = "High Contrast Colors",
+				["2"] = "Low Contrast Consistent",
 			},
-			["collab_CR"] = {
+			["collab_DBD"] = {
 				["1"] = "Low Contrast Colors",
 				["2"] = "High Contrast Colors",
 			},
 			["default_rendom_suns"] = {
 				["1"] = "Default Colors",
 			},
-			["collab_DBD"] = {
-				["1"] = "Low Contrast Colors",
-				["2"] = "High Contrast Colors",
-			},
-			["collab_R"] = {
-				["1"] = "Low Contrast Colors",
-				["2"] = "High Contrast Colors",
-			},
-			["collab_DS"] = {
-				["1"] = "Low Contrast Colors",
-				["2"] = "High Contrast Colors",
-			},
-			["collab_WF"] = {
-				["1"] = "Low Contrast Colors",
-				["2"] = "High Contrast Colors",
-			},
-			["collab_PC"] = {
-				["1"] = "Low Contrast Colors",
-				["2"] = "High Contrast Colors",
-			},
-			["collab_STS"] = {
-				["1"] = "Low Contrast Colors",
-				["2"] = "High Contrast Colors",
-			},
-			["collab_D2"] = {
+			["default_Spades"] = {
 				["1"] = "Low Contrast Colors",
 				["2"] = "High Contrast Colors",
 			},
@@ -157,41 +143,13 @@ return {
 				["1"] = "Low Contrast Colors",
 				["2"] = "High Contrast Colors",
 			},
-			["collab_FO"] = {
-				["1"] = "Low Contrast Colors",
-				["2"] = "High Contrast Colors",
-			},
-			["collab_C7"] = {
-				["1"] = "Low Contrast Colors",
-				["2"] = "High Contrast Colors",
-			},
-			["default_Spades"] = {
-				["1"] = "Low Contrast Colors",
-				["2"] = "High Contrast Colors",
-			},
-			["collab_TW"] = {
-				["1"] = "Low Contrast Colors",
-				["2"] = "High Contrast Colors",
-			},
 			["default_Clubs"] = {
 				["1"] = "Low Contrast Colors",
 				["2"] = "High Contrast Colors",
 			},
-			["collab_XR"] = {
+			["rendom_mlp_clubs"] = {
 				["1"] = "Low Contrast Colors",
-				["2"] = "High Contrast Colors",
-			},
-			["collab_EG"] = {
-				["1"] = "Low Contrast Colors",
-				["2"] = "High Contrast Colors",
-			},
-			["collab_SV"] = {
-				["1"] = "Low Contrast Colors",
-				["2"] = "High Contrast Colors",
-			},
-			["default_Diamonds"] = {
-				["1"] = "Low Contrast Colors",
-				["2"] = "High Contrast Colors",
+				["2"] = "Low Contrast Consistent",
 			},
 			["collab_VS"] = {
 				["1"] = "Low Contrast Colors",
@@ -201,7 +159,35 @@ return {
 				["1"] = "Low Contrast Colors",
 				["2"] = "High Contrast Colors",
 			},
-			["default_Hearts"] = {
+			["collab_R"] = {
+				["1"] = "Low Contrast Colors",
+				["2"] = "High Contrast Colors",
+			},
+			["collab_AU"] = {
+				["1"] = "Low Contrast Colors",
+				["2"] = "High Contrast Colors",
+			},
+			["default_Diamonds"] = {
+				["1"] = "Low Contrast Colors",
+				["2"] = "High Contrast Colors",
+			},
+			["collab_SK"] = {
+				["1"] = "Low Contrast Colors",
+				["2"] = "High Contrast Colors",
+			},
+			["collab_CL"] = {
+				["1"] = "Low Contrast Colors",
+				["2"] = "High Contrast Colors",
+			},
+			["collab_CR"] = {
+				["1"] = "Low Contrast Colors",
+				["2"] = "High Contrast Colors",
+			},
+			["collab_DS"] = {
+				["1"] = "Low Contrast Colors",
+				["2"] = "High Contrast Colors",
+			},
+			["collab_D2"] = {
 				["1"] = "Low Contrast Colors",
 				["2"] = "High Contrast Colors",
 			},
@@ -209,7 +195,51 @@ return {
 				["1"] = "Low Contrast Colors",
 				["2"] = "High Contrast Colors",
 			},
-			["collab_AU"] = {
+			["collab_STS"] = {
+				["1"] = "Low Contrast Colors",
+				["2"] = "High Contrast Colors",
+			},
+			["collab_TW"] = {
+				["1"] = "Low Contrast Colors",
+				["2"] = "High Contrast Colors",
+			},
+			["rendom_mlp_hearts"] = {
+				["1"] = "Low Contrast Colors",
+				["2"] = "Low Contrast Consistent",
+			},
+			["collab_STP"] = {
+				["1"] = "Low Contrast Colors",
+				["2"] = "High Contrast Colors",
+			},
+			["collab_C7"] = {
+				["1"] = "Low Contrast Colors",
+				["2"] = "High Contrast Colors",
+			},
+			["collab_WF"] = {
+				["1"] = "Low Contrast Colors",
+				["2"] = "High Contrast Colors",
+			},
+			["collab_FO"] = {
+				["1"] = "Low Contrast Colors",
+				["2"] = "High Contrast Colors",
+			},
+			["rendom_mlp_diamonds"] = {
+				["1"] = "Low Contrast Colors",
+				["2"] = "Low Contrast Consistent",
+			},
+			["default_Hearts"] = {
+				["1"] = "Low Contrast Colors",
+				["2"] = "High Contrast Colors",
+			},
+			["collab_SV"] = {
+				["1"] = "Low Contrast Colors",
+				["2"] = "High Contrast Colors",
+			},
+			["collab_EG"] = {
+				["1"] = "Low Contrast Colors",
+				["2"] = "High Contrast Colors",
+			},
+			["collab_XR"] = {
 				["1"] = "Low Contrast Colors",
 				["2"] = "High Contrast Colors",
 			},
@@ -220,11 +250,11 @@ return {
 			["default_rendom_moons"] = {
 				["1"] = "Default Colors",
 			},
-			["collab_STP"] = {
+			["collab_PC"] = {
 				["1"] = "Low Contrast Colors",
 				["2"] = "High Contrast Colors",
 			},
-			["collab_SK"] = {
+			["collab_AC"] = {
 				["1"] = "Low Contrast Colors",
 				["2"] = "High Contrast Colors",
 			},
@@ -332,8 +362,8 @@ return {
 		},
 		["Other"] = {
 			["rendom_honesty_seal"] = {
-				["label"] = "Element of Harmony",
 				["name"] = "Element of Honesty",
+				["label"] = "Element of Harmony",
 				["text"] = {
 					"Reveals the positions of",
 					"up to {C:attention}3{} upcoming",
@@ -364,8 +394,8 @@ return {
 				},
 			},
 			["rendom_loyalty_seal"] = {
-				["label"] = "Element of Harmony",
 				["name"] = "Element of Loyalty",
+				["label"] = "Element of Harmony",
 				["text"] = {
 					"Other played",
 					"{C:attention}Elements of Harmony{}",
@@ -385,8 +415,8 @@ return {
 				},
 			},
 			["rendom_generosity_seal"] = {
-				["label"] = "Element of Harmony",
 				["name"] = "Element of Generosity",
+				["label"] = "Element of Harmony",
 				["text"] = {
 					"Other scored",
 					"{C:attention}Elements of Harmony{}",
@@ -394,8 +424,8 @@ return {
 				},
 			},
 			["rendom_kindness_seal"] = {
-				["label"] = "Element of Harmony",
 				["name"] = "Element of Kindness",
+				["label"] = "Element of Harmony",
 				["text"] = {
 					"{C:chips}+10{} Chips for every",
 					"{C:attention}Element of Harmony{}",
@@ -415,8 +445,8 @@ return {
 				},
 			},
 			["rendom_laughter_seal"] = {
-				["label"] = "Element of Harmony",
 				["name"] = "Element of Laughter",
+				["label"] = "Element of Harmony",
 				["text"] = {
 					"Retrigger other scoring",
 					"{C:attention}Elements of Harmony",
@@ -434,8 +464,8 @@ return {
 				},
 			},
 			["rendom_magic_seal"] = {
-				["label"] = "Element of Harmony",
 				["name"] = "Element of Magic",
+				["label"] = "Element of Harmony",
 				["text"] = {
 					"Apply a random",
 					"{C:attention}Element of Harmony{}",
@@ -443,8 +473,8 @@ return {
 				},
 			},
 			["rendom_revive_seal"] = {
-				["name"] = "Revive",
 				["label"] = "Revive",
+				["name"] = "Revive",
 				["text"] = {
 					"Creates {C:attention}#1#{} copies of this",
 					"card when {C:attention}destroyed{}",
@@ -452,6 +482,13 @@ return {
 			},
 		},
 		["Joker"] = {
+			["j_rendom_cocksley"] = {
+				["name"] = "Cocksley",
+				["text"] = {
+					"{C:mult}+#1#{} discards",
+					"{C:chips}#2#{} hand",
+				},
+			},
 			["j_rendom_david"] = {
 				["name"] = "David",
 				["text"] = {
@@ -462,12 +499,19 @@ return {
 					"{C:inactive,s:0.85}Rank chosen on Blind selected{}",
 				},
 			},
-			["j_rendom_nightmarenight"] = {
-				["name"] = "Nightmare Night",
+			["j_rendom_combo"] = {
+				["name"] = "Combo",
 				["text"] = {
-					"Played cards with",
-					"{C:rendom_moons}Moon{} suit give",
-					"{C:mult}+3{} Mult when scored",
+					"Gains {X:mult,C:white}x#1#{} Mult per",
+					"blinds won in 1 hand",
+					"consecutively",
+					"{C:inactive}(Currently {X:mult,C:white}x#2#{C:inactive} Mult){}",
+				},
+			},
+			["j_rendom_badegg"] = {
+				["name"] = "Bad EGG",
+				["text"] = {
+					"{C:dark_edition,E:1,s:1.5}...{}",
 				},
 			},
 			["j_rendom_summersun"] = {
@@ -475,6 +519,30 @@ return {
 				["text"] = {
 					"Played cards with",
 					"{C:rendom_suns}Sun{} suit give",
+					"{C:mult}+3{} Mult when scored",
+				},
+			},
+			["j_rendom_mergedown"] = {
+				["name"] = "Merge Down",
+				["text"] = {
+					"All cards count as {C:attention}first scored{}",
+				},
+			},
+			["j_rendom_missingno"] = {
+				["name"] = "MissingNo.",
+				["text"] = {
+					"On blind selected:",
+					"Creates a {C:dark_edition}Negative{} copy of {C:attention}5th{} Joker",
+					"{C:green}#1#%{} to become {C:attention}Bad EGG{} instead",
+					"Chance doubles per copy owned",
+					"{C:inactive}(#2#){}",
+				},
+			},
+			["j_rendom_nightmarenight"] = {
+				["name"] = "Nightmare Night",
+				["text"] = {
+					"Played cards with",
+					"{C:rendom_moons}Moon{} suit give",
 					"{C:mult}+3{} Mult when scored",
 				},
 			},
@@ -488,6 +556,13 @@ return {
 					"destroys the card",
 				},
 			},
+			["j_rendom_catapult"] = {
+				["name"] = "Catapult",
+				["text"] = {
+					"{C:chips}+#2#{} hands",
+					"{C:mult}#1#{} discard",
+				},
+			},
 			["j_rendom_blownaway"] = {
 				["name"] = "Blown Away",
 				["text"] = {
@@ -498,10 +573,21 @@ return {
 				},
 			},
 		},
+		["Planet"] = {
+			["c_rendom_avalon"] = {
+				["name"] = "Avalon",
+				["text"] = {
+					"Upgrade {C:attention}least used{}",
+					"poker hand by {C:attention}#1# levels{}",
+					"and {C:attention}2nd least used{}",
+					"poker hand by {C:attention}#2# levels{}",
+				},
+			},
+		},
 		["Enhanced"] = {
 			["m_rendom_blackhole"] = {
-				["name"] = "Black Hole",
 				["label"] = "Black Hole",
+				["name"] = "Black Hole",
 				["text"] = {
 					"When scored, destroy",
 					"other played cards and",
@@ -513,8 +599,8 @@ return {
 				},
 			},
 			["m_rendom_asbestos"] = {
-				["name"] = "Asbestos",
 				["label"] = "Asbestos",
+				["name"] = "Asbestos",
 				["text"] = {
 					"{X:mult,C:white}X#1#{} mult while in hand",
 					"Loses {X:mult,C:white}X#2#{} per hand played",
@@ -525,8 +611,8 @@ return {
 				},
 			},
 			["m_rendom_waterdamage"] = {
-				["name"] = "Water Damaged",
 				["label"] = "Water Damaged",
+				["name"] = "Water Damaged",
 				["text"] = {
 					"{C:chips}+#1#{} bonus chips",
 					"{C:green}#2#/100{} chance to",
@@ -537,8 +623,8 @@ return {
 		},
 		["Edition"] = {
 			["e_rendom_big"] = {
-				["name"] = "Big",
 				["label"] = "Big",
+				["name"] = "Big",
 				["text"] = {
 					"Takes {C:dark_edition}2{} #1#",
 					"{C:attention}Doubles{} all* values",
@@ -546,8 +632,8 @@ return {
 				},
 			},
 			["e_rendom_parasite"] = {
-				["name"] = "Parasite",
 				["label"] = "Parasite",
+				["name"] = "Parasite",
 				["text"] = {
 					"{X:mult,C:white}X#1#{} Mult",
 					"{X:mult,C:white}-X#2#{} every round",
@@ -557,8 +643,8 @@ return {
 				},
 			},
 			["e_rendom_terry"] = {
-				["name"] = "Terry",
 				["label"] = "Terry",
+				["name"] = "Terry",
 				["text"] = {
 					"{X:mult,C:white}X#1#{} Mult",
 					"{s:0.8,C:inactive}Randomly chosen when scored{}",

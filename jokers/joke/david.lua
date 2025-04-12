@@ -3,7 +3,7 @@ SMODS.Joker {
     loc_txt = {
         name = "David",
         text = {
-            "On Blind selected:",
+            "On blind selected:",
             "{C:green}90%{} to create Negative Ice Cream",
             "{C:green}10%{} to create Negative David",
             "If {C:attention}#1#{} scored, {C:attention}destroy{} this card",
@@ -23,6 +23,7 @@ SMODS.Joker {
     pos = {x=7,y=0},
     soul_pos = {x=8,y=0},
     rarity = 4,
+    cost = 20,
     calculate = function(self,card,context)
         if context.setting_blind then
             if REND.david_last_set ~= G.GAME.round or not REND.david_rank then

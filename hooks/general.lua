@@ -68,8 +68,9 @@ end
 local menuHook = Game.main_menu
 function Game:main_menu(ctx)
     local r = menuHook(self,ctx)
-    local center = pseudorandom_element({"rendom_SUNS_A","rendom_MOONS_A","rendom_SNAKE_A"},pseudoseed("rendom_titlecard"))
-    local card = Card(0,0,G.CARD_W,G.CARD_H,G.P_CARDS[center],G.P_CENTERS.m_rendom_asbestos)
+    local cards = {"rendom_SUNS_A","rendom_MOONS_A","rendom_SNAKE_A"}
+    local card = cards[math.random(#cards)]
+    local card = Card(0,0,G.CARD_W,G.CARD_H,G.P_CARDS[card],G.P_CENTERS.m_rendom_asbestos)
     card.T.w = card.T.w * 1.4
     card.T.h = card.T.h * 1.4
     G.title_top.T.w = G.title_top.T.w * 1.7675
