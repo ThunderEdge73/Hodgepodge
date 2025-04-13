@@ -287,6 +287,8 @@ REND.load_script("jokers/misc/blownaway.lua")
 -- Joke
 REND.load_script("jokers/joke/catapult.lua")
 REND.load_script("jokers/joke/cocksley.lua")
+
+REND.load_script("jokers/misc/metamorphosis.lua") --Should be in Misc. This is just here temporarily bc i dont wanna break up cocksley and catapult
 -- MLP
 REND.load_script("jokers/mlp/cupcakes.lua")
 REND.load_script("jokers/mlp/summersun.lua")
