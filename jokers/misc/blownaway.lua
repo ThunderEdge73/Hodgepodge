@@ -26,7 +26,7 @@ SMODS.Joker {
     rarity = 3,
     cost = 7,
     calculate = function(self,card,context)
-        if context.before and context.cardarea == G.jokers and not context.blueprint then
+        if context.before and context.cardarea == G.jokers then
             if (#context.poker_hands["Straight"] > 0) then
                 local create_champion_event = function()
                     G.E_MANAGER:add_event(Event({
@@ -79,14 +79,14 @@ SMODS.Joker {
                     highest_card = G.play.cards[i]
                 end
             end
-            -- MAKE THIS ACCOUNT FOR A2345 FLUSH
-            if context.destroy_card == highest_card then
+            if (context.destroy_card == highest_card) then
                 return {
                     remove = true
                 }
             end
         end
     end,
+    blueprint_compat = true, -- Work on this some more in the future to make it destroy more cards in sequence
     set_badges = function(self,card,badges)
         badges[#badges+1] = create_badge(localize('k_badge_misc'), G.C.CHIPS, G.C.WHITE, 1.2)
     end

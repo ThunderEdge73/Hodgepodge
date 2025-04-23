@@ -8,7 +8,7 @@ SMODS.Suit {
         plural = "Suns"
     },
     lc_atlas = 'suits_atlas',
-    hc_atlas = 'suits_atlas',
+    hc_atlas = 'rendom_modded_mlp_suits_2_atlas',
     lc_ui_atlas = 'icons_atlas',
     hc_ui_atlas = 'icons_atlas',
     lc_colour = HEX("F2AE17"),
@@ -23,34 +23,36 @@ SMODS.Suit {
     end
 }
 
-SMODS.DeckSkin {
-    key = "mlp_suns",
-    suit = "rendom_suns",
-    palettes = {
-        {
-            key = 'lc',
-            ranks = {2,3,4,5,6,7,8,9,10,"Jack","Queen","King","Ace"},
-            display_ranks = {"King","Queen","Jack"},
-            atlas = "rendom_modded_mlp_suits_atlas",
-            pos_style = "deck",
-            colour = HEX("F2AE17"),
-            suit_icon = {
-                atlas = "icons_atlas",
-                pos = 0
-            }
-        },
-        {
-            key = 'lc_con',
-            ranks = {2,3,4,5,6,7,8,9,10,"Jack","Queen","King","Ace"},
-            display_ranks = {"King","Queen","Jack"},
-            atlas = "rendom_modded_mlp_suits_2_atlas",
-            pos_style = "deck",
-            colour = HEX("F2AE17"),
-            suit_icon = {
-                atlas = "rendom_base_suit_icon_atlas",
-                pos = 0
-            }
-        }
-    },
-    loc_txt = "My Little Pony"
-}
+-- G.COLLABS.colour_palettes.default_rendom_suns = {"lc","lc_con"}
+
+-- SMODS.DeckSkin {
+--     key = "mlp_suns",
+--     suit = "rendom_suns",
+--     palettes = {
+--         {
+--             key = 'lc',
+--             ranks = {2,3,4,5,6,7,8,9,10,"Jack","Queen","King","Ace"},
+--             display_ranks = {"King","Queen","Jack"},
+--             atlas = "rendom_modded_mlp_suits_atlas",
+--             pos_style = "deck",
+--             colour = HEX("F2AE17"),
+--             suit_icon = {
+--                 atlas = "rendom_icons_atlas",
+--                 pos = {x=1,y=0}
+--             }
+--         },
+--         {
+--             key = 'lc_con',
+--             ranks = {2,3,4,5,6,7,8,9,10,"Jack","Queen","King","Ace"},
+--             display_ranks = {"King","Queen","Jack"},
+--             atlas = "rendom_modded_mlp_suits_2_atlas",
+--             pos_style = "deck",
+--             colour = HEX("F2AE17"),
+--             suit_icon = {
+--                 atlas = "rendom_icons_atlas",
+--                 pos = {x=1,y=0}
+--             }
+--         }
+--     },
+--     loc_txt = "My Little Pony"
+-- }

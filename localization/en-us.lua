@@ -122,7 +122,7 @@ return {
 		},
 		["collab_palettes"] = {
 			["default_rendom_snake"] = {
-				["1"] = "Default Colors",
+				["1"] = "Low Contrast Colors",
 			},
 			["rendom_mlp_spades"] = {
 				["1"] = "Low Contrast Colors",
@@ -133,7 +133,8 @@ return {
 				["2"] = "High Contrast Colors",
 			},
 			["default_rendom_suns"] = {
-				["1"] = "Default Colors",
+				["1"] = "Low Contrast Colors",
+				["2"] = "Low Contrast Consistent",
 			},
 			["default_Spades"] = {
 				["1"] = "Low Contrast Colors",
@@ -248,7 +249,8 @@ return {
 				["2"] = "High Contrast Colors",
 			},
 			["default_rendom_moons"] = {
-				["1"] = "Default Colors",
+				["1"] = "Low Contrast Colors",
+				["2"] = "Low Contrast Consistent",
 			},
 			["collab_PC"] = {
 				["1"] = "Low Contrast Colors",
@@ -368,9 +370,9 @@ return {
 					"Reveals the positions of",
 					"up to {C:attention}3{} upcoming",
 					"{C:attention}Elements of Harmony{}:",
-					"{C:attention,s:0.8}#1#{s:0.8} - {C:attention,s:0.8}#2#{s:0.8} cards{}",
-					"{C:attention,s:0.8}#3#{s:0.8} - {C:attention,s:0.8}#4#{s:0.8} cards{}",
-					"{C:attention,s:0.8}#5#{s:0.8} - {C:attention,s:0.8}#6#{s:0.8} cards{}",
+					"{C:attention,s:0.85}#1#{s:0.85} - {C:attention,s:0.85}#2#{s:0.85} cards{}",
+					"{C:attention,s:0.85}#3#{s:0.85} - {C:attention,s:0.85}#4#{s:0.85} cards{}",
+					"{C:attention,s:0.85}#5#{s:0.85} - {C:attention,s:0.85}#6#{s:0.85} cards{}",
 				},
 			},
 			["p_rendom_power_booster_2"] = {
@@ -592,10 +594,10 @@ return {
 					"When scored, destroy",
 					"other played cards and",
 					"gain their values.",
-					"{C:inactive,s:0.8}Currently:",
-					"{C:chips,s:0.8}+#1#{s:0.8} Chips",
-					"{C:mult,s:0.8}+#2#{s:0.8} Mult",
-					"{X:mult,C:white,s:0.8}x#3#{s:0.8} Mult",
+					"{C:inactive,s:0.85}Currently:",
+					"{C:chips,s:0.85}+#1#{s:0.85} Chips",
+					"{C:mult,s:0.85}+#2#{s:0.85} Mult",
+					"{X:mult,C:white,s:0.85}x#3#{s:0.85} Mult",
 				},
 			},
 			["m_rendom_asbestos"] = {
@@ -606,8 +608,8 @@ return {
 					"Loses {X:mult,C:white}X#2#{} per hand played",
 					"{E:2,C:mult}Can go negative{}",
 					"{E:1,C:mult}Negative values DON'T cancel out{}",
-					"{C:mult,s:0.8}Discards and destructions may fail{}",
-					"{C:mult,s:0.8}and increase degradation rate{}",
+					"{C:mult,s:0.85}Discards and destructions may fail{}",
+					"{C:mult,s:0.85}and increase degradation rate{}",
 				},
 			},
 			["m_rendom_waterdamage"] = {
@@ -617,7 +619,7 @@ return {
 					"{C:chips}+#1#{} bonus chips",
 					"{C:green}#2#/100{} chance to",
 					"destroy card",
-					"Values increase when scored",
+					"{C:chips,s:0.85}+10{s:0.85} and {C:green,s:0.85}+5/100{s:0.85} when scored{}",
 				},
 			},
 		},
@@ -628,7 +630,7 @@ return {
 				["text"] = {
 					"Takes {C:dark_edition}2{} #1#",
 					"{C:attention}Doubles{} all* values",
-					"{s:0.8,C:inactive}*Where possible",
+					"{s:0.85,C:inactive}*Where possible",
 				},
 			},
 			["e_rendom_parasite"] = {
@@ -637,9 +639,9 @@ return {
 				["text"] = {
 					"{X:mult,C:white}X#1#{} Mult",
 					"{X:mult,C:white}-X#2#{} every round",
-					"{s:0.8}At {s:0.8,X:mult,C:white}X#3#{s:0.8}, destroy this joker",
-					"{s:0.8}and apply {s:0.8,C:attention}Parasite{s:0.8} to{}",
-					"{s:0.8}an editionless joker{}",
+					"{s:0.85}At {s:0.85,X:mult,C:white}X#3#{s:0.85}, destroy this joker",
+					"{s:0.85}and apply {s:0.85,C:attention}Parasite{s:0.85} to{}",
+					"{s:0.85}an editionless joker{}",
 				},
 			},
 			["e_rendom_terry"] = {
@@ -647,7 +649,7 @@ return {
 				["name"] = "Terry",
 				["text"] = {
 					"{X:mult,C:white}X#1#{} Mult",
-					"{s:0.8,C:inactive}Randomly chosen when scored{}",
+					"{s:0.85,C:inactive}Randomly chosen when scored{}",
 				},
 			},
 		},

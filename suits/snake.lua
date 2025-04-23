@@ -35,8 +35,8 @@ SMODS.DeckSkin {
             pos_style = "deck",
             colour = HEX("21A888"),
             suit_icon = {
-                atlas = "icons_atlas",
-                pos = 0
+                atlas = "rendom_icons_atlas",
+                pos = {x=0,y=0}
             }
         },
         {
@@ -47,8 +47,8 @@ SMODS.DeckSkin {
             pos_style = "deck",
             colour = HEX("21A888"),
             suit_icon = {
-                atlas = "rendom_base_suit_icon_atlas",
-                pos = 0
+                atlas = "rendom_icons_atlas",
+                pos = {x=0,y=0}
             }
         }
     },

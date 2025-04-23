@@ -62,6 +62,7 @@ SMODS.Joker {
             end
         end
     end,
+    blueprint_compat = true,
     add_to_deck = function(self,card,from_debuff)
     end,
     set_badges = function(self,card,badges)

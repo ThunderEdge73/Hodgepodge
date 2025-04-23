@@ -30,7 +30,7 @@ SMODS.Joker {
     rarity = 3,
     cost = 8,
     calculate = function(self,card,context)
-        if context.end_of_round and context.cardarea == G.jokers then
+        if context.end_of_round and context.cardarea == G.jokers and not context.blueprint then
             local ret_message = ""
             if G.GAME.hands_played - card.ability.extra.last_hands_played <= 1 then
                 card.ability.x_mult = card.ability.x_mult + card.ability.extra.increase
@@ -43,6 +43,7 @@ SMODS.Joker {
             return {message = ret_message}
         end
     end,
+    blueprint_compat = true,
     add_to_deck = function(self,card,from_debuff)
         card.ability.extra.last_hands_played = G.GAME.hands_played
     end,

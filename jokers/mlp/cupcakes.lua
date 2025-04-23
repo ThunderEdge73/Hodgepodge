@@ -31,13 +31,13 @@ SMODS.Joker {
     rarity = 2,
     cost = 6,
     calculate = function(self,card,context)
-        if context.final_scoring_step and context.cardarea == G.jokers then
+        if context.final_scoring_step and context.cardarea == G.jokers and not context.blueprint then
             card.ability.x_mult = card.ability.x_mult - card.ability.extra.mult_loss
             return {
                 message = "-"..card.ability.extra.mult_loss.."X"
             }
         end
-        if context.destroy_card and context.cardarea == G.play and context.destroy_card.seal == "rendom_loyalty" then
+        if context.destroy_card and context.cardarea == G.play and context.destroy_card.seal == "rendom_loyalty" and not context.blueprint then
             card.ability.x_mult = card.ability.x_mult + card.ability.extra.mult_gain
             return {
                 remove = true,
@@ -46,6 +46,7 @@ SMODS.Joker {
             }
         end
     end,
+    blueprint_compat = true,
     set_badges = function(self,card,badges)
         badges[#badges+1] = create_badge(localize('k_badge_mlp'), G.C.PURPLE, G.C.WHITE, 1.2)
     end

@@ -23,10 +23,11 @@ SMODS.Joker {
     calculate = function(self,card,context)
         if context.individual and context.cardarea == G.play then
             if context.other_card.base.suit == "rendom_moons" then
-                return { mult = 3 }
+                return { mult = 3, message_card = context.other_card }
             end
         end
     end,
+    blueprint_compat = true,
     in_pool = function(self,args)
         for k,card in ipairs(G.playing_cards) do
             if card:is_suit("rendom_moons") then

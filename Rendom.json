@@ -5,7 +5,7 @@
     "description": "Random nonsense for your enjoyment!",
     "prefix":"rendom",
     "main_file":"rendom.lua",
-    "version": "1.0.0",
+    "version": "0.1.0",
     "badge_colour": "444444",
     "badge_text_colour": "FFFF00",
     "dump_loc": true

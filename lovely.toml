@@ -104,8 +104,6 @@ position = "at"
 payload = '''
 if self.ability.name == 'Hanging Chad' and (
 REND.table_contains(REND.first_card_merge_down(context.scoring_hand),context.other_card)) then
-    print('chad trigger')
-    print(#REND.first_card_merge_down(context.scoring_hand))
     return {
         message = localize('k_again_ex'),
         repetitions = self.ability.extra,
@@ -184,3 +182,32 @@ payload = '''
 if self.ability.d_size ~= 0 then
 '''
 match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = '''
+SMODS.calculate_context({end_of_round = true, game_over = game_over })
+'''
+position = "after"
+payload = '''
+G.GAME.rend_last_blind_type = G.GAME.blind:get_type()
+'''
+match_indent = true
+overwrite = false
+
+# [[patches]]
+# [patches.pattern]
+# target = "game.lua"
+# pattern = '''
+# if not nosave_shop then SMODS.calculate_context({starting_shop = true}) end
+# '''
+# position = "after"
+# payload = '''
+# if (not nosave_shop) and (G.GAME.rend_last_blind_type == 'Boss') and (not G.GAME.rend_loop_incoming) then
+#     G.GAME.rend_loop_save = STR_PACK(G.culled_table)
+#     print("saved")
+# end
+# '''
+# match_indent = true
+# overwrite = false

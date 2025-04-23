@@ -20,6 +20,7 @@ SMODS.Joker {
     pos = {x=8,y=1},
     rarity = 2,
     cost = 5,
+    blueprint_compat = false,
     set_badges = function(self,card,badges)
         badges[#badges+1] = create_badge(localize('k_badge_misc'), G.C.CHIPS, G.C.WHITE, 1.2)
     end,

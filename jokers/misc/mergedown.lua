@@ -17,6 +17,7 @@ SMODS.Joker {
     pos = {x=2,y=1},
     rarity = 3,
     cost = 7,
+    blueprint_compat = false,
     calculate = function(self,card,context)
     end,
     set_badges = function(self,card,badges)

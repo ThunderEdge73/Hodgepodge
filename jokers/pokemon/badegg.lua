@@ -21,20 +21,24 @@ SMODS.Joker {
     end,
     calculate = function(self,card,context)
         if context.setting_blind then
-            if pseudorandom("bad_egg") < 1/256 then
+            if pseudorandom("bad_egg") < 1/2 then
                 local legendary = pseudorandom_element(G.P_JOKER_RARITY_POOLS[4],pseudoseed("bad_egg"))
+                local c = (context.blueprint and context.blueprint_card) or card
                 G.E_MANAGER:add_event(Event({trigger = 'after',delay = 0.1,func = function()
-                    card:flip()
+                    c:flip()
                     play_sound('card1')
-                    card:juice_up(0.3,0.3)
+                    c:juice_up(0.3,0.3)
                     return true end }))
                 delay(0.2)
                 G.E_MANAGER:add_event(Event({trigger = 'after',delay = 0.3,func = function()
-                    card:set_ability(legendary)
-                    card:flip()
+                    c:set_ability(legendary)
+                    c:flip()
                     play_sound('card1')
-                    card:juice_up(0.3,0.3)
+                    c:juice_up(0.3,0.3)
                     return true end }))
+                    return {
+                        message = "Hatched!"
+                    }
             else
                 return {
                     message = "Oh?"
@@ -42,6 +46,7 @@ SMODS.Joker {
             end
         end
     end,
+    blueprint_compat = true,
     -- add_to_deck = function(self,card,from_debuff)
     --     card.sell_cost = -256
     -- end,

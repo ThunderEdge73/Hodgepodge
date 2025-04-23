@@ -18,6 +18,7 @@ SMODS.Joker {
             h_plays = 2
         }
     },
+    blueprint_compat = false,
     atlas = "jokers_atlas",
     pos = {x=7,y=1},
     rarity = 2,
