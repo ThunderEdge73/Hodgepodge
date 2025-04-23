@@ -34,79 +34,27 @@ return {
 			["rendom_moons"] = "Moon",
 		},
 		["dictionary"] = {
-			["carto_deck_view_stack_chips"] = "Stack different chip values",
-			["k_badge_joke"] = "Joke",
-			["carto_deck_view_hide_drawn_cards"] = "Hide drawn cards",
-			["carto_settings_keybinds"] = "Keybinds",
-			["carto_flames_intensity_max"] = "Max intensity ",
 			["k_badge_misc"] = "Misc",
-			["carto_hide_jokers"] = "Hide jokers",
-			["carto_flames_intensity_min"] = "Min intensity ",
-			["carto_jokers_hide"] = "Hide",
-			["carto_deck_view_stack_enabled"] = "Stack cards in deck view",
-			["carto_compact_deck_enabled"] = "Limit cards in deck pile",
-			["carto_settings_compact_deck"] = "Compact deck",
 			["k_badge_pokemon"] = "Pokémon",
-			["carto_flames_intensity_vanilla"] = "Ignore min/max intensity",
-			["carto_flames_gasoline"] = "",
 			["k_badge_fnf"] = "FNF",
 			["b_power_cards"] = "Power Cards",
-			["carto_hide_tags"] = "Hide tags",
-			["carto_settings_jokers"] = "Jokers",
 			["k_booster_group_p_rendom_power_booster_mega"] = {
 				"Power Cards",
 			},
-			["carto_settings_other"] = "Other",
-			["carto_jokers_zoom"] = "Zoom",
-			["carto_flames_gasoline_title"] = "Preview",
-			["carto_improved_hand_sorting"] = "Improved hand sorting",
-			["carto_jokers_controls_show_after"] = "after total # of jokers above ",
-			["carto_settings_flames"] = "Flames",
-			["carto_deck_view_stack_x_color"] = "Color ",
-			["carto_draw_non_essential_shaders"] = "Draw non-essential shaders",
-			["carto_flames_relative_intensity"] = "Score intensity relative to current blind",
-			["carto_kb_hide_joker"] = "Hide joker",
 			["k_booster_group_p_rendom_power_booster_1"] = {
 				"Power Cards",
 			},
-			["carto_kb_toggle_tags"] = "Toggle tags visibility",
-			["carto_hide_consumables"] = "Hide consumables",
-			["carto_compact_deck_visible_cards"] = "Cards limit ",
 			["k_power"] = "Power Card",
-			["carto_settings_deck_view"] = "Deck view",
-			["carto_waiting_keybind"] = "Waiting for input...",
-			["carto_dynamic_hand_align"] = "Improved hand align for huge hand size",
 			["k_booster_group_p_rendom_power_booster_jumbo"] = {
 				"Power Cards",
 			},
-			["carto_deck_view_stack_modifiers"] = "Stack all modifiers",
 			["k_badge_wof"] = "Wings of Fire",
-			["carto_kb_toggle_jokers"] = "Toggle jokers visibility",
-			["carto_deck_view_stack_pos_vertical_options"] = {
-				"top",
-				"center",
-				"bottom",
-			},
 			["k_badge_pokemon_maybe"] = "Pokémon?",
-			["carto_jokers_show"] = "Show",
 			["k_rendom_power_booster"] = "Power Pack",
 			["k_booster_group_p_rendom_power_booster_2"] = {
 				"Power Cards",
 			},
-			["carto_deck_view_stack_pos"] = "Alignment ",
-			["carto_jokers_controls_buttons"] = "Show joker area buttons",
-			["carto_kb_toggle_consumables"] = "Toggle consumables visibility",
-			["carto_deck_view_stack_background_opacity"] = "Opacity ",
-			["carto_flames_volume"] = "Flames volume ",
-			["carto_hide_deck"] = "Hide deck",
-			["carto_kb_toggle_jokers_buttons"] = "Toggle jokers buttons",
-			["carto_deck_view_stack_pos_horizontal_options"] = {
-				"left",
-				"middle",
-				"right",
-			},
 			["k_badge_mlp"] = "MLP:FiM",
-			["carto_deck_view_unique_cards"] = "Unique cards:",
 		},
 		["labels"] = {
 			["rendom_honesty_seal"] = "Element of Harmony",
@@ -128,137 +76,25 @@ return {
 				["1"] = "Low Contrast Colors",
 				["2"] = "Low Contrast Consistent",
 			},
-			["collab_DBD"] = {
-				["1"] = "Low Contrast Colors",
-				["2"] = "High Contrast Colors",
-			},
 			["default_rendom_suns"] = {
 				["1"] = "Low Contrast Colors",
 				["2"] = "Low Contrast Consistent",
-			},
-			["default_Spades"] = {
-				["1"] = "Low Contrast Colors",
-				["2"] = "High Contrast Colors",
-			},
-			["collab_TBoI"] = {
-				["1"] = "Low Contrast Colors",
-				["2"] = "High Contrast Colors",
-			},
-			["default_Clubs"] = {
-				["1"] = "Low Contrast Colors",
-				["2"] = "High Contrast Colors",
 			},
 			["rendom_mlp_clubs"] = {
 				["1"] = "Low Contrast Colors",
 				["2"] = "Low Contrast Consistent",
 			},
-			["collab_VS"] = {
-				["1"] = "Low Contrast Colors",
-				["2"] = "High Contrast Colors",
-			},
-			["collab_DTD"] = {
-				["1"] = "Low Contrast Colors",
-				["2"] = "High Contrast Colors",
-			},
-			["collab_R"] = {
-				["1"] = "Low Contrast Colors",
-				["2"] = "High Contrast Colors",
-			},
-			["collab_AU"] = {
-				["1"] = "Low Contrast Colors",
-				["2"] = "High Contrast Colors",
-			},
-			["default_Diamonds"] = {
-				["1"] = "Low Contrast Colors",
-				["2"] = "High Contrast Colors",
-			},
-			["collab_SK"] = {
-				["1"] = "Low Contrast Colors",
-				["2"] = "High Contrast Colors",
-			},
-			["collab_CL"] = {
-				["1"] = "Low Contrast Colors",
-				["2"] = "High Contrast Colors",
-			},
-			["collab_CR"] = {
-				["1"] = "Low Contrast Colors",
-				["2"] = "High Contrast Colors",
-			},
-			["collab_DS"] = {
-				["1"] = "Low Contrast Colors",
-				["2"] = "High Contrast Colors",
-			},
-			["collab_D2"] = {
-				["1"] = "Low Contrast Colors",
-				["2"] = "High Contrast Colors",
-			},
-			["collab_BUG"] = {
-				["1"] = "Low Contrast Colors",
-				["2"] = "High Contrast Colors",
-			},
-			["collab_STS"] = {
-				["1"] = "Low Contrast Colors",
-				["2"] = "High Contrast Colors",
-			},
-			["collab_TW"] = {
-				["1"] = "Low Contrast Colors",
-				["2"] = "High Contrast Colors",
-			},
 			["rendom_mlp_hearts"] = {
 				["1"] = "Low Contrast Colors",
 				["2"] = "Low Contrast Consistent",
-			},
-			["collab_STP"] = {
-				["1"] = "Low Contrast Colors",
-				["2"] = "High Contrast Colors",
-			},
-			["collab_C7"] = {
-				["1"] = "Low Contrast Colors",
-				["2"] = "High Contrast Colors",
-			},
-			["collab_WF"] = {
-				["1"] = "Low Contrast Colors",
-				["2"] = "High Contrast Colors",
-			},
-			["collab_FO"] = {
-				["1"] = "Low Contrast Colors",
-				["2"] = "High Contrast Colors",
 			},
 			["rendom_mlp_diamonds"] = {
 				["1"] = "Low Contrast Colors",
 				["2"] = "Low Contrast Consistent",
 			},
-			["default_Hearts"] = {
-				["1"] = "Low Contrast Colors",
-				["2"] = "High Contrast Colors",
-			},
-			["collab_SV"] = {
-				["1"] = "Low Contrast Colors",
-				["2"] = "High Contrast Colors",
-			},
-			["collab_EG"] = {
-				["1"] = "Low Contrast Colors",
-				["2"] = "High Contrast Colors",
-			},
-			["collab_XR"] = {
-				["1"] = "Low Contrast Colors",
-				["2"] = "High Contrast Colors",
-			},
-			["collab_CYP"] = {
-				["1"] = "Low Contrast Colors",
-				["2"] = "High Contrast Colors",
-			},
 			["default_rendom_moons"] = {
 				["1"] = "Low Contrast Colors",
 				["2"] = "Low Contrast Consistent",
-			},
-			["collab_PC"] = {
-				["1"] = "Low Contrast Colors",
-				["2"] = "High Contrast Colors",
-			},
-			["collab_AC"] = {
-				["1"] = "Low Contrast Colors",
-				["2"] = "High Contrast Colors",
 			},
 		},
 	},
@@ -349,11 +185,11 @@ return {
 			},
 		},
 		["Blind"] = {
-			["bl_wheel"] = {
-				["text"] = {
-					"#1# in 7 cards get",
-				},
-			},
+			-- ["bl_wheel"] = {
+			-- 	["text"] = {
+			-- 		"#1# in 7 cards get",
+			-- 	},
+			-- },
 			["bl_rendom_name"] = {
 				["name"] = "The Name",
 				["text"] = {
