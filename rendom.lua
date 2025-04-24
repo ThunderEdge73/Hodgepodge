@@ -297,7 +297,7 @@ REND.load_script("jokers/mlp/nightmarenight.lua")
 REND.load_script("jokers/joke/david.lua")
 REND.load_script("jokers/pokemon/missingno.lua")
 REND.load_script("jokers/pokemon/badegg.lua") -- does... does this count?
--- REND.load_script("jokers/mlp/timeloop.lua") bababooey
+-- REND.load_script("jokers/mlp/timeloop.lua") this fucker is soooooo broken
 
 ------ Blinds ------
 REND.load_script("blinds/name.lua") -- I CURSE THE NAME THE ONE BEHIND IT ALLLLLLLLLLLLLLLLLLLLLLL

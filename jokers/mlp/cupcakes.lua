@@ -47,6 +47,14 @@ SMODS.Joker {
         end
     end,
     blueprint_compat = true,
+    in_pool = function(self,args)
+        for k,card in ipairs(G.playing_cards) do
+            if card.seal == "rendom_loyalty" then
+                return true
+            end
+        end
+        return false
+    end,
     set_badges = function(self,card,badges)
         badges[#badges+1] = create_badge(localize('k_badge_mlp'), G.C.PURPLE, G.C.WHITE, 1.2)
     end
