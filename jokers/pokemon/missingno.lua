@@ -14,19 +14,28 @@ SMODS.Joker {
     loc_vars = function (self,info_queue,card)
         if G.jokers then
             if G.jokers.cards[5] then
-                local selected_card = G.jokers.cards[5]
-                local chance = card.ability.extra.base_chance
-                for _, c in ipairs(G.jokers.cards) do
-                    if c.ability.name == selected_card.ability.name and c ~= selected_card then
-                        chance = chance * 2
-                    end
-                end
-                return {
-                    vars = {
-                        card.ability.extra.base_chance*100,
-                        "Currently "..(chance*100).."%"
+                if G.jokers.cards[5].ability.name == "j_rendom_missingno" then
+                    return {
+                        vars = {
+                            card.ability.extra.base_chance*100,
+                            "What did I just say?"
+                        }
                     }
-                }
+                else
+                    local selected_card = G.jokers.cards[5]
+                    local chance = card.ability.extra.base_chance
+                    for _, c in ipairs(G.jokers.cards) do
+                        if c.ability.name == selected_card.ability.name and c ~= selected_card then
+                            chance = chance * 2
+                        end
+                    end
+                    return {
+                        vars = {
+                            card.ability.extra.base_chance*100,
+                            "Currently "..(chance*100).."%"
+                        }
+                    }
+                end
             else
                 return {
                     vars = {
@@ -55,7 +64,7 @@ SMODS.Joker {
     cost = 20,
     calculate = function(self,card,context)
         if context.setting_blind then
-            if G.jokers.cards[5] then
+            if G.jokers.cards[5] and G.jokers.cards[5].ability.name ~= "j_rendom_missingno" then
                 local selected_card = G.jokers.cards[5]
                 -- local all_copies = {}
                 local chance = card.ability.extra.base_chance

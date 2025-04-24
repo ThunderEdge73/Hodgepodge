@@ -373,6 +373,7 @@ return {
 					"Creates a {C:dark_edition}Negative{} copy of {C:attention}5th{} Joker",
 					"{C:green}#1#%{} to become {C:attention}Bad EGG{} instead",
 					"Chance doubles per copy owned",
+					"{C:inactive,S:0.85}(Cannot copy MissingNo.){}",
 					"{C:inactive}(#2#){}",
 				},
 			},
