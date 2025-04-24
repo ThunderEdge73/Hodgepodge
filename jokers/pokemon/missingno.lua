@@ -1,16 +1,16 @@
 SMODS.Joker {
     key = "missingno",
-    loc_txt = {
-        name = "MissingNo.",
-        text = {
-            -- "{C:dark_edition}+1{} Joker Slot",
-            "On blind selected:",
-            "Creates a {C:dark_edition}Negative{} copy of {C:attention}5th{} Joker",
-            "{C:green}#1#%{} to become {C:attention}Bad EGG{} instead",
-            "Chance doubles per copy owned",
-            "{C:inactive}(#2#){}"
-        }
-    },
+    -- loc_txt = {
+    --     name = "MissingNo.",
+    --     text = {
+    --         -- "{C:dark_edition}+1{} Joker Slot",
+    --         "On blind selected:",
+    --         "Creates a {C:dark_edition}Negative{} copy of {C:attention}5th{} Joker",
+    --         "{C:green}#1#%{} to become {C:attention}Bad EGG{} instead",
+    --         "Chance doubles per copy owned",
+    --         "{C:inactive}(#2#){}"
+    --     }
+    -- },
     loc_vars = function (self,info_queue,card)
         if G.jokers then
             if G.jokers.cards[5] then

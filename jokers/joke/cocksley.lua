@@ -1,12 +1,12 @@
 SMODS.Joker {
     key = "cocksley",
-    loc_txt = {
-        name = "Cocksley",
-        text = {
-            "{C:mult}+#1#{} discards",
-            "{C:chips}#2#{} hand"
-        }
-    },
+    -- loc_txt = {
+    --     name = "Cocksley",
+    --     text = {
+    --         "{C:mult}+#1#{} discards",
+    --         "{C:chips}#2#{} hand"
+    --     }
+    -- },
     loc_vars = function (self,info_queue,card)
         return {
             vars = {card.ability.d_size,card.ability.extra.h_plays}

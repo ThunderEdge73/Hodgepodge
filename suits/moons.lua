@@ -3,10 +3,10 @@ SMODS.Suit {
     card_key = "MOONS",
     pos = {y=2},
     ui_pos = {x=2,y=0},
-    loc_txt = {
-        singular = "Moon",
-        plural = "Moons"
-    },
+    -- loc_txt = {
+    --     singular = "Moon",
+    --     plural = "Moons"
+    -- },
     lc_atlas = 'suits_atlas',
     hc_atlas = 'rendom_modded_mlp_suits_2_atlas',
     lc_ui_atlas = 'icons_atlas',
@@ -52,5 +52,5 @@ SMODS.Suit {
 --             }
 --         }
 --     },
---     loc_txt = "My Little Pony"
+--     -- loc_txt = "My Little Pony"
 -- }

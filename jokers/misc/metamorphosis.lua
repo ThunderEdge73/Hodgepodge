@@ -1,14 +1,14 @@
 SMODS.Joker {
     key = "metamorphosis",
-    loc_txt = {
-        name = "Metamorphosis",
-        text = {
-            "{C:green}#1# in #2#{} chance for",
-            "{C:attention}scored cards{} to become",
-            "a random {C:attention}enhancement{}",
-            "{C:inactive,s:0.85}Can replace existing enhancements{}"
-        }
-    },
+    -- loc_txt = {
+    --     name = "Metamorphosis",
+    --     text = {
+    --         "{C:green}#1# in #2#{} chance for",
+    --         "{C:attention}scored cards{} to become",
+    --         "a random {C:attention}enhancement{}",
+    --         "{C:inactive,s:0.85}Can replace existing enhancements{}"
+    --     }
+    -- },
     loc_vars = function (self,info_queue,card)
         return {
             vars = {

@@ -1,11 +1,11 @@
 SMODS.Blind {
     key = "name",
-    loc_txt = {
-        name = "The Name",
-        text = {
-            "Debuffs all","Elements of Harmony"
-        }
-    },
+    -- loc_txt = {
+    --     name = "The Name",
+    --     text = {
+    --         "Debuffs all","Elements of Harmony"
+    --     }
+    -- },
     atlas = "blinds_atlas",
     pos = {x=0},
     recalc_debuff = function(self, card, from_blind)
@@ -25,8 +25,6 @@ SMODS.Blind {
                     elements = elements + 1
                 end
             end
-            print(elements)
-            print(#G.playing_cards)
             if elements >= #G.playing_cards / 10 then
                 return true
             end

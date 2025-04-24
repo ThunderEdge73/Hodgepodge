@@ -1,11 +1,11 @@
 SMODS.Joker {
     key = "mergedown",
-    loc_txt = {
-        name = "Merge Down",
-        text = {
-            "All cards count as {C:attention}first scored{}"
-        }
-    },
+    -- loc_txt = {
+    --     name = "Merge Down",
+    --     text = {
+    --         "All cards count as {C:attention}first scored{}"
+    --     }
+    -- },
     loc_vars = function (self,info_queue,card)
         return {
             vars = {}

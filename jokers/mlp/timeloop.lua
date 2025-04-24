@@ -1,16 +1,15 @@
 SMODS.Joker {
     key = "timeloop",
-    loc_txt = {
-        name = "Day 734",
-        text = {
-            -- "{C:dark_edition}+1{} Joker Slot",
-            "After {C:attention}Boss Blind{} is defeated,",
-            "rewind to start of the Ante.",
-            "{C:gold}Money{}, {C:attention}Jokers{}, {C:attention}Shops{}, etc. are",
-            "included in the rewind.",
-            "{C:inactive,s:0.9}#1#{}"
-        }
-    },
+    -- loc_txt = {
+    --     name = "Day 734",
+    --     text = {
+    --         "After {C:attention}Boss Blind{} is defeated,",
+    --         "rewind to start of the Ante.",
+    --         "{C:gold}Money{}, {C:attention}Jokers{}, {C:attention}Shops{}, etc. are",
+    --         "included in the rewind.",
+    --         "{C:inactive,s:0.9}#1#{}"
+    --     }
+    -- },
     loc_vars = function (self,info_queue,card)
         -- card.ability.extra.loop_started_ui = card.ability.extra.loop_started_ui or ""
         local loop_active_text = "ERROR: shits fucked idk"

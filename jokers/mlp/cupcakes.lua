@@ -1,15 +1,15 @@
 SMODS.Joker {
     key = "cupcakes",
-    loc_txt = {
-        name = "Cupcakes",
-        text = {
-            "{X:mult,C:white}X#1#{} Mult, loses {X:mult,C:white}X#2#{} Mult",
-            "per hand played",
-            "Gains {X:mult,C:white}X#3#{} per scoring card",
-            "with {C:attention}Element of Loyalty{} and",
-            "destroys the card"
-        }
-    },
+    -- loc_txt = {
+    --     name = "Cupcakes",
+    --     text = {
+    --         "{X:mult,C:white}X#1#{} Mult, loses {X:mult,C:white}X#2#{} Mult",
+    --         "per hand played",
+    --         "Gains {X:mult,C:white}X#3#{} per scoring card",
+    --         "with {C:attention}Element of Loyalty{} and",
+    --         "destroys the card"
+    --     }
+    -- },
     loc_vars = function (self,info_queue,card)
         return {
             vars = {

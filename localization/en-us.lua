@@ -179,7 +179,7 @@ return {
 			["c_rendom_symbiosis"] = {
 				["name"] = "Symbiosis",
 				["text"] = {
-					"Apply {C:attention}Symbiosis{} to",
+					"Apply {C:attention}Parasite{} to",
 					"a random Joker",
 				},
 			},
@@ -410,6 +410,25 @@ return {
 					"blind by {C:attention}#1#%{}",
 				},
 			},
+			["j_rendom_metamorphosis"] = {
+				["name"] = "Metamorphosis",
+				["text"] = {
+					"{C:green}#1# in #2#{} chance for",
+					"{C:attention}scored cards{} to become",
+					"a random {C:attention}enhancement{}",
+					"{C:inactive,s:0.85}Can replace existing enhancements{}"
+				},
+			},
+			["j_rendom_timeloop"] = {
+				["name"] = "Day 734",
+				["text"] = {
+					"After {C:attention}Boss Blind{} is defeated,",
+					"rewind to start of the Ante.",
+					"{C:gold}Money{}, {C:attention}Jokers{}, {C:attention}Shops{}, etc. are",
+					"included in the rewind.",
+					"{C:inactive,s:0.9}#1#{}"
+				}
+			}
 		},
 		["Planet"] = {
 			["c_rendom_avalon"] = {

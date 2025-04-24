@@ -196,6 +196,19 @@ G.GAME.rend_last_blind_type = G.GAME.blind:get_type()
 match_indent = true
 overwrite = false
 
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = '''
+if self.ability.name == 'Chicot' and G.GAME.blind and G.GAME.blind.boss and not G.GAME.blind.disabled then
+'''
+position = "at"
+payload = '''
+if self.ability.name == 'Chicot' and G.GAME.blind and G.GAME.blind.boss and not G.GAME.blind.disabled then
+    -- print(G.rend_chicot_override)
+'''
+match_indent = true
+
 # [[patches]]
 # [patches.pattern]
 # target = "game.lua"

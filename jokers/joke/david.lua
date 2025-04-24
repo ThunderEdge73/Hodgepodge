@@ -1,15 +1,15 @@
 SMODS.Joker {
     key = "david",
-    loc_txt = {
-        name = "David",
-        text = {
-            "On blind selected:",
-            "{C:green}90%{} to create Negative Ice Cream",
-            "{C:green}10%{} to create Negative David",
-            "If {C:attention}#1#{} scored, {C:attention}destroy{} this card",
-            "{C:inactive,s:0.85}Rank chosen on Blind selected{}"
-        }
-    },
+    -- loc_txt = {
+    --     name = "David",
+    --     text = {
+    --         "On blind selected:",
+    --         "{C:green}90%{} to create Negative Ice Cream",
+    --         "{C:green}10%{} to create Negative David",
+    --         "If {C:attention}#1#{} scored, {C:attention}destroy{} this card",
+    --         "{C:inactive,s:0.85}Rank chosen on Blind selected{}"
+    --     }
+    -- },
     loc_vars = function (self,info_queue,card)
         return {
             vars = {

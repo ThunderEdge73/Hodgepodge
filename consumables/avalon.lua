@@ -2,15 +2,15 @@ SMODS.Consumable {
     key = "avalon",
     set = "Planet",
     atlas = "tarot_atlas", pos = {x=0,y=0},
-    loc_txt = {
-        name = "Avalon",
-        text = {
-            "Upgrade {C:attention}least used{}",
-            "poker hand by {C:attention}#1# levels{}",
-            "and {C:attention}2nd least used{}",
-            "poker hand by {C:attention}#2# levels{}",
-        }
-    },
+    -- loc_txt = {
+    --     name = "Avalon",
+    --     text = {
+    --         "Upgrade {C:attention}least used{}",
+    --         "poker hand by {C:attention}#1# levels{}",
+    --         "and {C:attention}2nd least used{}",
+    --         "poker hand by {C:attention}#2# levels{}",
+    --     }
+    -- },
     loc_vars = function (self,info_queue,card)
         return {vars = {
             card.ability.extra.upgrade_levels[1],

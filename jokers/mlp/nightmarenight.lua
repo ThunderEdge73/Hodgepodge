@@ -1,13 +1,13 @@
 SMODS.Joker {
     key = "nightmarenight",
-    loc_txt = {
-        name = "Nightmare Night",
-        text = {
-            "Played cards with",
-            "{C:rendom_moons}Moon{} suit give",
-            "{C:mult}+3{} Mult when scored"
-        }
-    },
+    -- loc_txt = {
+    --     name = "Nightmare Night",
+    --     text = {
+    --         "Played cards with",
+    --         "{C:rendom_moons}Moon{} suit give",
+    --         "{C:mult}+3{} Mult when scored"
+    --     }
+    -- },
     loc_vars = function (self,info_queue,card)
         return {
             vars = {

@@ -1,11 +1,11 @@
 SMODS.Joker {
     key = "badegg",
-    loc_txt = {
-        name = "Bad EGG",
-        text = {
-            "{C:dark_edition,E:1,s:1.5}...{}"
-        }
-    },
+    -- loc_txt = {
+    --     name = "Bad EGG",
+    --     text = {
+    --         "{C:dark_edition,E:1,s:1.5}...{}"
+    --     }
+    -- },
     loc_vars = function (self,info_queue,card)
         return {vars = {}}
     end,
@@ -21,24 +21,31 @@ SMODS.Joker {
     end,
     calculate = function(self,card,context)
         if context.setting_blind then
-            if pseudorandom("bad_egg") < 1/2 then
-                local legendary = pseudorandom_element(G.P_JOKER_RARITY_POOLS[4],pseudoseed("bad_egg"))
+            if pseudorandom("bad_egg") < 1/1 then
+                local legendary = G.P_JOKER_RARITY_POOLS[4][4] --pseudorandom_element(G.P_JOKER_RARITY_POOLS[4],pseudoseed("bad_egg"))
+                
                 local c = (context.blueprint and context.blueprint_card) or card
                 G.E_MANAGER:add_event(Event({trigger = 'after',delay = 0.1,func = function()
+                    print("flip down")
                     c:flip()
                     play_sound('card1')
                     c:juice_up(0.3,0.3)
                     return true end }))
                 delay(0.2)
                 G.E_MANAGER:add_event(Event({trigger = 'after',delay = 0.3,func = function()
+                    print("set ability")
                     c:set_ability(legendary)
-                    c:flip()
+                    return true end }))
+                delay(0.1)
+                G.E_MANAGER:add_event(Event({trigger = 'after',delay = 0.3,func = function()
+                    print("flip up")
+                    if c.facing == "back" then c:flip() end
                     play_sound('card1')
                     c:juice_up(0.3,0.3)
                     return true end }))
-                    return {
-                        message = "Hatched!"
-                    }
+                return {
+                    message = "Hatched!"
+                }
             else
                 return {
                     message = "Oh?"

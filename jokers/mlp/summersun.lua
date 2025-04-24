@@ -1,13 +1,13 @@
 SMODS.Joker {
     key = "summersun",
-    loc_txt = {
-        name = "Summer Sun Celebration",
-        text = {
-            "Played cards with",
-            "{C:rendom_suns}Sun{} suit give",
-            "{C:mult}+3{} Mult when scored"
-        }
-    },
+    -- loc_txt = {
+    --     name = "Summer Sun Celebration",
+    --     text = {
+    --         "Played cards with",
+    --         "{C:rendom_suns}Sun{} suit give",
+    --         "{C:mult}+3{} Mult when scored"
+    --     }
+    -- },
     loc_vars = function (self,info_queue,card)
         return {
             vars = {

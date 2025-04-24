@@ -1,14 +1,14 @@
 SMODS.Joker {
     key = "blownaway",
-    loc_txt = {
-        name = "Blown Away",
-        text = {
-            "If played hand contains a",
-            "{C:attention}Straight{}, destroy highest",
-            "scoring card and reduce",
-            "blind by {C:attention}#1#%{}"
-        }
-    },
+    -- loc_txt = {
+    --     name = "Blown Away",
+    --     text = {
+    --         "If played hand contains a",
+    --         "{C:attention}Straight{}, destroy highest",
+    --         "scoring card and reduce",
+    --         "blind by {C:attention}#1#%{}"
+    --     }
+    -- },
     loc_vars = function (self,info_queue,card)
         return {
             vars = {

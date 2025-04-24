@@ -47,7 +47,7 @@ SMODS.DeckSkin {
             }
         }
     },
-    loc_txt = "My Little Pony"
+    -- loc_txt = "My Little Pony"
 }
 
 SMODS.DeckSkin {
@@ -79,7 +79,7 @@ SMODS.DeckSkin {
             }
         }
     },
-    loc_txt = "My Little Pony"
+    -- loc_txt = "My Little Pony"
 }
 
 SMODS.DeckSkin {
@@ -111,7 +111,7 @@ SMODS.DeckSkin {
             }
         }
     },
-    loc_txt = "My Little Pony"
+    -- loc_txt = "My Little Pony"
 }
 
 SMODS.DeckSkin {
@@ -143,5 +143,5 @@ SMODS.DeckSkin {
             }
         }
     },
-    loc_txt = "My Little Pony"
+    -- loc_txt = "My Little Pony"
 }

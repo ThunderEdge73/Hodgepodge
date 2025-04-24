@@ -4,13 +4,13 @@ SMODS.Back {
     atlas = "decks_atlas",
     pos = {x=4,y=0},
     config = {},
-    loc_txt = {
-        name = "Friendship Deck",
-        text = {
-            "Includes {C:rendom_suns}Sun{} and {C:rendom_moons}Moon{} suits",
-            "Includes 1 of each", "{C:attention}Element of Harmony{}"
-        }
-    },
+    -- loc_txt = {
+    --     name = "Friendship Deck",
+    --     text = {
+    --         "Includes {C:rendom_suns}Sun{} and {C:rendom_moons}Moon{} suits",
+    --         "Includes 1 of each", "{C:attention}Element of Harmony{}"
+    --     }
+    -- },
     apply = function()
         G.E_MANAGER:add_event(Event({
             func = function()
