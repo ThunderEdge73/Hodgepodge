@@ -20,7 +20,7 @@ SMODS.Joker {
     },
     blueprint_compat = false,
     atlas = "jokers_atlas",
-    pos = {x=7,y=1},
+    pos = {x=3,y=0},
     rarity = 2,
     cost = 5,
     set_badges = function(self,card,badges)

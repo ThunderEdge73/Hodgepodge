@@ -71,8 +71,8 @@ SMODS.Joker {
         }
     },
     atlas = "jokers_atlas",
-    pos = {x=8,y=2},
-    soul_pos = {x=7,y=2},
+    pos = {x=10,y=2},
+    soul_pos = {x=10,y=3},
     rarity = 4,
     cost = 20,
     calculate = function(self,card,context)

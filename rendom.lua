@@ -281,6 +281,7 @@ REND.load_script("suits/moons.lua")
 
 ------ Jokers ------
 -- Page 1 - Misc
+REND.load_script("jokers/misc/placeholder.lua")
 REND.load_script("jokers/misc/catapult.lua")
 REND.load_script("jokers/misc/cocksley.lua")
 
