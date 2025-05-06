@@ -320,6 +320,19 @@ return {
 			},
 		},
 		["Joker"] = {
+			["j_rendom_placeholder"] = {
+				["name"] = "Placeholder",
+				["text"] = {
+					"Does nothing.",
+				},
+			},
+			["j_rendom_catapult"] = {
+				["name"] = "Catapult",
+				["text"] = {
+					"{C:chips}+#2#{} hands",
+					"{C:mult}#1#{} discard",
+				},
+			},
 			["j_rendom_cocksley"] = {
 				["name"] = "Cocksley",
 				["text"] = {
@@ -393,13 +406,6 @@ return {
 					"Gains {X:mult,C:white}X#3#{} per scoring card",
 					"with {C:attention}Element of Loyalty{} and",
 					"destroys the card",
-				},
-			},
-			["j_rendom_catapult"] = {
-				["name"] = "Catapult",
-				["text"] = {
-					"{C:chips}+#2#{} hands",
-					"{C:mult}#1#{} discard",
 				},
 			},
 			["j_rendom_blownaway"] = {

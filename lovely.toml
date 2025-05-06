@@ -167,9 +167,16 @@ match_indent = true
 target = "card.lua"
 pattern = "self.sell_cost = math.max(1, math.floor(self.cost/2)) + (self.ability.extra_value or 0)"
 position = "at"
-payload = "self.sell_cost = (self.ability.name == 'j_rendom_badegg' and -256) or math.max(1, math.floor(self.cost/2)) + (self.ability.extra_value or 0)"
+payload = "self.sell_cost = (self.ability.name == 'j_rendom_badegg' and -256) or (math.floor(self.cost/2) + (self.ability.extra_value or 0))"
 match_indent = true
 
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = "self.cost = math.max(1, math.floor((self.base_cost + self.extra_cost + 0.5)*(100-G.GAME.discount_percent)/100))"
+position = "at"
+payload = "self.cost = math.floor((self.base_cost + self.extra_cost + 0.5)*(100-G.GAME.discount_percent)/100)"
+match_indent = true
 
 [[patches]]
 [patches.pattern]
