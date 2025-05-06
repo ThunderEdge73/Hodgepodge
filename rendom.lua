@@ -280,20 +280,21 @@ REND.load_script("suits/suns.lua")
 REND.load_script("suits/moons.lua")
 
 ------ Jokers ------
--- Misc
+-- Page 1 - Misc
+REND.load_script("jokers/misc/catapult.lua")
+REND.load_script("jokers/misc/cocksley.lua")
+
 REND.load_script("jokers/misc/combo.lua")
 REND.load_script("jokers/misc/mergedown.lua")
 REND.load_script("jokers/misc/blownaway.lua")
--- Joke
-REND.load_script("jokers/joke/catapult.lua")
-REND.load_script("jokers/joke/cocksley.lua")
+REND.load_script("jokers/misc/metamorphosis.lua")
+-- Page 2 - Joke
 
-REND.load_script("jokers/misc/metamorphosis.lua") --Should be in Misc. This is just here temporarily bc i dont wanna break up cocksley and catapult
--- MLP
-REND.load_script("jokers/mlp/cupcakes.lua")
+-- Page 3 - MLP
 REND.load_script("jokers/mlp/summersun.lua")
 REND.load_script("jokers/mlp/nightmarenight.lua")
--- Legendaries!
+REND.load_script("jokers/mlp/cupcakes.lua")
+-- Page 3 - Legendaries
 REND.load_script("jokers/joke/david.lua")
 REND.load_script("jokers/pokemon/missingno.lua")
 REND.load_script("jokers/pokemon/badegg.lua") -- does... does this count?
