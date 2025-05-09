@@ -12,8 +12,8 @@ SMODS.Joker {
     config = {
     },
     atlas = "jokers_atlas",
-    pos = {x=7,y=2},
-    soul_pos = {x=7,y=3},
+    pos = {x=7,y=REND.atlas_y.legendary[1]},
+    soul_pos = {x=7,y=REND.atlas_y.soul[1]},
     rarity = 3,
     cost = -10,
     in_pool = function(self,args)

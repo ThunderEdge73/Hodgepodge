@@ -17,7 +17,7 @@ SMODS.Joker {
         extra = {h_plays = -1},
     },
     atlas = "jokers_atlas",
-    pos = {x=4,y=0},
+    pos = {x=4,y=REND.atlas_y.misc[1]},
     rarity = 2,
     cost = 5,
     blueprint_compat = false,

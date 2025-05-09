@@ -15,6 +15,14 @@ end
 
 REND.elements_of_harmony = {"rendom_kindness","rendom_honesty","rendom_loyalty","rendom_laughter","rendom_generosity","rendom_magic"}
 
+REND.atlas_y = {
+    misc      = { 0 },
+    joke      = { 1 },
+    mlp       = { 2 },
+    legendary = { 3 },
+    soul      = { 4 }
+}
+
 -----------------------------
 ----- UTILITY FUNCTIONS -----
 -----------------------------
