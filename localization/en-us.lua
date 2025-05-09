@@ -326,6 +326,14 @@ return {
 					"Does nothing.",
 				},
 			},
+			["j_rendom_brokenrecord"] = {
+				["name"] = "Broken Record",
+				["text"] = {
+					"If rightmost played card ",
+					"is {C:attention}unscored{}, score it",
+					"and retrigger it {C:attention}#1#{} times"
+				},
+			},
 			["j_rendom_catapult"] = {
 				["name"] = "Catapult",
 				["text"] = {
