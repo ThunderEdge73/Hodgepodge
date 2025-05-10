@@ -123,14 +123,14 @@ REND.first_card_merge_down = function(cards,merge) -- Get first card, with compa
         end
     end
     if merge then
-        print("all cards")
+        -- print("all cards")
         return cards
     else
         if cards[1] then
-            print("first card")
+            -- print("first card")
             return {cards[1]}
         else
-            print("no cards")
+            -- print("no cards")
             return {}
         end
     end
@@ -291,8 +291,15 @@ REND.load_script("suits/moons.lua")
 -- Page 1 - Misc
 REND.load_script("jokers/misc/placeholder.lua")
 REND.load_script("jokers/misc/brokenrecord.lua")
+REND.load_script("jokers/misc/spaghettification.lua")
 REND.load_script("jokers/misc/catapult.lua")
 REND.load_script("jokers/misc/cocksley.lua")
+
+REND.load_script("jokers/misc/ricoshot.lua")
+REND.load_script("jokers/misc/projectileboost.lua")
+REND.load_script("jokers/misc/exploded.lua")
+REND.load_script("jokers/misc/arsenal.lua")
+REND.load_script("jokers/misc/overkill.lua")
 
 REND.load_script("jokers/misc/combo.lua")
 REND.load_script("jokers/misc/mergedown.lua")

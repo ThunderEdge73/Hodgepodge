@@ -22,7 +22,7 @@ for i = 1, #scoring_hand do
 end
 
 for i=1, #scoring_hand do
-    if has_blackhole_card and i ~= first_blackhole then
+    if has_blackhole_card and i ~= first_blackhole and not ((#SMODS.find_card("j_rendom_spaghettification") > 0) and pseudorandom("blackhole") < (G.GAME.probabilities.noraml or 1)/4) then
         cards_destroyed[#cards_destroyed+1] = scoring_hand[i]
         scoring_hand[i].destroyed = true
     end
@@ -213,6 +213,22 @@ position = "at"
 payload = '''
 if self.ability.name == 'Chicot' and G.GAME.blind and G.GAME.blind.boss and not G.GAME.blind.disabled then
     -- print(G.rend_chicot_override)
+'''
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = '''
+if not G.GAME.blind:debuff_hand(G.play.cards, poker_hands, text) then
+'''
+position = "at"
+payload = '''
+if (#SMODS.find_card("j_rendom_exploded") > 0) and text == SMODS.find_card("j_rendom_exploded")[1].ability.extra.poker_hand then
+    mult = mod_mult(0)
+    hand_chips = mod_chips(0)
+    play_area_status_text("Charging!")--localize('k_not_allowed_ex'), true)
+elseif not G.GAME.blind:debuff_hand(G.play.cards, poker_hands, text) then
 '''
 match_indent = true
 

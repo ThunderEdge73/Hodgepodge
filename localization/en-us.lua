@@ -334,6 +334,14 @@ return {
 					"and retrigger it {C:attention}#1#{} times"
 				},
 			},
+			["j_rendom_spaghettification"] = {
+				["name"] = "Spaghettification",
+				["text"] = {
+					"{C:attention}Black Hole{} cards have a",
+					"{C:green}#1#/4{} chance not to destroy",
+					"absorbed cards"
+				},
+			},
 			["j_rendom_catapult"] = {
 				["name"] = "Catapult",
 				["text"] = {
@@ -346,6 +354,51 @@ return {
 				["text"] = {
 					"{C:mult}+#1#{} discards",
 					"{C:chips}#2#{} hand",
+				},
+			},
+			["j_rendom_ricoshot"] = {
+				["name"] = "+ RICOSHOT",
+				["text"] = {
+					"Gains {X:mult,C:white}X#1#{} Mult if {C:attention}poker hand{} is",
+					"a {C:attention}#2#{} and changes required",
+					"hand, else loses {X:mult,C:white}X#3#{} Mult.",
+					"{C:inactive}(Currently {X:mult,C:white}X#4#{C:inactive} Mult){}"
+				},
+			},
+			["j_rendom_projectileboost"] = {
+				["name"] = "+ PROJECTILE BOOST",
+				["text"] = {
+					"Gains {X:mult,C:white}X#1#{} Mult if {C:attention}discarded hand{} is",
+					"a {C:attention}#2#{} and changes required hand.",
+					"Loses {X:mult,C:white}X#3#{} Mult after a hand is scored.",
+					"{C:inactive}(Currently {X:mult,C:white}X#4#{C:inactive} Mult){}"
+				},
+			},
+			["j_rendom_exploded"] = {
+				["name"] = "+ EXPLODED",
+				["text"] = {
+					"Playing a {C:attention}#2#{} will not score,",
+					"but this Joker gains {X:mult,C:white}X#1#{} Mult.",
+					"Loses {X:mult,C:white}X#3#{} Mult after a hand is scored.",
+					"{C:inactive}(Currently {X:mult,C:white}X#4#{C:inactive} Mult){}"
+				},
+			},
+			["j_rendom_arsenal"] = {
+				["name"] = "+ ARSENAL",
+				["text"] = {
+					"Gains {X:mult,C:white}X#1#{} Mult if {C:attention}played hand{}",
+					"contains at least {C:attention}4{} suits,",
+					"else loses {X:mult,C:white}X#2#{} Mult",
+					"{C:inactive}(Currently {X:mult,C:white}X#3#{C:inactive} Mult){}"
+				},
+			},
+			["j_rendom_overkill"] = {
+				["name"] = "+ OVERKILL",
+				["text"] = {
+					"Gains {X:mult,C:white}X#1#{} Mult if {C:attention}final score{}",
+					"is at least {C:attention}#2#x{} the blind requirement",
+					"Loses {X:mult,C:white}X#3#{} Mult after a hand is scored.",
+					"{C:inactive}(Currently {X:mult,C:white}X#4#{C:inactive} Mult){}"
 				},
 			},
 			["j_rendom_david"] = {
