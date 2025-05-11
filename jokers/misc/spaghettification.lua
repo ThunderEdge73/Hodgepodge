@@ -25,18 +25,6 @@ SMODS.Joker {
     rarity = 2,
     cost = 5,
     calculate = function(self,card,context)
-        if context.modify_scoring_hand and not context.blueprint then
-            if context.other_card == context.full_hand[#context.full_hand] then
-                if not REND.table_contains(context.scoring_hand,context.other_card) then
-                    card.ability.retrigger_target = context.other_card
-                    return {
-                        add_to_hand = true
-                    }
-                else
-                    card.ability.retrigger_target = nil
-                end
-            end
-        end
     end,
     blueprint_compat = false, -- Work on this some more in the future to make it destroy more cards in sequence
     set_badges = function(self,card,badges)

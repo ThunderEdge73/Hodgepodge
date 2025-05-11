@@ -24,7 +24,8 @@ SMODS.Joker {
             xmult = 1,
             xmult_gain = 0.4,
             xmult_loss = 0.2,
-            poker_hand = "High Card",
+            poker_hand = "Pair",
+            banned_hands = {"High Card"}
         }
     },
     atlas = "jokers_atlas",
@@ -38,7 +39,7 @@ SMODS.Joker {
                 card.ability.extra.xmult = card.ability.extra.xmult + card.ability.extra.xmult_gain
                 _poker_hands = {}
                 for k,v in pairs(G.GAME.hands) do
-                    if v.visible and k ~= card.ability.extra.poker_hand then
+                    if v.visible and k ~= card.ability.extra.poker_hand and not REND.table_contains(card.ability.extra.banned_hands,k) then
                         _poker_hands[#_poker_hands + 1] = k
                     end
                 end

@@ -47,12 +47,12 @@ SMODS.Edition {
             local extra_is_probability = REND.table_contains(extra_probability_jokers,card.ability.name) -- If current joker is one of these jokers ^^^
             ----print(card.ability.mult)
             REND.mod_card_values(card.ability,{multiply = 2, reference = card.rendom_orig_ability, unkeywords = {
-                ["cry_prob"] = true, ["akyrs_cycler"] = true, -- THESE AREN'T MY VALUES! But aiko put them in unkeywords so i will too for compatibility or smth
+                ["cry_prob"] = true, ["akyrs_cycler"] = true, -- cryptid probability, aiko's cycling card (hibana i think)
                 ["odds"] = true, -- Multiplying odds by 2 makes them half as likely! I want them to be twice as likely,
-                ["extra"] = extra_is_probability
+                ["extra"] = extra_is_probability -- ^
             }})
             ----print(card.ability.mult)
-            REND.mod_card_values(card.ability,{multiply = 0.5, keywords = {["odds"]=true,["extra"]=extra_is_probability}}) -- Multiply just the odds
+            REND.mod_card_values(card.ability,{multiply = 0.5, keywords = {["odds"]=true,["extra"]=extra_is_probability,["cry_prob"]=true}}) -- Multiply just the odds
             ----print(card.ability.mult)
             card.rendom_upgrade_big = true
             card.T.scale = card.T.scale * 1.25

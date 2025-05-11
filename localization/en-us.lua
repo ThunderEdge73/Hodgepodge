@@ -401,6 +401,13 @@ return {
 					"{C:inactive}(Currently {X:mult,C:white}X#4#{C:inactive} Mult){}"
 				},
 			},
+			["j_rendom_synccrystal"] = {
+				["name"] = "Sync Crystal",
+				["text"] = {
+					"Convert all {C:attention}scoring cards{}",
+					"to the hand's {C:attention}average{} rank"
+				},
+			},
 			["j_rendom_david"] = {
 				["name"] = "David",
 				["text"] = {

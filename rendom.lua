@@ -301,6 +301,7 @@ REND.load_script("jokers/misc/exploded.lua")
 REND.load_script("jokers/misc/arsenal.lua")
 REND.load_script("jokers/misc/overkill.lua")
 
+REND.load_script("jokers/misc/synccrystal.lua")
 REND.load_script("jokers/misc/combo.lua")
 REND.load_script("jokers/misc/mergedown.lua")
 REND.load_script("jokers/misc/blownaway.lua")
