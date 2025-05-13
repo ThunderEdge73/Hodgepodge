@@ -245,81 +245,81 @@ SMODS.Atlas {
 -----------------------------
 
 ------ Hooks ------
-REND.load_script("hooks/general.lua")
+REND.load_script("objects/hooks/general.lua")
 
 ------ Consumables ------
 -- Custom Types
-REND.load_script("consumables/power.lua")
+REND.load_script("objects/consumables/power.lua")
 -- Planets
-REND.load_script("consumables/avalon.lua")
+REND.load_script("objects/consumables/avalon.lua")
 
 ------ Editions ------
-REND.load_script("editions/big.lua")
-REND.load_script("editions/terry.lua")
-REND.load_script("editions/parasite.lua")
+REND.load_script("objects/editions/big.lua")
+REND.load_script("objects/editions/terry.lua")
+REND.load_script("objects/editions/parasite.lua")
 
 ------ Enhancements ------
-REND.load_script("enhancements/asbestos.lua")
-REND.load_script("enhancements/blackhole.lua")
-REND.load_script("enhancements/waterdamage.lua")
+REND.load_script("objects/enhancements/asbestos.lua")
+REND.load_script("objects/enhancements/blackhole.lua")
+REND.load_script("objects/enhancements/waterdamage.lua")
 
 ------ Seals ------
 -- Misc
-REND.load_script("seals/revive.lua")
+REND.load_script("objects/seals/revive.lua")
 -- MLP
-REND.load_script("seals/mlp/loyalty.lua")
-REND.load_script("seals/mlp/honesty.lua")
-REND.load_script("seals/mlp/kindness.lua")
-REND.load_script("seals/mlp/generosity.lua")
-REND.load_script("seals/mlp/laughter.lua")
-REND.load_script("seals/mlp/magic.lua")
+REND.load_script("objects/seals/mlp/loyalty.lua")
+REND.load_script("objects/seals/mlp/honesty.lua")
+REND.load_script("objects/seals/mlp/kindness.lua")
+REND.load_script("objects/seals/mlp/generosity.lua")
+REND.load_script("objects/seals/mlp/laughter.lua")
+REND.load_script("objects/seals/mlp/magic.lua")
 
 ------ Decks ------
-REND.load_script("decks/jumbo.lua")
-REND.load_script("decks/condemned.lua")
-REND.load_script("decks/snake.lua")
-REND.load_script("decks/friendship.lua")
+REND.load_script("objects/decks/jumbo.lua")
+REND.load_script("objects/decks/condemned.lua")
+REND.load_script("objects/decks/snake.lua")
+REND.load_script("objects/decks/friendship.lua")
 
 ----- Suits ------
 -- Creatures
-REND.load_script("suits/snake.lua")
+REND.load_script("objects/suits/snake.lua")
 -- MLP
-REND.load_script("suits/suns.lua")
-REND.load_script("suits/moons.lua")
+REND.load_script("objects/suits/suns.lua")
+REND.load_script("objects/suits/moons.lua")
 
 ------ Jokers ------
 -- Page 1 - Misc
-REND.load_script("jokers/misc/placeholder.lua")
-REND.load_script("jokers/misc/brokenrecord.lua")
-REND.load_script("jokers/misc/spaghettification.lua")
-REND.load_script("jokers/misc/catapult.lua")
-REND.load_script("jokers/misc/cocksley.lua")
+REND.load_script("objects/jokers/misc/placeholder.lua")
+REND.load_script("objects/jokers/misc/brokenrecord.lua")
+REND.load_script("objects/jokers/misc/spaghettification.lua")
+REND.load_script("objects/jokers/misc/catapult.lua")
+REND.load_script("objects/jokers/misc/cocksley.lua")
 
-REND.load_script("jokers/misc/ricoshot.lua")
-REND.load_script("jokers/misc/projectileboost.lua")
-REND.load_script("jokers/misc/exploded.lua")
-REND.load_script("jokers/misc/arsenal.lua")
-REND.load_script("jokers/misc/overkill.lua")
+REND.load_script("objects/jokers/misc/ricoshot.lua")
+REND.load_script("objects/jokers/misc/projectileboost.lua")
+REND.load_script("objects/jokers/misc/exploded.lua")
+REND.load_script("objects/jokers/misc/arsenal.lua")
+REND.load_script("objects/jokers/misc/overkill.lua")
 
-REND.load_script("jokers/misc/synccrystal.lua")
-REND.load_script("jokers/misc/combo.lua")
-REND.load_script("jokers/misc/mergedown.lua")
-REND.load_script("jokers/misc/blownaway.lua")
-REND.load_script("jokers/misc/metamorphosis.lua")
+REND.load_script("objects/jokers/misc/synccrystal.lua")
+REND.load_script("objects/jokers/misc/combo.lua")
+REND.load_script("objects/jokers/misc/mergedown.lua")
+REND.load_script("objects/jokers/misc/blownaway.lua")
+REND.load_script("objects/jokers/misc/metamorphosis.lua")
 -- Page 2 - Joke
 
 -- Page 3 - MLP
-REND.load_script("jokers/mlp/summersun.lua")
-REND.load_script("jokers/mlp/nightmarenight.lua")
-REND.load_script("jokers/mlp/cupcakes.lua")
+REND.load_script("objects/jokers/mlp/summersun.lua")
+REND.load_script("objects/jokers/mlp/nightmarenight.lua")
+REND.load_script("objects/jokers/mlp/cupcakes.lua")
 -- Page 3 - Legendaries
-REND.load_script("jokers/joke/david.lua")
-REND.load_script("jokers/pokemon/missingno.lua")
-REND.load_script("jokers/pokemon/badegg.lua") -- does... does this count?
---REND.load_script("jokers/mlp/timeloop.lua") --this fucker is soooooo broken
+REND.load_script("objects/jokers/joke/david.lua")
+REND.load_script("objects/jokers/pokemon/missingno.lua")
+REND.load_script("objects/jokers/pokemon/badegg.lua") -- does... does this count?
+--REND.load_script("objects/jokers/mlp/timeloop.lua") --this fucker is soooooo broken
 
 ------ Blinds ------
-REND.load_script("blinds/name.lua") -- I CURSE THE NAME THE ONE BEHIND IT ALLLLLLLLLLLLLLLLLLLLLLL
+REND.load_script("objects/blinds/name.lua") -- I CURSE THE NAME THE ONE BEHIND IT ALLLLLLLLLLLLLLLLLLLLLLL
 
 
-REND.load_script("collabs/mlp.lua")
+REND.load_script("objects/collabs/mlp.lua")
