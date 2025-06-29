@@ -186,6 +186,13 @@ return {
 					"a random Joker",
 				},
 			},
+			["c_rendom_friendship"] = {
+				["name"] = "Friendship",
+				["text"] = {
+					"Select {C:attention}#1#{} card to",
+					"apply {C:attention}Element of Magic{}",
+				},
+			},
 		},
 		["Blind"] = {
 			-- ["bl_wheel"] = {

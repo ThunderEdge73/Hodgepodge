@@ -52,6 +52,16 @@ not (card.ability.consumeable and #G.consumeables.cards < G.consumeables.config.
 '''
 match_indent = true
 
+# [[patches]]
+# [patches.pattern]
+# target = "functions/button_callbacks.lua"
+# pattern = "e.config.object.scale = scale_number(G.GAME.current_round.current_hand.mult, 0.9, 1000)"
+# position = "at"
+# payload = '''
+# e.config.object.scale = 3 --math.max(10,scale_number(G.GAME.current_round.current_hand.mult, 0.9, 1000))
+# '''
+# match_indent = true
+
 [[patches]]
 [patches.pattern]
 target = "functions/common_events.lua"
@@ -86,26 +96,6 @@ elseif self.ability.name == "j_rendom_badegg" then
 '''
 match_indent = true
 overwrite = false
-
-[[patches]]
-[patches.pattern]
-target = '=[SMODS _ "src/card_draw.lua"]'
-pattern =  '''
-self.children.center:draw_shader(v.shader, nil, self.ARGS.send_to_shader)
-if self.children.front and self.ability.effect ~= 'Stone Card' and not self.config.center.replace_base_card then
-    self.children.front:draw_shader(v.shader, nil, self.ARGS.send_to_shader)
-end
-'''
-position = "at"
-payload = '''
-self.children.center:draw_shader(v.shader, nil, self.ARGS.send_to_shader)
-print("doin it at all")
-if self.children.front and self.ability.effect ~= 'Stone Card' and not self.config.center.replace_base_card then
-    print("doin it again")
-    self.children.front:draw_shader(v.shader, nil, self.ARGS.send_to_shader)
-end
-'''
-match_indent = true
 
 
 [[patches]]
