@@ -89,6 +89,27 @@ overwrite = false
 
 [[patches]]
 [patches.pattern]
+target = '=[SMODS _ "src/card_draw.lua"]'
+pattern =  '''
+self.children.center:draw_shader(v.shader, nil, self.ARGS.send_to_shader)
+if self.children.front and self.ability.effect ~= 'Stone Card' and not self.config.center.replace_base_card then
+    self.children.front:draw_shader(v.shader, nil, self.ARGS.send_to_shader)
+end
+'''
+position = "at"
+payload = '''
+self.children.center:draw_shader(v.shader, nil, self.ARGS.send_to_shader)
+print("doin it at all")
+if self.children.front and self.ability.effect ~= 'Stone Card' and not self.config.center.replace_base_card then
+    print("doin it again")
+    self.children.front:draw_shader(v.shader, nil, self.ARGS.send_to_shader)
+end
+'''
+match_indent = true
+
+
+[[patches]]
+[patches.pattern]
 target = "card.lua"
 pattern = '''
 if self.ability.name == 'Hanging Chad' and (

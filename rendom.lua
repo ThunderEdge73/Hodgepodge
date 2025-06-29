@@ -17,15 +17,26 @@ REND.elements_of_harmony = {"rendom_kindness","rendom_honesty","rendom_loyalty",
 
 REND.atlas_y = {
     misc      = { 0 },
-    joke      = { 1 },
-    mlp       = { 2 },
-    legendary = { 3 },
-    soul      = { 4 }
+    joke      = { 2 },
+    mlp       = { 4 },
+    legendary = { 6 },
+    utdr      = { 8 },
+
+    soul      = { 1, 3, 5, 7 }
 }
 
 -----------------------------
 ----- UTILITY FUNCTIONS -----
 -----------------------------
+
+-- stole this little number from yahimod
+REND.load_custom_image = function(filename)
+    local full_path = (REND.path .. "customimages/" .. filename)
+    local file_data = assert(NFS.newFileData(full_path),("Failed to create file_data"))
+    local tempimagedata = assert(love.image.newImageData(file_data),("Failed to create tempimagedata"))
+    return (assert(love.graphics.newImage(tempimagedata),("Failed to create return image")))
+end
+    
 
 REND.starts_with = function(str,start)
     return str:sub(1, #start) == start
@@ -45,7 +56,9 @@ REND.load_script = function(path)
     if load_error then
         print("Loading "..path.." failed! Error: "..load_error)
     else
-        helper()
+        if helper then
+            helper()
+        end
     end
 end
 
@@ -60,6 +73,7 @@ end
 -- Thanks to aikoyori for this one! This is copied directly from the Aikoyori's Shenanigans mod lol
 REND.mod_card_values = function (table_in, config)
     if not config then config = {} end
+    local set = config.set or nil
     local add = config.add or 0
     local multiply = config.multiply or 1
     local keywords = config.keywords or {}
@@ -72,7 +86,7 @@ REND.mod_card_values = function (table_in, config)
                 if (keywords[k] or (REND.table_true_size(keywords) < 1)) and not unkeyword[k] then -- If it's in the keywords, OR there's no keywords and it isn't in the unkeywords
                     if ref and ref[k] then -- If it exists in the reference
                         if not (x_protect and (REND.starts_with(k,"x_") or REND.starts_with(k,"h_x_")) and ref[k] == 1) then
-                            table_in[k] = (ref[k] + add) * multiply -- Set it to (reference's value + add) * multiply
+                            table_in[k] = ((set or ref[k]) + add) * multiply -- Set it to (reference's value + add) * multiply
                         end
                     end
                 end
@@ -257,6 +271,7 @@ REND.load_script("objects/consumables/avalon.lua")
 REND.load_script("objects/editions/big.lua")
 REND.load_script("objects/editions/terry.lua")
 REND.load_script("objects/editions/parasite.lua")
+REND.load_script("objects/editions/glitch.lua")
 
 ------ Enhancements ------
 REND.load_script("objects/enhancements/asbestos.lua")
@@ -307,16 +322,24 @@ REND.load_script("objects/jokers/misc/mergedown.lua")
 REND.load_script("objects/jokers/misc/blownaway.lua")
 REND.load_script("objects/jokers/misc/metamorphosis.lua")
 -- Page 2 - Joke
+REND.load_script("objects/jokers/joke/shooketh.lua")
+-- REND.load_script("objects/jokers/joke/ppe.lua")
+REND.load_script("objects/jokers/joke/sou.lua")
+REND.load_script("objects/jokers/joke/nonejoker.lua")
+REND.load_script("objects/jokers/joke/parappa.lua")
 
 -- Page 3 - MLP
 REND.load_script("objects/jokers/mlp/summersun.lua")
 REND.load_script("objects/jokers/mlp/nightmarenight.lua")
 REND.load_script("objects/jokers/mlp/cupcakes.lua")
--- Page 3 - Legendaries
+-- Page 4 - Legendaries
 REND.load_script("objects/jokers/joke/david.lua")
 REND.load_script("objects/jokers/pokemon/missingno.lua")
 REND.load_script("objects/jokers/pokemon/badegg.lua") -- does... does this count?
 --REND.load_script("objects/jokers/mlp/timeloop.lua") --this fucker is soooooo broken
+-- Page 5 - UTDR
+-- REND.load_script("objects/jokers/utdr/prophecy.lua")
+
 
 ------ Blinds ------
 REND.load_script("objects/blinds/name.lua") -- I CURSE THE NAME THE ONE BEHIND IT ALLLLLLLLLLLLLLLLLLLLLLL

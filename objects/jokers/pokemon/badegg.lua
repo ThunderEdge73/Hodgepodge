@@ -13,7 +13,7 @@ SMODS.Joker {
     },
     atlas = "jokers_atlas",
     pos = {x=7,y=REND.atlas_y.legendary[1]},
-    soul_pos = {x=7,y=REND.atlas_y.soul[1]},
+    soul_pos = {x=7,y=REND.atlas_y.soul[4]},
     rarity = 3,
     cost = -10,
     in_pool = function(self,args)

@@ -21,6 +21,7 @@ SMODS.Joker {
     },
     atlas = "jokers_atlas",
     pos = {x=10,y=REND.atlas_y.misc[1]},
+    soul_pos = {x=10,y=REND.atlas_y.soul[1]},
     rarity = 3,
     cost = 5,
     calculate = function(self,card,context)
@@ -43,7 +44,7 @@ SMODS.Joker {
                     context.scoring_hand[i].base.value = "Ace"
                 else
                     context.scoring_hand[i].base.nominal = average
-                    context.scoring_hand[i].base.value = average
+                    context.scoring_hand[i].base.value = tostring(average)
                 end
                 context.scoring_hand[i].base.id = average
                 local percent = 1.15 - (i-0.999)/(#context.scoring_hand-0.998)*0.3

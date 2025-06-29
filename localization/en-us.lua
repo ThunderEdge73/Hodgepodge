@@ -35,8 +35,14 @@ return {
 		},
 		["dictionary"] = {
 			["k_badge_misc"] = "Misc",
+			["k_badge_joke"] = "Joke",
 			["k_badge_pokemon"] = "Pokémon",
+			["k_badge_utdr"] = "UTDR",
 			["k_badge_fnf"] = "FNF",
+			["k_badge_wof"] = "Wings of Fire",
+			["k_badge_pokemon_maybe"] = "Pokémon?",
+			["k_badge_mlp"] = "MLP:FiM",
+			
 			["b_power_cards"] = "Power Cards",
 			["k_booster_group_p_rendom_power_booster_mega"] = {
 				"Power Cards",
@@ -48,13 +54,10 @@ return {
 			["k_booster_group_p_rendom_power_booster_jumbo"] = {
 				"Power Cards",
 			},
-			["k_badge_wof"] = "Wings of Fire",
-			["k_badge_pokemon_maybe"] = "Pokémon?",
 			["k_rendom_power_booster"] = "Power Pack",
 			["k_booster_group_p_rendom_power_booster_2"] = {
 				"Power Cards",
-			},
-			["k_badge_mlp"] = "MLP:FiM",
+			}
 		},
 		["labels"] = {
 			["rendom_honesty_seal"] = "Element of Harmony",
@@ -406,6 +409,34 @@ return {
 				["text"] = {
 					"Convert all {C:attention}scoring cards{}",
 					"to the hand's {C:attention}average{} rank"
+				},
+			},
+			["j_rendom_shooketh"] = {
+				["name"] = "Shooketh",
+				["text"] = {
+					"If a hand scores {C:mult}negative{} Chips,",
+					"gains {X:mult,C:white}X#1#{}",
+					"{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive}){}"
+				},
+			},
+			["j_rendom_sou"] = {
+				["name"] = "Story of Undertale",
+				["text"] = {
+					"Destroy {C:attention}scored{} cards",
+				},
+			},
+			["j_rendom_nonejoker"] = {
+				["name"] = "None Joker Left Chips",
+				["text"] = {
+					"Set {C:mult}Mult{} to {C:attention}1{}",
+					"{X:chips,C:white}X#1#{} Chips"
+				},
+			},
+			["j_rendom_parappa"] = {
+				["name"] = "Parappa",
+				["text"] = {
+					"{C:green}#1# in #2#{} chance to",
+					"{C:attention}retrigger{} played cards"
 				},
 			},
 			["j_rendom_david"] = {
