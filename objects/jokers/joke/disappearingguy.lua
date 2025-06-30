@@ -1,5 +1,5 @@
 SMODS.Joker {
-    key = "shooketh",
+    key = "disappearingguy",
     -- loc_txt = {
     --     name = "Merge Down",
     --     text = {
@@ -8,35 +8,39 @@ SMODS.Joker {
     -- },
     loc_vars = function (self,info_queue,card)
         return {
-            vars = {
-                card.ability.extra.xmult_gain,
-                card.ability.extra.xmult,
-            }
+            vars = {card.ability.xmult}
         }
     end,
     config = {
-        extra = {
-            xmult = 1,
-            xmult_gain = 0.25,
-        }
+        xmult = 10
     },
     atlas = "jokers_atlas",
-    pos = {x=10,y=REND.atlas_y.joke[1]},
-    rarity = 3,
-    cost = 7,
+    pos = {x=3,y=REND.atlas_y.joke[1]},
+    rarity = 1,
+    cost = 6,
     blueprint_compat = false,
     calculate = function(self,card,context)
-        if context.after and context.main_eval and not context.blueprint then
-            if (hand_chips * mult) < 0 then
-                card.ability.extra.xmult = card.ability.extra.xmult + card.ability.extra.xmult_gain
-                return {
-                    message = "+X"..card.ability.extra.xmult_gain
-                }
-            end
-        end
         if context.joker_main then
+            local cards_to_destroy = {}
+            local to_right = false
+            for k,joker in ipairs(G.jokers.cards) do
+                if joker == card then
+                    to_right = true
+                end
+                if to_right then
+                    table.insert(cards_to_destroy,joker)
+                end
+            end
+            G.GAME.joker_buffer = G.GAME.joker_buffer - #cards_to_destroy
+            for k,joker in ipairs(cards_to_destroy) do
+                joker.debuff = true
+                G.E_MANAGER:add_event(Event({func = function()
+                    G.GAME.joker_buffer = G.GAME.joker_buffer + 1
+                    joker:start_dissolve(nil, nil, 1.6)
+                return true end }))
+            end
             return {
-                xmult = card.ability.extra.xmult
+                xmult = card.ability.xmult
             }
         end
     end,

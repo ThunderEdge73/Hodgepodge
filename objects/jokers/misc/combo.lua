@@ -3,10 +3,10 @@ SMODS.Joker {
     -- loc_txt = {
     --     name = "Combo",
     --     text = {
-    --         "Gains {X:mult,C:white}x#1#{} Mult per",
+    --         "Gains {X:mult,C:white}X#1#{} Mult per",
     --         "blinds won in 1 hand",
     --         "consecutively",
-    --         "{C:inactive}(Currently {X:mult,C:white}x#2#{C:inactive} Mult){}"
+    --         "{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive} Mult){}"
     --     }
     -- },
     loc_vars = function (self,info_queue,card)

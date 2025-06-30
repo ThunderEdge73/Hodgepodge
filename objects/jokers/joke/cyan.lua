@@ -1,5 +1,5 @@
 SMODS.Joker {
-    key = "shooketh",
+    key = "cyan",
     -- loc_txt = {
     --     name = "Merge Down",
     --     text = {
@@ -8,35 +8,35 @@ SMODS.Joker {
     -- },
     loc_vars = function (self,info_queue,card)
         return {
-            vars = {
-                card.ability.extra.xmult_gain,
-                card.ability.extra.xmult,
-            }
+            vars = {card.ability.chips,card.ability.extra.increase}
         }
     end,
     config = {
+        chips = 0,
         extra = {
-            xmult = 1,
-            xmult_gain = 0.25,
+            increase = 2
         }
     },
     atlas = "jokers_atlas",
-    pos = {x=10,y=REND.atlas_y.joke[1]},
-    rarity = 3,
-    cost = 7,
+    pos = {x=2,y=REND.atlas_y.joke[1]},
+    rarity = 1,
+    cost = 5,
     blueprint_compat = false,
     calculate = function(self,card,context)
-        if context.after and context.main_eval and not context.blueprint then
-            if (hand_chips * mult) < 0 then
-                card.ability.extra.xmult = card.ability.extra.xmult + card.ability.extra.xmult_gain
-                return {
-                    message = "+X"..card.ability.extra.xmult_gain
-                }
+        if context.before and context.cardarea == G.jokers then
+            for k, playing_card in ipairs(G.play.cards) do
+                if not REND.table_contains(context.scoring_hand, playing_card) then
+                    card.ability.chips = card.ability.chips + card.ability.extra.increase
+                    G.E_MANAGER:add_event(Event({trigger = 'after', delay = 0.4, func = function()
+                        playing_card:juice_up()
+                    return true end}))
+                    card_eval_status_text(card, 'extra', nil, nil, nil, {message = "Upgrade!", colour = G.C.CHIPS})
+                end
             end
         end
         if context.joker_main then
             return {
-                xmult = card.ability.extra.xmult
+                chips = card.ability.chips
             }
         end
     end,

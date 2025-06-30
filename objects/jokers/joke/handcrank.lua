@@ -1,5 +1,5 @@
 SMODS.Joker {
-    key = "shooketh",
+    key = "handcrank",
     -- loc_txt = {
     --     name = "Merge Down",
     --     text = {
@@ -7,37 +7,38 @@ SMODS.Joker {
     --     }
     -- },
     loc_vars = function (self,info_queue,card)
+        local current_val = (card.ability.chips >= 0 and "+" or "") .. card.ability.chips
         return {
-            vars = {
-                card.ability.extra.xmult_gain,
-                card.ability.extra.xmult,
-            }
+            vars = {current_val,card.ability.extra.increase}
         }
     end,
     config = {
+        chips = -20,
         extra = {
-            xmult = 1,
-            xmult_gain = 0.25,
+            start = -20,
+            increase = 5
         }
     },
     atlas = "jokers_atlas",
-    pos = {x=10,y=REND.atlas_y.joke[1]},
-    rarity = 3,
-    cost = 7,
+    pos = {x=1,y=REND.atlas_y.joke[1]},
+    rarity = 1,
+    cost = 3,
     blueprint_compat = false,
     calculate = function(self,card,context)
-        if context.after and context.main_eval and not context.blueprint then
-            if (hand_chips * mult) < 0 then
-                card.ability.extra.xmult = card.ability.extra.xmult + card.ability.extra.xmult_gain
-                return {
-                    message = "+X"..card.ability.extra.xmult_gain
-                }
-            end
-        end
         if context.joker_main then
+            local save_chips = card.ability.chips
+            card.ability.chips = card.ability.extra.start
             return {
-                xmult = card.ability.extra.xmult
+                chips = save_chips,
+                message = "Reset!"
             }
+        end
+        if context.rend_clicked and context.card_clicked == card then
+            card.ability.chips = card.ability.chips + card.ability.extra.increase
+            card_eval_status_text(card, 'extra', nil, nil, nil, {message = "+"..card.ability.extra.increase, colour = G.C.CHIPS, instant = true})
+            -- return {
+            --     message = "+"..card.ability.extra.increase
+            -- }
         end
     end,
     set_badges = function(self,card,badges)

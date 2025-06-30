@@ -10,7 +10,7 @@ SMODS.Enhancement {
     --         "{C:inactive,s:0.8}Currently:",
     --         "{C:chips,s:0.8}+#1#{s:0.8} Chips",
     --         "{C:mult,s:0.8}+#2#{s:0.8} Mult",
-    --         "{X:mult,C:white,s:0.8}x#3#{s:0.8} Mult"
+    --         "{X:mult,C:white,s:0.8}X#3#{s:0.8} Mult"
     --         --"{C:money,s:0.8}$#4#{s:0.8}"
     --     }
     -- },

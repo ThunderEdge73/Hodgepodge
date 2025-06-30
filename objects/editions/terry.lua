@@ -16,15 +16,47 @@ SMODS.Edition {
     -- },
     loc_vars = function(self, info_queue, card)
         local vals = self.config
+        --Check for lumi joker
+        local lumi = false
+        local lumi_val = 1
+        if G.jokers and G.jokers.cards then
+            for _,j in ipairs(G.jokers.cards) do
+                if j.ability and j.ability.name == "j_rendom_lumi" then
+                    lumi = true
+                    if j.ability.extra > lumi_val then
+                        lumi_val = j.ability.extra
+                    end
+                
+                end 
+            end
+        end
+
         if (card.edition and card.edition.extra) then
             vals = card.edition
         end
-        local rand = math.random()
+
+        -- local rand = math.random()
         local inc = vals.extra.increment
-        local min = vals.extra.lower_bound
+        local min = lumi and lumi_val or vals.extra.lower_bound
         local max = vals.extra.upper_bound
-        local placeholder = inc*math.ceil(((rand*(max-min))+min)/inc)
-        return {vars = {placeholder}}
+        -- local placeholder = inc*math.ceil(((rand*(max-min))+min)/inc)
+
+        local display_mults = {}
+        for i = min, max+inc, inc do
+            table.insert(display_mults,string.format("X%.1f",i))
+        end
+        local loc_mult = ' '..(localize('k_mult'))..' '
+        local random_ui = {
+                {n=G.UIT.C, config = {align = "m",colour = G.C.MULT,r = 0.05,padding = 0.03,res = 0.15}, 
+                    nodes = {
+                        {n=G.UIT.O, config={object = DynaText({string = display_mults, colours = {G.C.WHITE},pop_in_rate = 9999999, silent = true, random_element = true, pop_delay = 0.3, scale = 0.32, min_cycle_time = 0})}},
+                    }
+                },
+                {n=G.UIT.O, config={object = DynaText({string = loc_mult, colours = {G.C.UI.TEXT_DARK},pop_in_rate = 9999999, silent = true, scale = 0.32})}}
+            }
+
+
+        return {vars = {}, main_start = random_ui}
     end,
     config = {
         extra = {
@@ -36,16 +68,35 @@ SMODS.Edition {
     in_shop = true,
     weight = 10,
     get_weight = function(self)
-        return G.GAME.edition_rate * self.weight
+        local lumis = 0
+        for _,j in ipairs(G.jokers.cards) do
+            if j.ability and j.ability.name == "j_rendom_lumi" then
+                lumis = lumis + 1
+            end 
+        end
+        return G.GAME.edition_rate * self.weight * math.pow(2,lumis)
     end,
     extra_cost = 4,
     apply_to_float = false,
     disable_base_shader = true,
     calculate = function(self, card, context)
         if (context.main_scoring and context.cardarea == G.play) or context.post_joker then
+            --Check for lumi joker
+            local lumi = false
+            local lumi_val = 1
+            for _,j in ipairs(G.jokers.cards) do
+                if j.ability and j.ability.name == "j_rendom_lumi" then
+                    lumi = true
+                    if j.ability.extra > lumi_val then
+                        lumi_val = j.ability.extra
+                    end
+               
+                end 
+            end
+            --Behaviour
             local rand = math.random()
             local inc = card.edition.extra.increment
-            local min = card.edition.extra.lower_bound
+            local min = lumi and lumi_val or card.edition.extra.lower_bound
             local max = card.edition.extra.upper_bound
             local value = inc*math.ceil(((rand*(max-min))+min)/inc)
             return {x_mult = value}

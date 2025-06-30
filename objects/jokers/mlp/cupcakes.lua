@@ -23,7 +23,7 @@ SMODS.Joker {
         x_mult = 2,
         extra = {
             mult_loss = 0.1,
-            mult_gain = 0.2
+            mult_gain = 0.5
         }
     },
     atlas = "jokers_atlas",

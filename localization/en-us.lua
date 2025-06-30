@@ -66,7 +66,7 @@ return {
 			["rendom_loyalty_seal"] = "Element of Harmony",
 			["rendom_revive_seal"] = "Revive",
 			["rendom_big"] = "Big",
-			["rendom_terry"] = "Terry",
+			["rendom_terry"] = "Slime",
 			["rendom_parasite"] = "Parasite",
 			["rendom_generosity_seal"] = "Element of Harmony",
 			["rendom_laughter_seal"] = "Element of Harmony",
@@ -140,7 +140,7 @@ return {
 			["c_rendom_chaos"] = {
 				["name"] = "Chaos",
 				["text"] = {
-					"Apply {C:attention}Terry{} to",
+					"Apply {C:attention}Slime{} to",
 					"a random Joker",
 				},
 			},
@@ -418,6 +418,36 @@ return {
 					"to the hand's {C:attention}average{} rank"
 				},
 			},
+			["j_rendom_hydra"] = {
+				["name"] = "Hydra",
+				["text"] = {
+					"{X:mult,C:white}X#1#{} Mult{C:dark_edition,E:1}...{}",
+				},
+			},
+			["j_rendom_handcrank"] = {
+				["name"] = "Hand Crank",
+				["text"] = {
+					"{C:chips}#1#{} Chips",
+					"Gains {C:chips}+#2#{} when {C:attention}clicked{}",
+					"{C:attention}Resets{} after scoring",
+					"{C:inactive,s:0.8}Shinji, crank that Soulja Boy!{}"
+				},
+			},
+			["j_rendom_cyan"] = {
+				["name"] = "Cyan",
+				["text"] = {
+					"{C:chips}+#1#{} Chips",
+					"Gains {C:chips}+#2#{} per {C:attention}unscored{} card",
+				},
+			},
+			["j_rendom_disappearingguy"] = {
+				["name"] = "Disappearing Guy",
+				["text"] = {
+					"{X:mult,C:white}X#1#{} Mult",
+					"{C:mult,E:1}Self destructs and destroys{}",
+					"{C:mult,E:1}jokers to it's right{}"
+				},
+			},
 			["j_rendom_shooketh"] = {
 				["name"] = "Shooketh",
 				["text"] = {
@@ -446,6 +476,15 @@ return {
 					"{C:attention}retrigger{} played cards"
 				},
 			},
+			["j_rendom_lumi"] = {
+				["name"] = "Lumi",
+				["text"] = {
+					"Cards with the {C:attention}Slime{} edition",
+					"never give below {X:mult,C:white}X2{} Mult",
+					"{C:attention}Slime{} cards are {C:attention}2X{} more common",
+
+				},
+			},
 			["j_rendom_david"] = {
 				["name"] = "David",
 				["text"] = {
@@ -459,10 +498,10 @@ return {
 			["j_rendom_combo"] = {
 				["name"] = "Combo",
 				["text"] = {
-					"Gains {X:mult,C:white}x#1#{} Mult per",
+					"Gains {X:mult,C:white}X#1#{} Mult per",
 					"blinds won in 1 hand",
 					"consecutively",
-					"{C:inactive}(Currently {X:mult,C:white}x#2#{C:inactive} Mult){}",
+					"{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive} Mult){}",
 				},
 			},
 			["j_rendom_badegg"] = {
@@ -565,7 +604,7 @@ return {
 					"{C:inactive,s:0.85}Currently:",
 					"{C:chips,s:0.85}+#1#{s:0.85} Chips",
 					"{C:mult,s:0.85}+#2#{s:0.85} Mult",
-					"{X:mult,C:white,s:0.85}x#3#{s:0.85} Mult",
+					"{X:mult,C:white,s:0.85}X#3#{s:0.85} Mult",
 				},
 			},
 			["m_rendom_asbestos"] = {
@@ -613,11 +652,10 @@ return {
 				},
 			},
 			["e_rendom_terry"] = {
-				["label"] = "Terry",
-				["name"] = "Terry",
+				["label"] = "Slime",
+				["name"] = "Slime",
 				["text"] = {
-					"{X:mult,C:white}X#1#{} Mult",
-					"{s:0.85,C:inactive}Randomly chosen when scored{}",
+					"{s:0.85,C:inactive}Random XMult{}",
 				},
 			},
 		},

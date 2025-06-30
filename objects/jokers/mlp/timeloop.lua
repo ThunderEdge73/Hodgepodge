@@ -71,8 +71,8 @@ SMODS.Joker {
         }
     },
     atlas = "jokers_atlas",
-    pos = {x=10,y=REND.atlas_y.legendary[1]},
-    soul_pos = {x=10,y=REND.atlas_y.soul[4]},
+    pos = {x=10,y=REND.atlas_y.soul[4]},
+    soul_pos = {x=10,y=REND.atlas_y.legendary[1]},
     rarity = 4,
     cost = 20,
     calculate = function(self,card,context)
@@ -81,33 +81,37 @@ SMODS.Joker {
                 G.GAME.rend_loop_incoming = true
                 print("load")
                 savetext = STR_UNPACK(G.GAME.rend_loop_save)
-                -- G.E_MANAGER:add_event(
-                --     Event({
-                --         trigger = "after",
-                --         delay = G.SETTINGS.GAMESPEED,
-                --         func = function()
-                --             G:delete_run()
-                --             G:start_run({
-                --                 savetext = STR_UNPACK(G.GAME.rend_loop_save)
-                --             })
-                --         end
-                --     }),
-                --     "other"
-                -- )
+                G.E_MANAGER:add_event(
+                    Event({
+                        trigger = "after",
+                        delay = G.SETTINGS.GAMESPEED,
+                        func = function()
+                            G:delete_run()
+                            G:start_run({
+                                savetext = STR_UNPACK(G.GAME.rend_loop_save)
+                            })
+                            print("loaded")
+                            return true --HOW DID YOU FORGET THIS. THIS PREVENTS AN INFINITE LOOP YOU DUMBASS
+                        end
+                    }),
+                    "other"
+                )
             else
                 card.ability.extra.loop_started = true
                 print("save")
                 G.GAME.rend_loop_save = STR_PACK(G.culled_table)
-                -- G.E_MANAGER:add_event(
-                --     Event({
-                --         trigger = "after",
-                --         delay = G.SETTINGS.GAMESPEED,
-                --         func = function()
-                --             G.GAME.rend_loop_save = STR_PACK(G.culled_table)
-                --         end
-                --     }),
-                --     "other"
-                -- )
+                G.E_MANAGER:add_event(
+                    Event({
+                        trigger = "after",
+                        delay = G.SETTINGS.GAMESPEED,
+                        func = function()
+                            G.GAME.rend_loop_save = STR_PACK(G.culled_table)
+                            print("saved")
+                            return true --HOW DID YOU FORGET THIS. THIS PREVENTS AN INFINITE LOOP YOU DUMBASS
+                        end
+                    }),
+                    "other"
+                )
             end
         end
     end, --TODO: make this joker survive the time loop. maybe hook save_run or maybye save to a profile (G.PROFILES[G.SETTINGS.profile].var_name)

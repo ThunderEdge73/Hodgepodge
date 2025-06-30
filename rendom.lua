@@ -259,7 +259,7 @@ SMODS.Atlas {
 -----------------------------
 
 ------ Hooks ------
-REND.load_script("objects/hooks/general.lua")
+REND.load_script("hooks/general.lua")
 
 ------ Consumables ------
 -- Custom Types
@@ -322,6 +322,10 @@ REND.load_script("objects/jokers/misc/mergedown.lua")
 REND.load_script("objects/jokers/misc/blownaway.lua")
 REND.load_script("objects/jokers/misc/metamorphosis.lua")
 -- Page 2 - Joke
+REND.load_script("objects/jokers/joke/hydra.lua")
+REND.load_script("objects/jokers/joke/handcrank.lua")
+REND.load_script("objects/jokers/joke/cyan.lua")
+REND.load_script("objects/jokers/joke/disappearingguy.lua")
 REND.load_script("objects/jokers/joke/shooketh.lua")
 -- REND.load_script("objects/jokers/joke/ppe.lua")
 REND.load_script("objects/jokers/joke/sou.lua")
@@ -333,10 +337,11 @@ REND.load_script("objects/jokers/mlp/summersun.lua")
 REND.load_script("objects/jokers/mlp/nightmarenight.lua")
 REND.load_script("objects/jokers/mlp/cupcakes.lua")
 -- Page 4 - Legendaries
+REND.load_script("objects/jokers/misc/lumi.lua")
 REND.load_script("objects/jokers/joke/david.lua")
 REND.load_script("objects/jokers/pokemon/missingno.lua")
 REND.load_script("objects/jokers/pokemon/badegg.lua") -- does... does this count?
---REND.load_script("objects/jokers/mlp/timeloop.lua") --this fucker is soooooo broken
+REND.load_script("objects/jokers/mlp/timeloop.lua") --this fucker is soooooo broken
 -- Page 5 - UTDR
 -- REND.load_script("objects/jokers/utdr/prophecy.lua")
 
@@ -345,4 +350,4 @@ REND.load_script("objects/jokers/pokemon/badegg.lua") -- does... does this count
 REND.load_script("objects/blinds/name.lua") -- I CURSE THE NAME THE ONE BEHIND IT ALLLLLLLLLLLLLLLLLLLLLLL
 
 
-REND.load_script("objects/collabs/mlp.lua")
+REND.load_script("collabs/mlp.lua")
