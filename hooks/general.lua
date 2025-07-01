@@ -97,8 +97,6 @@ function Game:main_menu(ctx)
     return r
 end
 
-print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAa")
-
 -- Clicking context
 local cardClick = Card.click
 function Card:click()
