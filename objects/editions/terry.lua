@@ -52,7 +52,7 @@ SMODS.Edition {
                         {n=G.UIT.O, config={object = DynaText({string = display_mults, colours = {G.C.WHITE},pop_in_rate = 9999999, silent = true, random_element = true, pop_delay = 0.3, scale = 0.32, min_cycle_time = 0})}},
                     }
                 },
-                {n=G.UIT.O, config={object = DynaText({string = loc_mult, colours = {G.C.UI.TEXT_DARK},pop_in_rate = 9999999, silent = true, scale = 0.32})}}
+                {n=G.UIT.T, config={text = loc_mult, scale = 0.32, colour = G.C.UI.TEXT_DARK}},
             }
 
 
