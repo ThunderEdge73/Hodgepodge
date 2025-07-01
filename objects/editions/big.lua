@@ -55,9 +55,7 @@ SMODS.Edition {
 
             if card.ability.extra.rend_big_ignore then
                 for k,v in pairs(card.ability.extra.rend_big_ignore) do
-                    if v == true then
-                        ignore_keys[k] = true
-                    end
+                    ignore_keys[k] = v
                 end
             end
 
