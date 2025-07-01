@@ -1,0 +1,70 @@
+SMODS.Joker {
+    key = "lowpercent",
+    -- loc_txt = {
+    --     name = "Merge Down",
+    --     text = {
+    --         "All cards count as {C:attention}first scored{}"
+    --     }
+    -- },
+    loc_vars = function (self,info_queue,card)
+        local loc_chips = ' Chips' --' '..(localize('k_chips'))..' ' --There's no localisation for chips ??
+        local ref = (card.area == G.jokers) and G.GAME.rend_lowpercent_vals or {[card.ability.extra.id_table] = 0}
+        local live_update_ui = {
+            -- {n=G.UIT.O, config={object = DynaText({ref_table = ref, ref_value = card.ability.extra.id_table, colours = {G.C.CHIPS},pop_in_rate = 9999999, silent = true, random_element = true, pop_delay = 0.3, scale = 0.32, min_cycle_time = 0})}},
+            {n=G.UIT.T, config={text = '+', scale = 0.32, colour = G.C.CHIPS}},
+            {n=G.UIT.T, config={ref_table = ref, ref_value = card.ability.extra.id_table, scale = 0.32, colour = G.C.CHIPS}},
+            {n=G.UIT.T, config={text = loc_chips, scale = 0.32, colour = G.C.UI.TEXT_DARK}},
+            -- {n=G.UIT.O, config={object = DynaText({string = loc_chips, colours = {G.C.UI.TEXT_DARK},pop_in_rate = 9999999, silent = true, scale = 0.32})}}
+        }
+        return {
+            vars = {card.ability.chips,card.ability.extra.chip_gain},
+            main_start = live_update_ui
+        }
+    end,
+    config = {
+        chips = 0,
+        extra = {
+            last_checked_time = nil,
+            time_since_gain = 0,
+            chip_gain = 0.25,
+            id_table = {}, -- This is used to identify the table in G.GAME.rend_lowpercent_vals, as all tables are unique.
+            big_ignore = {
+                ["last_checked_time"] = true,
+                ["time_since_gain"] = true,
+                ["id_table"] = true
+            }
+        }
+    },
+    atlas = "jokers_atlas",
+    pos = {x=4,y=REND.atlas_y.joke[1]},
+    soul_pos = {x=4,y=REND.atlas_y.soul[2]},
+    rarity = 1,
+    cost = 6,
+    blueprint_compat = false,
+    calculate = function(self,card,context)
+        if context.joker_main then
+            return {
+                chips = card.ability.chips
+            }
+        end
+    end,
+    update = function(self, card, dt)
+        if card.area == G.jokers then
+            if card.ability.extra.last_checked_time then
+                card.ability.extra.time_since_gain = card.ability.extra.time_since_gain + (G.TIMERS.REAL - card.ability.extra.last_checked_time)
+                while card.ability.extra.time_since_gain >= 1 do
+                    card.ability.chips = card.ability.chips + card.ability.extra.chip_gain
+                    card.ability.extra.time_since_gain = card.ability.extra.time_since_gain - 1
+                end
+                if not G.GAME.rend_lowpercent_vals then
+                    G.GAME.rend_lowpercent_vals = {}
+                end
+                G.GAME.rend_lowpercent_vals[card.ability.extra.id_table] = card.ability.chips
+            end
+        end
+        card.ability.extra.last_checked_time = G.TIMERS.REAL
+    end,
+    set_badges = function(self,card,badges)
+        badges[#badges+1] = create_badge(localize('k_badge_joke'), G.C.GREEN, G.C.WHITE, 1.2)
+    end
+}

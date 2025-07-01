@@ -448,6 +448,12 @@ return {
 					"{C:mult,E:1}jokers to it's right{}"
 				},
 			},
+			["j_rendom_lowpercent"] = {
+				["name"] = "Low% Joker",
+				["text"] = {
+					"Gains {C:chips}+#2#{} every second"
+				},
+			},
 			["j_rendom_shooketh"] = {
 				["name"] = "Shooketh",
 				["text"] = {
