@@ -46,11 +46,22 @@ SMODS.Edition {
             local extra_probability_jokers = {"8 Ball","Business Card","Space Joker"} -- List of jokers who have ability.extra set to just 1 number, the probability of smth happening
             local extra_is_probability = REND.table_contains(extra_probability_jokers,card.ability.name) -- If current joker is one of these jokers ^^^
             ----print(card.ability.mult)
-            REND.mod_card_values(card.ability,{multiply = 2, reference = card.rendom_orig_ability, unkeywords = {
+            
+            local ignore_keys = {
                 ["cry_prob"] = true, ["akyrs_cycler"] = true, -- cryptid probability, aiko's cycling card (hibana i think)
                 ["odds"] = true, -- Multiplying odds by 2 makes them half as likely! I want them to be twice as likely,
                 ["extra"] = extra_is_probability -- ^
-            }})
+            } 
+
+            if card.ability.extra.rend_big_ignore then
+                for k,v in pairs(card.ability.extra.rend_big_ignore) do
+                    if v == true then
+                        ignore_keys[k] = true
+                    end
+                end
+            end
+
+            REND.mod_card_values(card.ability,{multiply = 2, reference = card.rendom_orig_ability, unkeywords = ignore_keys})
             ----print(card.ability.mult)
             REND.mod_card_values(card.ability,{multiply = 0.5, keywords = {["odds"]=true,["extra"]=extra_is_probability,["cry_prob"]=true}}) -- Multiply just the odds
             ----print(card.ability.mult)
