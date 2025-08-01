@@ -1,5 +1,5 @@
 SMODS.Joker {
-    key = "nonejoker",
+    key = "vestup",
     -- loc_txt = {
     --     name = "Merge Down",
     --     text = {
@@ -8,23 +8,32 @@ SMODS.Joker {
     -- },
     loc_vars = function (self,info_queue,card)
         return {
-            vars = {card.ability.x_chips}
+            vars = {card.ability.chips,card.ability.extra.chip_gain_bonus,card.ability.extra.increase}
         }
     end,
     config = {
-        x_chips = 4
+        chips = 4,
+        extra = {
+            chip_gain_bonus = 1,
+            increase = 1
+        }
     },
     atlas = "jokers_atlas",
-    pos = {x=13,y=REND.atlas_y.joke[1]},
-    soul_pos = {x=13,y=REND.atlas_y.soul[2]},
-    rarity = 3,
+    pos = {x=5,y=REND.atlas_y.joke[1]},
+    soul_pos = {x=5,y=REND.atlas_y.soul[2]},
+    rarity = 2,
     cost = 7,
     blueprint_compat = false,
     calculate = function(self,card,context)
         if context.joker_main then
             return {
-                mult = 1-mult,
-                xchips = card.ability.x_chips
+                chips = card.ability.chips
+            }
+        end
+        if context.end_of_round and context.cardarea == G.jokers and not context.blueprint then
+            card.ability.extra.chip_gain_bonus = card.ability.extra.chip_gain_bonus + card.ability.extra.increase
+            return {
+                message = "Vest Up!"
             }
         end
     end,

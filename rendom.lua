@@ -327,6 +327,10 @@ REND.load_script("objects/jokers/joke/handcrank.lua")
 REND.load_script("objects/jokers/joke/cyan.lua")
 REND.load_script("objects/jokers/joke/disappearingguy.lua")
 REND.load_script("objects/jokers/joke/lowpercent.lua")
+
+REND.load_script("objects/jokers/joke/vestup.lua")
+REND.load_script("objects/jokers/joke/nft.lua")
+
 REND.load_script("objects/jokers/joke/shooketh.lua")
 -- REND.load_script("objects/jokers/joke/ppe.lua")
 REND.load_script("objects/jokers/joke/sou.lua")

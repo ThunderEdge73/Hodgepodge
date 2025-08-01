@@ -106,3 +106,40 @@ function Card:click()
     local ret = cardClick(self)
     return ret
 end
+
+--vest up chip gain
+local calcIndivEffect = SMODS.calculate_individual_effect
+SMODS.calculate_individual_effect = function(effect, scored_card, key, amount, from_edition)
+    if (key == 'chips' or key == 'h_chips' or key == 'chip_mod') and amount then
+
+        local bonus_chips = 0
+        for k,joker in pairs(G.jokers.cards) do
+            if joker.ability.name == "j_rendom_vestup" then
+                bonus_chips = bonus_chips + joker.ability.extra.chip_gain_bonus
+                print(bonus_chips, joker.ability.extra.chip_gain_bonus)
+                joker:juice_up()
+            end
+        end
+
+        amount = amount + bonus_chips
+
+        if effect.card and effect.card ~= scored_card then juice_card(effect.card) end
+        hand_chips = mod_chips(hand_chips + amount)
+        update_hand_text({delay = 0}, {chips = hand_chips, mult = mult})
+        if not effect.remove_default_message then
+            if from_edition then
+                card_eval_status_text(scored_card, 'jokers', nil, percent, nil, {message = localize{type = 'variable', key = amount > 0 and 'a_chips' or 'a_chips_minus', vars = {amount}}, chip_mod = amount, colour = G.C.EDITION, edition = true})
+            else
+                if key ~= 'chip_mod' then
+                    if effect.chip_message then
+                        card_eval_status_text(effect.message_card or effect.juice_card or scored_card or effect.card or effect.focus, 'extra', nil, percent, nil, effect.chip_message)
+                    else
+                        card_eval_status_text(effect.message_card or effect.juice_card or scored_card or effect.card or effect.focus, 'chips', amount, percent)
+                    end
+                end
+            end
+        end
+        return true
+    end
+    return calcIndivEffect(effect,scored_card,key,amount,from_edition)
+end

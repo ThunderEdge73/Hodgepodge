@@ -54,9 +54,9 @@ SMODS.Enhancement {
                         mult = ((target.ability.seal or {mult=0}).mult) or 0,
                         x_mult = ((target.ability.seal or {x_mult=1}).x_mult) or 1
                     }
-                    total_chip_gain = target.base.nominal + target.ability.bonus + target.ability.perma_bonus + seal.chips + edition.chips
-                    total_mult_gain = target.ability.mult + seal.mult + edition.mult
-                    total_xmult_gain = target.ability.x_mult-1 + seal.x_mult-1 + edition.x_mult-1
+                    local total_chip_gain = target.base.nominal + target.ability.bonus + target.ability.perma_bonus + seal.chips + edition.chips
+                    local total_mult_gain = target.ability.mult + seal.mult + edition.mult
+                    local total_xmult_gain = target.ability.x_mult-1 + seal.x_mult-1 + edition.x_mult-1
 
                     -- print("Card "..i..": "..total_chip_gain.." chips | "..total_mult_gain.." mult | "..total_xmult_gain.." xmult")
                     card.ability.chips = card.ability.chips + total_chip_gain

@@ -454,6 +454,22 @@ return {
 					"Gains {C:chips}+#2#{} every second"
 				},
 			},
+			["j_rendom_vestup"] = {
+				["name"] = "Vest Up",
+				["text"] = {
+					"{C:chips}+#1#{} Chips",
+					"{C:attention}ALL{} chip gain increased by {C:chips}+#2#{}",
+					"Gain increases by {C:chips}+#3#{} at end of round"
+				},
+			},
+			["j_rendom_nft"] = {
+				["name"] = "NFT",
+				["text"] = {
+					"{C:money}X#1#{} {C:attention}sell value{} when {C:attention}Blind{} is selected",
+					"{C:green}#2# in #3#{} chance to {C:mult}lose all{}",
+					"{C:attention}sell value{} on {C:attention}card scored{}"
+				},
+			},
 			["j_rendom_shooketh"] = {
 				["name"] = "Shooketh",
 				["text"] = {

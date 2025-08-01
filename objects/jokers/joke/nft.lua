@@ -1,5 +1,5 @@
 SMODS.Joker {
-    key = "nonejoker",
+    key = "nft",
     -- loc_txt = {
     --     name = "Merge Down",
     --     text = {
@@ -8,24 +8,45 @@ SMODS.Joker {
     -- },
     loc_vars = function (self,info_queue,card)
         return {
-            vars = {card.ability.x_chips}
+            vars = {
+                card.ability.extra.sell_mult,
+                (G.GAME.probabilities.normal or 1),
+                card.ability.extra.odds
+            }
         }
     end,
     config = {
-        x_chips = 4
+        extra = {
+            sell_mult = 1.5,
+            odds = 20,
+            unrounded = nil
+        }
     },
     atlas = "jokers_atlas",
-    pos = {x=13,y=REND.atlas_y.joke[1]},
-    soul_pos = {x=13,y=REND.atlas_y.soul[2]},
-    rarity = 3,
-    cost = 7,
+    pos = {x=6,y=REND.atlas_y.joke[1]},
+    rarity = 2,
+    cost = 5,
     blueprint_compat = false,
     calculate = function(self,card,context)
-        if context.joker_main then
+        if context.setting_blind then
+            if card.ability.extra.unrounded then
+                card.ability.extra.unrounded = card.ability.extra.unrounded * card.ability.extra.sell_mult
+            else
+                card.ability.extra.unrounded = card.sell_cost * card.ability.extra.sell_mult 
+            end
+            card.sell_cost = math.floor(card.ability.extra.unrounded + 0.5)
             return {
-                mult = 1-mult,
-                xchips = card.ability.x_chips
+                message = "X"..card.ability.extra.sell_mult.."$"
             }
+        end
+        if context.individual and context.cardarea == G.play then
+            if pseudorandom("nft") < (G.GAME.probabilities.normal or 1)/(card.ability.extra.odds) then
+                card.sell_cost = 0
+                card.ability.extra.unrounded = 0
+                return {
+                    message = "Right Clicked!"
+                }
+            end
         end
     end,
     set_badges = function(self,card,badges)

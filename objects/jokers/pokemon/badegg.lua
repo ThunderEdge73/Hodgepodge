@@ -21,7 +21,7 @@ SMODS.Joker {
     end,
     calculate = function(self,card,context)
         if context.setting_blind then
-            if pseudorandom("bad_egg") < 1/1 then
+            if pseudorandom("bad_egg") < 1/255 then
                 local legendary = G.P_JOKER_RARITY_POOLS[4][4] --pseudorandom_element(G.P_JOKER_RARITY_POOLS[4],pseudoseed("bad_egg"))
                 
                 local c = (context.blueprint and context.blueprint_card) or card
