@@ -302,12 +302,13 @@ REND.load_script("objects/seals/mlp/magic.lua")
 ------ Decks ------
 REND.load_script("objects/decks/jumbo.lua")
 REND.load_script("objects/decks/condemned.lua")
-REND.load_script("objects/decks/snake.lua")
+REND.load_script("objects/decks/boardgame.lua")
 REND.load_script("objects/decks/friendship.lua")
 
 ----- Suits ------
--- Creatures
+-- Snakes n Ladders
 REND.load_script("objects/suits/snake.lua")
+REND.load_script("objects/suits/ladders.lua")
 -- MLP
 REND.load_script("objects/suits/suns.lua")
 REND.load_script("objects/suits/moons.lua")

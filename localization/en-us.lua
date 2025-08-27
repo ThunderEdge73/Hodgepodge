@@ -31,7 +31,15 @@ return {
 		["suits_singular"] = {
 			["rendom_suns"] = "Sun",
 			["rendom_snake"] = "Snake",
+			["rendom_ladders"] = "Ladder",
+			["rendom_suns"] = "Sun",
 			["rendom_moons"] = "Moon",
+		},
+			["suits_plural"] = {
+			["rendom_snake"] = "Snakes",
+			["rendom_ladders"] = "Ladders",
+			["rendom_suns"] = "Suns",
+			["rendom_moons"] = "Moons",
 		},
 		["dictionary"] = {
 			["k_badge_misc"] = "Misc",
@@ -103,11 +111,11 @@ return {
 	},
 	["descriptions"] = {
 		["Back"] = {
-			["b_rendom_snake"] = {
-				["name"] = "Snake Deck",
+			["b_rendom_boardgame"] = {
+				["name"] = "Board Game Deck",
 				["text"] = {
-					"Includes cards with",
-					"the {C:rendom_snake}Snake{} suit",
+					"Includes {C:rendom_snake}Snake{} and {C:rendom_ladders}Ladder{} suits",
+					"Start with {C:attention,T:j_oops}Oops! All 6s{}",
 				},
 			},
 			["b_rendom_jumbo"] = {

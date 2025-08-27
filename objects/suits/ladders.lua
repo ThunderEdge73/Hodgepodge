@@ -1,22 +1,18 @@
 SMODS.Suit {
-    key = "moons",
-    card_key = "MOONS",
-    pos = {y=3},
-    ui_pos = {x=3,y=0},
-    -- loc_txt = {
-    --     singular = "Moon",
-    --     plural = "Moons"
-    -- },
+    key = "ladders",
+    card_key = "LADDERS",
+    pos = {y=1},
+    ui_pos = {x=1,y=0},
     lc_atlas = 'suits_atlas',
-    hc_atlas = 'rendom_modded_mlp_suits_2_atlas',
+    hc_atlas = 'suits_atlas',
     lc_ui_atlas = 'icons_atlas',
     hc_ui_atlas = 'icons_atlas',
-    lc_colour = HEX("5217F2"),
-    hc_colour = HEX("5217F2"),
+    lc_colour = HEX("BB17F2"),
+    hc_colour = HEX("BB17F2"),
     in_pool = function(self,args)
         if G.GAME.selected_back then
-            local moon_decks = {"Friendship Deck"}
-            return REND.table_contains(moon_decks,G.GAME.selected_back.name)
+            local ladder_decks = {"Board Game Deck"}
+            return REND.table_contains(ladder_decks,G.GAME.selected_back.name)
         else
             return true
         end
@@ -24,8 +20,8 @@ SMODS.Suit {
 }
 
 -- SMODS.DeckSkin {
---     key = "mlp_moons",
---     suit = "rendom_moons",
+--     key = "mlp_ladders",
+--     suit = "rendom_ladders",
 --     palettes = {
 --         {
 --             key = 'lc',
@@ -33,10 +29,10 @@ SMODS.Suit {
 --             display_ranks = {"King","Queen","Jack"},
 --             atlas = "rendom_modded_mlp_suits_atlas",
 --             pos_style = "deck",
---             colour = HEX("5217F2"),
+--             colour = HEX("21A888"),
 --             suit_icon = {
 --                 atlas = "rendom_icons_atlas",
---                 pos = {x=2,y=0}
+--                 pos = {x=1,y=0}
 --             }
 --         },
 --         {
@@ -45,10 +41,10 @@ SMODS.Suit {
 --             display_ranks = {"King","Queen","Jack"},
 --             atlas = "rendom_modded_mlp_suits_2_atlas",
 --             pos_style = "deck",
---             colour = HEX("5217F2"),
+--             colour = HEX("21A888"),
 --             suit_icon = {
 --                 atlas = "rendom_icons_atlas",
---                 pos = {x=2,y=0}
+--                 pos = {x=1,y=0}
 --             }
 --         }
 --     },

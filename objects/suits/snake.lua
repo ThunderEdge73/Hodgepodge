@@ -15,7 +15,7 @@ SMODS.Suit {
     hc_colour = HEX("21A888"),
     in_pool = function(self,args)
         if G.GAME.selected_back then
-            local snake_decks = {"Snake Deck"}
+            local snake_decks = {"Board Game Deck"}
             return REND.table_contains(snake_decks,G.GAME.selected_back.name)
         else
             return true

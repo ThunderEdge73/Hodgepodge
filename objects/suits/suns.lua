@@ -1,8 +1,8 @@
 SMODS.Suit {
     key = "suns",
     card_key = "SUNS",
-    pos = {y=1},
-    ui_pos = {x=1,y=0},
+    pos = {y=2},
+    ui_pos = {x=2,y=0},
     -- loc_txt = {
     --     singular = "Sun",
     --     plural = "Suns"
