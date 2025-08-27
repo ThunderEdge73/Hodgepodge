@@ -366,5 +366,7 @@ REND.load_script("objects/jokers/mlp/timeloop.lua") --this fucker is soooooo bro
 ------ Blinds ------
 REND.load_script("objects/blinds/name.lua") -- I CURSE THE NAME THE ONE BEHIND IT ALLLLLLLLLLLLLLLLLLLLLLL
 
+------ Challenges ------
+REND.load_script("objects/challenges/battleroyale.lua")
 
 REND.load_script("collabs/mlp.lua")

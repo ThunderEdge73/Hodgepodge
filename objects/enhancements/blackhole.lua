@@ -61,7 +61,7 @@ SMODS.Enhancement {
                     -- print("Card "..i..": "..total_chip_gain.." chips | "..total_mult_gain.." mult | "..total_xmult_gain.." xmult")
                     card.ability.chips = card.ability.chips + total_chip_gain
                     card.ability.mult = card.ability.mult + total_mult_gain
-                    card.ability.x_mult = card.ability.x_mult + total_xmult_gain
+                    card.ability.x_mult = card.ability.x_mult * total_xmult_gain
                 end
             end
             return {

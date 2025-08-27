@@ -1,10 +1,5 @@
 return {
 	["misc"] = {
-		["suits_plural"] = {
-			["rendom_suns"] = "Suns",
-			["rendom_snake"] = "Snakes",
-			["rendom_moons"] = "Moons",
-		},
 		["collabs"] = {
 			["Clubs"] = {
 				["8"] = "My Little Pony",
@@ -29,7 +24,6 @@ return {
 			},
 		},
 		["suits_singular"] = {
-			["rendom_suns"] = "Sun",
 			["rendom_snake"] = "Snake",
 			["rendom_ladders"] = "Ladder",
 			["rendom_suns"] = "Sun",
@@ -108,6 +102,9 @@ return {
 				["2"] = "Low Contrast Consistent",
 			},
 		},
+		["challenge_names"] = {
+			["c_rendom_battleroyale"] = "Battle Royale"
+		}
 	},
 	["descriptions"] = {
 		["Back"] = {
