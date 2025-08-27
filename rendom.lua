@@ -342,6 +342,7 @@ REND.load_script("objects/jokers/joke/lowpercent.lua")
 REND.load_script("objects/jokers/joke/vestup.lua")
 REND.load_script("objects/jokers/joke/nft.lua")
 REND.load_script("objects/jokers/joke/stopsign.lua")
+REND.load_script("objects/jokers/joke/lostcount.lua")
 
 REND.load_script("objects/jokers/joke/shooketh.lua")
 -- REND.load_script("objects/jokers/joke/ppe.lua")

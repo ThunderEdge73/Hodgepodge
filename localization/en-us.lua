@@ -515,7 +515,13 @@ return {
 					"chance to gain {C:mult}+#3#{} Mult",
 				},
 			},
-
+			["j_rendom_lostcount"] = {
+				["name"] = "Lost Count",
+				["text"] = {
+					"Scored cards above {C:attention}4{}",
+					"have their rank randomized"
+				},
+			},
 
 			["j_rendom_shooketh"] = {
 				["name"] = "Shooketh",
