@@ -112,29 +112,45 @@ local calcIndivEffect = SMODS.calculate_individual_effect
 SMODS.calculate_individual_effect = function(effect, scored_card, key, amount, from_edition)
     if (key == 'chips' or key == 'h_chips' or key == 'chip_mod') and amount then
 
+        --print("--- "..scored_card.ability.name.." ---")
+        --print(effect)
+        --print("Before: "..amount)
         local bonus_chips = 0
         for k,joker in pairs(G.jokers.cards) do
             if joker.ability.name == "j_rendom_vestup" then
                 bonus_chips = bonus_chips + joker.ability.extra.chip_gain_bonus
-                print(bonus_chips, joker.ability.extra.chip_gain_bonus)
+                --print("New bonus: "..bonus_chips.." | Gained "..joker.ability.extra.chip_gain_bonus)
                 joker:juice_up()
             end
         end
 
+        local orig_amount = amount
         amount = amount + bonus_chips
+        --print("After: "..amount)
+
 
         if effect.card and effect.card ~= scored_card then juice_card(effect.card) end
         hand_chips = mod_chips(hand_chips + amount)
         update_hand_text({delay = 0}, {chips = hand_chips, mult = mult})
         if not effect.remove_default_message then
             if from_edition then
+                --print("from_edition")
                 card_eval_status_text(scored_card, 'jokers', nil, percent, nil, {message = localize{type = 'variable', key = amount > 0 and 'a_chips' or 'a_chips_minus', vars = {amount}}, chip_mod = amount, colour = G.C.EDITION, edition = true})
             else
                 if key ~= 'chip_mod' then
+                    --print("~= chip_mod")
                     if effect.chip_message then
+                        --print("effect.chip_message")
+                        --print(effect.chip_message)
                         card_eval_status_text(effect.message_card or effect.juice_card or scored_card or effect.card or effect.focus, 'extra', nil, percent, nil, effect.chip_message)
                     else
+                        --print("No effect.chip_message")
                         card_eval_status_text(effect.message_card or effect.juice_card or scored_card or effect.card or effect.focus, 'chips', amount, percent)
+                    end
+                else
+                    --print("No card_eval_status_text ran")
+                    if effect.message then --this is all custom
+                        effect.message = effect.message:gsub(orig_amount,amount)
                     end
                 end
             end
