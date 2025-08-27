@@ -17,7 +17,7 @@ SMODS.Joker {
     config = {
         extra = {
             xmult = 1,
-            xmult_gain = 0.25,
+            xmult_gain = 0.5,
         }
     },
     atlas = "jokers_atlas",

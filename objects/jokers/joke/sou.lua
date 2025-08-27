@@ -19,6 +19,11 @@ SMODS.Joker {
     cost = 7,
     blueprint_compat = false,
     calculate = function(self,card,context)
+        if context.after and context.main_eval and not context.blueprint then
+            update_hand_text({sound = 'button', volume = 0.7, pitch = 0.8, delay = 0.3}, {handname=context.scoring_name,chips = G.GAME.hands[context.scoring_name].chips, mult = G.GAME.hands[context.scoring_name].mult, level=G.GAME.hands[context.scoring_name].level})
+            level_up_hand(card, context.scoring_name, false, 1)
+            update_hand_text({sound = 'button', volume = 0.7, pitch = 1.1, delay = 0}, {mult = 0, chips = 0, handname = '', level = ''})
+        end
         if context.destroy_card and context.cardarea == G.play then
             return {
                 remove = true
