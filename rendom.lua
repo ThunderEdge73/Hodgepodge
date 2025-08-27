@@ -150,6 +150,16 @@ REND.first_card_merge_down = function(cards,merge) -- Get first card, with compa
     end
 end
 
+
+------------------
+----- Sounds -----
+------------------
+
+SMODS.Sound {
+    key = "poisonogg",
+    path = "Poison.ogg"
+}
+
 ---------------------------
 ----- Texture Atlases -----
 ---------------------------

@@ -10,9 +10,11 @@ SMODS.Joker {
     --     }
     -- },
     loc_vars = function (self,info_queue,card)
+        local numerator, denominator = SMODS.get_probability_vars(card, 1, 4, 'spaghettification')
         return {
             vars = {
-                G.GAME.probabilities.normal or 1
+                numerator,
+                denominator
             }
         }
     end,

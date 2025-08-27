@@ -10,10 +10,11 @@ SMODS.Joker {
     --     }
     -- },
     loc_vars = function (self,info_queue,card)
+        local numerator, denominator = SMODS.get_probability_vars(card, card.ability.extra.numerator, card.ability.extra.denominator, 'parappa')
         return {
             vars = {
-                card.ability.extra.numerator,
-                card.ability.extra.denominator,
+                numerator,
+                denominator,
             }
         }
     end,
@@ -29,7 +30,7 @@ SMODS.Joker {
     rarity = 3,
     cost = 7,
     calculate = function(self,card,context)
-        if context.repetition and context.cardarea == G.play and pseudorandom("parappa") < ((G.GAME.probabilities.normal or 1)*card.ability.extra.numerator)/card.ability.extra.denominator then
+        if context.repetition and context.cardarea == G.play and SMODS.pseudorandom_probability(card, 'parappa', card.ability.extra.denominator, card.ability.extra.denominator, 'parappa') then
             return {
                 repetitions = card.ability.extra.retriggers
             }

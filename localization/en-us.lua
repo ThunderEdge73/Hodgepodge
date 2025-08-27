@@ -348,7 +348,7 @@ return {
 				["name"] = "Spaghettification",
 				["text"] = {
 					"{C:attention}Black Hole{} cards have a",
-					"{C:green}#1#/4{} chance not to destroy",
+					"{C:green}#1# in #2#{} chance not to destroy",
 					"absorbed cards"
 				},
 			},
@@ -418,6 +418,39 @@ return {
 					"to the hand's {C:attention}average{} rank"
 				},
 			},
+			["j_rendom_combo"] = {
+				["name"] = "Combo",
+				["text"] = {
+					"Gains {X:mult,C:white}X#1#{} Mult per",
+					"blinds won in 1 hand",
+					"consecutively",
+					"{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive} Mult){}",
+				},
+			},
+			["j_rendom_mergedown"] = {
+				["name"] = "Merge Down",
+				["text"] = {
+					"All cards count as {C:attention}first scored{}",
+				},
+			},
+			["j_rendom_blownaway"] = {
+				["name"] = "Blown Away",
+				["text"] = {
+					"If played hand contains a",
+					"{C:attention}Straight{}, destroy highest",
+					"scoring card and reduce",
+					"blind by {C:attention}#1#%{}",
+				},
+			},
+			["j_rendom_metamorphosis"] = {
+				["name"] = "Metamorphosis",
+				["text"] = {
+					"{C:green}#1# in #2#{} chance for",
+					"{C:attention}scored cards{} to become",
+					"a random {C:attention}enhancement{}",
+					"{C:inactive,s:0.85}Can replace existing enhancements{}"
+				},
+			},
 			["j_rendom_hydra"] = {
 				["name"] = "Hydra",
 				["text"] = {
@@ -470,6 +503,15 @@ return {
 					"{C:attention}sell value{} on {C:attention}card scored{}"
 				},
 			},
+			["j_rendom_stopsign"] = {
+				["name"] = "Stop Sign",
+				["text"] = {
+					"Scored {C:attention}8s{} have a {C:green}#1# in #2#{}",
+					"chance to gain {C:mult}+#3#{} Mult",
+				},
+			},
+
+
 			["j_rendom_shooketh"] = {
 				["name"] = "Shooketh",
 				["text"] = {
@@ -478,10 +520,12 @@ return {
 					"{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive}){}"
 				},
 			},
+
 			["j_rendom_sou"] = {
 				["name"] = "Story of Undertale",
 				["text"] = {
 					"Destroy {C:attention}scored{} cards",
+					"Level up played {C:attention}poker hand{}"
 				},
 			},
 			["j_rendom_nonejoker"] = {
@@ -496,6 +540,32 @@ return {
 				["text"] = {
 					"{C:green}#1# in #2#{} chance to",
 					"{C:attention}retrigger{} played cards"
+				},
+			},
+			["j_rendom_summersun"] = {
+				["name"] = "Summer Sun Celebration",
+				["text"] = {
+					"Played cards with",
+					"{C:rendom_suns}Sun{} suit give",
+					"{C:mult}+3{} Mult when scored",
+				},
+			},
+			["j_rendom_nightmarenight"] = {
+				["name"] = "Nightmare Night",
+				["text"] = {
+					"Played cards with",
+					"{C:rendom_moons}Moon{} suit give",
+					"{C:mult}+3{} Mult when scored",
+				},
+			},
+			["j_rendom_cupcakes"] = {
+				["name"] = "Cupcakes",
+				["text"] = {
+					"{X:mult,C:white}X#1#{} Mult, loses {X:mult,C:white}X#2#{} Mult",
+					"per hand played",
+					"Gains {X:mult,C:white}X#3#{} per scoring card",
+					"with {C:attention}Element of Loyalty{} and",
+					"destroys the card",
 				},
 			},
 			["j_rendom_lumi"] = {
@@ -517,35 +587,6 @@ return {
 					"{C:inactive,s:0.85}Rank chosen on Blind selected{}",
 				},
 			},
-			["j_rendom_combo"] = {
-				["name"] = "Combo",
-				["text"] = {
-					"Gains {X:mult,C:white}X#1#{} Mult per",
-					"blinds won in 1 hand",
-					"consecutively",
-					"{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive} Mult){}",
-				},
-			},
-			["j_rendom_badegg"] = {
-				["name"] = "Bad EGG",
-				["text"] = {
-					"{C:dark_edition,E:1,s:1.5}...{}",
-				},
-			},
-			["j_rendom_summersun"] = {
-				["name"] = "Summer Sun Celebration",
-				["text"] = {
-					"Played cards with",
-					"{C:rendom_suns}Sun{} suit give",
-					"{C:mult}+3{} Mult when scored",
-				},
-			},
-			["j_rendom_mergedown"] = {
-				["name"] = "Merge Down",
-				["text"] = {
-					"All cards count as {C:attention}first scored{}",
-				},
-			},
 			["j_rendom_missingno"] = {
 				["name"] = "MissingNo.",
 				["text"] = {
@@ -557,40 +598,10 @@ return {
 					"{C:inactive}(#2#){}",
 				},
 			},
-			["j_rendom_nightmarenight"] = {
-				["name"] = "Nightmare Night",
+			["j_rendom_badegg"] = {
+				["name"] = "Bad EGG",
 				["text"] = {
-					"Played cards with",
-					"{C:rendom_moons}Moon{} suit give",
-					"{C:mult}+3{} Mult when scored",
-				},
-			},
-			["j_rendom_cupcakes"] = {
-				["name"] = "Cupcakes",
-				["text"] = {
-					"{X:mult,C:white}X#1#{} Mult, loses {X:mult,C:white}X#2#{} Mult",
-					"per hand played",
-					"Gains {X:mult,C:white}X#3#{} per scoring card",
-					"with {C:attention}Element of Loyalty{} and",
-					"destroys the card",
-				},
-			},
-			["j_rendom_blownaway"] = {
-				["name"] = "Blown Away",
-				["text"] = {
-					"If played hand contains a",
-					"{C:attention}Straight{}, destroy highest",
-					"scoring card and reduce",
-					"blind by {C:attention}#1#%{}",
-				},
-			},
-			["j_rendom_metamorphosis"] = {
-				["name"] = "Metamorphosis",
-				["text"] = {
-					"{C:green}#1# in #2#{} chance for",
-					"{C:attention}scored cards{} to become",
-					"a random {C:attention}enhancement{}",
-					"{C:inactive,s:0.85}Can replace existing enhancements{}"
+					"{C:dark_edition,E:1,s:1.5}...{}",
 				},
 			},
 			["j_rendom_timeloop"] = {

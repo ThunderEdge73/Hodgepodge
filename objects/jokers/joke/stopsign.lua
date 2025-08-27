@@ -7,8 +7,9 @@ SMODS.Joker {
     --     }
     -- },
     loc_vars = function (self,info_queue,card)
+        local numerator, denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds, 'stopsign')
         return {
-            vars = {card.ability.odds,card.ability.extra.permamult}
+            vars = {numerator,denominator,card.ability.extra.permamult}
         }
     end,
     config = {
@@ -26,8 +27,9 @@ SMODS.Joker {
         if context.individual and context.cardarea == G.play then
             print((G.GAME.probabilities.normal or 1)/(card.ability.extra.odds))
             print(context.other_card.base.value)
-            if context.other_card.base.value == "8" and pseudorandom("stopsign") < (G.GAME.probabilities.normal or 1)/(card.ability.extra.odds) then
-                print("stopsign hit")
+            --if context.other_card.base.value == "8" and pseudorandom("stopsign") < (G.GAME.probabilities.normal or 1)/(card.ability.extra.odds) then
+            if context.other_card.base.value == "8" and SMODS.pseudorandom_probability(card, 'stopsign', 1, card.ability.extra.odds, 'stopsign') then
+                --print("stopsign hit")
                 context.other_card.ability.perma_mult = context.other_card.ability.perma_mult + card.ability.extra.permamult
                 return {
                     card = context.other_card,

@@ -56,7 +56,7 @@ SMODS.Enhancement {
                     }
                     local total_chip_gain = target.base.nominal + target.ability.bonus + target.ability.perma_bonus + seal.chips + edition.chips
                     local total_mult_gain = target.ability.mult + seal.mult + edition.mult
-                    local total_xmult_gain = target.ability.x_mult-1 + seal.x_mult-1 + edition.x_mult-1
+                    local total_xmult_gain = target.ability.x_mult * seal.x_mult * edition.x_mult
 
                     -- print("Card "..i..": "..total_chip_gain.." chips | "..total_mult_gain.." mult | "..total_xmult_gain.." xmult")
                     card.ability.chips = card.ability.chips + total_chip_gain

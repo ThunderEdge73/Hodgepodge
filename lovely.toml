@@ -22,7 +22,7 @@ for i = 1, #scoring_hand do
 end
 
 for i=1, #scoring_hand do
-    if has_blackhole_card and i ~= first_blackhole and not ((#SMODS.find_card("j_rendom_spaghettification") > 0) and pseudorandom("blackhole") < (G.GAME.probabilities.noraml or 1)/4) then
+    if has_blackhole_card and i ~= first_blackhole and not ((#SMODS.find_card("j_rendom_spaghettification") > 0) and SMODS.pseudorandom_probability(card, 'spaghettification', 1, 4, 'spaghettification')) then
         cards_destroyed[#cards_destroyed+1] = scoring_hand[i]
         scoring_hand[i].destroyed = true
     end

@@ -10,10 +10,11 @@ SMODS.Joker {
     --     }
     -- },
     loc_vars = function (self,info_queue,card)
+        local numerator, denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds, 'metamorphosis')
         return {
             vars = {
-                (G.GAME.probabilities.normal or 1),
-                card.ability.extra.odds
+                numerator,
+                denominator
             }
         }
     end,
@@ -30,7 +31,7 @@ SMODS.Joker {
         if context.before then
             local triggered = false
             for k, v in ipairs(context.scoring_hand) do
-                if pseudorandom("metamorphosis") < (G.GAME.probabilities.normal or 1)/card.ability.extra.odds then
+                if SMODS.pseudorandom_probability(card, 'metamorphosis', 1, card.ability.extra.odds, 'metamorphosis') then
                     local enhancement = SMODS.poll_enhancement {
                         key = "metamorphosis",
                         guaranteed = true
@@ -47,15 +48,21 @@ SMODS.Joker {
             end
             if triggered then
                 local messages = {
-                    "Transformed!","Transformed!","Transformed!", --lazy weighting
-                    "Monch!",
-                    "Chomp!",
-                    "Nom!",
-                    "Gooped!",
-                    "Owch!"
+                    "Transformed!","Transformed!","Transformed!","Transformed!","Transformed!","Transformed!","Transformed!","Transformed!", --lazy weighting
+                    "Monch!","Monch!",
+                    "Chomp!","Chomp!",
+                    "Nom!","Nom!",
+                    "Gooped!","Gooped!",
+                    "Owch!","Owch!",
+                    "Changed!", --plays Poison.ogg
+                    "Chaos, chaos!",
                 }
+                local message = pseudorandom_element(messages,pseudoseed("metamorphosis"))
+                if message == "Changed!" then
+                    play_sound("rendom_poisonogg")
+                end
                 return {
-                    message = pseudorandom_element(messages,pseudoseed("metamorphosis")),
+                    message = message,
                     colour = G.C.CHIPS,
                     card = card
                 }

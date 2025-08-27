@@ -7,11 +7,12 @@ SMODS.Joker {
     --     }
     -- },
     loc_vars = function (self,info_queue,card)
+        local numerator, denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds, 'nft')
         return {
             vars = {
                 card.ability.extra.sell_mult,
-                (G.GAME.probabilities.normal or 1),
-                card.ability.extra.odds
+                numerator,
+                denominator
             }
         }
     end,
@@ -40,7 +41,8 @@ SMODS.Joker {
             }
         end
         if context.individual and context.cardarea == G.play then
-            if pseudorandom("nft") < (G.GAME.probabilities.normal or 1)/(card.ability.extra.odds) then
+            --if pseudorandom("nft") < (G.GAME.probabilities.normal or 1)/(card.ability.extra.odds) then
+            if SMODS.pseudorandom_probability(card, 'nft', 1, card.ability.extra.odds, 'nft') then
                 card.sell_cost = 0
                 card.ability.extra.unrounded = 0
                 return {
