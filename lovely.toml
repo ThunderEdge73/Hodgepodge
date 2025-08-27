@@ -251,6 +251,29 @@ elseif not G.GAME.blind:debuff_hand(G.play.cards, poker_hands, text) then
 '''
 match_indent = true
 
+### Support for main_start in edition tooltips ###
+[[patches]]
+[patches.pattern]
+target = "functions/common_events.lua"
+pattern = '''t.set = res.set or t.set'''
+position = "after"
+payload = '''t.main_start = res.main_start or t.main_start'''
+match_indent = true
+times = 1
+
+[[patches]]
+[patches.pattern]
+target = "functions/common_events.lua"
+pattern = '''if main_start then 
+    desc_nodes[#desc_nodes+1] = main_start 
+end'''
+position = "at"
+payload = '''if _c.main_start or main_start then 
+    desc_nodes[#desc_nodes+1] = _c.main_start or main_start 
+end'''
+match_indent = true
+### End support ###
+
 # [[patches]]
 # [patches.pattern]
 # target = "game.lua"
