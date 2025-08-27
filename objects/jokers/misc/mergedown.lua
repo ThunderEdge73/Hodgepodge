@@ -25,22 +25,3 @@ SMODS.Joker {
     end
 }
 
--- SMODS.Joker:take_ownership('hanging_chad',
---     {
---         calculate = function(self,card,context)
---             if context.repetition then
---                 print(REND.first_card_merge_down(context.scoring_hand))
---                 if context.repetition and context.scoring_hand and REND.table_contains(REND.first_card_merge_down(context.scoring_hand),context.other_card) then
---                     print("hanging chad")
---                     return {
---                         message = localize('k_again_ex'),
---                         repetitions = self.ability.extra,
---                         card = self
---                     }
---                 end
---             end
---         end
---     },
---     true -- Suppress mod badge
--- )
-

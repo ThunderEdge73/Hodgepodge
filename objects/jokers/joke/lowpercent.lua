@@ -1,11 +1,5 @@
 SMODS.Joker {
     key = "lowpercent",
-    -- loc_txt = {
-    --     name = "Merge Down",
-    --     text = {
-    --         "All cards count as {C:attention}first scored{}"
-    --     }
-    -- },
     loc_vars = function (self,info_queue,card)
         local loc_chips = ' Chips' --' '..(localize('k_chips'))..' ' --There's no localisation for chips ??
         local ref = (card.area == G.jokers) and REND.lowpercent_vals or {[card.ability.extra.id_table] = 0}

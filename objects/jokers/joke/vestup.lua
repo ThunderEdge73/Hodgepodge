@@ -1,11 +1,5 @@
 SMODS.Joker {
     key = "vestup",
-    -- loc_txt = {
-    --     name = "Merge Down",
-    --     text = {
-    --         "All cards count as {C:attention}first scored{}"
-    --     }
-    -- },
     loc_vars = function (self,info_queue,card)
         return {
             vars = {card.ability.chips,card.ability.extra.chip_gain_bonus,card.ability.extra.increase}
