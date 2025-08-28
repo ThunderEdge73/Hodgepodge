@@ -10,7 +10,7 @@ SMODS.Joker {
     atlas = "jokers_atlas",
     pos = {x=12,y=REND.atlas_y.joke[1]},
     rarity = 3,
-    cost = 7,
+    cost = 8,
     blueprint_compat = false,
     calculate = function(self,card,context)
         if context.after and context.main_eval and not context.blueprint then

@@ -32,12 +32,19 @@ SMODS.Enhancement {
     },
     calculate = function(self,card,context)
         
-        if context.after and context.cardarea == G.hand then -- ALL CARDS HAVE 1 XMULT SO IT GOES UP FOR EVERY CARD SWALLOWED
+        if context.after and context.cardarea == G.hand then 
             card.ability.extra.h_x_mult = card.ability.extra.h_x_mult - card.ability.extra.decrease_rate
             return {
                 message = "-x"..card.ability.extra.decrease_rate,
                 colour = G.C.RED
             }
+        end
+
+        local disturb_odds = card.ability.extra.disturb_odds
+        for k,joker in pairs(G.jokers.cards) do
+            if joker.ability.name == "j_rendom_ppe" then
+                disturb_odds = disturb_odds / joker.ability.extra.rate
+            end
         end
 
         if context.discard and context.other_card == card then
@@ -46,7 +53,7 @@ SMODS.Enhancement {
             -- print("Card Area is discard? "..tostring(context.cardarea == G.discard))
             -- print("Card Area is hand? "..tostring(context.cardarea == G.hand))
             local rand = pseudorandom("asbestos")
-            local disturb = rand < card.ability.extra.disturb_odds
+            local disturb = rand < disturb_odds
             local funny_message = ((rand < 0.1) and "Told you!") or "Disturbed!"
             if disturb then
                 card.ability.extra.decrease_rate = card.ability.extra.decrease_rate + card.ability.extra.disturb_decay
@@ -66,7 +73,7 @@ SMODS.Enhancement {
         if context.remove_playing_cards and REND.table_contains(context.removed,card) then
 
             local rand = pseudorandom("asbestos")
-            local disturb = rand < card.ability.extra.disturb_odds
+            local disturb = rand < disturb_odds
             local funny_message = ((rand < 0.1) and "Told you!") or "Disturbed!"
             if disturb then
                 card.ability.extra.decrease_rate = card.ability.extra.decrease_rate + 0.2

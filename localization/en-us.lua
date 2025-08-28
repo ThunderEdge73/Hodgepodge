@@ -522,7 +522,13 @@ return {
 					"have their rank randomized"
 				},
 			},
-
+			["j_rendom_biggamba"] = {
+				["name"] = "Big Gamba",
+				["text"] = {
+					"{C:green}Random{} chips",
+					"{C:inactive,s:0.8}Let's go gambling!{}"
+				},
+			},
 			["j_rendom_shooketh"] = {
 				["name"] = "Shooketh",
 				["text"] = {
@@ -531,7 +537,13 @@ return {
 					"{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive}){}"
 				},
 			},
-
+			["j_rendom_ppe"] = {
+				["name"] = "PPE",
+				["text"] = {
+					"{C:attention}Asbestos{} cards are {C:attention}#1#X{}",
+					"less likely to be {C:attention}disturbed{}"
+				},
+			},
 			["j_rendom_sou"] = {
 				["name"] = "Story of Undertale",
 				["text"] = {
