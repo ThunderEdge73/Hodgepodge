@@ -29,8 +29,8 @@ SMODS.Joker {
     atlas = "jokers_atlas",
     pos = {x=11,y=REND.atlas_y.mlp[1]},
     soul_pos = {x=11,y=REND.atlas_y.soul[3]},
-    rarity = 2,
-    cost = 6,
+    rarity = 3,
+    cost = 7,
     calculate = function(self,card,context)
         if context.final_scoring_step and context.cardarea == G.jokers and not context.blueprint then
             card.ability.x_mult = card.ability.x_mult - card.ability.extra.mult_loss

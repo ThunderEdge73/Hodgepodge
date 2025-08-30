@@ -581,6 +581,15 @@ return {
 					"{C:mult}+3{} Mult when scored",
 				},
 			},
+			["j_rendom_rainbowfactory"] = {
+				["name"] = "Rainbow Factory",
+				["text"] = {
+					"Destroys {C:attention}scored cards{} ranked {C:attention}#1# or lower{}",
+					"After #2# cards destroyed, add",
+					"{C:dark_edition}#3#{} to a random scored card",
+					"{C:inactive}(#4#){}"
+				},
+			},
 			["j_rendom_cupcakes"] = {
 				["name"] = "Cupcakes",
 				["text"] = {

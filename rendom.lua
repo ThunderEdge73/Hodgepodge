@@ -354,6 +354,7 @@ REND.load_script("objects/jokers/joke/parappa.lua")
 -- Page 3 - MLP
 REND.load_script("objects/jokers/mlp/summersun.lua")
 REND.load_script("objects/jokers/mlp/nightmarenight.lua")
+REND.load_script("objects/jokers/mlp/rainbowfactory.lua")
 REND.load_script("objects/jokers/mlp/cupcakes.lua")
 -- Page 4 - Legendaries
 REND.load_script("objects/jokers/misc/lumi.lua")
