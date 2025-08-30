@@ -581,6 +581,14 @@ return {
 					"{C:mult}+3{} Mult when scored",
 				},
 			},
+			["j_rendom_amber"] = {
+				["name"] = "Amber",
+				["text"] = {
+					"{C:green}#1#/#2#{} per scored {C:rendom_suns}Sun{} card",
+					"to gain {C:chips}+1 Hand{}",
+					"{C:inactive,s:0.9}(eg. #3# scoring Suns = #4#/5){}"
+				},
+			},
 			["j_rendom_rainbowfactory"] = {
 				["name"] = "Rainbow Factory",
 				["text"] = {

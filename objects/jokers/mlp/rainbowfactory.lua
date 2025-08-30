@@ -49,7 +49,6 @@ SMODS.Joker {
                         chosen_card:set_edition({[card.ability.extra.edition] = true}, true)
                         chosen_card:juice_up(0.3, 0.3);
                         card:juice_up(0.3,0.3);
-                        delay(1.0)
                         return true end
                     }))
                     
