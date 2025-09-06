@@ -34,7 +34,7 @@ SMODS.Consumable { -- Chaos (Applies Terry)
     cost = 3,
     config = {
         max_highlighted = 0,
-        extra = "e_rendom_terry"
+        extra = "e_hodge_terry"
     },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue+1] = G.P_CENTERS[(card.edition or self.config).extra]
@@ -60,7 +60,7 @@ SMODS.Consumable { -- Chaos (Applies Terry)
         G.E_MANAGER:add_event(Event({trigger = 'after', delay = 0.4, func = function()
             local over = false
             local eligible_card = pseudorandom_element(temp_pool, pseudoseed("chaos"))
-            eligible_card:set_edition({["rendom_terry"] = true}, true)
+            eligible_card:set_edition({["hodge_terry"] = true}, true)
             check_for_unlock({type = 'have_edition'})
         return true end }))
     end
@@ -74,7 +74,7 @@ SMODS.Consumable { -- Umbrakinesis (Applies Black Hole)
     cost = 3,
     config = {
         max_highlighted = 1,
-        extra = "m_rendom_blackhole"
+        extra = "m_hodge_blackhole"
     },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue+1] = G.P_CENTERS[(card.ability or self.config).extra]
@@ -91,7 +91,7 @@ SMODS.Consumable { -- Umbrakinesis (Applies Black Hole)
                 return true end}))
             
             G.E_MANAGER:add_event(Event({trigger = 'after',delay = 0.1,func = function()
-                G.hand.highlighted[i]:set_ability(G.P_CENTERS["m_rendom_blackhole"])
+                G.hand.highlighted[i]:set_ability(G.P_CENTERS["m_hodge_blackhole"])
                 return true end}))
             
             delay(0.5)
@@ -108,7 +108,7 @@ SMODS.Consumable { -- Dimension (Applies Big)
     cost = 3,
     config = {
         max_highlighted = 0,
-        extra = "e_rendom_big"
+        extra = "e_hodge_big"
     },
 
     loc_vars = function(self, info_queue, card)
@@ -135,7 +135,7 @@ SMODS.Consumable { -- Dimension (Applies Big)
         G.E_MANAGER:add_event(Event({trigger = 'after', delay = 0.4, func = function()
             local over = false
             local eligible_card = pseudorandom_element(temp_pool, pseudoseed("dimension"))
-            eligible_card:set_edition({["rendom_big"] = true}, true)
+            eligible_card:set_edition({["hodge_big"] = true}, true)
             check_for_unlock({type = 'have_edition'})
         return true end }))
     end
@@ -149,7 +149,7 @@ SMODS.Consumable { -- Immortality (Applies Revive)
     cost = 3,
     config = {
         max_highlighted = 1,
-        extra = "rendom_revive"
+        extra = "hodge_revive"
     },
 
     loc_vars = function(self, info_queue, card)
@@ -184,7 +184,7 @@ SMODS.Consumable { -- Aquakinesis (Applies Water Damage)
     cost = 3,
     config = {
         max_highlighted = 1,
-        extra = "m_rendom_waterdamage"
+        extra = "m_hodge_waterdamage"
     },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue+1] = G.P_CENTERS[(card.ability or self.config).extra]
@@ -201,7 +201,7 @@ SMODS.Consumable { -- Aquakinesis (Applies Water Damage)
                 return true end}))
             
             G.E_MANAGER:add_event(Event({trigger = 'after',delay = 0.1,func = function()
-                G.hand.highlighted[i]:set_ability(G.P_CENTERS["m_rendom_waterdamage"])
+                G.hand.highlighted[i]:set_ability(G.P_CENTERS["m_hodge_waterdamage"])
                 return true end}))
             
             delay(0.5)
@@ -218,7 +218,7 @@ SMODS.Consumable { -- Toxigenesis (Applies Asbestos)
     cost = 3,
     config = {
         max_highlighted = 1,
-        extra = "m_rendom_asbestos"
+        extra = "m_hodge_asbestos"
     },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue+1] = G.P_CENTERS[(card.ability or self.config).extra]
@@ -235,7 +235,7 @@ SMODS.Consumable { -- Toxigenesis (Applies Asbestos)
                 return true end}))
             
             G.E_MANAGER:add_event(Event({trigger = 'after',delay = 0.1,func = function()
-                G.hand.highlighted[i]:set_ability(G.P_CENTERS["m_rendom_asbestos"])
+                G.hand.highlighted[i]:set_ability(G.P_CENTERS["m_hodge_asbestos"])
                 return true end}))
             
             delay(0.5)
@@ -252,7 +252,7 @@ SMODS.Consumable { -- Symbiosis (Applies Parasite)
     cost = 3,
     config = {
         max_highlighted = 0,
-        extra = "e_rendom_parasite"
+        extra = "e_hodge_parasite"
     },
 
     loc_vars = function(self, info_queue, card)
@@ -279,7 +279,7 @@ SMODS.Consumable { -- Symbiosis (Applies Parasite)
         G.E_MANAGER:add_event(Event({trigger = 'after', delay = 0.4, func = function()
             local over = false
             local eligible_card = pseudorandom_element(temp_pool, pseudoseed("size"))
-            eligible_card:set_edition({["rendom_parasite"] = true}, true)
+            eligible_card:set_edition({["hodge_parasite"] = true}, true)
             check_for_unlock({type = 'have_edition'})
         return true end }))
     end
@@ -293,7 +293,7 @@ SMODS.Consumable { -- Friendship (Applies Magic Seal)
     cost = 3,
     config = {
         max_highlighted = 1,
-        extra = "rendom_magic"
+        extra = "hodge_magic"
     },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue+1] = G.P_CENTERS[(card.ability or self.config).extra]
@@ -310,7 +310,7 @@ SMODS.Consumable { -- Friendship (Applies Magic Seal)
                 return true end}))
             
             G.E_MANAGER:add_event(Event({trigger = 'after',delay = 0.1,func = function()
-                G.hand.highlighted[i]:set_seal("rendom_magic", nil, true)
+                G.hand.highlighted[i]:set_seal("hodge_magic", nil, true)
                 return true end}))
             
             delay(0.5)
@@ -330,7 +330,7 @@ SMODS.Consumable { -- Friendship (Applies Magic Seal)
 --     cost = 3,
 --     config = {
 --         max_highlighted = 1,
---         extra = "e_rendom_glitch"
+--         extra = "e_hodge_glitch"
 --     },
 --     loc_vars = function(self, info_queue, card)
 --         --info_queue[#info_queue+1] = G.P_CENTERS[(card.ability or self.config).extra]
@@ -354,7 +354,7 @@ SMODS.Booster {
     config = {extra = 2, choose = 1},
     weight = 0.5,
     draw_hand = true,
-    group_key = "k_rendom_power_booster",
+    group_key = "k_hodge_power_booster",
     create_card = function(self,card,i)
         return {
             set = "power",
@@ -373,7 +373,7 @@ SMODS.Booster {
     config = {extra = 2, choose = 1},
     weight = 0.5,
     draw_hand = true,
-    group_key = "k_rendom_power_booster",
+    group_key = "k_hodge_power_booster",
     create_card = function(self,card,i)
         return {
             set = "power",
@@ -392,7 +392,7 @@ SMODS.Booster {
     config = {extra = 4, choose = 1},
     weight = 0.5,
     draw_hand = true,
-    group_key = "k_rendom_power_booster",
+    group_key = "k_hodge_power_booster",
     create_card = function(self,card,i)
         return {
             set = "power",
@@ -411,7 +411,7 @@ SMODS.Booster {
     config = {extra = 4, choose = 2},
     weight = 0.2,
     draw_hand = true,
-    group_key = "k_rendom_power_booster",
+    group_key = "k_hodge_power_booster",
     create_card = function(self,card,i)
         return {
             set = "power",

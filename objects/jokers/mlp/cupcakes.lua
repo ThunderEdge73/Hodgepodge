@@ -38,7 +38,7 @@ SMODS.Joker {
                 message = "-"..card.ability.extra.mult_loss.."X"
             }
         end
-        if context.destroy_card and context.cardarea == G.play and context.destroy_card.seal == "rendom_loyalty" and not context.blueprint then
+        if context.destroy_card and context.cardarea == G.play and context.destroy_card.seal == "hodge_loyalty" and not context.blueprint then
             card.ability.x_mult = card.ability.x_mult + card.ability.extra.mult_gain
             return {
                 remove = true,
@@ -50,7 +50,7 @@ SMODS.Joker {
     blueprint_compat = true,
     in_pool = function(self,args)
         for k,card in ipairs(G.playing_cards) do
-            if card.seal == "rendom_loyalty" then
+            if card.seal == "hodge_loyalty" then
                 return true
             end
         end

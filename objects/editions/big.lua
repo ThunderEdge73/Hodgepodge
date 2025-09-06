@@ -40,9 +40,9 @@ SMODS.Edition {
     apply_to_float = true,
     disable_base_shader = true,
     on_apply = function(card) -- WHEN A CARD BECOMES BIG
-        ----print("Checking to apply Big! orig mult = "..card.rendom_orig_ability.mult)
-        if not card.rendom_upgrade_big then
-            ----print("Applying Big! orig mult = "..card.rendom_orig_ability.mult)
+        ----print("Checking to apply Big! orig mult = "..card.hodge_orig_ability.mult)
+        if not card.hodge_upgrade_big then
+            ----print("Applying Big! orig mult = "..card.hodge_orig_ability.mult)
             local extra_probability_jokers = {"8 Ball","Business Card","Space Joker"} -- List of jokers who have ability.extra set to just 1 number, the probability of smth happening
             local extra_is_probability = REND.table_contains(extra_probability_jokers,card.ability.name) -- If current joker is one of these jokers ^^^
             ----print(card.ability.mult)
@@ -59,24 +59,24 @@ SMODS.Edition {
                 end
             end
 
-            REND.mod_card_values(card.ability,{multiply = 2, reference = card.rendom_orig_ability, unkeywords = ignore_keys})
+            REND.mod_card_values(card.ability,{multiply = 2, reference = card.hodge_orig_ability, unkeywords = ignore_keys})
             ----print(card.ability.mult)
             REND.mod_card_values(card.ability,{multiply = 0.5, keywords = {["odds"]=true,["extra"]=extra_is_probability,["cry_prob"]=true}}) -- Multiply just the odds
             ----print(card.ability.mult)
-            card.rendom_upgrade_big = true
+            card.hodge_upgrade_big = true
             card.T.scale = card.T.scale * 1.25
-            ----print("Applied Big! orig mult = "..card.rendom_orig_ability.mult)
+            ----print("Applied Big! orig mult = "..card.hodge_orig_ability.mult)
         end
         
         --card.role.draw_major.T.w = card.role.draw_major.T.w * 1.25
         --card.role.draw_major.T.h = card.role.draw_major.T.h * 1.25
     end,
     on_remove = function(card) -- REMOVING BIG FROM A CARD
-        ----print("Removing Big! orig mult = "..tostring(card.rendom_orig_ability.mult))
-        card.ability = REND.deep_copy(card.rendom_orig_ability)
-        card.rendom_upgrade_big = false
+        ----print("Removing Big! orig mult = "..tostring(card.hodge_orig_ability.mult))
+        card.ability = REND.deep_copy(card.hodge_orig_ability)
+        card.hodge_upgrade_big = false
         card.T.scale = card.T.scale / 1.25
-        ----print("Removed Big! orig mult = "..card.rendom_orig_ability.mult)
+        ----print("Removed Big! orig mult = "..card.hodge_orig_ability.mult)
         --card.role.draw_major.T.w = card.role.draw_major.T.w / 1.25
         --card.role.draw_major.T.h = card.role.draw_major.T.h / 1.25
     end,

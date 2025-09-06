@@ -25,17 +25,17 @@ SMODS.Suit {
 
 SMODS.DeckSkin {
     key = "mlp_snake",
-    suit = "rendom_snake",
+    suit = "hodge_snake",
     palettes = {
         {
             key = 'lc',
             ranks = {2,3,4,5,6,7,8,9,10,"Jack","Queen","King","Ace"},
             display_ranks = {"King","Queen","Jack"},
-            atlas = "rendom_modded_mlp_suits_atlas",
+            atlas = "hodge_modded_mlp_suits_atlas",
             pos_style = "deck",
             colour = HEX("21A888"),
             suit_icon = {
-                atlas = "rendom_icons_atlas",
+                atlas = "hodge_icons_atlas",
                 pos = {x=0,y=0}
             }
         },
@@ -43,11 +43,11 @@ SMODS.DeckSkin {
             key = 'lc_con',
             ranks = {2,3,4,5,6,7,8,9,10,"Jack","Queen","King","Ace"},
             display_ranks = {"King","Queen","Jack"},
-            atlas = "rendom_modded_mlp_suits_2_atlas",
+            atlas = "hodge_modded_mlp_suits_2_atlas",
             pos_style = "deck",
             colour = HEX("21A888"),
             suit_icon = {
-                atlas = "rendom_icons_atlas",
+                atlas = "hodge_icons_atlas",
                 pos = {x=0,y=0}
             }
         }

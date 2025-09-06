@@ -36,12 +36,12 @@ SMODS.Seal {
             card.ability.seal.extra.card_positions = {}
 
             local element_names = {
-                rendom_honest = "Honesty",
-                rendom_laughter = "Laughter",
-                rendom_magic = "Magic",
-                rendom_loyalty = "Loyalty",
-                rendom_generosity = "Generosity",
-                rendom_kindness = "Kindness"
+                hodge_honest = "Honesty",
+                hodge_laughter = "Laughter",
+                hodge_magic = "Magic",
+                hodge_loyalty = "Loyalty",
+                hodge_generosity = "Generosity",
+                hodge_kindness = "Kindness"
             }
             
             local check_deck = {}

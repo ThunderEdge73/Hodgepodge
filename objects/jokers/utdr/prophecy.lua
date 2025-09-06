@@ -42,7 +42,7 @@ REND.prophecy_image = REND.load_custom_image("depths.png")
 --     end
 -- end
 
--- generate_shader_atlas("rendom_jokers_atlas","rendom_depths_jokers_atlas","prophecy",{mask_texture = REND.prophecy_image})
+-- generate_shader_atlas("hodge_jokers_atlas","hodge_depths_jokers_atlas","prophecy",{mask_texture = REND.prophecy_image})
 
 REND.prophecy_canvas = love.graphics.newCanvas(71, 95, {type = '2d', readable = true})
 
@@ -76,8 +76,8 @@ SMODS.Joker {
         -- love.graphics.setCanvas(REND.prophecy_canvas)
         -- love.graphics.setColor(1,1,1,1)
 
-        -- G.SHADERS["rendom_prophecy"]:send("mask_texture",REND.prophecy_image)
-        -- card.children.center:draw_shader("rendom_prophecy", nil,card.ARGS.send_to_shader)
+        -- G.SHADERS["hodge_prophecy"]:send("mask_texture",REND.prophecy_image)
+        -- card.children.center:draw_shader("hodge_prophecy", nil,card.ARGS.send_to_shader)
 
         -- love.graphics.pop()
     end
@@ -87,8 +87,8 @@ SMODS.Joker {
 --     key = "prophecy_drawstep",
 --     order = 25,
 --     func = function(card,layer)
---         G.SHADERS["rendom_prophecy"]:send("mask_texture",REND.prophecy_image)
---         card.children.center:draw_shader("rendom_prophecy", nil,card.ARGS.send_to_shader)
+--         G.SHADERS["hodge_prophecy"]:send("mask_texture",REND.prophecy_image)
+--         card.children.center:draw_shader("hodge_prophecy", nil,card.ARGS.send_to_shader)
 --     end,
 --     conditions = {facing = "front"}
 -- }

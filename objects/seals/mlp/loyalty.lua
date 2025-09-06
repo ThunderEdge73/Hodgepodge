@@ -22,7 +22,7 @@ SMODS.Seal {
         if context.after and context.cardarea == G.play then -- Correct context
             local first_loyalty = false
             for i,c in ipairs(context.scoring_hand) do -- For card in hand
-                if c.seal == "rendom_loyalty" then
+                if c.seal == "hodge_loyalty" then
                     if c == card then
                         first_loyalty = true
                     end

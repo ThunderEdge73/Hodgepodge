@@ -4,7 +4,7 @@ SMODS.Joker {
     --     name = "Nightmare Night",
     --     text = {
     --         "Played cards with",
-    --         "{C:rendom_moons}Moon{} suit give",
+    --         "{C:hodge_moons}Moon{} suit give",
     --         "{C:mult}+3{} Mult when scored"
     --     }
     -- },
@@ -22,7 +22,7 @@ SMODS.Joker {
     cost = 5,
     calculate = function(self,card,context)
         if context.individual and context.cardarea == G.play then
-            if context.other_card.base.suit == "rendom_moons" then
+            if context.other_card.base.suit == "hodge_moons" then
                 return { mult = 3, message_card = context.other_card }
             end
         end
@@ -30,7 +30,7 @@ SMODS.Joker {
     blueprint_compat = true,
     in_pool = function(self,args)
         for k,card in ipairs(G.playing_cards) do
-            if card:is_suit("rendom_moons") then
+            if card:is_suit("hodge_moons") then
                 return true
             end
         end

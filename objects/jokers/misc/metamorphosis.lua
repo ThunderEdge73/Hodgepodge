@@ -59,7 +59,7 @@ SMODS.Joker {
                 }
                 local message = pseudorandom_element(messages,pseudoseed("metamorphosis"))
                 if message == "Changed!" then
-                    play_sound("rendom_poisonogg")
+                    play_sound("hodge_poisonogg")
                 end
                 return {
                     message = message,

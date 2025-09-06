@@ -10,30 +10,30 @@ return {
 			["Diamonds"] = {
 				["8"] = "My Little Pony",
 			},
-			["rendom_moons"] = {
+			["hodge_moons"] = {
 				["1"] = "Default",
 			},
 			["Hearts"] = {
 				["8"] = "My Little Pony",
 			},
-			["rendom_snake"] = {
+			["hodge_snake"] = {
 				["1"] = "Default",
 			},
-			["rendom_suns"] = {
+			["hodge_suns"] = {
 				["1"] = "Default",
 			},
 		},
 		["suits_singular"] = {
-			["rendom_snake"] = "Snake",
-			["rendom_ladders"] = "Ladder",
-			["rendom_suns"] = "Sun",
-			["rendom_moons"] = "Moon",
+			["hodge_snake"] = "Snake",
+			["hodge_ladders"] = "Ladder",
+			["hodge_suns"] = "Sun",
+			["hodge_moons"] = "Moon",
 		},
 			["suits_plural"] = {
-			["rendom_snake"] = "Snakes",
-			["rendom_ladders"] = "Ladders",
-			["rendom_suns"] = "Suns",
-			["rendom_moons"] = "Moons",
+			["hodge_snake"] = "Snakes",
+			["hodge_ladders"] = "Ladders",
+			["hodge_suns"] = "Suns",
+			["hodge_moons"] = "Moons",
 		},
 		["dictionary"] = {
 			["k_badge_misc"] = "Misc",
@@ -46,76 +46,76 @@ return {
 			["k_badge_mlp"] = "MLP:FiM",
 			
 			["b_power_cards"] = "Power Cards",
-			["k_booster_group_p_rendom_power_booster_mega"] = {
+			["k_booster_group_p_hodge_power_booster_mega"] = {
 				"Power Cards",
 			},
-			["k_booster_group_p_rendom_power_booster_1"] = {
+			["k_booster_group_p_hodge_power_booster_1"] = {
 				"Power Cards",
 			},
 			["k_power"] = "Power Card",
-			["k_booster_group_p_rendom_power_booster_jumbo"] = {
+			["k_booster_group_p_hodge_power_booster_jumbo"] = {
 				"Power Cards",
 			},
-			["k_rendom_power_booster"] = "Power Pack",
-			["k_booster_group_p_rendom_power_booster_2"] = {
+			["k_hodge_power_booster"] = "Power Pack",
+			["k_booster_group_p_hodge_power_booster_2"] = {
 				"Power Cards",
 			}
 		},
 		["labels"] = {
-			["rendom_honesty_seal"] = "Element of Harmony",
-			["rendom_kindness_seal"] = "Element of Harmony",
-			["rendom_magic_seal"] = "Element of Harmony",
-			["rendom_loyalty_seal"] = "Element of Harmony",
-			["rendom_revive_seal"] = "Revive",
-			["rendom_big"] = "Big",
-			["rendom_terry"] = "Slime",
-			["rendom_parasite"] = "Parasite",
-			["rendom_generosity_seal"] = "Element of Harmony",
-			["rendom_laughter_seal"] = "Element of Harmony",
+			["hodge_honesty_seal"] = "Element of Harmony",
+			["hodge_kindness_seal"] = "Element of Harmony",
+			["hodge_magic_seal"] = "Element of Harmony",
+			["hodge_loyalty_seal"] = "Element of Harmony",
+			["hodge_revive_seal"] = "Revive",
+			["hodge_big"] = "Big",
+			["hodge_terry"] = "Slime",
+			["hodge_parasite"] = "Parasite",
+			["hodge_generosity_seal"] = "Element of Harmony",
+			["hodge_laughter_seal"] = "Element of Harmony",
 		},
 		["collab_palettes"] = {
-			["default_rendom_snake"] = {
+			["default_hodge_snake"] = {
 				["1"] = "Low Contrast Colors",
 			},
-			["rendom_mlp_spades"] = {
-				["1"] = "Low Contrast Colors",
-				["2"] = "Low Contrast Consistent",
-			},
-			["default_rendom_suns"] = {
+			["hodge_mlp_spades"] = {
 				["1"] = "Low Contrast Colors",
 				["2"] = "Low Contrast Consistent",
 			},
-			["rendom_mlp_clubs"] = {
+			["default_hodge_suns"] = {
 				["1"] = "Low Contrast Colors",
 				["2"] = "Low Contrast Consistent",
 			},
-			["rendom_mlp_hearts"] = {
+			["hodge_mlp_clubs"] = {
 				["1"] = "Low Contrast Colors",
 				["2"] = "Low Contrast Consistent",
 			},
-			["rendom_mlp_diamonds"] = {
+			["hodge_mlp_hearts"] = {
 				["1"] = "Low Contrast Colors",
 				["2"] = "Low Contrast Consistent",
 			},
-			["default_rendom_moons"] = {
+			["hodge_mlp_diamonds"] = {
+				["1"] = "Low Contrast Colors",
+				["2"] = "Low Contrast Consistent",
+			},
+			["default_hodge_moons"] = {
 				["1"] = "Low Contrast Colors",
 				["2"] = "Low Contrast Consistent",
 			},
 		},
 		["challenge_names"] = {
-			["c_rendom_battleroyale"] = "Battle Royale"
+			["c_hodge_battleroyale"] = "Battle Royale"
 		}
 	},
 	["descriptions"] = {
 		["Back"] = {
-			["b_rendom_boardgame"] = {
+			["b_hodge_boardgame"] = {
 				["name"] = "Board Game Deck",
 				["text"] = {
-					"Includes {C:rendom_snake}Snake{} and {C:rendom_ladders}Ladder{} suits",
+					"Includes {C:hodge_snake}Snake{} and {C:hodge_ladders}Ladder{} suits",
 					"Start with {C:attention,T:j_oops}Oops! All 6s{}",
 				},
 			},
-			["b_rendom_jumbo"] = {
+			["b_hodge_jumbo"] = {
 				["name"] = "Jumbo Deck",
 				["text"] = {
 					"Start run with",
@@ -124,74 +124,74 @@ return {
 					"{C:inactive}(Hand can hold {C:attention}6{C:inactive} Big cards){}",
 				},
 			},
-			["b_rendom_friendship"] = {
+			["b_hodge_friendship"] = {
 				["name"] = "Friendship Deck",
 				["text"] = {
-					"Includes {C:rendom_suns}Sun{} and {C:rendom_moons}Moon{} suits",
+					"Includes {C:hodge_suns}Sun{} and {C:hodge_moons}Moon{} suits",
 					"Includes 1 of each",
 					"{C:attention}Element of Harmony{}",
 				},
 			},
-			["b_rendom_condemned"] = {
+			["b_hodge_condemned"] = {
 				["name"] = "Condemned Deck",
 				["text"] = {
 					"Random cards are missing",
-					"Random cards are {C:attention,T:m_rendom_asbestos}Asbestos{}",
-					"Random cards are {C:attention,T:m_rendom_waterdamage}Water Damaged{}",
+					"Random cards are {C:attention,T:m_hodge_asbestos}Asbestos{}",
+					"Random cards are {C:attention,T:m_hodge_waterdamage}Water Damaged{}",
 				},
 			},
 		},
 		["power"] = {
-			["c_rendom_chaos"] = {
+			["c_hodge_chaos"] = {
 				["name"] = "Chaos",
 				["text"] = {
 					"Apply {C:attention}Slime{} to",
 					"a random Joker",
 				},
 			},
-			["c_rendom_umbrakinesis"] = {
+			["c_hodge_umbrakinesis"] = {
 				["name"] = "Umbrakinesis",
 				["text"] = {
 					"Select {C:attention}#1#{} card to apply",
 					"{C:attention}Black Hole{} enhancement",
 				},
 			},
-			["c_rendom_toxigenesis"] = {
+			["c_hodge_toxigenesis"] = {
 				["name"] = "Toxigenesis",
 				["text"] = {
 					"Select {C:attention}#1#{} card to apply",
 					"{C:attention}Asbestos{} enhancement",
 				},
 			},
-			["c_rendom_aquakinesis"] = {
+			["c_hodge_aquakinesis"] = {
 				["name"] = "Water Damage",
 				["text"] = {
 					"Select {C:attention}#1#{} card to apply",
 					"{C:attention}Water Damage{} enhancement",
 				},
 			},
-			["c_rendom_dimension"] = {
+			["c_hodge_dimension"] = {
 				["name"] = "Dimension",
 				["text"] = {
 					"Apply {C:attention}Big{} to",
 					"a random Joker",
 				},
 			},
-			["c_rendom_immortality"] = {
+			["c_hodge_immortality"] = {
 				["name"] = "Immortality",
 				["text"] = {
 					"Select {C:attention}#1#{} card to",
 					"apply {C:attention}Revive{}",
 				},
 			},
-			["c_rendom_symbiosis"] = {
+			["c_hodge_symbiosis"] = {
 				["name"] = "Symbiosis",
 				["text"] = {
 					"Apply {C:attention}Parasite{} to",
 					"a random Joker",
 				},
 			},
-			["c_rendom_friendship"] = {
+			["c_hodge_friendship"] = {
 				["name"] = "Friendship",
 				["text"] = {
 					"Select {C:attention}#1#{} card to",
@@ -205,7 +205,7 @@ return {
 			-- 		"#1# in 7 cards get",
 			-- 	},
 			-- },
-			["bl_rendom_name"] = {
+			["bl_hodge_name"] = {
 				["name"] = "The Name",
 				["text"] = {
 					"Debuffs all",
@@ -214,7 +214,7 @@ return {
 			},
 		},
 		["Other"] = {
-			["rendom_honesty_seal"] = {
+			["hodge_honesty_seal"] = {
 				["name"] = "Element of Honesty",
 				["label"] = "Element of Harmony",
 				["text"] = {
@@ -226,7 +226,7 @@ return {
 					"{C:attention,s:0.85}#5#{s:0.85} - {C:attention,s:0.85}#6#{s:0.85} cards{}",
 				},
 			},
-			["p_rendom_power_booster_2"] = {
+			["p_hodge_power_booster_2"] = {
 				["group_name"] = {
 					"Power Cards",
 				},
@@ -246,7 +246,7 @@ return {
 					"learn what it does",
 				},
 			},
-			["rendom_loyalty_seal"] = {
+			["hodge_loyalty_seal"] = {
 				["name"] = "Element of Loyalty",
 				["label"] = "Element of Harmony",
 				["text"] = {
@@ -256,7 +256,7 @@ return {
 					"return to hand when played",
 				},
 			},
-			["p_rendom_power_booster_1"] = {
+			["p_hodge_power_booster_1"] = {
 				["group_name"] = {
 					"Power Cards",
 				},
@@ -267,7 +267,7 @@ return {
 					"be used immediately",
 				},
 			},
-			["rendom_generosity_seal"] = {
+			["hodge_generosity_seal"] = {
 				["name"] = "Element of Generosity",
 				["label"] = "Element of Harmony",
 				["text"] = {
@@ -276,7 +276,7 @@ return {
 					"gain {C:chips}10{} Chips",
 				},
 			},
-			["rendom_kindness_seal"] = {
+			["hodge_kindness_seal"] = {
 				["name"] = "Element of Kindness",
 				["label"] = "Element of Harmony",
 				["text"] = {
@@ -286,7 +286,7 @@ return {
 					"{C:inactive,s:0.9}Currently {C:chips,s:0.9}+#1#{}",
 				},
 			},
-			["p_rendom_power_booster_jumbo"] = {
+			["p_hodge_power_booster_jumbo"] = {
 				["group_name"] = {
 					"Power Cards",
 				},
@@ -297,7 +297,7 @@ return {
 					"be used immediately",
 				},
 			},
-			["rendom_laughter_seal"] = {
+			["hodge_laughter_seal"] = {
 				["name"] = "Element of Laughter",
 				["label"] = "Element of Harmony",
 				["text"] = {
@@ -305,7 +305,7 @@ return {
 					"{C:attention}Elements of Harmony",
 				},
 			},
-			["p_rendom_power_booster_mega"] = {
+			["p_hodge_power_booster_mega"] = {
 				["group_name"] = {
 					"Power Cards",
 				},
@@ -316,7 +316,7 @@ return {
 					"be used immediately",
 				},
 			},
-			["rendom_magic_seal"] = {
+			["hodge_magic_seal"] = {
 				["name"] = "Element of Magic",
 				["label"] = "Element of Harmony",
 				["text"] = {
@@ -325,7 +325,7 @@ return {
 					"to one held card",
 				},
 			},
-			["rendom_revive_seal"] = {
+			["hodge_revive_seal"] = {
 				["label"] = "Revive",
 				["name"] = "Revive",
 				["text"] = {
@@ -335,13 +335,13 @@ return {
 			},
 		},
 		["Joker"] = {
-			["j_rendom_placeholder"] = {
+			["j_hodge_placeholder"] = {
 				["name"] = "Placeholder",
 				["text"] = {
 					"Does nothing.",
 				},
 			},
-			["j_rendom_brokenrecord"] = {
+			["j_hodge_brokenrecord"] = {
 				["name"] = "Broken Record",
 				["text"] = {
 					"If rightmost played card ",
@@ -349,7 +349,7 @@ return {
 					"and retrigger it {C:attention}#1#{} times"
 				},
 			},
-			["j_rendom_spaghettification"] = {
+			["j_hodge_spaghettification"] = {
 				["name"] = "Spaghettification",
 				["text"] = {
 					"{C:attention}Black Hole{} cards have a",
@@ -357,21 +357,21 @@ return {
 					"absorbed cards"
 				},
 			},
-			["j_rendom_catapult"] = {
+			["j_hodge_catapult"] = {
 				["name"] = "Catapult",
 				["text"] = {
 					"{C:chips}+#2#{} hands",
 					"{C:mult}#1#{} discard",
 				},
 			},
-			["j_rendom_cocksley"] = {
+			["j_hodge_cocksley"] = {
 				["name"] = "Cocksley",
 				["text"] = {
 					"{C:mult}+#1#{} discards",
 					"{C:chips}#2#{} hand",
 				},
 			},
-			["j_rendom_ricoshot"] = {
+			["j_hodge_ricoshot"] = {
 				["name"] = "+ RICOSHOT",
 				["text"] = {
 					"Gains {X:mult,C:white}X#1#{} Mult if {C:attention}poker hand{} is",
@@ -380,7 +380,7 @@ return {
 					"{C:inactive}(Currently {X:mult,C:white}X#4#{C:inactive} Mult){}"
 				},
 			},
-			["j_rendom_projectileboost"] = {
+			["j_hodge_projectileboost"] = {
 				["name"] = "+ PROJECTILE BOOST",
 				["text"] = {
 					"Gains {X:mult,C:white}X#1#{} Mult if {C:attention}discarded hand{} is",
@@ -389,7 +389,7 @@ return {
 					"{C:inactive}(Currently {X:mult,C:white}X#4#{C:inactive} Mult){}"
 				},
 			},
-			["j_rendom_exploded"] = {
+			["j_hodge_exploded"] = {
 				["name"] = "+ EXPLODED",
 				["text"] = {
 					"Playing a {C:attention}#2#{} will not score,",
@@ -398,7 +398,7 @@ return {
 					"{C:inactive}(Currently {X:mult,C:white}X#4#{C:inactive} Mult){}"
 				},
 			},
-			["j_rendom_arsenal"] = {
+			["j_hodge_arsenal"] = {
 				["name"] = "+ ARSENAL",
 				["text"] = {
 					"Gains {X:mult,C:white}X#1#{} Mult if {C:attention}played hand{}",
@@ -407,7 +407,7 @@ return {
 					"{C:inactive}(Currently {X:mult,C:white}X#3#{C:inactive} Mult){}"
 				},
 			},
-			["j_rendom_overkill"] = {
+			["j_hodge_overkill"] = {
 				["name"] = "+ OVERKILL",
 				["text"] = {
 					"Gains {X:mult,C:white}X#1#{} Mult if {C:attention}final score{}",
@@ -416,14 +416,14 @@ return {
 					"{C:inactive}(Currently {X:mult,C:white}X#4#{C:inactive} Mult){}"
 				},
 			},
-			["j_rendom_synccrystal"] = {
+			["j_hodge_synccrystal"] = {
 				["name"] = "Sync Crystal",
 				["text"] = {
 					"Convert all {C:attention}scoring cards{}",
 					"to the hand's {C:attention}average{} rank"
 				},
 			},
-			["j_rendom_combo"] = {
+			["j_hodge_combo"] = {
 				["name"] = "Combo",
 				["text"] = {
 					"Gains {X:mult,C:white}X#1#{} Mult per",
@@ -432,13 +432,13 @@ return {
 					"{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive} Mult){}",
 				},
 			},
-			["j_rendom_mergedown"] = {
+			["j_hodge_mergedown"] = {
 				["name"] = "Merge Down",
 				["text"] = {
 					"All cards count as {C:attention}first scored{}",
 				},
 			},
-			["j_rendom_blownaway"] = {
+			["j_hodge_blownaway"] = {
 				["name"] = "Blown Away",
 				["text"] = {
 					"If played hand contains a",
@@ -447,7 +447,7 @@ return {
 					"blind by {C:attention}#1#%{}",
 				},
 			},
-			["j_rendom_metamorphosis"] = {
+			["j_hodge_metamorphosis"] = {
 				["name"] = "Metamorphosis",
 				["text"] = {
 					"{C:green}#1# in #2#{} chance for",
@@ -456,13 +456,13 @@ return {
 					"{C:inactive,s:0.85}Can replace existing enhancements{}"
 				},
 			},
-			["j_rendom_hydra"] = {
+			["j_hodge_hydra"] = {
 				["name"] = "Hydra",
 				["text"] = {
 					"{X:mult,C:white}X#1#{} Mult{C:dark_edition,E:1}...{}",
 				},
 			},
-			["j_rendom_handcrank"] = {
+			["j_hodge_handcrank"] = {
 				["name"] = "Hand Crank",
 				["text"] = {
 					"{C:chips}#1#{} Chips",
@@ -471,14 +471,14 @@ return {
 					"{C:inactive,s:0.8}Shinji, crank that Soulja Boy!{}"
 				},
 			},
-			["j_rendom_cyan"] = {
+			["j_hodge_cyan"] = {
 				["name"] = "Cyan",
 				["text"] = {
 					"{C:chips}+#1#{} Chips",
 					"Gains {C:chips}+#2#{} per {C:attention}unscored{} card",
 				},
 			},
-			["j_rendom_disappearingguy"] = {
+			["j_hodge_disappearingguy"] = {
 				["name"] = "Disappearing Guy",
 				["text"] = {
 					"{X:mult,C:white}X#1#{} Mult",
@@ -486,13 +486,13 @@ return {
 					"{C:mult,E:1}jokers to it's right{}"
 				},
 			},
-			["j_rendom_lowpercent"] = {
+			["j_hodge_lowpercent"] = {
 				["name"] = "Low% Joker",
 				["text"] = {
 					"Gains {C:chips}+#2#{} every second"
 				},
 			},
-			["j_rendom_vestup"] = {
+			["j_hodge_vestup"] = {
 				["name"] = "Vest Up",
 				["text"] = {
 					"{C:chips}+#1#{} Chips",
@@ -500,7 +500,7 @@ return {
 					"Gain increases by {C:chips}+#3#{} at end of round"
 				},
 			},
-			["j_rendom_nft"] = {
+			["j_hodge_nft"] = {
 				["name"] = "NFT",
 				["text"] = {
 					"{C:money}X#1#{} {C:attention}sell value{} when {C:attention}Blind{} is selected",
@@ -508,28 +508,28 @@ return {
 					"{C:attention}sell value{} on {C:attention}card scored{}"
 				},
 			},
-			["j_rendom_stopsign"] = {
+			["j_hodge_stopsign"] = {
 				["name"] = "Stop Sign",
 				["text"] = {
 					"Scored {C:attention}8s{} have a {C:green}#1# in #2#{}",
 					"chance to gain {C:mult}+#3#{} Mult",
 				},
 			},
-			["j_rendom_lostcount"] = {
+			["j_hodge_lostcount"] = {
 				["name"] = "Lost Count",
 				["text"] = {
 					"Scored cards above {C:attention}4{}",
 					"have their rank randomized"
 				},
 			},
-			["j_rendom_biggamba"] = {
+			["j_hodge_biggamba"] = {
 				["name"] = "Big Gamba",
 				["text"] = {
 					"{C:green}Random{} chips",
 					"{C:inactive,s:0.8}Let's go gambling!{}"
 				},
 			},
-			["j_rendom_shooketh"] = {
+			["j_hodge_shooketh"] = {
 				["name"] = "Shooketh",
 				["text"] = {
 					"If a hand scores {C:mult}negative{} Chips,",
@@ -537,59 +537,59 @@ return {
 					"{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive}){}"
 				},
 			},
-			["j_rendom_ppe"] = {
+			["j_hodge_ppe"] = {
 				["name"] = "PPE",
 				["text"] = {
 					"{C:attention}Asbestos{} cards are {C:attention}#1#X{}",
 					"less likely to be {C:attention}disturbed{}"
 				},
 			},
-			["j_rendom_sou"] = {
+			["j_hodge_sou"] = {
 				["name"] = "Story of Undertale",
 				["text"] = {
 					"Destroy {C:attention}scored{} cards",
 					"Level up played {C:attention}poker hand{}"
 				},
 			},
-			["j_rendom_nonejoker"] = {
+			["j_hodge_nonejoker"] = {
 				["name"] = "None Joker Left Chips",
 				["text"] = {
 					"Set {C:mult}Mult{} to {C:attention}1{}",
 					"{X:chips,C:white}X#1#{} Chips"
 				},
 			},
-			["j_rendom_parappa"] = {
+			["j_hodge_parappa"] = {
 				["name"] = "Parappa",
 				["text"] = {
 					"{C:green}#1# in #2#{} chance to",
 					"{C:attention}retrigger{} played cards"
 				},
 			},
-			["j_rendom_summersun"] = {
+			["j_hodge_summersun"] = {
 				["name"] = "Summer Sun Celebration",
 				["text"] = {
 					"Played cards with",
-					"{C:rendom_suns}Sun{} suit give",
+					"{C:hodge_suns}Sun{} suit give",
 					"{C:mult}+3{} Mult when scored",
 				},
 			},
-			["j_rendom_nightmarenight"] = {
+			["j_hodge_nightmarenight"] = {
 				["name"] = "Nightmare Night",
 				["text"] = {
 					"Played cards with",
-					"{C:rendom_moons}Moon{} suit give",
+					"{C:hodge_moons}Moon{} suit give",
 					"{C:mult}+3{} Mult when scored",
 				},
 			},
-			["j_rendom_amber"] = {
+			["j_hodge_amber"] = {
 				["name"] = "Amber",
 				["text"] = {
-					"{C:green}#1#/#2#{} per scored {C:rendom_suns}Sun{} card",
+					"{C:green}#1#/#2#{} per scored {C:hodge_suns}Sun{} card",
 					"to gain {C:chips}+1 Hand{}",
 					"{C:inactive,s:0.9}(eg. #3# scoring Suns = #4#/5){}"
 				},
 			},
-			["j_rendom_rainbowfactory"] = {
+			["j_hodge_rainbowfactory"] = {
 				["name"] = "Rainbow Factory",
 				["text"] = {
 					"Destroys {C:attention}scored cards{} ranked {C:attention}#1# or lower{}",
@@ -598,7 +598,7 @@ return {
 					"{C:inactive}(#4#){}"
 				},
 			},
-			["j_rendom_cupcakes"] = {
+			["j_hodge_cupcakes"] = {
 				["name"] = "Cupcakes",
 				["text"] = {
 					"{X:mult,C:white}X#1#{} Mult, loses {X:mult,C:white}X#2#{} Mult",
@@ -608,7 +608,7 @@ return {
 					"destroys the card",
 				},
 			},
-			["j_rendom_lumi"] = {
+			["j_hodge_lumi"] = {
 				["name"] = "Lumi",
 				["text"] = {
 					"Cards with the {C:attention}Slime{} edition",
@@ -617,7 +617,7 @@ return {
 
 				},
 			},
-			["j_rendom_david"] = {
+			["j_hodge_david"] = {
 				["name"] = "David",
 				["text"] = {
 					"On Blind selected:",
@@ -627,7 +627,7 @@ return {
 					"{C:inactive,s:0.85}Rank chosen on Blind selected{}",
 				},
 			},
-			["j_rendom_missingno"] = {
+			["j_hodge_missingno"] = {
 				["name"] = "MissingNo.",
 				["text"] = {
 					"On blind selected:",
@@ -638,13 +638,13 @@ return {
 					"{C:inactive}(#2#){}",
 				},
 			},
-			["j_rendom_badegg"] = {
+			["j_hodge_badegg"] = {
 				["name"] = "Bad EGG",
 				["text"] = {
 					"{C:dark_edition,E:1,s:1.5}...{}",
 				},
 			},
-			["j_rendom_timeloop"] = {
+			["j_hodge_timeloop"] = {
 				["name"] = "Day 734",
 				["text"] = {
 					"After {C:attention}Boss Blind{} is defeated,",
@@ -656,7 +656,7 @@ return {
 			}
 		},
 		["Planet"] = {
-			["c_rendom_avalon"] = {
+			["c_hodge_avalon"] = {
 				["name"] = "Avalon",
 				["text"] = {
 					"Upgrade {C:attention}least used{}",
@@ -667,7 +667,7 @@ return {
 			},
 		},
 		["Enhanced"] = {
-			["m_rendom_blackhole"] = {
+			["m_hodge_blackhole"] = {
 				["label"] = "Black Hole",
 				["name"] = "Black Hole",
 				["text"] = {
@@ -680,7 +680,7 @@ return {
 					"{X:mult,C:white,s:0.85}X#3#{s:0.85} Mult",
 				},
 			},
-			["m_rendom_asbestos"] = {
+			["m_hodge_asbestos"] = {
 				["label"] = "Asbestos",
 				["name"] = "Asbestos",
 				["text"] = {
@@ -692,7 +692,7 @@ return {
 					"{C:mult,s:0.85}and increase degradation rate{}",
 				},
 			},
-			["m_rendom_waterdamage"] = {
+			["m_hodge_waterdamage"] = {
 				["label"] = "Water Damaged",
 				["name"] = "Water Damaged",
 				["text"] = {
@@ -704,7 +704,7 @@ return {
 			},
 		},
 		["Edition"] = {
-			["e_rendom_big"] = {
+			["e_hodge_big"] = {
 				["label"] = "Big",
 				["name"] = "Big",
 				["text"] = {
@@ -713,7 +713,7 @@ return {
 					"{s:0.85,C:inactive}*Where possible",
 				},
 			},
-			["e_rendom_parasite"] = {
+			["e_hodge_parasite"] = {
 				["label"] = "Parasite",
 				["name"] = "Parasite",
 				["text"] = {
@@ -724,7 +724,7 @@ return {
 					"{s:0.85}an editionless joker{}",
 				},
 			},
-			["e_rendom_terry"] = {
+			["e_hodge_terry"] = {
 				["label"] = "Slime",
 				["name"] = "Slime",
 				["text"] = {

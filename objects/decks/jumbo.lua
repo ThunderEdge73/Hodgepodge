@@ -3,7 +3,7 @@ SMODS.Back {
     key = "jumbo",
     atlas = "decks_atlas",
     pos = {x=0,y=0},
-    config = {rendom_big = true},
+    config = {hodge_big = true},
     -- loc_txt = {
     --     name = "Jumbo Deck",
     --     text = {
@@ -19,7 +19,7 @@ SMODS.Back {
             func = function()
                 for i = #G.playing_cards, 1, -1 do
                     G.playing_cards[i]:set_edition({
-                        rendom_big = true
+                        hodge_big = true
                     },true,true)
                 end
                 return true

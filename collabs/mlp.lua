@@ -26,11 +26,11 @@ SMODS.DeckSkin {
             key = 'lc',
             ranks = {2,3,4,5,6,7,8,9,10,"Jack","Queen","King","Ace"},
             display_ranks = {"King","Queen","Jack"},
-            atlas = "rendom_mlp_suits_atlas",
+            atlas = "hodge_mlp_suits_atlas",
             pos_style = "deck",
             colour = HEX("3C4368"),
             suit_icon = {
-                atlas = "rendom_base_suit_icon_atlas",
+                atlas = "hodge_base_suit_icon_atlas",
                 pos = 0
             }
         },
@@ -38,11 +38,11 @@ SMODS.DeckSkin {
             key = 'lc_con',
             ranks = {2,3,4,5,6,7,8,9,10,"Jack","Queen","King","Ace"},
             display_ranks = {"King","Queen","Jack"},
-            atlas = "rendom_mlp_suits_2_atlas",
+            atlas = "hodge_mlp_suits_2_atlas",
             pos_style = "deck",
             colour = HEX("3C4368"),
             suit_icon = {
-                atlas = "rendom_base_suit_icon_atlas",
+                atlas = "hodge_base_suit_icon_atlas",
                 pos = 0
             }
         }
@@ -58,11 +58,11 @@ SMODS.DeckSkin {
             key = 'lc',
             ranks = {2,3,4,5,6,7,8,9,10,"Jack","Queen","King","Ace"},
             display_ranks = {"King","Queen","Jack"},
-            atlas = "rendom_mlp_suits_atlas",
+            atlas = "hodge_mlp_suits_atlas",
             pos_style = "deck",
             colour = HEX("F03464"),
             suit_icon = {
-                atlas = "rendom_base_suit_icon_atlas",
+                atlas = "hodge_base_suit_icon_atlas",
                 pos = 0
             }
         },
@@ -70,11 +70,11 @@ SMODS.DeckSkin {
             key = 'lc_con',
             ranks = {2,3,4,5,6,7,8,9,10,"Jack","Queen","King","Ace"},
             display_ranks = {"King","Queen","Jack"},
-            atlas = "rendom_mlp_suits_2_atlas",
+            atlas = "hodge_mlp_suits_2_atlas",
             pos_style = "deck",
             colour = HEX("F03464"),
             suit_icon = {
-                atlas = "rendom_base_suit_icon_atlas",
+                atlas = "hodge_base_suit_icon_atlas",
                 pos = 0
             }
         }
@@ -90,11 +90,11 @@ SMODS.DeckSkin {
             key = 'lc',
             ranks = {2,3,4,5,6,7,8,9,10,"Jack","Queen","King","Ace"},
             display_ranks = {"King","Queen","Jack"},
-            atlas = "rendom_mlp_suits_atlas",
+            atlas = "hodge_mlp_suits_atlas",
             pos_style = "deck",
             colour = HEX("F06B3F"),
             suit_icon = {
-                atlas = "rendom_base_suit_icon_atlas",
+                atlas = "hodge_base_suit_icon_atlas",
                 pos = 0
             }
         },
@@ -102,11 +102,11 @@ SMODS.DeckSkin {
             key = 'lc_con',
             ranks = {2,3,4,5,6,7,8,9,10,"Jack","Queen","King","Ace"},
             display_ranks = {"King","Queen","Jack"},
-            atlas = "rendom_mlp_suits_2_atlas",
+            atlas = "hodge_mlp_suits_2_atlas",
             pos_style = "deck",
             colour = HEX("F06B3F"),
             suit_icon = {
-                atlas = "rendom_base_suit_icon_atlas",
+                atlas = "hodge_base_suit_icon_atlas",
                 pos = 0
             }
         }
@@ -122,11 +122,11 @@ SMODS.DeckSkin {
             key = 'lc',
             ranks = {2,3,4,5,6,7,8,9,10,"Jack","Queen","King","Ace"},
             display_ranks = {"King","Queen","Jack"},
-            atlas = "rendom_mlp_suits_atlas",
+            atlas = "hodge_mlp_suits_atlas",
             pos_style = "deck",
             colour = HEX("235955"),
             suit_icon = {
-                atlas = "rendom_base_suit_icon_atlas",
+                atlas = "hodge_base_suit_icon_atlas",
                 pos = 0
             }
         },
@@ -134,11 +134,11 @@ SMODS.DeckSkin {
             key = 'lc_con',
             ranks = {2,3,4,5,6,7,8,9,10,"Jack","Queen","King","Ace"},
             display_ranks = {"King","Queen","Jack"},
-            atlas = "rendom_mlp_suits_2_atlas",
+            atlas = "hodge_mlp_suits_2_atlas",
             pos_style = "deck",
             colour = HEX("235955"),
             suit_icon = {
-                atlas = "rendom_base_suit_icon_atlas",
+                atlas = "hodge_base_suit_icon_atlas",
                 pos = 0
             }
         }

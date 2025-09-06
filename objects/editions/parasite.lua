@@ -18,7 +18,7 @@ SMODS.Edition {
     --     }
     -- },
     loc_vars = function(self, info_queue, card)
-        --info_queue[#info_queue+1] = G.P_CENTERS["e_rendom_parasite"]
+        --info_queue[#info_queue+1] = G.P_CENTERS["e_hodge_parasite"]
         local vals = self.config
         if (card.edition and card.edition.extra) then
             vals = card.edition
@@ -65,7 +65,7 @@ SMODS.Edition {
                             local over = false
                             local temp_pool = eligible_editionless_cards or {}
                             local eligible_card = pseudorandom_element(temp_pool, pseudoseed("parasite"))
-                            eligible_card:set_edition({["rendom_parasite"] = true}, true)
+                            eligible_card:set_edition({["hodge_parasite"] = true}, true)
                             check_for_unlock({type = 'have_edition'})
                         end
                         -- G.hand:remove_card(card)
@@ -92,7 +92,7 @@ SMODS.Edition {
                     local over = false
                     local temp_pool = eligible_editionless_jokers or {}
                     local eligible_card = pseudorandom_element(temp_pool, pseudoseed("parasite"))
-                    eligible_card:set_edition({["rendom_parasite"] = true}, true)
+                    eligible_card:set_edition({["hodge_parasite"] = true}, true)
                     check_for_unlock({type = 'have_edition'})
                 end
                 G.E_MANAGER:add_event(Event({
@@ -136,7 +136,7 @@ SMODS.Edition {
         --                     local over = false
         --                     local temp_pool = eligible_editionless_cards or {}
         --                     local eligible_card = pseudorandom_element(temp_pool, pseudoseed("parasite"))
-        --                     eligible_card:set_edition({["rendom_parasite"] = true}, true)
+        --                     eligible_card:set_edition({["hodge_parasite"] = true}, true)
         --                     check_for_unlock({type = 'have_edition'})
         --                 end
         --                 -- G.hand:remove_card(card)
@@ -163,7 +163,7 @@ SMODS.Edition {
         --             local over = false
         --             local temp_pool = eligible_editionless_jokers or {}
         --             local eligible_card = pseudorandom_element(temp_pool, pseudoseed("parasite"))
-        --             eligible_card:set_edition({["rendom_parasite"] = true}, true)
+        --             eligible_card:set_edition({["hodge_parasite"] = true}, true)
         --             check_for_unlock({type = 'have_edition'})
         --         end
         --         G.E_MANAGER:add_event(Event({

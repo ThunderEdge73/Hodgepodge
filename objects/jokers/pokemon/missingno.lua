@@ -14,7 +14,7 @@ SMODS.Joker {
     loc_vars = function (self,info_queue,card)
         if G.jokers then
             if G.jokers.cards[5] then
-                if G.jokers.cards[5].ability.name == "j_rendom_missingno" then
+                if G.jokers.cards[5].ability.name == "j_hodge_missingno" then
                     return {
                         vars = {
                             card.ability.extra.base_chance*100,
@@ -64,7 +64,7 @@ SMODS.Joker {
     cost = 20,
     calculate = function(self,card,context)
         if context.setting_blind then
-            if G.jokers.cards[5] and G.jokers.cards[5].ability.name ~= "j_rendom_missingno" then
+            if G.jokers.cards[5] and G.jokers.cards[5].ability.name ~= "j_hodge_missingno" then
                 local selected_card = G.jokers.cards[5]
                 -- local all_copies = {}
                 local chance = card.ability.extra.base_chance
@@ -84,7 +84,7 @@ SMODS.Joker {
                         return true end }))
                     delay(0.2)
                     G.E_MANAGER:add_event(Event({trigger = 'after',delay = 0.3,func = function()
-                        card:set_ability(G.P_CENTERS["j_rendom_badegg"])
+                        card:set_ability(G.P_CENTERS["j_hodge_badegg"])
                         -- card.sell_cost = -256
                         card:flip()
                         play_sound('card1')

@@ -26,7 +26,7 @@ SMODS.Joker {
             G.E_MANAGER:add_event(Event({
                 func = function() 
                     for i=1,math.min(2,amt),1 do
-                        local card = create_card('Joker', G.jokers, nil, 0, nil, nil, "j_rendom_hydra","hydra")
+                        local card = create_card('Joker', G.jokers, nil, 0, nil, nil, "j_hodge_hydra","hydra")
                         card:add_to_deck()
                         G.jokers:emplace(card)
                         card:start_materialize()

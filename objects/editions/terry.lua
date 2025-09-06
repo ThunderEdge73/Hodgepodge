@@ -21,7 +21,7 @@ SMODS.Edition {
         local lumi_val = 1
         if G.jokers and G.jokers.cards then
             for _,j in ipairs(G.jokers.cards) do
-                if j.ability and j.ability.name == "j_rendom_lumi" then
+                if j.ability and j.ability.name == "j_hodge_lumi" then
                     lumi = true
                     if j.ability.extra > lumi_val then
                         lumi_val = j.ability.extra
@@ -70,7 +70,7 @@ SMODS.Edition {
     get_weight = function(self)
         local lumis = 0
         for _,j in ipairs(G.jokers.cards) do
-            if j.ability and j.ability.name == "j_rendom_lumi" then
+            if j.ability and j.ability.name == "j_hodge_lumi" then
                 lumis = lumis + 1
             end 
         end
@@ -85,7 +85,7 @@ SMODS.Edition {
             local lumi = false
             local lumi_val = 1
             for _,j in ipairs(G.jokers.cards) do
-                if j.ability and j.ability.name == "j_rendom_lumi" then
+                if j.ability and j.ability.name == "j_hodge_lumi" then
                     lumi = true
                     if j.ability.extra > lumi_val then
                         lumi_val = j.ability.extra

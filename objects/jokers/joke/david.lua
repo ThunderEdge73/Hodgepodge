@@ -39,7 +39,7 @@ SMODS.Joker {
 
             local joker_id = "j_ice_cream"
             if pseudorandom("david") < 0.1 then
-                joker_id = "j_rendom_david"
+                joker_id = "j_hodge_david"
             end
             G.GAME.joker_buffer = G.GAME.joker_buffer + 1
             G.E_MANAGER:add_event(Event({

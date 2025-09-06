@@ -1,7 +1,7 @@
 SMODS.Joker {
     key = "ppe",
     loc_vars = function (self,info_queue,card)
-        info_queue[#info_queue+1] = G.P_CENTERS.m_rendom_asbestos
+        info_queue[#info_queue+1] = G.P_CENTERS.m_hodge_asbestos
         return {
             vars = {card.ability.extra.rate}
         }

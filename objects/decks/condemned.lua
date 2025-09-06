@@ -3,13 +3,13 @@ SMODS.Back {
     key = "condemned",
     atlas = "decks_atlas",
     pos = {x=2,y=0},
-    config = {rendom_big = true},
+    config = {hodge_big = true},
     -- loc_txt = {
     --     name = "Condemned Deck",
     --     text = {
     --         "Random cards are missing",
-    --         "Random cards are {C:attention,T:m_rendom_asbestos}Asbestos{}",
-    --         "Random cards are {C:attention,T:m_rendom_waterdamage}Water Damaged{}"
+    --         "Random cards are {C:attention,T:m_hodge_asbestos}Asbestos{}",
+    --         "Random cards are {C:attention,T:m_hodge_waterdamage}Water Damaged{}"
     --     }
     -- },
     apply = function()
@@ -20,9 +20,9 @@ SMODS.Back {
                     if rand < 0.2 then
                         G.playing_cards[i]:remove()
                     elseif rand < 0.35 then
-                        G.playing_cards[i]:set_ability(G.P_CENTERS.m_rendom_asbestos)
+                        G.playing_cards[i]:set_ability(G.P_CENTERS.m_hodge_asbestos)
                     elseif rand < 0.6 then
-                        G.playing_cards[i]:set_ability(G.P_CENTERS.m_rendom_waterdamage)
+                        G.playing_cards[i]:set_ability(G.P_CENTERS.m_hodge_waterdamage)
                     end
                 end
                 return true

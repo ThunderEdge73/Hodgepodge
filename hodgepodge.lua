@@ -13,7 +13,7 @@ end
 ----- GLOBAL VARIABLES -----
 ----------------------------
 
-REND.elements_of_harmony = {"rendom_kindness","rendom_honesty","rendom_loyalty","rendom_laughter","rendom_generosity","rendom_magic"}
+REND.elements_of_harmony = {"hodge_kindness","hodge_honesty","hodge_loyalty","hodge_laughter","hodge_generosity","hodge_magic"}
 
 REND.atlas_y = {
     misc      = { 0 },
@@ -131,7 +131,7 @@ REND.first_card_merge_down = function(cards,merge) -- Get first card, with compa
     if merge == nil then
         merge = false
         for _,j in ipairs(G.jokers.cards) do
-            if j.ability and j.ability.name == "j_rendom_mergedown" then
+            if j.ability and j.ability.name == "j_hodge_mergedown" then
                 merge = true
             end 
         end

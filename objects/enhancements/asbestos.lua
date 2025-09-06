@@ -42,7 +42,7 @@ SMODS.Enhancement {
 
         local disturb_odds = card.ability.extra.disturb_odds
         for k,joker in pairs(G.jokers.cards) do
-            if joker.ability.name == "j_rendom_ppe" then
+            if joker.ability.name == "j_hodge_ppe" then
                 disturb_odds = disturb_odds / joker.ability.extra.rate
             end
         end
