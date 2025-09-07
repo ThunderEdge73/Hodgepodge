@@ -212,6 +212,13 @@ return {
 					"Elements of Harmony",
 				},
 			},
+			["bl_hodge_pip"] = {
+				["name"] = "The Pip",
+				["text"] = {
+					"All chances",
+					"are #1# in #2#",
+				},
+			},
 		},
 		["Other"] = {
 			["hodge_honesty_seal"] = {
@@ -511,8 +518,8 @@ return {
 			["j_hodge_stopsign"] = {
 				["name"] = "Stop Sign",
 				["text"] = {
-					"Scored {C:attention}8s{} have a {C:green}#1# in #2#{}",
-					"chance to gain {C:mult}+#3#{} Mult",
+					"Scored {C:attention}#1#s{} have a {C:green}#2# in #3#{}",
+					"chance to gain {C:mult}+#4#{} Mult",
 				},
 			},
 			["j_hodge_lostcount"] = {
@@ -584,9 +591,9 @@ return {
 			["j_hodge_amber"] = {
 				["name"] = "Amber",
 				["text"] = {
-					"{C:green}#1#/#2#{} per scored {C:hodge_suns}Sun{} card",
-					"to gain {C:chips}+1 Hand{}",
-					"{C:inactive,s:0.9}(eg. #3# scoring Suns = #4#/5){}"
+					"{C:green}0 in #2#{} chance to gain {C:chips}+1 Hand{} ",
+					"Increases by {C:green}#1# in #2#{} per scoring {C:hodge_suns}Sun{} card",
+					"{C:inactive,s:0.9}(eg. #3# scoring Suns = #4# in #2#){}"
 				},
 			},
 			["j_hodge_rainbowfactory"] = {
