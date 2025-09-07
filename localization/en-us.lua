@@ -592,8 +592,16 @@ return {
 				["name"] = "Amber",
 				["text"] = {
 					"{C:green}0 in #2#{} chance to gain {C:chips}+1 Hand{} ",
-					"Increases by {C:green}#1# in #2#{} per scoring {C:hodge_suns}Sun{} card",
+					"Increases by {C:green}#1# in #2#{} per", "scoring {C:hodge_suns}Sun{} card in played hand",
 					"{C:inactive,s:0.9}(eg. #3# scoring Suns = #4# in #2#){}"
+				},
+			},
+			["j_hodge_moonrock"] = {
+				["name"] = "Moon Rock",
+				["text"] = {
+					"{C:green}0 in #2#{} chance to gain {C:mult}+1 Discard{} ",
+					"Increases by {C:green}#1# in #2#{} per", "scoring {C:hodge_moons}Moon{} card in played hand",
+					"{C:inactive,s:0.9}(eg. #3# scoring Moons = #4# in #2#){}"
 				},
 			},
 			["j_hodge_rainbowfactory"] = {

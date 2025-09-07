@@ -355,6 +355,7 @@ REND.load_script("objects/jokers/joke/parappa.lua")
 REND.load_script("objects/jokers/mlp/summersun.lua")
 REND.load_script("objects/jokers/mlp/nightmarenight.lua")
 REND.load_script("objects/jokers/mlp/amber.lua")
+REND.load_script("objects/jokers/mlp/moonrock.lua")
 REND.load_script("objects/jokers/mlp/rainbowfactory.lua")
 REND.load_script("objects/jokers/mlp/cupcakes.lua")
 -- Page 4 - Legendaries

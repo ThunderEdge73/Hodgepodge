@@ -1,15 +1,7 @@
 SMODS.Joker {
-    key = "amber",
-    -- loc_txt = {
-    --     name = "Summer Sun Celebration",
-    --     text = {
-    --         "Played cards with",
-    --         "{C:hodge_suns}Sun{} suit give",
-    --         "{C:mult}+3{} Mult when scored"
-    --     }
-    -- },
+    key = "moonrock",
     loc_vars = function (self,info_queue,card)
-        local numerator, denominator = SMODS.get_probability_vars(card, 1, 5, 'amber')
+        local numerator, denominator = SMODS.get_probability_vars(card, 1, 5, 'moonrock')
         local example_count = 3
         return {
             vars = {
@@ -23,26 +15,26 @@ SMODS.Joker {
     config = {
     },
     atlas = "jokers_atlas",
-    pos = {x=3,y=REND.atlas_y.mlp[1]},
+    pos = {x=4,y=REND.atlas_y.mlp[1]},
     rarity = 2,
     cost = 7,
     calculate = function(self,card,context)
         if context.joker_main then
-            local suns = 0
+            local moons = 0
             for k, playing_card in ipairs(context.scoring_hand) do
-                if playing_card.base.suit == "hodge_suns" then
-                    suns = suns + 1
+                if playing_card.base.suit == "hodge_moons" then
+                    moons = moons + 1
                 end
             end
-            if SMODS.pseudorandom_probability(card, 'amber', suns, 5, 'amber') then
-                ease_hands_played(1)
+            if SMODS.pseudorandom_probability(card, 'moonrock', moons, 5, 'moonrock') then
+                ease_discards(1)
             end
         end
     end,
     blueprint_compat = true,
     in_pool = function(self,args)
         for k,card in ipairs(G.playing_cards) do
-            if card:is_suit("hodge_suns") then
+            if card:is_suit("hodge_moons") then
                 return true
             end
         end
