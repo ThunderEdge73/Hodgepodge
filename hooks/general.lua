@@ -68,9 +68,11 @@ end
 local menuHook = Game.main_menu
 function Game:main_menu(ctx)
     local r = menuHook(self,ctx)
-    local cards = {"hodge_SUNS_A","hodge_MOONS_A","hodge_SNAKE_A","hodge_LADDERS_A"}
-    local card = cards[math.random(#cards)]
-    local card = Card(0,0,G.CARD_W,G.CARD_H,G.P_CARDS[card],G.P_CENTERS.m_hodge_asbestos)
+    local card_faces = {"hodge_SUNS_A","hodge_MOONS_A","hodge_SNAKE_A","hodge_LADDERS_A"}
+    local card_face = card_faces[math.random(#card_faces)]
+    local card_enhancements = {"m_hodge_asbestos","m_hodge_blackhole","m_hodge_waterdamaged"}
+    local card_enhancement = card_enhancements[math.random(#card_enhancements)]
+    local card = Card(0,0,G.CARD_W,G.CARD_H,G.P_CARDS[card_face],G.P_CENTERS[card_enhancement])
     card.T.w = card.T.w * 1.4
     card.T.h = card.T.h * 1.4
     G.title_top.T.w = G.title_top.T.w * 1.7675
