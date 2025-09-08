@@ -361,7 +361,7 @@ REND.load_script("objects/jokers/joke/parappa.lua")
 -- Page 3 - MLP
 REND.load_script("objects/jokers/mlp/summersun.lua")
 REND.load_script("objects/jokers/mlp/nightmarenight.lua")
---REND.load_script("objects/jokers/mlp/twilightsparkle.lua")
+REND.load_script("objects/jokers/mlp/twilightsparkle.lua")
 REND.load_script("objects/jokers/mlp/amber.lua")
 REND.load_script("objects/jokers/mlp/moonrock.lua")
 
