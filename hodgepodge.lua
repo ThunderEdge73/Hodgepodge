@@ -354,10 +354,22 @@ REND.load_script("objects/jokers/joke/parappa.lua")
 -- Page 3 - MLP
 REND.load_script("objects/jokers/mlp/summersun.lua")
 REND.load_script("objects/jokers/mlp/nightmarenight.lua")
+--REND.load_script("objects/jokers/mlp/twilightsparkle.lua")
 REND.load_script("objects/jokers/mlp/amber.lua")
 REND.load_script("objects/jokers/mlp/moonrock.lua")
+
+--REND.load_script("objects/jokers/mlp/rainbowdash.lua")
+--REND.load_script("objects/jokers/mlp/pinkiepie.lua")
+--REND.load_script("objects/jokers/mlp/fluttershy.lua")
+--REND.load_script("objects/jokers/mlp/rarity.lua")
+--REND.load_script("objects/jokers/mlp/applejack.lua")
+
 REND.load_script("objects/jokers/mlp/rainbowfactory.lua")
 REND.load_script("objects/jokers/mlp/cupcakes.lua")
+REND.load_script("objects/jokers/mlp/butterflies.lua")
+REND.load_script("objects/jokers/mlp/littlemissrarity.lua")
+REND.load_script("objects/jokers/mlp/applesleepexperiment.lua")
+
 -- Page 4 - Legendaries
 REND.load_script("objects/jokers/misc/lumi.lua")
 REND.load_script("objects/jokers/joke/david.lua")

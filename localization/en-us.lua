@@ -119,7 +119,7 @@ return {
 				["name"] = "Jumbo Deck",
 				["text"] = {
 					"Start run with",
-					"only {C:attention}Big{} cards",
+					"only {C:dark_edition}Big{} cards",
 					"{C:attention}+4{} hand size",
 					"{C:inactive}(Hand can hold {C:attention}6{C:inactive} Big cards){}",
 				},
@@ -145,7 +145,7 @@ return {
 			["c_hodge_chaos"] = {
 				["name"] = "Chaos",
 				["text"] = {
-					"Apply {C:attention}Slime{} to",
+					"Apply {C:dark_edition}Slime{} to",
 					"a random Joker",
 				},
 			},
@@ -173,7 +173,7 @@ return {
 			["c_hodge_dimension"] = {
 				["name"] = "Dimension",
 				["text"] = {
-					"Apply {C:attention}Big{} to",
+					"Apply {C:dark_edition}Big{} to",
 					"a random Joker",
 				},
 			},
@@ -187,7 +187,7 @@ return {
 			["c_hodge_symbiosis"] = {
 				["name"] = "Symbiosis",
 				["text"] = {
-					"Apply {C:attention}Parasite{} to",
+					"Apply {C:dark_edition}Parasite{} to",
 					"a random Joker",
 				},
 			},
@@ -623,12 +623,36 @@ return {
 					"destroys the card",
 				},
 			},
+			["j_hodge_butterflies"] = {
+				["name"] = "Butterflies",
+				["text"] = {
+					"Scored cards with ",
+					"{C:attention}Element of Honesty{} gain {C:dark_edition}Parasite{}"
+				},
+			},
+			["j_hodge_littlemissrarity"] = {
+				["name"] = "Little Miss Rarity",
+				["text"] = {
+					"{X:mult,C:white}X#1#{} Mult, sold jokers give",
+					"no money but add {C:attention}one fifth{}",
+					"of their sell value to XMult",
+					"{C:inactive,s:0.8}please don't read this comic{}"
+				},
+			},
+			["j_hodge_applesleepexperiment"] = {
+				["name"] = "Apple Sleep Experiment",
+				["text"] = {
+					"{C:attention}Unscored{} and {C:attention}debuffed{} cards",
+					"are instead scored and",
+					"{C:attention}retriggered #1# times{}"
+				},
+			},
 			["j_hodge_lumi"] = {
 				["name"] = "Lumi",
 				["text"] = {
-					"Cards with the {C:attention}Slime{} edition",
+					"Cards with the {C:dark_edition}Slime{} edition",
 					"never give below {X:mult,C:white}X2{} Mult",
-					"{C:attention}Slime{} cards are {C:attention}2X{} more common",
+					"{C:dark_edition}Slime{} cards are {C:attention}2X{} more common",
 
 				},
 			},

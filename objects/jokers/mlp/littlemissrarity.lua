@@ -1,0 +1,32 @@
+SMODS.Joker {
+    key = "littlemissrarity",
+    loc_vars = function (self,info_queue,card)
+        return {
+            vars = {
+                card.ability.x_mult
+            }
+        }
+    end,
+    config = {
+        x_mult = 1,
+        extra = {
+            value_mult = 0.2
+        }
+    },
+    atlas = "jokers_atlas",
+    pos = {x=13,y=REND.atlas_y.mlp[1]},
+    rarity = 3,
+    cost = 7,
+    calculate = function(self,card,context)
+        if context.selling_card and context.cardarea == G.jokers and not context.selling_self then
+            card.ability.x_mult = card.ability.x_mult + (context.card.sell_cost * card.ability.extra.value_mult)
+            return {
+                message = "+"..(context.card.sell_cost * card.ability.extra.value_mult).."X"
+            }
+        end
+    end,
+    blueprint_compat = true,
+    set_badges = function(self,card,badges)
+        badges[#badges+1] = create_badge(localize('k_badge_mlp'), G.C.PURPLE, G.C.WHITE, 1.2)
+    end
+}
