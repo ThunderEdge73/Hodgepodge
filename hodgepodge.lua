@@ -264,6 +264,13 @@ SMODS.Atlas {
     path = "modicon.png"
 }
 
+SMODS.Atlas {
+    key = "tags",
+    px = 34,
+    py = 34,
+    path = "tags.png"
+}
+
 -----------------------------
 ----- LOADING SCRIPTS!! -----
 -----------------------------
