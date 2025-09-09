@@ -1,0 +1,74 @@
+SMODS.Joker {
+    key = "applejack", -- this joker might not work properly. i cant fix it right now. im too busy crying about undertale. im going to bed
+    loc_vars = function (self,info_queue,card)
+        local count = 52/2
+        if G.playing_cards and G.deck then
+            local elements = 0
+            for k,currentCard in pairs(G.playing_cards) do
+                if REND.table_contains(REND.elements_of_harmony,currentCard.seal) then
+                    elements = elements + 1
+                end
+            end
+            if elements > #G.deck.cards/2 then
+                count = elements
+            else
+                count = (#G.deck.cards + #G.discard.cards + #G.hand.cards)/2
+            end
+        end
+        return {
+            vars = {
+                count
+            }
+        }
+    end,
+    config = {
+        extra = {
+            mult_gain = 1
+        }
+    },
+    atlas = "jokers_atlas",
+    pos = {x=9,y=REND.atlas_y.mlp[1]},
+    rarity = 2,
+    cost = 7,
+    calculate = function(self,card,context)
+    end,
+    blueprint_compat = true,
+    in_pool = function(self,args)
+        for k,card in ipairs(G.playing_cards) do
+            if card.seal == "hodge_honesty" then
+                return true
+            end
+        end
+        return false
+    end,
+    set_badges = function(self,card,badges)
+        badges[#badges+1] = create_badge(localize('k_badge_mlp'), G.C.PURPLE, G.C.WHITE, 1.2)
+    end
+}
+
+local cardAreaShuffle = CardArea.shuffle
+function CardArea:shuffle(_seed)
+    if self.config.type == "deck" and next(SMODS.find_card("j_hodge_applejack")) then
+        local elements = 0
+        for k,currentCard in pairs(G.playing_cards) do
+            if REND.table_contains(REND.elements_of_harmony,currentCard.seal) then
+                elements = elements + 1
+            end
+        end
+        if elements > #G.deck.cards/2 then
+            count = elements
+        else
+            count = #G.deck.cards/2
+        end
+        REND.bias_shuffle(self.cards, {
+                {
+                    match = function(item) return REND.table_contains(REND.elements_of_harmony,item.seal) end,
+                    lower_lim = count
+                }
+            }, pseudoseed(_seed or 'shuffle')
+        )
+        self:set_ranks()
+    else
+        return cardAreaShuffle(self,_seed)
+    end
+end

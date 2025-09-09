@@ -588,6 +588,13 @@ return {
 					"{C:mult}+3{} Mult when scored",
 				},
 			},
+			["j_hodge_twilightsparkle"] = {
+				["name"] = "Twilight Sparkle",
+				["text"] = {
+					"A random card in {C:attention}scoring hand{}",
+					"gains a random {C:attention}Element of Harmony{}"
+				},
+			},
 			["j_hodge_amber"] = {
 				["name"] = "Amber",
 				["text"] = {
@@ -602,6 +609,45 @@ return {
 					"{C:green}0 in #2#{} chance to gain {C:mult}+1 Discard{} ",
 					"Increases by {C:green}#1# in #2#{} per", "scoring {C:hodge_moons}Moon{} card in played hand",
 					"{C:inactive,s:0.9}(eg. #3# scoring Moons = #4# in #2#){}"
+				},
+			},
+			["j_hodge_rainbowdash"] = {
+				["name"] = "Rainbow Dash",
+				["text"] = {
+					"Played {C:attention}Elements of Harmony{}",
+					"return to {C:attention}deck{} when played"
+				},
+			},
+			["j_hodge_pinkiepie"] = {
+				["name"] = "Pinkie Pie",
+				["text"] = {
+					"Retrigger scored",
+					"{C:attention}Elements of Harmony{}",
+				},
+			},
+			["j_hodge_fluttershy"] = {
+				["name"] = "Fluttershy",
+				["text"] = {
+					"{C:mult}+#1#{} Mult per",
+					"{C:attention}Element of Harmony{}",
+					"in full deck",
+					"{C:inactive}(Currently {C:mult}+#2#{C:inactive})",
+					"{C:inactive,s:0.7}omg shes literally me{}"
+				},
+			},
+			["j_hodge_rarity"] = {
+				["name"] = "Rarity",
+				["text"] = {
+					"Scored {C:attention}Elements of Harmony{}",
+					"gain {C:mult}+#1#{} Mult",
+				},
+			},
+			["j_hodge_applejack"] = {
+				["name"] = "Applejack",
+				["text"] = {
+					"{C:attention}Elements of Harmony{} are",
+					"drawn within the first",
+					"{C:attention}#1#{} cards of the deck"
 				},
 			},
 			["j_hodge_rainbowfactory"] = {

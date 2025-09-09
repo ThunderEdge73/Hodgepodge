@@ -150,7 +150,43 @@ REND.first_card_merge_down = function(cards,merge) -- Get first card, with compa
     end
 end
 
+--  REND.bias_shuffle(G.deck.cards,
+--      [{
+--          match = function(item) return REND.table_contains(REND.elements_of_harmony,item.seal) end,
+--          upper_lim = #G.deck.cards/2
+--      }]
+--  )
+REND.bias_shuffle = function(list, biases, seed)
+    if seed then math.randomseed(seed) end
 
+    if list[1] and list[1].sort_id then
+        table.sort(list, function (a, b) return (a.sort_id or 1) < (b.sort_id or 2) end)
+    end
+
+    local function is_allowed(item,index)
+        for i,bias in ipairs(biases) do
+            if bias.match(item) then
+                if bias.upper_lim and bias.upper_lim < index then
+                    return false
+                end
+                if bias.lower_lim and bias.lower_lim > index then
+                    return false
+                end
+            end
+        end
+        return true
+    end
+
+    for i = #list, 2, -1 do
+        local j = nil
+        local pass = false
+        while not pass do
+            j = math.random(i)
+            pass = is_allowed(list[i],j) and is_allowed(list[j],i)
+        end
+        list[i], list[j] = list[j], list[i]
+    end
+end
 ------------------
 ----- Sounds -----
 ------------------
@@ -365,11 +401,11 @@ REND.load_script("objects/jokers/mlp/twilightsparkle.lua")
 REND.load_script("objects/jokers/mlp/amber.lua")
 REND.load_script("objects/jokers/mlp/moonrock.lua")
 
---REND.load_script("objects/jokers/mlp/rainbowdash.lua")
---REND.load_script("objects/jokers/mlp/pinkiepie.lua")
---REND.load_script("objects/jokers/mlp/fluttershy.lua")
---REND.load_script("objects/jokers/mlp/rarity.lua")
---REND.load_script("objects/jokers/mlp/applejack.lua")
+REND.load_script("objects/jokers/mlp/rainbowdash.lua")
+REND.load_script("objects/jokers/mlp/pinkiepie.lua")
+REND.load_script("objects/jokers/mlp/fluttershy.lua")
+REND.load_script("objects/jokers/mlp/rarity.lua")
+REND.load_script("objects/jokers/mlp/applejack.lua")
 
 REND.load_script("objects/jokers/mlp/rainbowfactory.lua")
 REND.load_script("objects/jokers/mlp/cupcakes.lua")
