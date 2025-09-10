@@ -33,7 +33,7 @@ SMODS.Joker {
     cost = 5,
     calculate = function(self,card,context)
         if context.end_of_round and context.cardarea == G.jokers and not context.blueprint then
-            print(G.GAME.chips/G.GAME.blind.chips)
+            --print(G.GAME.chips/G.GAME.blind.chips)
             if G.GAME.chips/G.GAME.blind.chips >= card.ability.extra.score_req then
                 card.ability.extra.xmult = card.ability.extra.xmult + card.ability.extra.xmult_gain
                 return {

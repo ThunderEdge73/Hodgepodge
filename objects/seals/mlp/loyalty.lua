@@ -31,12 +31,12 @@ SMODS.Seal {
                 end
             end
             if first_loyalty == card then
-                print("loyalty | first loyalty == card")
+                --print("loyalty | first loyalty == card")
                 for i,c in ipairs(context.scoring_hand) do -- For card in hand
                     if REND.table_contains(REND.elements_of_harmony,c.seal) and ((card ~= c) or (loyalties > 1)) then -- If is element of harmony
-                        print("loyalty | "..c.seal)
+                        --print("loyalty | "..c.seal)
                         if SMODS.pseudorandom_probability(card, 'loyalty', 1, card.ability.seal.extra.odds, 'loyalty') then -- Random chance
-                            print("loyalty | passed check, back to hand")
+                            --print("loyalty | passed check, back to hand")
                             G.E_MANAGER:add_event(Event({ -- Add to queue
                                 trigger = 'immediate',
                                 func = function()
@@ -47,9 +47,9 @@ SMODS.Seal {
                                 end
                             }))
                         else
-                            print("loyalty | failed check")
+                            --print("loyalty | failed check")
                             if next(SMODS.find_card("j_hodge_rainbowdash")) then --rainbow dash offloads her work onto loyalty cards if they're present to avoid bugs
-                                print("loyalty | back to deck")
+                                --print("loyalty | back to deck")
                                 G.E_MANAGER:add_event(Event({ -- Add to queue
                                 trigger = 'immediate',
                                 func = function()

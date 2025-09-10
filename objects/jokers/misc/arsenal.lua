@@ -40,7 +40,7 @@ SMODS.Joker {
                     end
                 end
             end
-            print(_suitcount)
+            --print(_suitcount)
             if _suitcount >= 4 then
                 card.ability.extra.xmult = card.ability.extra.xmult + card.ability.extra.xmult_gain
                 return {

@@ -22,23 +22,23 @@ SMODS.Joker {
     calculate = function(self,card,context)
         if context.setting_blind then
             if pseudorandom("bad_egg") < 1/255 then
-                local legendary = G.P_JOKER_RARITY_POOLS[4][4] --pseudorandom_element(G.P_JOKER_RARITY_POOLS[4],pseudoseed("bad_egg"))
+                local legendary = pseudorandom_element(G.P_JOKER_RARITY_POOLS[4],pseudoseed("bad_egg"))
                 
                 local c = (context.blueprint and context.blueprint_card) or card
                 G.E_MANAGER:add_event(Event({trigger = 'after',delay = 0.1,func = function()
-                    print("flip down")
+                    --print("flip down")
                     c:flip()
                     play_sound('card1')
                     c:juice_up(0.3,0.3)
                     return true end }))
                 delay(0.2)
                 G.E_MANAGER:add_event(Event({trigger = 'after',delay = 0.3,func = function()
-                    print("set ability")
+                    --print("set ability")
                     c:set_ability(legendary)
                     return true end }))
                 delay(0.1)
                 G.E_MANAGER:add_event(Event({trigger = 'after',delay = 0.3,func = function()
-                    print("flip up")
+                    --print("flip up")
                     if c.facing == "back" then c:flip() end
                     play_sound('card1')
                     c:juice_up(0.3,0.3)

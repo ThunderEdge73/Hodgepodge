@@ -19,9 +19,9 @@ SMODS.Joker {
     cost = 7,
     calculate = function(self,card,context)
         if context.before then
-            print(context.full_hand)
+            --print(context.full_hand)
             for k,playing_card in pairs(context.full_hand) do
-                print(playing_card.debuff)
+                --print(playing_card.debuff)
                 if playing_card.debuff then
                     playing_card.hodge_unscored = true
                     playing_card:set_debuff(false)

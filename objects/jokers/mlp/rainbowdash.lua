@@ -21,12 +21,12 @@ SMODS.Joker {
                 end
             end
             if loyalties < 2 then
-                print("rd | loyalties < 2")
+                --print("rd | loyalties < 2")
                 for i,c in ipairs(context.scoring_hand) do -- For card in hand
                     if REND.table_contains(REND.elements_of_harmony,c.seal) and (loyalties == 0 or c.seal == "hodge_loyalty") then -- If is element of harmony
                         --If there's a loyalty card in the hand, it deals with the logic instead. its easier this way ^
-                        print("rd | "..c.seal)
-                        print("rd | back to deck")
+                        --print("rd | "..c.seal)
+                        --print("rd | back to deck")
                         G.E_MANAGER:add_event(Event({ -- Add to queue
                             trigger = 'immediate',
                             func = function()

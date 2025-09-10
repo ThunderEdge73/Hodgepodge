@@ -30,7 +30,7 @@ SMODS.Joker {
             local count = 0
             for _,playing_card in pairs(context.scoring_hand) do
                 total_rank = total_rank + playing_card.base.id
-                print(total_rank)
+                --print(total_rank)
                 count = count+1
             end
             local average = math.floor(total_rank / count)

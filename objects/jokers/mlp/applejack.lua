@@ -1,5 +1,5 @@
 SMODS.Joker {
-    key = "applejack", -- this joker might not work properly. i cant fix it right now. im too busy crying about undertale. im going to bed
+    key = "applejack", 
     loc_vars = function (self,info_queue,card)
         local count = 52/2
         if G.playing_cards and G.deck then
@@ -9,10 +9,10 @@ SMODS.Joker {
                     elements = elements + 1
                 end
             end
-            if elements > #G.deck.cards/2 then
+            if elements > (G.deck.config.true_card_limit)/2 then
                 count = elements
             else
-                count = (#G.deck.cards + #G.discard.cards + #G.hand.cards)/2
+                count = (G.deck.config.true_card_limit)/2
             end
         end
         return {
@@ -49,6 +49,8 @@ SMODS.Joker {
 local cardAreaShuffle = CardArea.shuffle
 function CardArea:shuffle(_seed)
     if self.config.type == "deck" and next(SMODS.find_card("j_hodge_applejack")) then
+        --print("AJ Shuffle")
+        local count = 0
         local elements = 0
         for k,currentCard in pairs(G.playing_cards) do
             if REND.table_contains(REND.elements_of_harmony,currentCard.seal) then
@@ -56,17 +58,12 @@ function CardArea:shuffle(_seed)
             end
         end
         if elements > #G.deck.cards/2 then
-            count = elements
+            count = #G.deck.cards - elements
         else
             count = #G.deck.cards/2
         end
-        REND.bias_shuffle(self.cards, {
-                {
-                    match = function(item) return REND.table_contains(REND.elements_of_harmony,item.seal) end,
-                    lower_lim = count
-                }
-            }, pseudoseed(_seed or 'shuffle')
-        )
+        --print(count)
+        REND.force_front_shuffle(self.cards, function(item) return REND.table_contains(REND.elements_of_harmony,item.seal) end, count, pseudoseed(_seed or 'shuffle'))
         self:set_ranks()
     else
         return cardAreaShuffle(self,_seed)

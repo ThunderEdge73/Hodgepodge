@@ -156,37 +156,71 @@ end
 --          upper_lim = #G.deck.cards/2
 --      }]
 --  )
-REND.bias_shuffle = function(list, biases, seed)
+-- REND.bias_shuffle_broken = function(list, biases, seed) -- THIS DOESNT WORK!
+--     if seed then math.randomseed(seed) end
+
+--     if list[1] and list[1].sort_id then
+--         table.sort(list, function (a, b) return (a.sort_id or 1) < (b.sort_id or 2) end)
+--     end
+
+--     local function is_allowed(item,index,maxindex)
+--         for i,bias in ipairs(biases) do
+--             if bias.match(item) then
+--                 if bias.upper_lim and bias.upper_lim < index then
+--                     return false
+--                 end
+--                 if bias.lower_lim and (bias.lower_lim > index) and not (maxindex < bias.lower_lim) then
+--                     return false
+--                 end
+--                 -- print("bias passed")
+--             end
+--         end
+--         -- print("all biases passed")
+--         return true
+--     end
+
+--     for i = #list, 2, -1 do
+--         local j = nil
+--         local pass = false
+--         local emergency_quit = 50
+--         while emergency_quit > 0 and not pass do
+--             j = math.random(i)
+--             pass = is_allowed(list[i],j,i) and is_allowed(list[j],i,i)
+--             emergency_quit = emergency_quit - 1
+--         end
+--         if emergency_quit == 0 then print("emergency quit") end
+--         list[i], list[j] = list[j], list[i]
+--     end
+-- end
+
+REND.force_front_shuffle = function(list, condition, lower_bound, seed)
     if seed then math.randomseed(seed) end
 
     if list[1] and list[1].sort_id then
         table.sort(list, function (a, b) return (a.sort_id or 1) < (b.sort_id or 2) end)
     end
 
-    local function is_allowed(item,index)
-        for i,bias in ipairs(biases) do
-            if bias.match(item) then
-                if bias.upper_lim and bias.upper_lim < index then
-                    return false
-                end
-                if bias.lower_lim and bias.lower_lim > index then
-                    return false
-                end
-            end
-        end
-        return true
+    for i = #list, 2, -1 do
+        local j = nil
+        j = math.random(i)
+        list[i], list[j] = list[j], list[i]
     end
 
     for i = #list, 2, -1 do
-        local j = nil
-        local pass = false
-        while not pass do
-            j = math.random(i)
-            pass = is_allowed(list[i],j) and is_allowed(list[j],i)
+        if condition(list[i]) and i <= lower_bound then
+            --print("card where it shouldnt be")
+            --print("i =",i,list[i].seal)
+            local j = math.random(#list)
+            while condition(list[j]) or j <= lower_bound do
+                j = math.random(#list)
+            end
+
+            --print("j =",j,list[j].seal)
+            list[i], list[j] = list[j], list[i]
         end
-        list[i], list[j] = list[j], list[i]
     end
 end
+
 ------------------
 ----- Sounds -----
 ------------------
