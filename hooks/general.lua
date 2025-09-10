@@ -103,7 +103,7 @@ end
 local cardClick = Card.click
 function Card:click()
     if self.area and self.area == G.jokers then
-        SMODS.calculate_context({rend_clicked = true, card_clicked = self})
+        SMODS.calculate_context({hodge_clicked = true, card_clicked = self})
     end
     local ret = cardClick(self)
     return ret

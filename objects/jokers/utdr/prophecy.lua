@@ -3,7 +3,7 @@ local shader = SMODS.Shader {
     path = "prophecy.fs"
 }
 
-REND.prophecy_image = REND.load_custom_image("depths.png")
+HODGE.prophecy_image = HODGE.load_custom_image("depths.png")
 
 -- I DIDNT NEED AN OF THIS STUFF DOWN HERE AT ALl!! IT WAS ALL WRONG!!!!!! I LOVE GRAPHICS CODE
 
@@ -42,9 +42,9 @@ REND.prophecy_image = REND.load_custom_image("depths.png")
 --     end
 -- end
 
--- generate_shader_atlas("hodge_jokers_atlas","hodge_depths_jokers_atlas","prophecy",{mask_texture = REND.prophecy_image})
+-- generate_shader_atlas("hodge_jokers_atlas","hodge_depths_jokers_atlas","prophecy",{mask_texture = HODGE.prophecy_image})
 
-REND.prophecy_canvas = love.graphics.newCanvas(71, 95, {type = '2d', readable = true})
+HODGE.prophecy_canvas = love.graphics.newCanvas(71, 95, {type = '2d', readable = true})
 
 SMODS.Joker {
     key = "prophecy",
@@ -59,7 +59,7 @@ SMODS.Joker {
         }
     },
     atlas = "depths_jokers_atlas",
-    pos = {x=1,y=REND.atlas_y.utdr[1]},
+    pos = {x=1,y=HODGE.atlas_y.utdr[1]},
     rarity = 2,
     cost = 6,
     calculate = function(self,card,context)
@@ -73,10 +73,10 @@ SMODS.Joker {
     draw = function(self, card, layer)
         -- love.graphics.push("all")
 
-        -- love.graphics.setCanvas(REND.prophecy_canvas)
+        -- love.graphics.setCanvas(HODGE.prophecy_canvas)
         -- love.graphics.setColor(1,1,1,1)
 
-        -- G.SHADERS["hodge_prophecy"]:send("mask_texture",REND.prophecy_image)
+        -- G.SHADERS["hodge_prophecy"]:send("mask_texture",HODGE.prophecy_image)
         -- card.children.center:draw_shader("hodge_prophecy", nil,card.ARGS.send_to_shader)
 
         -- love.graphics.pop()
@@ -87,7 +87,7 @@ SMODS.Joker {
 --     key = "prophecy_drawstep",
 --     order = 25,
 --     func = function(card,layer)
---         G.SHADERS["hodge_prophecy"]:send("mask_texture",REND.prophecy_image)
+--         G.SHADERS["hodge_prophecy"]:send("mask_texture",HODGE.prophecy_image)
 --         card.children.center:draw_shader("hodge_prophecy", nil,card.ARGS.send_to_shader)
 --     end,
 --     conditions = {facing = "front"}

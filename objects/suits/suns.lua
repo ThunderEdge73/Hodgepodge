@@ -16,7 +16,7 @@ SMODS.Suit {
     in_pool = function(self,args)
         if G.GAME.selected_back then
             local sun_decks = {"Friendship Deck"}
-            return REND.table_contains(sun_decks,G.GAME.selected_back.name)
+            return HODGE.table_contains(sun_decks,G.GAME.selected_back.name)
         else
             return true
         end

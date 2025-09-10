@@ -18,8 +18,8 @@ SMODS.Seal {
     calculate = function(self,card,context)
         -- if context.repetition and context.cardarea == G.play then
         --     print(context.other_card.seal)
-        --     print(REND.elements_of_harmony)
-        --     if REND.table_contains(REND.elements_of_harmony,context.other_card.seal) then
+        --     print(HODGE.elements_of_harmony)
+        --     if HODGE.table_contains(HODGE.elements_of_harmony,context.other_card.seal) then
         --         return {
         --             message = "Haha!", 
         --             repetitions = 1,

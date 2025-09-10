@@ -27,7 +27,7 @@ SMODS.Joker {
                 message = "Reset!"
             }
         end
-        if context.rend_clicked and context.card_clicked == card then
+        if context.hodge_clicked and context.card_clicked == card then
             card.ability.chips = card.ability.chips + card.ability.extra.increase
             card_eval_status_text(card, 'extra', nil, nil, nil, {message = "+"..card.ability.extra.increase, colour = G.C.CHIPS, instant = true})
             -- return {

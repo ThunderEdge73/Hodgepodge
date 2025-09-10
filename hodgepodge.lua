@@ -1,6 +1,6 @@
-REND = SMODS.current_mod
+HODGE = SMODS.current_mod
 
-REND.optional_features = function()
+HODGE.optional_features = function()
     return {
         retrigger_joker = true,
         cardareas = {
@@ -13,9 +13,9 @@ end
 ----- GLOBAL VARIABLES -----
 ----------------------------
 
-REND.elements_of_harmony = {"hodge_kindness","hodge_honesty","hodge_loyalty","hodge_laughter","hodge_generosity","hodge_magic"}
+HODGE.elements_of_harmony = {"hodge_kindness","hodge_honesty","hodge_loyalty","hodge_laughter","hodge_generosity","hodge_magic"}
 
-REND.atlas_y = {
+HODGE.atlas_y = {
     misc      = { 0 },
     joke      = { 2 },
     mlp       = { 4 },
@@ -30,19 +30,19 @@ REND.atlas_y = {
 -----------------------------
 
 -- stole this little number from yahimod
-REND.load_custom_image = function(filename)
-    local full_path = (REND.path .. "customimages/" .. filename)
+HODGE.load_custom_image = function(filename)
+    local full_path = (HODGE.path .. "customimages/" .. filename)
     local file_data = assert(NFS.newFileData(full_path),("Failed to create file_data"))
     local tempimagedata = assert(love.image.newImageData(file_data),("Failed to create tempimagedata"))
     return (assert(love.graphics.newImage(tempimagedata),("Failed to create return image")))
 end
     
 
-REND.starts_with = function(str,start)
+HODGE.starts_with = function(str,start)
     return str:sub(1, #start) == start
 end
 
-REND.table_contains = function(table,value)
+HODGE.table_contains = function(table,value)
     for i = 1,#table do
         if (table[i] == value) then
             return true
@@ -51,7 +51,7 @@ REND.table_contains = function(table,value)
     return false
 end
 
-REND.load_script = function(path)
+HODGE.load_script = function(path)
     local helper, load_error = SMODS.load_file(path)
     if load_error then
         print("Loading "..path.." failed! Error: "..load_error)
@@ -62,7 +62,7 @@ REND.load_script = function(path)
     end
 end
 
-REND.table_true_size = function(table)
+HODGE.table_true_size = function(table)
     local n = 0
     for k,v in pairs(table) do
         n = n+1
@@ -71,7 +71,7 @@ REND.table_true_size = function(table)
 end
 
 -- Thanks to aikoyori for this one! This is copied directly from the Aikoyori's Shenanigans mod lol
-REND.mod_card_values = function (table_in, config)
+HODGE.mod_card_values = function (table_in, config)
     if not config then config = {} end
     local set = config.set or nil
     local add = config.add or 0
@@ -83,9 +83,9 @@ REND.mod_card_values = function (table_in, config)
     local function modify_values(table_in, ref)
         for k,v in pairs(table_in) do -- For key, value in the table
             if type(v) == "number" then -- If it's a number
-                if (keywords[k] or (REND.table_true_size(keywords) < 1)) and not unkeyword[k] then -- If it's in the keywords, OR there's no keywords and it isn't in the unkeywords
+                if (keywords[k] or (HODGE.table_true_size(keywords) < 1)) and not unkeyword[k] then -- If it's in the keywords, OR there's no keywords and it isn't in the unkeywords
                     if ref and ref[k] then -- If it exists in the reference
-                        if not (x_protect and (REND.starts_with(k,"x_") or REND.starts_with(k,"h_x_")) and ref[k] == 1) then
+                        if not (x_protect and (HODGE.starts_with(k,"x_") or HODGE.starts_with(k,"h_x_")) and ref[k] == 1) then
                             table_in[k] = ((set or ref[k]) + add) * multiply -- Set it to (reference's value + add) * multiply
                         end
                     end
@@ -102,7 +102,7 @@ REND.mod_card_values = function (table_in, config)
 end
 
 -- Thanks also for this function, aiko
-REND.deep_copy = function(orig,cutoff_value)
+HODGE.deep_copy = function(orig,cutoff_value)
     cutoff_value = cutoff_value or orig
     local orig_type = type(orig)
     local copy
@@ -110,7 +110,7 @@ REND.deep_copy = function(orig,cutoff_value)
         if orig_type ~= cutoff_value then
             copy = {}
             for orig_key, orig_value in next, orig, nil do
-                copy[REND.deep_copy(orig_key)] = REND.deep_copy(orig_value)
+                copy[HODGE.deep_copy(orig_key)] = HODGE.deep_copy(orig_value)
             end
         end
     else
@@ -119,15 +119,15 @@ REND.deep_copy = function(orig,cutoff_value)
     return copy
 end
 
-REND.reverse_table = function(table)
-    local tab = REND.deep_copy(table)
+HODGE.reverse_table = function(table)
+    local tab = HODGE.deep_copy(table)
     for i = 1, math.floor(#tab/2), 1 do
         tab[i], tab[#tab-i+1] = tab[#tab-i+i], tab[i]
     end
     return tab
 end
 
-REND.first_card_merge_down = function(cards,merge) -- Get first card, with compatibility for Merge Down joker
+HODGE.first_card_merge_down = function(cards,merge) -- Get first card, with compatibility for Merge Down joker
     if merge == nil then
         merge = false
         for _,j in ipairs(G.jokers.cards) do
@@ -150,13 +150,13 @@ REND.first_card_merge_down = function(cards,merge) -- Get first card, with compa
     end
 end
 
---  REND.bias_shuffle(G.deck.cards,
+--  HODGE.bias_shuffle(G.deck.cards,
 --      [{
---          match = function(item) return REND.table_contains(REND.elements_of_harmony,item.seal) end,
+--          match = function(item) return HODGE.table_contains(HODGE.elements_of_harmony,item.seal) end,
 --          upper_lim = #G.deck.cards/2
 --      }]
 --  )
--- REND.bias_shuffle_broken = function(list, biases, seed) -- THIS DOESNT WORK!
+-- HODGE.bias_shuffle_broken = function(list, biases, seed) -- THIS DOESNT WORK!
 --     if seed then math.randomseed(seed) end
 
 --     if list[1] and list[1].sort_id then
@@ -193,7 +193,7 @@ end
 --     end
 -- end
 
-REND.force_front_shuffle = function(list, condition, lower_bound, seed)
+HODGE.force_front_shuffle = function(list, condition, lower_bound, seed)
     if seed then math.randomseed(seed) end
 
     if list[1] and list[1].sort_id then
@@ -346,124 +346,122 @@ SMODS.Atlas {
 -----------------------------
 
 ------ Hooks ------
-REND.load_script("hooks/general.lua")
+HODGE.load_script("hooks/general.lua")
 
 ------ Consumables ------
 -- Custom Types
-REND.load_script("objects/consumables/power.lua")
+HODGE.load_script("objects/consumables/power.lua")
 -- Planets
-REND.load_script("objects/consumables/avalon.lua")
+HODGE.load_script("objects/consumables/avalon.lua")
 
 ------ Editions ------
-REND.load_script("objects/editions/big.lua")
-REND.load_script("objects/editions/terry.lua")
-REND.load_script("objects/editions/parasite.lua")
-REND.load_script("objects/editions/glitch.lua")
+HODGE.load_script("objects/editions/big.lua")
+HODGE.load_script("objects/editions/terry.lua")
+HODGE.load_script("objects/editions/parasite.lua")
+HODGE.load_script("objects/editions/glitch.lua")
 
 ------ Enhancements ------
-REND.load_script("objects/enhancements/asbestos.lua")
-REND.load_script("objects/enhancements/blackhole.lua")
-REND.load_script("objects/enhancements/waterdamage.lua")
+HODGE.load_script("objects/enhancements/asbestos.lua")
+HODGE.load_script("objects/enhancements/blackhole.lua")
+HODGE.load_script("objects/enhancements/waterdamage.lua")
 
 ------ Seals ------
 -- Misc
-REND.load_script("objects/seals/revive.lua")
+HODGE.load_script("objects/seals/revive.lua")
 -- MLP
-REND.load_script("objects/seals/mlp/loyalty.lua")
-REND.load_script("objects/seals/mlp/honesty.lua")
-REND.load_script("objects/seals/mlp/kindness.lua")
-REND.load_script("objects/seals/mlp/generosity.lua")
-REND.load_script("objects/seals/mlp/laughter.lua")
-REND.load_script("objects/seals/mlp/magic.lua")
+HODGE.load_script("objects/seals/mlp/loyalty.lua")
+HODGE.load_script("objects/seals/mlp/honesty.lua")
+HODGE.load_script("objects/seals/mlp/kindness.lua")
+HODGE.load_script("objects/seals/mlp/generosity.lua")
+HODGE.load_script("objects/seals/mlp/laughter.lua")
+HODGE.load_script("objects/seals/mlp/magic.lua")
 
 ------ Decks ------
-REND.load_script("objects/decks/jumbo.lua")
-REND.load_script("objects/decks/condemned.lua")
-REND.load_script("objects/decks/boardgame.lua")
-REND.load_script("objects/decks/friendship.lua")
+HODGE.load_script("objects/decks/jumbo.lua")
+HODGE.load_script("objects/decks/condemned.lua")
+HODGE.load_script("objects/decks/boardgame.lua")
+HODGE.load_script("objects/decks/friendship.lua")
 
 ----- Suits ------
 -- Snakes n Ladders
-REND.load_script("objects/suits/snake.lua")
-REND.load_script("objects/suits/ladders.lua")
+HODGE.load_script("objects/suits/snake.lua")
+HODGE.load_script("objects/suits/ladders.lua")
 -- MLP
-REND.load_script("objects/suits/suns.lua")
-REND.load_script("objects/suits/moons.lua")
+HODGE.load_script("objects/suits/suns.lua")
+HODGE.load_script("objects/suits/moons.lua")
 
 ------ Jokers ------
 -- Page 1 - Misc
-REND.load_script("objects/jokers/misc/placeholder.lua")
-REND.load_script("objects/jokers/misc/brokenrecord.lua")
-REND.load_script("objects/jokers/misc/spaghettification.lua")
-REND.load_script("objects/jokers/misc/catapult.lua")
-REND.load_script("objects/jokers/misc/cocksley.lua")
+HODGE.load_script("objects/jokers/misc/placeholder.lua")
+HODGE.load_script("objects/jokers/misc/brokenrecord.lua")
+HODGE.load_script("objects/jokers/misc/spaghettification.lua")
+HODGE.load_script("objects/jokers/misc/catapult.lua")
+HODGE.load_script("objects/jokers/misc/cocksley.lua")
 
-REND.load_script("objects/jokers/misc/ricoshot.lua")
-REND.load_script("objects/jokers/misc/projectileboost.lua")
-REND.load_script("objects/jokers/misc/exploded.lua")
-REND.load_script("objects/jokers/misc/arsenal.lua")
-REND.load_script("objects/jokers/misc/overkill.lua")
+HODGE.load_script("objects/jokers/misc/ricoshot.lua")
+HODGE.load_script("objects/jokers/misc/projectileboost.lua")
+HODGE.load_script("objects/jokers/misc/exploded.lua")
+HODGE.load_script("objects/jokers/misc/arsenal.lua")
+HODGE.load_script("objects/jokers/misc/overkill.lua")
 
-REND.load_script("objects/jokers/misc/synccrystal.lua")
-REND.load_script("objects/jokers/misc/combo.lua")
-REND.load_script("objects/jokers/misc/mergedown.lua")
-REND.load_script("objects/jokers/misc/blownaway.lua")
-REND.load_script("objects/jokers/misc/metamorphosis.lua")
+HODGE.load_script("objects/jokers/misc/synccrystal.lua")
+HODGE.load_script("objects/jokers/misc/combo.lua")
+HODGE.load_script("objects/jokers/misc/mergedown.lua")
+HODGE.load_script("objects/jokers/misc/blownaway.lua")
+HODGE.load_script("objects/jokers/misc/metamorphosis.lua")
 -- Page 2 - Joke
-REND.load_script("objects/jokers/joke/hydra.lua")
-REND.load_script("objects/jokers/joke/handcrank.lua")
-REND.load_script("objects/jokers/joke/cyan.lua")
-REND.load_script("objects/jokers/joke/disappearingguy.lua")
-REND.load_script("objects/jokers/joke/lowpercent.lua")
+HODGE.load_script("objects/jokers/joke/hydra.lua")
+HODGE.load_script("objects/jokers/joke/handcrank.lua")
+HODGE.load_script("objects/jokers/joke/cyan.lua")
+HODGE.load_script("objects/jokers/joke/disappearingguy.lua")
+HODGE.load_script("objects/jokers/joke/lowpercent.lua")
 
-REND.load_script("objects/jokers/joke/vestup.lua")
-REND.load_script("objects/jokers/joke/nft.lua")
-REND.load_script("objects/jokers/joke/stopsign.lua")
-REND.load_script("objects/jokers/joke/lostcount.lua")
-REND.load_script("objects/jokers/joke/big gamba.lua")
+HODGE.load_script("objects/jokers/joke/vestup.lua")
+HODGE.load_script("objects/jokers/joke/nft.lua")
+HODGE.load_script("objects/jokers/joke/stopsign.lua")
+HODGE.load_script("objects/jokers/joke/lostcount.lua")
+HODGE.load_script("objects/jokers/joke/big gamba.lua")
 
-REND.load_script("objects/jokers/joke/shooketh.lua")
-REND.load_script("objects/jokers/joke/ppe.lua")
-REND.load_script("objects/jokers/joke/sou.lua")
-REND.load_script("objects/jokers/joke/nonejoker.lua")
-REND.load_script("objects/jokers/joke/parappa.lua")
+HODGE.load_script("objects/jokers/joke/shooketh.lua")
+HODGE.load_script("objects/jokers/joke/ppe.lua")
+HODGE.load_script("objects/jokers/joke/sou.lua")
+HODGE.load_script("objects/jokers/joke/nonejoker.lua")
+HODGE.load_script("objects/jokers/joke/parappa.lua")
 
 -- Page 3 - MLP
-REND.load_script("objects/jokers/mlp/summersun.lua")
-REND.load_script("objects/jokers/mlp/nightmarenight.lua")
-REND.load_script("objects/jokers/mlp/twilightsparkle.lua")
-REND.load_script("objects/jokers/mlp/amber.lua")
-REND.load_script("objects/jokers/mlp/moonrock.lua")
+HODGE.load_script("objects/jokers/mlp/summersun.lua")
+HODGE.load_script("objects/jokers/mlp/nightmarenight.lua")
+HODGE.load_script("objects/jokers/mlp/twilightsparkle.lua")
+HODGE.load_script("objects/jokers/mlp/amber.lua")
+HODGE.load_script("objects/jokers/mlp/moonrock.lua")
 
-REND.load_script("objects/jokers/mlp/rainbowdash.lua")
-REND.load_script("objects/jokers/mlp/pinkiepie.lua")
-REND.load_script("objects/jokers/mlp/fluttershy.lua")
-REND.load_script("objects/jokers/mlp/rarity.lua")
-REND.load_script("objects/jokers/mlp/applejack.lua")
+HODGE.load_script("objects/jokers/mlp/rainbowdash.lua")
+HODGE.load_script("objects/jokers/mlp/pinkiepie.lua")
+HODGE.load_script("objects/jokers/mlp/fluttershy.lua")
+HODGE.load_script("objects/jokers/mlp/rarity.lua")
+HODGE.load_script("objects/jokers/mlp/applejack.lua")
 
-REND.load_script("objects/jokers/mlp/rainbowfactory.lua")
-REND.load_script("objects/jokers/mlp/cupcakes.lua")
-REND.load_script("objects/jokers/mlp/butterflies.lua")
-REND.load_script("objects/jokers/mlp/littlemissrarity.lua")
-REND.load_script("objects/jokers/mlp/applesleepexperiment.lua")
+HODGE.load_script("objects/jokers/mlp/rainbowfactory.lua")
+HODGE.load_script("objects/jokers/mlp/cupcakes.lua")
+HODGE.load_script("objects/jokers/mlp/butterflies.lua")
+HODGE.load_script("objects/jokers/mlp/littlemissrarity.lua")
+HODGE.load_script("objects/jokers/mlp/applesleepexperiment.lua")
 
 -- Page 4 - Legendaries
-REND.load_script("objects/jokers/misc/lumi.lua")
-REND.load_script("objects/jokers/joke/david.lua")
-REND.load_script("objects/jokers/pokemon/missingno.lua")
-REND.load_script("objects/jokers/pokemon/badegg.lua") -- does... does this count?
-REND.load_script("objects/jokers/mlp/timeloop.lua") --this fucker is soooooo broken
+HODGE.load_script("objects/jokers/misc/lumi.lua")
+HODGE.load_script("objects/jokers/joke/david.lua")
+HODGE.load_script("objects/jokers/pokemon/missingno.lua")
+HODGE.load_script("objects/jokers/pokemon/badegg.lua") -- does... does this count?
+HODGE.load_script("objects/jokers/mlp/timeloop.lua") --this fucker is soooooo broken
 -- Page 5 - UTDR
--- REND.load_script("objects/jokers/utdr/prophecy.lua")
+-- HODGE.load_script("objects/jokers/utdr/prophecy.lua")
 
 
 ------ Blinds ------
-REND.load_script("objects/blinds/name.lua") -- I CURSE THE NAME THE ONE BEHIND IT ALLLLLLLLLLLLLLLLLLLLLLL
-REND.load_script("objects/blinds/pip.lua") -- who up tipping they pip
+HODGE.load_script("objects/blinds/name.lua") -- I CURSE THE NAME THE ONE BEHIND IT ALLLLLLLLLLLLLLLLLLLLLLL
+HODGE.load_script("objects/blinds/pip.lua") -- who up tipping they pip
 
 ------ Challenges ------
-REND.load_script("objects/challenges/battleroyale.lua")
+HODGE.load_script("objects/challenges/battleroyale.lua")
 
-REND.load_script("collabs/mlp.lua")
-
---test commit
+HODGE.load_script("collabs/mlp.lua")

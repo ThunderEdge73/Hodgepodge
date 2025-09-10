@@ -76,11 +76,11 @@ SMODS.Joker {
     rarity = 4,
     cost = 20,
     calculate = function(self,card,context)
-        if context.starting_shop and G.GAME.rend_last_blind_type == 'Boss' and not context.blueprint then
-            if G.GAME.rend_loop_save and card.ability.extra.loop_started then
-                G.GAME.rend_loop_incoming = true
+        if context.starting_shop and G.GAME.hodge_last_blind_type == 'Boss' and not context.blueprint then
+            if G.GAME.hodge_loop_save and card.ability.extra.loop_started then
+                G.GAME.hodge_loop_incoming = true
                 print("load")
-                savetext = STR_UNPACK(G.GAME.rend_loop_save)
+                savetext = STR_UNPACK(G.GAME.hodge_loop_save)
                 G.E_MANAGER:add_event(
                     Event({
                         trigger = "after",
@@ -88,7 +88,7 @@ SMODS.Joker {
                         func = function()
                             G:delete_run()
                             G:start_run({
-                                savetext = STR_UNPACK(G.GAME.rend_loop_save)
+                                savetext = STR_UNPACK(G.GAME.hodge_loop_save)
                             })
                             print("loaded")
                             return true --HOW DID YOU FORGET THIS. THIS PREVENTS AN INFINITE LOOP YOU DUMBASS
@@ -99,13 +99,13 @@ SMODS.Joker {
             else
                 card.ability.extra.loop_started = true
                 print("save")
-                G.GAME.rend_loop_save = STR_PACK(G.culled_table)
+                G.GAME.hodge_loop_save = STR_PACK(G.culled_table)
                 G.E_MANAGER:add_event(
                     Event({
                         trigger = "after",
                         delay = G.SETTINGS.GAMESPEED,
                         func = function()
-                            G.GAME.rend_loop_save = STR_PACK(G.culled_table)
+                            G.GAME.hodge_loop_save = STR_PACK(G.culled_table)
                             print("saved")
                             return true --HOW DID YOU FORGET THIS. THIS PREVENTS AN INFINITE LOOP YOU DUMBASS
                         end

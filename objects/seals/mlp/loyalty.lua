@@ -33,7 +33,7 @@ SMODS.Seal {
             if first_loyalty == card then
                 --print("loyalty | first loyalty == card")
                 for i,c in ipairs(context.scoring_hand) do -- For card in hand
-                    if REND.table_contains(REND.elements_of_harmony,c.seal) and ((card ~= c) or (loyalties > 1)) then -- If is element of harmony
+                    if HODGE.table_contains(HODGE.elements_of_harmony,c.seal) and ((card ~= c) or (loyalties > 1)) then -- If is element of harmony
                         --print("loyalty | "..c.seal)
                         if SMODS.pseudorandom_probability(card, 'loyalty', 1, card.ability.seal.extra.odds, 'loyalty') then -- Random chance
                             --print("loyalty | passed check, back to hand")

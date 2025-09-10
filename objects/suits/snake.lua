@@ -16,7 +16,7 @@ SMODS.Suit {
     in_pool = function(self,args)
         if G.GAME.selected_back then
             local snake_decks = {"Board Game Deck"}
-            return REND.table_contains(snake_decks,G.GAME.selected_back.name)
+            return HODGE.table_contains(snake_decks,G.GAME.selected_back.name)
         else
             return true
         end

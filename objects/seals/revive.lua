@@ -19,7 +19,7 @@ SMODS.Seal {
     end,
     atlas = "seal_atlas",
     calculate = function(self,card,context)
-        if context.remove_playing_cards and REND.table_contains(context.removed,card) then
+        if context.remove_playing_cards and HODGE.table_contains(context.removed,card) then
             G.E_MANAGER:add_event(Event({
                 func = function()
                     local _first_dissolve = nil

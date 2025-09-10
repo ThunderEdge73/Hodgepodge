@@ -122,7 +122,7 @@ end
 position = "at"
 payload = '''
 if self.ability.name == 'Hanging Chad' and (
-REND.table_contains(REND.first_card_merge_down(context.scoring_hand),context.other_card)) then
+HODGE.table_contains(HODGE.first_card_merge_down(context.scoring_hand),context.other_card)) then
     return {
         message = localize('k_again_ex'),
         repetitions = self.ability.extra,
@@ -170,7 +170,7 @@ if self.ability.name == 'Photograph' then
             end
         end
     end
-    if REND.table_contains(first_face,context.other_card) then
+    if HODGE.table_contains(first_face,context.other_card) then
         return {
             x_mult = self.ability.extra,
             colour = G.C.RED,
@@ -213,11 +213,11 @@ match_indent = true
 [patches.pattern]
 target = "functions/state_events.lua"
 pattern = '''
-SMODS.calculate_context({end_of_round = true, game_over = game_over })
+SMODS.calculate_context({end_of_round = true, game_over = game_over, beat_boss = G.GAME.blind.boss })
 '''
 position = "after"
 payload = '''
-G.GAME.rend_last_blind_type = G.GAME.blind:get_type()
+G.GAME.hodge_last_blind_type = G.GAME.blind:get_type()
 '''
 match_indent = true
 overwrite = false
@@ -231,7 +231,7 @@ if self.ability.name == 'Chicot' and G.GAME.blind and G.GAME.blind.boss and not 
 position = "at"
 payload = '''
 if self.ability.name == 'Chicot' and G.GAME.blind and G.GAME.blind.boss and not G.GAME.blind.disabled then
-    -- print(G.rend_chicot_override)
+    -- print(G.hodge_chicot_override)
 '''
 match_indent = true
 
@@ -282,8 +282,8 @@ match_indent = true
 # '''
 # position = "after"
 # payload = '''
-# if (not nosave_shop) and (G.GAME.rend_last_blind_type == 'Boss') and (not G.GAME.rend_loop_incoming) then
-#     G.GAME.rend_loop_save = STR_PACK(G.culled_table)
+# if (not nosave_shop) and (G.GAME.hodge_last_blind_type == 'Boss') and (not G.GAME.hodge_loop_incoming) then
+#     G.GAME.hodge_loop_save = STR_PACK(G.culled_table)
 #     print("saved")
 # end
 # '''

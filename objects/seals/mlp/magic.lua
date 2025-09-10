@@ -23,11 +23,11 @@ SMODS.Seal {
                     table.insert(eligible_sealless_cards, v)
                 end
             end
-            if REND.table_true_size(eligible_sealless_cards) > 0 then 
+            if HODGE.table_true_size(eligible_sealless_cards) > 0 then 
                 local over = false
                 local temp_pool = eligible_sealless_cards or {}
                 local eligible_card = pseudorandom_element(temp_pool, pseudoseed("magic"))
-                local selected_element = pseudorandom_element(REND.elements_of_harmony, pseudoseed("magic"))
+                local selected_element = pseudorandom_element(HODGE.elements_of_harmony, pseudoseed("magic"))
                 eligible_card:set_seal(selected_element, nil, true)
                 check_for_unlock({type = 'have_edition'})
             end

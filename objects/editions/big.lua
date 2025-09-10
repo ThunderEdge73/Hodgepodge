@@ -53,8 +53,8 @@ SMODS.Edition {
                 ["extra"] = extra_is_probability -- ^
             } 
 
-            if card and card.ability and card.ability.extra and card.ability.extra.rend_big_ignore then
-                for k,v in pairs(card.ability.extra.rend_big_ignore) do
+            if card and card.ability and card.ability.extra and card.ability.extra.hodge_big_ignore then
+                for k,v in pairs(card.ability.extra.hodge_big_ignore) do
                     ignore_keys[k] = v
                 end
             end
