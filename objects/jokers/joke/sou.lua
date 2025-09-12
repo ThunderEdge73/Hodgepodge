@@ -8,7 +8,7 @@ SMODS.Joker {
     config = {
     },
     atlas = "jokers_atlas",
-    pos = {x=12,y=REND.atlas_y.joke[1]},
+    pos = {x=12,y=HODGE.atlas_y.joke[1]},
     rarity = 3,
     cost = 8,
     blueprint_compat = false,

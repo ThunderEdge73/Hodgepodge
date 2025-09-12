@@ -47,7 +47,7 @@ SMODS.Consumable { -- Chaos (Applies Terry)
                 table.insert(eligible_editionless_jokers, v)
             end
         end
-        return REND.table_true_size(eligible_editionless_jokers) > 0
+        return HODGE.table_true_size(eligible_editionless_jokers) > 0
     end,
     use = function(self,card,area,copier)
         local eligible_editionless_jokers = {}
@@ -122,7 +122,7 @@ SMODS.Consumable { -- Dimension (Applies Big)
                 table.insert(eligible_editionless_jokers, v)
             end
         end
-        return (REND.table_true_size(eligible_editionless_jokers) > 0) and (#G.jokers.cards < G.jokers.config.card_limit)
+        return (HODGE.table_true_size(eligible_editionless_jokers) > 0) and (#G.jokers.cards < G.jokers.config.card_limit)
     end,
     use = function(self,card,area,copier)
         local eligible_editionless_jokers = {}
@@ -266,7 +266,7 @@ SMODS.Consumable { -- Symbiosis (Applies Parasite)
                 table.insert(eligible_editionless_jokers, v)
             end
         end
-        return (REND.table_true_size(eligible_editionless_jokers) > 0)
+        return (HODGE.table_true_size(eligible_editionless_jokers) > 0)
     end,
     use = function(self,card,area,copier)
         local eligible_editionless_jokers = {}

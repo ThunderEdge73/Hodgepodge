@@ -20,16 +20,16 @@ SMODS.Joker {
     config = {
     },
     atlas = "jokers_atlas",
-    pos = {x=1,y=REND.atlas_y.legendary[1]},
-    soul_pos = {x=1,y=REND.atlas_y.soul[4]},
+    pos = {x=1,y=HODGE.atlas_y.legendary[1]},
+    soul_pos = {x=1,y=HODGE.atlas_y.soul[4]},
     rarity = 4,
     cost = 20,
     calculate = function(self,card,context)
         if context.setting_blind then
-            if REND.david_last_set ~= G.GAME.round or not REND.david_rank then
+            if HODGE.david_last_set ~= G.GAME.round or not HODGE.david_rank then
                 local ranks = {}
                 for k,card in ipairs(G.playing_cards) do
-                    if not REND.table_contains(ranks,card.base.value) then
+                    if not HODGE.table_contains(ranks,card.base.value) then
                         table.insert(ranks,card.base.value)
                     end
                     G.david_last_set = G.GAME.round
@@ -71,10 +71,10 @@ SMODS.Joker {
     end,
     blueprint_compat = true,
     add_to_deck = function(self,card,from_debuff)
-        if not REND.david_rank then
+        if not HODGE.david_rank then
             local ranks = {}
             for k,card in ipairs(G.playing_cards) do
-                if not REND.table_contains(ranks,card.base.value) then
+                if not HODGE.table_contains(ranks,card.base.value) then
                     table.insert(ranks,card.base.value)
                 end
                 G.david_last_set = G.GAME.round

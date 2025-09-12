@@ -12,7 +12,7 @@ SMODS.Joker {
         }
     },
     atlas = "jokers_atlas",
-    pos = {x=11,y=REND.atlas_y.joke[1]},
+    pos = {x=11,y=HODGE.atlas_y.joke[1]},
     rarity = 3,
     cost = 7,
     blueprint_compat = false,

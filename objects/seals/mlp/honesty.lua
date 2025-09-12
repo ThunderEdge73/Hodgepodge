@@ -49,14 +49,14 @@ SMODS.Seal {
                 table.insert(check_deck,1,v)
             end
             for i,v in ipairs(check_deck) do
-                if REND.table_true_size(card.ability.seal.extra.card_elements) < 3 then
-                    if REND.table_contains(REND.elements_of_harmony,v.seal) then
+                if HODGE.table_true_size(card.ability.seal.extra.card_elements) < 3 then
+                    if HODGE.table_contains(HODGE.elements_of_harmony,v.seal) then
                         table.insert(card.ability.seal.extra.card_elements,element_names[v.seal])
                         table.insert(card.ability.seal.extra.card_positions,tostring(i))
                     end
                 end
             end
-            while REND.table_true_size(card.ability.seal.extra.card_elements) < 3 do
+            while HODGE.table_true_size(card.ability.seal.extra.card_elements) < 3 do
                 table.insert(card.ability.seal.extra.card_elements,"?")
                 table.insert(card.ability.seal.extra.card_positions,"?")
             end

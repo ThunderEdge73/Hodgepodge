@@ -30,7 +30,7 @@ SMODS.Seal {
         -- end
         if context.before and context.cardarea == G.play then
             for k,v in ipairs(context.scoring_hand) do
-                if REND.table_contains(REND.elements_of_harmony,v.seal) and v ~= card then
+                if HODGE.table_contains(HODGE.elements_of_harmony,v.seal) and v ~= card then
                     v.ability.perma_bonus = (v.ability.perma_bonus or 0) + 10
                 end
             end

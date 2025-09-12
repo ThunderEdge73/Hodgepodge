@@ -29,7 +29,7 @@ SMODS.Joker {
         }
     },
     atlas = "jokers_atlas",
-    pos = {x=5,y=REND.atlas_y.misc[1]},
+    pos = {x=5,y=HODGE.atlas_y.misc[1]},
     rarity = 3,
     cost = 5,
     calculate = function(self,card,context)
@@ -38,7 +38,7 @@ SMODS.Joker {
                 card.ability.extra.xmult = card.ability.extra.xmult + card.ability.extra.xmult_gain
                 _poker_hands = {}
                 for k,v in pairs(G.GAME.hands) do
-                    if v.visible and k ~= card.ability.extra.poker_hand and not REND.table_contains(card.ability.extra.banned_hands,k) then
+                    if v.visible and k ~= card.ability.extra.poker_hand and not HODGE.table_contains(card.ability.extra.banned_hands,k) then
                         _poker_hands[#_poker_hands + 1] = k
                     end
                 end

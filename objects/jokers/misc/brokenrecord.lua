@@ -23,14 +23,14 @@ SMODS.Joker {
         }
     },
     atlas = "jokers_atlas",
-    pos = {x=1,y=REND.atlas_y.misc[1]},
-    soul_pos = {x=1,y=REND.atlas_y.soul[1]},
+    pos = {x=1,y=HODGE.atlas_y.misc[1]},
+    soul_pos = {x=1,y=HODGE.atlas_y.soul[1]},
     rarity = 1,
     cost = 5,
     calculate = function(self,card,context)
         if context.modify_scoring_hand and not context.blueprint then
             if context.other_card == context.full_hand[#context.full_hand] then
-                if not REND.table_contains(context.scoring_hand,context.other_card) then
+                if not HODGE.table_contains(context.scoring_hand,context.other_card) then
                     card.ability.extra.retrigger_target = context.other_card
                     return {
                         add_to_hand = true

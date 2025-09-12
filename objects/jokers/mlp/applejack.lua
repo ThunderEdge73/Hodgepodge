@@ -5,7 +5,7 @@ SMODS.Joker {
         if G.playing_cards and G.deck then
             local elements = 0
             for k,currentCard in pairs(G.playing_cards) do
-                if REND.table_contains(REND.elements_of_harmony,currentCard.seal) then
+                if HODGE.table_contains(HODGE.elements_of_harmony,currentCard.seal) then
                     elements = elements + 1
                 end
             end
@@ -27,7 +27,7 @@ SMODS.Joker {
         }
     },
     atlas = "jokers_atlas",
-    pos = {x=9,y=REND.atlas_y.mlp[1]},
+    pos = {x=9,y=HODGE.atlas_y.mlp[1]},
     rarity = 2,
     cost = 7,
     calculate = function(self,card,context)
@@ -53,7 +53,7 @@ function CardArea:shuffle(_seed)
         local count = 0
         local elements = 0
         for k,currentCard in pairs(G.playing_cards) do
-            if REND.table_contains(REND.elements_of_harmony,currentCard.seal) then
+            if HODGE.table_contains(HODGE.elements_of_harmony,currentCard.seal) then
                 elements = elements + 1
             end
         end
@@ -63,7 +63,7 @@ function CardArea:shuffle(_seed)
             count = #G.deck.cards/2
         end
         --print(count)
-        REND.force_front_shuffle(self.cards, function(item) return REND.table_contains(REND.elements_of_harmony,item.seal) end, count, pseudoseed(_seed or 'shuffle'))
+        HODGE.force_front_shuffle(self.cards, function(item) return HODGE.table_contains(HODGE.elements_of_harmony,item.seal) end, count, pseudoseed(_seed or 'shuffle'))
         self:set_ranks()
     else
         return cardAreaShuffle(self,_seed)

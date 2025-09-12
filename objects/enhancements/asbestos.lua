@@ -70,7 +70,7 @@ SMODS.Enhancement {
             end
         end
         
-        if context.remove_playing_cards and REND.table_contains(context.removed,card) then
+        if context.remove_playing_cards and HODGE.table_contains(context.removed,card) then
 
             local rand = pseudorandom("asbestos")
             local disturb = rand < disturb_odds

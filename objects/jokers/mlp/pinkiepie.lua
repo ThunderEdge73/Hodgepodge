@@ -9,11 +9,11 @@ SMODS.Joker {
     config = {
     },
     atlas = "jokers_atlas",
-    pos = {x=6,y=REND.atlas_y.mlp[1]},
+    pos = {x=6,y=HODGE.atlas_y.mlp[1]},
     rarity = 2,
     cost = 7,
     calculate = function(self,card,context)
-        if context.repetition and context.cardarea == G.play and REND.table_contains(REND.elements_of_harmony,context.other_card.seal) then
+        if context.repetition and context.cardarea == G.play and HODGE.table_contains(HODGE.elements_of_harmony,context.other_card.seal) then
             return {
                 repetitions = 1
             }

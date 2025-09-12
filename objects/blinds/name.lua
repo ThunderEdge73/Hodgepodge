@@ -9,7 +9,7 @@ SMODS.Blind {
     atlas = "blinds_atlas",
     pos = {x=0},
     recalc_debuff = function(self, card, from_blind)
-        if REND.table_contains(REND.elements_of_harmony,card.seal) then
+        if HODGE.table_contains(HODGE.elements_of_harmony,card.seal) then
             return true
         end
         return false
@@ -21,7 +21,7 @@ SMODS.Blind {
         if G.playing_cards and #G.playing_cards > 10 then
             local elements = 0
             for k,card in ipairs(G.playing_cards) do
-                if REND.table_contains(REND.elements_of_harmony,card.seal) then
+                if HODGE.table_contains(HODGE.elements_of_harmony,card.seal) then
                     elements = elements + 1
                 end
             end

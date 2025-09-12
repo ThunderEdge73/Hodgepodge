@@ -21,7 +21,7 @@ SMODS.Joker {
         }
     },
     atlas = "jokers_atlas",
-    pos = {x=12,y=REND.atlas_y.mlp[1]},
+    pos = {x=12,y=HODGE.atlas_y.mlp[1]},
     rarity = 3,
     cost = 7,
     calculate = function(self,card,context)

@@ -9,8 +9,8 @@ SMODS.Joker {
         x_chips = 4
     },
     atlas = "jokers_atlas",
-    pos = {x=13,y=REND.atlas_y.joke[1]},
-    soul_pos = {x=13,y=REND.atlas_y.soul[2]},
+    pos = {x=13,y=HODGE.atlas_y.joke[1]},
+    soul_pos = {x=13,y=HODGE.atlas_y.soul[2]},
     rarity = 3,
     cost = 7,
     blueprint_compat = false,

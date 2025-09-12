@@ -103,7 +103,8 @@ return {
 			},
 		},
 		["challenge_names"] = {
-			["c_hodge_battleroyale"] = "Battle Royale"
+			["c_hodge_battleroyale"] = "Battle Royale",
+			["c_hodge_timeline"] = "Timeline"
 		}
 	},
 	["descriptions"] = {
@@ -732,11 +733,21 @@ return {
 			["j_hodge_timeloop"] = {
 				["name"] = "Day 734",
 				["text"] = {
-					"After {C:attention}Boss Blind{} is defeated,",
-					"rewind to start of the Ante.",
-					"{C:gold}Money{}, {C:attention}Jokers{}, {C:attention}Shops{}, etc. are",
-					"included in the rewind.",
-					"{C:inactive,s:0.9}#1#{}"
+					{
+						"After {C:attention}Boss Blind{} is defeated,",
+						"consume 1 {C:attention}charge{}, else",
+						"rewind to start of the Ante.",
+						"{C:gold}Money{}, {C:attention}Jokers{}, {C:attention}Shops{}, etc. are",
+						"included in the rewind.",
+						"{C:inactive,s:0.9}#1#{}"
+					},
+					{
+						"If not the {C:attention}rightmost{} joker,",
+						"{C:attention}destroy{} joker to the right",
+						"and {C:attention}gain 1 charge{}.",
+						"{C:inactive}(Currently {C:attention}#2#{C:inactive}){}"
+
+					}
 				}
 			}
 		},

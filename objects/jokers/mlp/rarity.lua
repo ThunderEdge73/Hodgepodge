@@ -18,7 +18,7 @@ SMODS.Joker {
     cost = 7,
     calculate = function(self,card,context)
         if context.individual and context.cardarea == G.play then
-            if REND.table_contains(REND.elements_of_harmony,context.other_card.seal) then
+            if HODGE.table_contains(HODGE.elements_of_harmony,context.other_card.seal) then
                 --print("stopsign hit")
                 context.other_card.ability.perma_mult = context.other_card.ability.perma_mult + card.ability.extra.mult_gain
                 return {

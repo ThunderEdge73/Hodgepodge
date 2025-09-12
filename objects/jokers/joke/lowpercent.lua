@@ -2,7 +2,7 @@ SMODS.Joker {
     key = "lowpercent",
     loc_vars = function (self,info_queue,card)
         local loc_chips = ' Chips' --' '..(localize('k_chips'))..' ' --There's no localisation for chips ??
-        local ref = (card.area == G.jokers) and REND.lowpercent_vals or {[card.ability.extra.id_table] = 0}
+        local ref = (card.area == G.jokers) and HODGE.lowpercent_vals or {[card.ability.extra.id_table] = 0}
         local live_update_ui = {
             -- {n=G.UIT.O, config={object = DynaText({ref_table = ref, ref_value = card.ability.extra.id_table, colours = {G.C.CHIPS},pop_in_rate = 9999999, silent = true, random_element = true, pop_delay = 0.3, scale = 0.32, min_cycle_time = 0})}},
             {n=G.UIT.T, config={text = '+', scale = 0.32, colour = G.C.CHIPS}},
@@ -21,7 +21,7 @@ SMODS.Joker {
             last_checked_time = nil,
             time_since_gain = 0,
             chip_gain = 0.25,
-            id_table = {}, -- This is used to identify the table in REND.lowpercent_vals, as all tables are unique.
+            id_table = {}, -- This is used to identify the table in HODGE.lowpercent_vals, as all tables are unique.
             big_ignore = {
                 ["last_checked_time"] = true,
                 ["time_since_gain"] = true,
@@ -30,8 +30,8 @@ SMODS.Joker {
         }
     },
     atlas = "jokers_atlas",
-    pos = {x=4,y=REND.atlas_y.joke[1]},
-    soul_pos = {x=4,y=REND.atlas_y.soul[2]},
+    pos = {x=4,y=HODGE.atlas_y.joke[1]},
+    soul_pos = {x=4,y=HODGE.atlas_y.soul[2]},
     rarity = 1,
     cost = 6,
     blueprint_compat = false,
@@ -50,10 +50,10 @@ SMODS.Joker {
                     card.ability.chips = card.ability.chips + card.ability.extra.chip_gain
                     card.ability.extra.time_since_gain = card.ability.extra.time_since_gain - 1
                 end
-                if not REND.lowpercent_vals then
-                    REND.lowpercent_vals = {}
+                if not HODGE.lowpercent_vals then
+                    HODGE.lowpercent_vals = {}
                 end
-                REND.lowpercent_vals[card.ability.extra.id_table] = card.ability.chips
+                HODGE.lowpercent_vals[card.ability.extra.id_table] = card.ability.chips
             end
         end
         card.ability.extra.last_checked_time = G.TIMERS.REAL

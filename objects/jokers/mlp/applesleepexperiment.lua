@@ -14,7 +14,7 @@ SMODS.Joker {
         }
     },
     atlas = "jokers_atlas",
-    pos = {x=14,y=REND.atlas_y.mlp[1]},
+    pos = {x=14,y=HODGE.atlas_y.mlp[1]},
     rarity = 3,
     cost = 7,
     calculate = function(self,card,context)
@@ -29,7 +29,7 @@ SMODS.Joker {
             end
         end
         if context.modify_scoring_hand and not context.blueprint then
-            if not REND.table_contains(context.scoring_hand,context.other_card) then
+            if not HODGE.table_contains(context.scoring_hand,context.other_card) then
                 context.other_card.hodge_unscored = true
                 return {
                     add_to_hand = true

@@ -13,8 +13,8 @@ SMODS.Joker {
         }
     },
     atlas = "jokers_atlas",
-    pos = {x=9,y=REND.atlas_y.joke[1]},
-    --soul_pos = {x=13,y=REND.atlas_y.soul[2]},
+    pos = {x=9,y=HODGE.atlas_y.joke[1]},
+    --soul_pos = {x=13,y=HODGE.atlas_y.soul[2]},
     rarity = 2,
     cost = 6,
     blueprint_compat = false,

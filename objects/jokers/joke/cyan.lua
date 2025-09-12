@@ -12,14 +12,14 @@ SMODS.Joker {
         }
     },
     atlas = "jokers_atlas",
-    pos = {x=2,y=REND.atlas_y.joke[1]},
+    pos = {x=2,y=HODGE.atlas_y.joke[1]},
     rarity = 1,
     cost = 5,
     blueprint_compat = false,
     calculate = function(self,card,context)
         if context.before and context.cardarea == G.jokers then
             for k, playing_card in ipairs(G.play.cards) do
-                if not REND.table_contains(context.scoring_hand, playing_card) then
+                if not HODGE.table_contains(context.scoring_hand, playing_card) then
                     card.ability.chips = card.ability.chips + card.ability.extra.increase
                     G.E_MANAGER:add_event(Event({trigger = 'after', delay = 0.4, func = function()
                         playing_card:juice_up()

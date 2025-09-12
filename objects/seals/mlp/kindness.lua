@@ -18,7 +18,7 @@ SMODS.Seal {
         local total_chips = 0
         if G.playing_cards then
             for k,currentCard in pairs(G.playing_cards) do
-                if REND.table_contains(REND.elements_of_harmony,currentCard.seal) then
+                if HODGE.table_contains(HODGE.elements_of_harmony,currentCard.seal) then
                     total_chips = total_chips + 10
                 end
             end
@@ -29,7 +29,7 @@ SMODS.Seal {
         if context.cardarea == G.play and context.main_scoring then
             local total_chips = 0
             for k,currentCard in pairs(G.playing_cards) do
-                if REND.table_contains(REND.elements_of_harmony,currentCard.seal) then
+                if HODGE.table_contains(HODGE.elements_of_harmony,currentCard.seal) then
                     total_chips = total_chips + 10
                 end
             end

@@ -4,7 +4,7 @@ SMODS.Joker {
         local total_mult = 0
         if G.playing_cards then
             for k,currentCard in pairs(G.playing_cards) do
-                if REND.table_contains(REND.elements_of_harmony,currentCard.seal) then
+                if HODGE.table_contains(HODGE.elements_of_harmony,currentCard.seal) then
                     total_mult = total_mult + card.ability.extra.mult_per_seal
                 end
             end
@@ -24,14 +24,14 @@ SMODS.Joker {
         }
     },
     atlas = "jokers_atlas",
-    pos = {x=7,y=REND.atlas_y.mlp[1]},
+    pos = {x=7,y=HODGE.atlas_y.mlp[1]},
     rarity = 2,
     cost = 7,
     calculate = function(self,card,context)
         if context.joker_main then
             local total_mult = 0
             for k,currentCard in pairs(G.playing_cards) do
-                if REND.table_contains(REND.elements_of_harmony,currentCard.seal) then
+                if HODGE.table_contains(HODGE.elements_of_harmony,currentCard.seal) then
                     total_mult = total_mult + card.ability.extra.mult_per_seal
                 end
             end

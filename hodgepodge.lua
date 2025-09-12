@@ -20,7 +20,8 @@ HODGE.atlas_y = {
     joke      = { 2 },
     mlp       = { 4 },
     legendary = { 6 },
-    utdr      = { 8 },
+    food      = { 8 },
+    utdr      = { 9 },
 
     soul      = { 1, 3, 5, 7 }
 }
@@ -463,5 +464,6 @@ HODGE.load_script("objects/blinds/pip.lua") -- who up tipping they pip
 
 ------ Challenges ------
 HODGE.load_script("objects/challenges/battleroyale.lua")
+HODGE.load_script("objects/challenges/timeline.lua")
 
 HODGE.load_script("collabs/mlp.lua")

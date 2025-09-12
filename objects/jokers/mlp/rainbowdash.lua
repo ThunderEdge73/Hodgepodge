@@ -9,7 +9,7 @@ SMODS.Joker {
     config = {
     },
     atlas = "jokers_atlas",
-    pos = {x=5,y=REND.atlas_y.mlp[1]},
+    pos = {x=5,y=HODGE.atlas_y.mlp[1]},
     rarity = 2,
     cost = 7,
     calculate = function(self,card,context)
@@ -23,7 +23,7 @@ SMODS.Joker {
             if loyalties < 2 then
                 --print("rd | loyalties < 2")
                 for i,c in ipairs(context.scoring_hand) do -- For card in hand
-                    if REND.table_contains(REND.elements_of_harmony,c.seal) and (loyalties == 0 or c.seal == "hodge_loyalty") then -- If is element of harmony
+                    if HODGE.table_contains(HODGE.elements_of_harmony,c.seal) and (loyalties == 0 or c.seal == "hodge_loyalty") then -- If is element of harmony
                         --If there's a loyalty card in the hand, it deals with the logic instead. its easier this way ^
                         --print("rd | "..c.seal)
                         --print("rd | back to deck")

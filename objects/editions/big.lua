@@ -44,7 +44,7 @@ SMODS.Edition {
         if not card.hodge_upgrade_big then
             ----print("Applying Big! orig mult = "..card.hodge_orig_ability.mult)
             local extra_probability_jokers = {"8 Ball","Business Card","Space Joker"} -- List of jokers who have ability.extra set to just 1 number, the probability of smth happening
-            local extra_is_probability = REND.table_contains(extra_probability_jokers,card.ability.name) -- If current joker is one of these jokers ^^^
+            local extra_is_probability = HODGE.table_contains(extra_probability_jokers,card.ability.name) -- If current joker is one of these jokers ^^^
             ----print(card.ability.mult)
             
             local ignore_keys = {
@@ -59,9 +59,9 @@ SMODS.Edition {
                 end
             end
 
-            REND.mod_card_values(card.ability,{multiply = 2, reference = card.hodge_orig_ability, unkeywords = ignore_keys})
+            HODGE.mod_card_values(card.ability,{multiply = 2, reference = card.hodge_orig_ability, unkeywords = ignore_keys})
             ----print(card.ability.mult)
-            REND.mod_card_values(card.ability,{multiply = 0.5, keywords = {["odds"]=true,["extra"]=extra_is_probability,["cry_prob"]=true}}) -- Multiply just the odds
+            HODGE.mod_card_values(card.ability,{multiply = 0.5, keywords = {["odds"]=true,["extra"]=extra_is_probability,["cry_prob"]=true}}) -- Multiply just the odds
             ----print(card.ability.mult)
             card.hodge_upgrade_big = true
             card.T.scale = card.T.scale * 1.25
@@ -73,7 +73,7 @@ SMODS.Edition {
     end,
     on_remove = function(card) -- REMOVING BIG FROM A CARD
         ----print("Removing Big! orig mult = "..tostring(card.hodge_orig_ability.mult))
-        card.ability = REND.deep_copy(card.hodge_orig_ability)
+        card.ability = HODGE.deep_copy(card.hodge_orig_ability)
         card.hodge_upgrade_big = false
         card.T.scale = card.T.scale / 1.25
         ----print("Removed Big! orig mult = "..card.hodge_orig_ability.mult)

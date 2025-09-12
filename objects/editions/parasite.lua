@@ -61,7 +61,7 @@ SMODS.Edition {
                                 table.insert(eligible_editionless_cards, v)
                             end
                         end
-                        if REND.table_true_size(eligible_editionless_cards) > 0 then 
+                        if HODGE.table_true_size(eligible_editionless_cards) > 0 then 
                             local over = false
                             local temp_pool = eligible_editionless_cards or {}
                             local eligible_card = pseudorandom_element(temp_pool, pseudoseed("parasite"))
@@ -88,7 +88,7 @@ SMODS.Edition {
                         table.insert(eligible_editionless_jokers, v)
                     end
                 end
-                if REND.table_true_size(eligible_editionless_jokers) > 0 then 
+                if HODGE.table_true_size(eligible_editionless_jokers) > 0 then 
                     local over = false
                     local temp_pool = eligible_editionless_jokers or {}
                     local eligible_card = pseudorandom_element(temp_pool, pseudoseed("parasite"))
@@ -132,7 +132,7 @@ SMODS.Edition {
         --                         table.insert(eligible_editionless_cards, v)
         --                     end
         --                 end
-        --                 if REND.table_true_size(eligible_editionless_cards) > 0 then 
+        --                 if HODGE.table_true_size(eligible_editionless_cards) > 0 then 
         --                     local over = false
         --                     local temp_pool = eligible_editionless_cards or {}
         --                     local eligible_card = pseudorandom_element(temp_pool, pseudoseed("parasite"))
@@ -159,7 +159,7 @@ SMODS.Edition {
         --                 table.insert(eligible_editionless_jokers, v)
         --             end
         --         end
-        --         if REND.table_true_size(eligible_editionless_jokers) > 0 then 
+        --         if HODGE.table_true_size(eligible_editionless_jokers) > 0 then 
         --             local over = false
         --             local temp_pool = eligible_editionless_jokers or {}
         --             local eligible_card = pseudorandom_element(temp_pool, pseudoseed("parasite"))
