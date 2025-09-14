@@ -24,7 +24,7 @@ SMODS.Joker {
     rarity = 2,
     cost = 5,
     set_badges = function(self,card,badges)
-        badges[#badges+1] = create_badge(localize('k_badge_misc'), G.C.CHIPS, G.C.WHITE, 1.2)
+        badges[#badges+1] = HODGE.badge('category','misc')
     end,
     add_to_deck = function(self,card,from_debuff)
         G.GAME.round_resets.hands = G.GAME.round_resets.hands + card.ability.extra.h_plays

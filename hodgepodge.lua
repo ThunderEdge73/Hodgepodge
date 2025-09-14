@@ -222,6 +222,65 @@ HODGE.force_front_shuffle = function(list, condition, lower_bound, seed)
     end
 end
 
+HODGE.badge = function(type,id)
+    local badges = {
+        category = {
+            misc = {
+                text = "k_badge_misc",
+                bg = G.C.CHIPS,
+                colour = G.C.WHITE
+            },
+            joke = {
+                text = "k_badge_joke",
+                bg = G.C.GREEN,
+                colour = G.C.WHITE
+            },
+            mlp = {
+                text = "k_badge_mlp",
+                bg = G.C.PURPLE,
+                colour = G.C.WHITE
+            },
+            pokemon = {
+                text = "k_badge_pokemon",
+                bg = G.C.MULT,
+                colour = G.C.WHITE
+            },
+            ["pokemon?"] = {
+                text = "k_badge_pokemon_maybe",
+                bg = G.C.MULT,
+                colour = G.C.WHITE
+            },
+            utdr = {
+                text = "k_badge_utdr",
+                bg = G.C.MULT,
+                colour = G.C.BLACK
+            },
+        },
+        credit = {
+            jorse = {
+                text = "k_badge_jorse",
+                bg = G.C.GREEN,
+                colour = G.C.WHITE,
+                size = 1.0
+            },
+            edward = {
+                text = "k_badge_edward",
+                bg = G.C.CHIPS,
+                colour = G.C.WHITE,
+                size = 1.0
+            },
+            pumpkin = {
+                text = "k_badge_pumpkin",
+                bg = G.C.SUITS.Diamonds,
+                colour = G.C.WHITE,
+                size = 1.0
+            }
+        }
+    }
+    local badge = badges[type][id]
+    return create_badge(localize(badge.text), badge.bg, badge.colour, badge.size or 1.2)
+end
+
 ------------------
 ----- Sounds -----
 ------------------
@@ -465,5 +524,8 @@ HODGE.load_script("objects/blinds/pip.lua") -- who up tipping they pip
 ------ Challenges ------
 HODGE.load_script("objects/challenges/battleroyale.lua")
 HODGE.load_script("objects/challenges/timeline.lua")
+
+------ Rarities ------
+--HODGE.load_script("objects/rarities/ubiquitous.lua")
 
 HODGE.load_script("collabs/mlp.lua")

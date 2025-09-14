@@ -32,7 +32,7 @@ SMODS.Joker {
         end
     end,
     set_badges = function(self,card,badges)
-        badges[#badges+1] = create_badge(localize('k_badge_joke'), G.C.GREEN, G.C.WHITE, 1.2)
+        badges[#badges+1] = HODGE.badge('category','joke')
     end
 }
 

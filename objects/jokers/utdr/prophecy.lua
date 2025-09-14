@@ -68,7 +68,7 @@ SMODS.Joker {
     in_pool = function(self,args)
     end,
     set_badges = function(self,card,badges)
-        badges[#badges+1] = create_badge(localize('k_badge_utdr'), G.C.MULT, G.C.BLACK, 1.2)
+        HODGE.badge('category','utdr')
     end,
     draw = function(self, card, layer)
         -- love.graphics.push("all")

@@ -153,6 +153,6 @@ SMODS.Joker {
         end
     end, --TODO: make this joker survive the time loop. maybe hook save_run or maybye save to a profile (G.PROFILES[G.SETTINGS.profile].var_name)
     set_badges = function(self,card,badges)
-        badges[#badges+1] = create_badge(localize('k_badge_mlp'), G.C.PURPLE, G.C.WHITE, 1.2)
+        badges[#badges+1] = HODGE.badge('category','mlp')
     end
 }

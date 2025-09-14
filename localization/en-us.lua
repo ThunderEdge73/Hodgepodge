@@ -36,6 +36,7 @@ return {
 			["hodge_moons"] = "Moons",
 		},
 		["dictionary"] = {
+			-- Categories
 			["k_badge_misc"] = "Misc",
 			["k_badge_joke"] = "Joke",
 			["k_badge_pokemon"] = "Pokémon",
@@ -44,6 +45,10 @@ return {
 			["k_badge_wof"] = "Wings of Fire",
 			["k_badge_pokemon_maybe"] = "Pokémon?",
 			["k_badge_mlp"] = "MLP:FiM",
+			--Credits
+			["k_badge_jorse"] = "Art: Jorse/Radspeon",
+			["k_badge_edward"] = "Art: edward robinson",
+			["k_badge_pumpkin"] = "Art: Pumpkin man",
 			
 			["b_power_cards"] = "Power Cards",
 			["k_booster_group_p_hodge_power_booster_mega"] = {

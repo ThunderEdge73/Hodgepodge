@@ -73,6 +73,6 @@ SMODS.Joker {
     add_to_deck = function(self,card,from_debuff)
     end,
     set_badges = function(self,card,badges)
-        badges[#badges+1] = create_badge(localize('k_badge_misc'), G.C.CHIPS, G.C.WHITE, 1.2)
+        badges[#badges+1] = HODGE.badge('category','misc')
     end
 }

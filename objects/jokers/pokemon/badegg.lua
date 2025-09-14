@@ -58,6 +58,6 @@ SMODS.Joker {
     --     card.sell_cost = -256
     -- end,
     set_badges = function(self,card,badges)
-        badges[#badges+1] = create_badge(localize('k_badge_pokemon_maybe'), G.C.MULT, G.C.WHITE, 1.2)
+        HODGE.badge('category','pokemon?')
     end
 }
