@@ -124,10 +124,9 @@ return {
 			["b_hodge_jumbo"] = {
 				["name"] = "Jumbo Deck",
 				["text"] = {
-					"Start run with",
-					"only {C:dark_edition}Big{} cards",
-					"{C:attention}+4{} hand size",
-					"{C:inactive}(Hand can hold {C:attention}6{C:inactive} Big cards){}",
+					"{C:attention}+#1#{} hand size,",
+					"{C:attention}+#2#{} Joker Slots",
+					"Everything is {C:dark_edition}Big{}"
 				},
 			},
 			["b_hodge_friendship"] = {
