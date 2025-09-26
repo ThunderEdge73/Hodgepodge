@@ -129,6 +129,12 @@ return {
 					"Everything is {C:dark_edition}Big{}"
 				},
 			},
+			["b_hodge_jimbo"] = {
+				["name"] = "Jimbo Deck",
+				["text"] = {
+					"{C:mult}+4{} Mult",
+				},
+			},
 			["b_hodge_friendship"] = {
 				["name"] = "Friendship Deck",
 				["text"] = {
