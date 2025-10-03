@@ -29,6 +29,7 @@ SMODS.Joker {
             local changed_cards = {}
             for i=1, #context.scoring_hand do
                 if context.scoring_hand[i].base.nominal > 4 then
+                    context.scoring_hand[i].hodge_orig_value = context.scoring_hand[i].base.value
                     local new_value = pseudorandom_element({2,3,4,5,6,7,8,9,10,11,12,13,14},"lostcount")
                     changed_cards[i] = new_value
                     if (new_value > 10 and new_value < 14) then
@@ -50,16 +51,18 @@ SMODS.Joker {
             for i,rank in pairs(changed_cards) do
                 G.E_MANAGER:add_event(Event({trigger = 'after',delay = 0.1,func = function()
                     local card = context.scoring_hand[i]
-                    local suit_prefix = string.sub(card.base.suit, 1, 1)..'_'
-                    local rank_suffix = rank
-                    if rank_suffix < 10 then rank_suffix = tostring(rank_suffix)
-                    elseif rank_suffix == 10 then rank_suffix = 'T'
-                    elseif rank_suffix == 11 then rank_suffix = 'J'
-                    elseif rank_suffix == 12 then rank_suffix = 'Q'
-                    elseif rank_suffix == 13 then rank_suffix = 'K'
-                    elseif rank_suffix == 14 or rank_suffix == 1 then rank_suffix = 'A'
+                    -- these next 2 lines are so that it can detect it as a rank increase. the value is increased before so that its scored correctly
+                    card.base.value = card.hodge_orig_value
+                    card.hodge_orig_value = nil
+                    
+                    if rank < 10 then rank = tostring(rank)
+                    elseif rank == 11 then rank = 'Jack'
+                    elseif rank == 12 then rank = 'Queen'
+                    elseif rank == 13 then rank = 'King'
+                    elseif rank == 14 or rank == 1 then rank = 'Ace'
                     end
-                    card:set_base(G.P_CARDS[suit_prefix..rank_suffix])
+                    
+                    SMODS.change_base(card,nil,rank)
                 return true end }))
             end  
             for i,rank in pairs(changed_cards) do

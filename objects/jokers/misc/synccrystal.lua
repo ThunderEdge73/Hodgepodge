@@ -35,6 +35,7 @@ SMODS.Joker {
             end
             local average = math.floor(total_rank / count)
             for i=1, #context.scoring_hand do
+                context.scoring_hand[i].hodge_orig_value = context.scoring_hand[i].base.value
                 if (average > 10 and average < 14) then
                     context.scoring_hand[i].base.nominal = 10
                     local face_ranks = {"Jack","Queen","King"}
@@ -53,16 +54,19 @@ SMODS.Joker {
             for i=1, #context.scoring_hand do
                 G.E_MANAGER:add_event(Event({trigger = 'after',delay = 0.1,func = function()
                     local card = context.scoring_hand[i]
-                    local suit_prefix = string.sub(card.base.suit, 1, 1)..'_'
-                    local rank_suffix = average
-                    if rank_suffix < 10 then rank_suffix = tostring(rank_suffix)
-                    elseif rank_suffix == 10 then rank_suffix = 'T'
-                    elseif rank_suffix == 11 then rank_suffix = 'J'
-                    elseif rank_suffix == 12 then rank_suffix = 'Q'
-                    elseif rank_suffix == 13 then rank_suffix = 'K'
-                    elseif rank_suffix == 14 or rank_suffix == 1 then rank_suffix = 'A'
+                    -- these next 2 lines are so that it can detect it as a rank increase. the value is increased before so that its scored correctly
+                    card.base.value = card.hodge_orig_value
+                    card.hodge_orig_value = nil
+                    
+                    local rank = average
+                    if rank < 10 then rank = tostring(rank)
+                    elseif rank == 11 then rank = 'Jack'
+                    elseif rank == 12 then rank = 'Queen'
+                    elseif rank == 13 then rank = 'King'
+                    elseif rank == 14 or rank == 1 then rank = 'Ace'
                     end
-                    card:set_base(G.P_CARDS[suit_prefix..rank_suffix])
+                    
+                    SMODS.change_base(card,nil,rank)
                 return true end }))
             end  
             for i=1, #context.scoring_hand do

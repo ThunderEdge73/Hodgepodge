@@ -87,6 +87,9 @@ if self.ability.name == 'Hologram' then
 '''
 position = "after"
 payload = '''
+elseif self.ability.name == "j_hodge_vestup" then
+    self.children.floating_sprite:draw_shader('dissolve',0, nil, nil, self.children.center,nil, nil,-0.8,-1.1 + 0.1,nil, 0.6)
+    self.children.floating_sprite:draw_shader('dissolve', nil, nil, nil, self.children.center, nil, nil,-0.8,-1.1)
 elseif self.ability.name == "j_hodge_missingno" then
     local x_mod = math.cos(1.8*G.TIMERS.REAL)*0.3
     local y_mod = math.sin(3.6*G.TIMERS.REAL)*0.3
@@ -98,9 +101,10 @@ elseif self.ability.name == "j_hodge_badegg" then
     rotate_mod = (math.sin(G.TIMERS.REAL*12)*math.sin(G.TIMERS.REAL)*ramp) * 0.4
     self.children.floating_sprite:draw_shader('dissolve',0, nil, nil, self.children.center,scale_mod, rotate_mod, 0, 0.22 + (0.1 + 0.03*math.sin(1.8*G.TIMERS.REAL)),nil, 0.6)
     self.children.floating_sprite:draw_shader('dissolve', nil, nil, nil, self.children.center, scale_mod, rotate_mod,0,0.22)
-elseif self.ability.name == "j_hodge_vestup" then
-    self.children.floating_sprite:draw_shader('dissolve',0, nil, nil, self.children.center,nil, nil,-0.8,-1.1 + 0.1,nil, 0.6)
-    self.children.floating_sprite:draw_shader('dissolve', nil, nil, nil, self.children.center, nil, nil,-0.8,-1.1)
+elseif self.ability.name == "j_hodge_eeeee" then
+    rotate_mod = (rotate_mod * 2) - 0.4
+    self.children.floating_sprite:draw_shader('dissolve',0, nil, nil, self.children.center,scale_mod, rotate_mod,-0.1, 0.05 + 0.03*math.sin(1.8*G.TIMERS.REAL),nil, 0.6)
+    self.children.floating_sprite:draw_shader('dissolve', nil, nil, nil, self.children.center, scale_mod, rotate_mod,-0.1,-0.05)
 '''
 match_indent = true
 overwrite = false
@@ -273,6 +277,68 @@ payload = '''if _c.main_start or main_start then
 end'''
 match_indent = true
 ### End support ###
+
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = '''
+love.graphics.setCanvas(G.AA_CANVAS)
+'''
+position = "at"
+payload = '''
+if G.GAME.hodge_blue then
+    love.graphics.setCanvas(G.HODGE_BLUE_CANVAS)
+    love.graphics.setShader( G.SHADERS['hodge_blue'])
+    love.graphics.draw(self.CANVAS, 0, 0)
+end
+
+love.graphics.setCanvas(G.AA_CANVAS)
+'''
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = '''
+    love.graphics.draw(self.CANVAS, 0, 0)
+love.graphics.pop()
+'''
+position = "at"
+payload = '''
+    if G.GAME.hodge_blue then
+        love.graphics.draw(self.HODGE_BLUE_CANVAS, 0, 0)
+    else
+        love.graphics.draw(self.CANVAS, 0, 0)
+    end
+love.graphics.pop()
+'''
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = "main.lua"
+pattern = '''
+G.CANVAS:setFilter('linear', 'linear')
+'''
+position = "after"
+payload = '''
+G.HODGE_BLUE_CANVAS = love.graphics.newCanvas(w*G.CANV_SCALE, h*G.CANV_SCALE, {type = '2d', readable = true})
+'''
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = '''
+self.GAME.current_round.reroll_cost = self.GAME.base_reroll_cost
+'''
+position = "after"
+payload = '''
+
+self.GAME.hodge_blue = false
+'''
+match_indent = true
+
 
 # [[patches]]
 # [patches.pattern]

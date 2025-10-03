@@ -109,6 +109,25 @@ function Card:click()
     return ret
 end
 
+-- Card change contexts
+
+local setBase = Card.set_base
+function Card:set_base(card,initial,manual_sprites)
+    --print(card and card.value)
+    --print(self and self.base and self.base.value)
+    if (self and self.base and self.base.suit) and (card and card.suit) and self.base.suit ~= card.suit then
+        --print("suit change")
+        SMODS.calculate_context({hodge_suit_change = true, other_card = self, orig_suit = self.base.suit, new_suit = card.suit})
+    end
+    if (self and self.base and self.base.value) and (card and card.value) and self.base.value ~= card.value then
+        --print("rank change")
+        SMODS.calculate_context({hodge_rank_change = true, other_card = self, orig_rank = self.base.value, new_rank = card.value})
+    end
+    
+    ret = setBase(self,card,initial,manual_sprites)
+    return ret
+end
+
 --vest up chip gain
 local calcIndivEffect = SMODS.calculate_individual_effect
 SMODS.calculate_individual_effect = function(effect, scored_card, key, amount, from_edition)

@@ -17,7 +17,7 @@ HODGE.elements_of_harmony = {"hodge_kindness","hodge_honesty","hodge_loyalty","h
 
 HODGE.atlas_y = {
     misc      = { 0 },
-    joke      = { 2 },
+    joke      = { 2, 10 },
     mlp       = { 4 },
     legendary = { 6 },
     food      = { 8 },
@@ -511,9 +511,15 @@ HODGE.load_script("objects/jokers/mlp/applesleepexperiment.lua")
 -- Page 4 - Legendaries
 HODGE.load_script("objects/jokers/misc/lumi.lua")
 HODGE.load_script("objects/jokers/joke/david.lua")
+
 HODGE.load_script("objects/jokers/pokemon/missingno.lua")
 HODGE.load_script("objects/jokers/pokemon/badegg.lua") -- does... does this count?
+HODGE.load_script("objects/jokers/pokemon/eeeee.lua")
+
 HODGE.load_script("objects/jokers/mlp/timeloop.lua") --this fucker is soooooo broken
+
+
+HODGE.load_script("objects/jokers/joke/bluelatro.lua")
 -- Page 5 - UTDR
 -- HODGE.load_script("objects/jokers/utdr/prophecy.lua")
 
@@ -530,3 +536,9 @@ HODGE.load_script("objects/challenges/timeline.lua")
 --HODGE.load_script("objects/rarities/ubiquitous.lua")
 
 HODGE.load_script("collabs/mlp.lua")
+
+
+SMODS.Shader {
+    key = "blue",
+    path = "blue.fs"
+}

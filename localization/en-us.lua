@@ -740,6 +740,14 @@ return {
 					"{C:dark_edition,E:1,s:1.5}...{}",
 				},
 			},
+			["j_hodge_eeeee"] = {
+				["name"] = "EEeEE",
+				["text"] = {
+					"Gains {X:mult,C:white}X#1#{} Mult when",
+					"a card's rank {C:attention}increases{}",
+					"{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive}){}"
+				},
+			},
 			["j_hodge_timeloop"] = {
 				["name"] = "Day 734",
 				["text"] = {
@@ -758,6 +766,12 @@ return {
 						"{C:inactive}(Currently {C:attention}#2#{C:inactive}){}"
 
 					}
+				}
+			},
+			["j_hodge_bluelatro"] = {
+				["name"] = "{C:blue}Blue{}latro",
+				["text"] = {
+					"what if balatro was {C:blue}Blue{}"
 				}
 			}
 		},
