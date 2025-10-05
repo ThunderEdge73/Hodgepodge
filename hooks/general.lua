@@ -137,16 +137,21 @@ SMODS.calculate_individual_effect = function(effect, scored_card, key, amount, f
         --print(effect)
         --print("Before: "..amount)
         local bonus_chips = 0
+        local bonus_chip_mult = 1
         for k,joker in pairs(G.jokers.cards) do
             if joker.ability.name == "j_hodge_vestup" then
                 bonus_chips = bonus_chips + joker.ability.extra.chip_gain_bonus
                 --print("New bonus: "..bonus_chips.." | Gained "..joker.ability.extra.chip_gain_bonus)
                 joker:juice_up()
             end
+            if joker.ability.name == "j_hodge_bluelatro" then
+                bonus_chip_mult = bonus_chip_mult * joker.ability.extra.chip_gain_mult
+                joker:juice_up()
+            end
         end
 
         local orig_amount = amount
-        amount = amount + bonus_chips
+        amount = (amount + bonus_chips) * bonus_chip_mult
         --print("After: "..amount)
 
 

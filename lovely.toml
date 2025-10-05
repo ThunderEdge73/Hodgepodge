@@ -105,6 +105,16 @@ elseif self.ability.name == "j_hodge_eeeee" then
     rotate_mod = (rotate_mod * 2) - 0.4
     self.children.floating_sprite:draw_shader('dissolve',0, nil, nil, self.children.center,scale_mod, rotate_mod,-0.1, 0.05 + 0.03*math.sin(1.8*G.TIMERS.REAL),nil, 0.6)
     self.children.floating_sprite:draw_shader('dissolve', nil, nil, nil, self.children.center, scale_mod, rotate_mod,-0.1,-0.05)
+elseif self.ability.name == "j_hodge_jovialmerriment" then
+    local x_period = 2.17
+    local y_period = 1.39
+    local x_mult = 0.5
+    local y_mult = 0.75
+    local x_mod = ((4 * math.abs((G.TIMERS.REAL / x_period) - math.floor((G.TIMERS.REAL / x_period) + 0.5))) - 1) * x_mult
+    local y_mod = ((4 * math.abs((G.TIMERS.REAL / y_period) - math.floor((G.TIMERS.REAL / y_period) + 0.5))) - 1) * y_mult
+    local rotate_mod = 0
+    --self.children.floating_sprite:draw_shader('dissolve',0, nil, nil, self.children.center,scale_mod, rotate_mod, x_mod, y_mod+(0.1 + 0.03*math.sin(1.8*G.TIMERS.REAL)),nil, 0.6)
+    self.children.floating_sprite:draw_shader('dissolve', nil, nil, nil, self.children.center, scale_mod, rotate_mod, x_mod, y_mod)
 '''
 match_indent = true
 overwrite = false
@@ -226,18 +236,18 @@ G.GAME.hodge_last_blind_type = G.GAME.blind:get_type()
 match_indent = true
 overwrite = false
 
-[[patches]]
-[patches.pattern]
-target = "card.lua"
-pattern = '''
-if self.ability.name == 'Chicot' and G.GAME.blind and G.GAME.blind.boss and not G.GAME.blind.disabled then
-'''
-position = "at"
-payload = '''
-if self.ability.name == 'Chicot' and G.GAME.blind and G.GAME.blind.boss and not G.GAME.blind.disabled then
-    -- print(G.hodge_chicot_override)
-'''
-match_indent = true
+# [[patches]]
+# [patches.pattern]
+# target = "card.lua"
+# pattern = '''
+# if self.ability.name == 'Chicot' and G.GAME.blind and G.GAME.blind.boss and not G.GAME.blind.disabled then
+# '''
+# position = "at"
+# payload = '''
+# if self.ability.name == 'Chicot' and G.GAME.blind and G.GAME.blind.boss and not G.GAME.blind.disabled then
+#     -- print(G.hodge_chicot_override)
+# '''
+# match_indent = true
 
 [[patches]]
 [patches.pattern]
@@ -278,6 +288,7 @@ end'''
 match_indent = true
 ### End support ###
 
+### what if balatro was Blue ###
 [[patches]]
 [patches.pattern]
 target = "game.lua"
@@ -287,7 +298,7 @@ love.graphics.setCanvas(G.AA_CANVAS)
 position = "at"
 payload = '''
 if G.GAME.hodge_blue then
-    love.graphics.setCanvas(G.HODGE_BLUE_CANVAS)
+    love.graphics.setCanvas(HODGE.BLUE_CANVAS)
     love.graphics.setShader( G.SHADERS['hodge_blue'])
     love.graphics.draw(self.CANVAS, 0, 0)
 end
@@ -306,7 +317,7 @@ love.graphics.pop()
 position = "at"
 payload = '''
     if G.GAME.hodge_blue then
-        love.graphics.draw(self.HODGE_BLUE_CANVAS, 0, 0)
+        love.graphics.draw(HODGE.BLUE_CANVAS, 0, 0)
     else
         love.graphics.draw(self.CANVAS, 0, 0)
     end
@@ -322,7 +333,8 @@ G.CANVAS:setFilter('linear', 'linear')
 '''
 position = "after"
 payload = '''
-G.HODGE_BLUE_CANVAS = love.graphics.newCanvas(w*G.CANV_SCALE, h*G.CANV_SCALE, {type = '2d', readable = true})
+HODGE.BLUE_CANVAS = love.graphics.newCanvas(w*G.CANV_SCALE, h*G.CANV_SCALE, {type = '2d', readable = true})
+HODGE.prophecy_canvas = love.graphics.newCanvas(w*G.CANV_SCALE, h*G.CANV_SCALE, {type = '2d', readable = true})
 '''
 match_indent = true
 
@@ -338,6 +350,8 @@ payload = '''
 self.GAME.hodge_blue = false
 '''
 match_indent = true
+### its blue now, thats my attack ##
+
 
 
 # [[patches]]

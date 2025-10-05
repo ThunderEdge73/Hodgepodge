@@ -27,7 +27,7 @@ SMODS.Joker {
                 end
             end
             if SMODS.pseudorandom_probability(card, 'moonrock', moons, 5, 'moonrock') then
-                ease_discards(1)
+                ease_discard(1)
             end
         end
     end,

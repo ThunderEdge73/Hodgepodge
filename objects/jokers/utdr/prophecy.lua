@@ -44,7 +44,7 @@ HODGE.prophecy_image = HODGE.load_custom_image("depths.png")
 
 -- generate_shader_atlas("hodge_jokers_atlas","hodge_depths_jokers_atlas","prophecy",{mask_texture = HODGE.prophecy_image})
 
-HODGE.prophecy_canvas = love.graphics.newCanvas(71, 95, {type = '2d', readable = true})
+--HODGE.prophecy_canvas = love.graphics.newCanvas(w*G.CANV_SCALE, h*G.CANV_SCALE, {type = '2d', readable = true})
 
 SMODS.Joker {
     key = "prophecy",
@@ -58,7 +58,7 @@ SMODS.Joker {
         extra = {
         }
     },
-    atlas = "depths_jokers_atlas",
+    atlas = "jokers_atlas",
     pos = {x=1,y=HODGE.atlas_y.utdr[1]},
     rarity = 2,
     cost = 6,
@@ -69,26 +69,35 @@ SMODS.Joker {
     end,
     set_badges = function(self,card,badges)
         HODGE.badge('category','utdr')
-    end,
-    draw = function(self, card, layer)
-        -- love.graphics.push("all")
-
-        -- love.graphics.setCanvas(HODGE.prophecy_canvas)
-        -- love.graphics.setColor(1,1,1,1)
-
-        -- G.SHADERS["hodge_prophecy"]:send("mask_texture",HODGE.prophecy_image)
-        -- card.children.center:draw_shader("hodge_prophecy", nil,card.ARGS.send_to_shader)
-
-        -- love.graphics.pop()
     end
+    -- draw = function(self, card, layer)
+    --     love.graphics.push("all")
+
+    --     love.graphics.setCanvas(HODGE.prophecy_canvas)
+    --     love.graphics.setColor(1,1,1,1)
+
+    --     G.SHADERS["hodge_prophecy"]:send("mask_texture",HODGE.prophecy_image)
+    --     card.children.center:draw_shader("hodge_prophecy", nil,card.ARGS.send_to_shader)
+
+    --     love.graphics.pop()
+    -- end
 }
 
--- SMODS.DrawStep {
---     key = "prophecy_drawstep",
---     order = 25,
---     func = function(card,layer)
---         G.SHADERS["hodge_prophecy"]:send("mask_texture",HODGE.prophecy_image)
---         card.children.center:draw_shader("hodge_prophecy", nil,card.ARGS.send_to_shader)
---     end,
---     conditions = {facing = "front"}
--- }
+SMODS.DrawStep {
+    key = "prophecy_drawstep",
+    order = 25,
+    func = function(card,layer)
+        local canvas = love.graphics.getCanvas()
+        love.graphics.setCanvas(HODGE.prophecy_canvas)
+        love.graphics.clear()
+        card.children.center:draw()
+
+        love.graphics.setCanvas(canvas)
+        love.graphics.setShader( G.SHADERS['hodge_prophecy'])
+        G.SHADERS["hodge_prophecy"]:send("mask_texture",HODGE.prophecy_image)
+        love.graphics.draw(HODGE.prophecy_canvas,0,0)
+        --card.children.center:draw_shader("hodge_prophecy", nil,card.ARGS.send_to_shader)
+    end,
+    conditions = {facing = "front"}
+}
+

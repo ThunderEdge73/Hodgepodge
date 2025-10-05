@@ -1,0 +1,38 @@
+SMODS.Joker {
+    key = "runerigus",
+    loc_vars = function (self,info_queue,card)
+        return {
+            vars = {
+                card.ability.extra.x_mult,
+                card.ability.x_mult
+            }
+        }
+    end,
+    config = {
+        x_mult = 1,
+        extra = {
+            x_mult = 0.5
+        }
+    },
+    atlas = "jokers_atlas",
+    pos = {x=9,y=HODGE.atlas_y.legendary[1]},
+    soul_pos = {x=9,y=HODGE.atlas_y.soul[4]},
+    rarity = 4,
+    cost = 20,
+    calculate = function(self,card,context)
+        if context.repetition and context.cardarea == G.play then
+            local retriggers = 0
+            for k,currentCard in pairs(G.hand.cards) do
+                if SMODS.has_enhancement(currentCard, 'm_stone') then
+                    retriggers = retriggers + 1
+                end
+            end
+            return {
+                repetitions = retriggers
+            }
+        end
+    end,
+    set_badges = function(self,card,badges)
+        badges[#badges+1] = HODGE.badge('category','pokemon')
+    end
+}

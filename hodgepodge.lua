@@ -511,12 +511,16 @@ HODGE.load_script("objects/jokers/mlp/applesleepexperiment.lua")
 -- Page 4 - Legendaries
 HODGE.load_script("objects/jokers/misc/lumi.lua")
 HODGE.load_script("objects/jokers/joke/david.lua")
+HODGE.load_script("objects/jokers/joke/jovialmerriment.lua")
 
+HODGE.load_script("objects/jokers/pokemon/umbreon.lua")
 HODGE.load_script("objects/jokers/pokemon/missingno.lua")
 HODGE.load_script("objects/jokers/pokemon/badegg.lua") -- does... does this count?
 HODGE.load_script("objects/jokers/pokemon/eeeee.lua")
+HODGE.load_script("objects/jokers/pokemon/runerigus.lua")
 
 HODGE.load_script("objects/jokers/mlp/timeloop.lua") --this fucker is soooooo broken
+HODGE.load_script("objects/jokers/mlp/celestia.lua")
 
 
 HODGE.load_script("objects/jokers/joke/bluelatro.lua")

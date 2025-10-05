@@ -5,6 +5,9 @@ SMODS.Joker {
         }
     end,
     config = {
+        extra = {
+            chip_gain_mult = 2 -- multiply all chip gain by 2
+        }
     },
     atlas = "jokers_atlas",
     pos = {x=0,y=HODGE.atlas_y.joke[2]},

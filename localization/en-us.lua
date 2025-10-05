@@ -615,7 +615,7 @@ return {
 				},
 			},
 			["j_hodge_moonrock"] = {
-				["name"] = "Moon Rock",
+				["name"] = "Moonstone",
 				["text"] = {
 					"{C:green}0 in #2#{} chance to gain {C:mult}+1 Discard{} ",
 					"Increases by {C:green}#1# in #2#{} per", "scoring {C:hodge_moons}Moon{} card in played hand",
@@ -723,6 +723,27 @@ return {
 					"{C:inactive,s:0.85}Rank chosen on Blind selected{}",
 				},
 			},
+			["j_hodge_jovialmerriment"] = {
+				["name"] = "Jovial Merriment",
+				["text"] = {
+					"Gains {X:mult,C:white}X#1#{} Mult if played hand is",
+					"{C:attention}highest scoring{} hand of run",
+					"{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive} Mult, {C:chips}#3#{C:inactive} chips){}"
+				},
+			},
+			["j_hodge_umbreon"] = {
+				["name"] = "Umbreon",
+				["text"] = {
+					{
+						"Scored {C:hodge_moons}Moons{}",
+						"give {C:mult}+#1#{} Mult"
+					},
+					{
+						"Converts {C:attention}played{} cards",
+						"to {C:hodge_moons}Moons{} after scoring"
+					}
+				},
+			},
 			["j_hodge_missingno"] = {
 				["name"] = "MissingNo.",
 				["text"] = {
@@ -748,6 +769,14 @@ return {
 					"{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive}){}"
 				},
 			},
+			["j_hodge_runerigus"] = {
+				["name"] = "Runerigus",
+				["text"] = {
+					"{C:attention}Retrigger{} scoring cards",
+					"for each {C:attention}Stone Card{}",
+					"held in hand"
+				},
+			},
 			["j_hodge_timeloop"] = {
 				["name"] = "Day 734",
 				["text"] = {
@@ -768,10 +797,24 @@ return {
 					}
 				}
 			},
+			["j_hodge_celestia"] = {
+				["name"] = "Celestia",
+				["text"] = {
+					{
+						"Gains {C:chips}+#1#{} Chips",
+						"per scoring {C:hodge_suns}Sun{}",
+						"{C:inactive}(Currently {C:chips}+#2#{C:inactive}){}"
+					},
+					{
+						"Converts {C:attention}played{} cards",
+						"to {C:hodge_suns}Suns{} after scoring"
+					}
+				},
+			},
 			["j_hodge_bluelatro"] = {
 				["name"] = "{C:blue}Blue{}latro",
 				["text"] = {
-					"what if balatro was {C:blue}Blue{}"
+					"what if balatro was {C:blue}Blue{C:dark_edition,E:1}...{}"
 				}
 			}
 		},
