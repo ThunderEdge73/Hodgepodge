@@ -535,7 +535,8 @@ return {
 				["text"] = {
 					"{C:chips}+#1#{} Chips",
 					"{C:attention}ALL{} chip gain increased by {C:chips}+#2#{}",
-					"Gain increases by {C:chips}+#3#{} at end of round"
+					"Gain increases by {C:chips}+#3#{} at end of round",
+					"{C:inactive,s}Nice argument. Unfortunately, Vest Up{}"
 				},
 			},
 			["j_hodge_nft"] = {
@@ -551,13 +552,15 @@ return {
 				["text"] = {
 					"Scored {C:attention}#1#s{} have a {C:green}#2# in #3#{}",
 					"chance to gain {C:mult}+#4#{} Mult",
+					"{C:inactive,s:0.8}8 fantastic sides and 8 awesome angles{}",
 				},
 			},
 			["j_hodge_lostcount"] = {
 				["name"] = "Lost Count",
 				["text"] = {
 					"Scored cards above {C:attention}4{}",
-					"have their rank randomized"
+					"have their rank randomized",
+					"{C:inactive,s:0.8}i can only count to FOURRR{}"
 				},
 			},
 			["j_hodge_biggamba"] = {
@@ -579,14 +582,16 @@ return {
 				["name"] = "PPE",
 				["text"] = {
 					"{C:attention}Asbestos{} cards are {C:attention}#1#X{}",
-					"less likely to be {C:attention}disturbed{}"
+					"less likely to be {C:attention}disturbed{}",
+					"{C:inactive,s:0.8}peak art{}"
 				},
 			},
 			["j_hodge_sou"] = {
 				["name"] = "Story of Undertale",
 				["text"] = {
 					"Destroy {C:attention}scored{} cards",
-					"Level up played {C:attention}poker hand{}"
+					"Level up played {C:attention}poker hand{}",
+					"{C:inactive,s:0.8}whoooaaah story of undertale{}"
 				},
 			},
 			["j_hodge_nonejoker"] = {
@@ -600,7 +605,8 @@ return {
 				["name"] = "Parappa",
 				["text"] = {
 					"{C:green}#1# in #2#{} chance to",
-					"{C:attention}retrigger{} played cards"
+					"{C:attention}retrigger{} played cards",
+					"{C:inactive,s:0.8}anything goes! even- chinese{}"
 				},
 			},
 			["j_hodge_summersun"] = {
@@ -663,7 +669,7 @@ return {
 					"{C:attention}Element of Harmony{}",
 					"in full deck",
 					"{C:inactive}(Currently {C:mult}+#2#{C:inactive})",
-					"{C:inactive,s:0.7}omg shes literally me{}"
+					"{C:inactive,s:0.8}omg shes literally me{}"
 				},
 			},
 			["j_hodge_rarity"] = {
@@ -741,6 +747,7 @@ return {
 					"{C:green}10%{} to create Negative David",
 					"If {C:attention}#1#{} scored, {C:attention}destroy{} this card",
 					"{C:inactive,s:0.85}Rank chosen on Blind selected{}",
+					"{C:inactive,s:0.8}WHERE IS MY BALL???{}"
 				},
 			},
 			["j_hodge_blip"] = {
@@ -757,7 +764,8 @@ return {
 					{
 						"{X:mult,C:white}X#1#{} Mult per",
 						"{C:attention}hand size{} above {C:attention}8{}",
-						"{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive}){}"
+						"{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive}){}",
+						"{C:inactive,s:0.8}play windowkill immediately{}"
 					}
 				},
 			},
