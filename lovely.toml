@@ -352,7 +352,19 @@ self.GAME.hodge_blue = false
 match_indent = true
 ### its blue now, thats my attack ##
 
-
+[[patches]]
+[patches.pattern]
+target = "functions/button_callbacks.lua"
+pattern = '''
+G.GAME.current_round.hands_left = (math.max(1, G.GAME.round_resets.hands + G.GAME.round_bonus.next_hands))
+'''
+position = "at"
+payload = '''
+if (#SMODS.find_card("j_hodge_blip") == 0) then
+    G.GAME.current_round.hands_left = (math.max(1, G.GAME.round_resets.hands + G.GAME.round_bonus.next_hands))
+end
+'''
+match_indent = true
 
 # [[patches]]
 # [patches.pattern]

@@ -64,7 +64,10 @@ return {
 			["k_hodge_power_booster"] = "Power Pack",
 			["k_booster_group_p_hodge_power_booster_2"] = {
 				"Power Cards",
-			}
+			},
+
+			["b_perk_cards"] = "Perk Cards",
+			["k_perk"] = "Perk Card",
 		},
 		["labels"] = {
 			["hodge_honesty_seal"] = "Element of Harmony",
@@ -210,6 +213,14 @@ return {
 				},
 			},
 		},
+		["perk"] = {
+			["c_hodge_crumb"] = {
+				["name"] = "crumb",
+				["text"] = {
+					"{C:attention}+#1#{} hand size",
+				},
+			},
+		},
 		["Blind"] = {
 			-- ["bl_wheel"] = {
 			-- 	["text"] = {
@@ -256,6 +267,15 @@ return {
 				},
 			},
 			["undiscovered_power"] = {
+				["name"] = "Not Discovered",
+				["text"] = {
+					"Purchase or use",
+					"this card in an",
+					"unseeded run to",
+					"learn what it does",
+				},
+			},
+			["undiscovered_perk"] = {
 				["name"] = "Not Discovered",
 				["text"] = {
 					"Purchase or use",
@@ -723,6 +743,24 @@ return {
 					"{C:inactive,s:0.85}Rank chosen on Blind selected{}",
 				},
 			},
+			["j_hodge_blip"] = {
+				["name"] = "Blip",
+				["text"] = {
+					{
+						"{C:attention}-1{} hand size",
+						"per hand played"
+					},
+					{
+						"Creates a {C:dark_edition}Negative{} {C:attention}crumb{}",
+						"at end of round"
+					},
+					{
+						"{X:mult,C:white}X#1#{} Mult per",
+						"{C:attention}hand size{} above {C:attention}8{}",
+						"{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive}){}"
+					}
+				},
+			},
 			["j_hodge_jovialmerriment"] = {
 				["name"] = "Jovial Merriment",
 				["text"] = {
@@ -895,5 +933,14 @@ return {
 				},
 			},
 		},
+		["Tag"] = {
+			["tag_hodge_assist"] = {
+				["name"] = "Assist Tag",
+				["text"] = {
+					"Create a {C:attention}perishable{}",
+					"{C:purple}Legendary{} joker"
+				}
+			}
+		}
 	},
 }

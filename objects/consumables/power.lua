@@ -1,3 +1,22 @@
+--- Music ---
+
+SMODS.Sound {
+    key = "music_powerpack",
+    path = "mus_powerpack.ogg",
+    volume = 0.5,
+    sync = {
+        ['music1'] = true,
+        ['music2'] = true,
+        ['music3'] = true,
+        ['music4'] = true,
+        ['music5'] = true,
+    },
+    select_music_track = function(self)
+        -- stole this logic from aikos lol
+        return G.booster_pack and not G.booster_pack.REMOVED and SMODS.OPENED_BOOSTER and SMODS.OPENED_BOOSTER.config.center.kind == 'power' and 100 or nil
+    end
+}
+
 --- DEFINE CONSUMABLE TYPE ---
 
 SMODS.ConsumableType {

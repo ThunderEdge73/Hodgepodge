@@ -316,6 +316,19 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
+    key = "perk_atlas",
+    path = "perks.png",
+    px = 67,
+    py = 68
+}
+SMODS.Atlas { --stupid game wont let me have square shaped undiscoveredsprite so i had to improvise
+    key = "perk_undiscovered_atlas",
+    path = "perks_undiscovered.png",
+    px = 71,
+    py = 95
+}
+
+SMODS.Atlas {
     atlas_table = 'ANIMATION_ATLAS',
     key = "anim_power_atlas",
     path = "animated_powers.png",
@@ -388,18 +401,20 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
+    key = "tags_atlas",
+    px = 34,
+    py = 34,
+    path = "tags.png"
+}
+
+SMODS.Atlas {
     key = "modicon",
     px = 32,
     py = 32,
     path = "modicon.png"
 }
 
-SMODS.Atlas {
-    key = "tags",
-    px = 34,
-    py = 34,
-    path = "tags.png"
-}
+
 
 -----------------------------
 ----- LOADING SCRIPTS!! -----
@@ -411,6 +426,7 @@ HODGE.load_script("hooks/general.lua")
 ------ Consumables ------
 -- Custom Types
 HODGE.load_script("objects/consumables/power.lua")
+HODGE.load_script("objects/consumables/perk.lua")
 -- Planets
 HODGE.load_script("objects/consumables/avalon.lua")
 
@@ -511,6 +527,7 @@ HODGE.load_script("objects/jokers/mlp/applesleepexperiment.lua")
 -- Page 4 - Legendaries
 HODGE.load_script("objects/jokers/misc/lumi.lua")
 HODGE.load_script("objects/jokers/joke/david.lua")
+HODGE.load_script("objects/jokers/misc/blip.lua")
 HODGE.load_script("objects/jokers/joke/jovialmerriment.lua")
 
 HODGE.load_script("objects/jokers/pokemon/umbreon.lua")
@@ -538,6 +555,9 @@ HODGE.load_script("objects/challenges/timeline.lua")
 
 ------ Rarities ------
 --HODGE.load_script("objects/rarities/ubiquitous.lua")
+
+------ Tags ------
+HODGE.load_script("objects/tags/assist.lua")
 
 HODGE.load_script("collabs/mlp.lua")
 
