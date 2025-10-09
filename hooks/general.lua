@@ -49,7 +49,7 @@ local calculateSeal = Card.calculate_seal
 function Card:calculate_seal(context)
     local ret = calculateSeal(self,context)
     if context.repetition then
-        if context.scoring_hand and REND and HODGE.table_contains and HODGE.table_contains(HODGE.elements_of_harmony,self.seal) then
+        if context.scoring_hand and HODGE and HODGE.table_contains and HODGE.table_contains(HODGE.elements_of_harmony,self.seal) then
             for k,v in ipairs(context.scoring_hand) do
                 if v.seal == "hodge_laughter" and v ~= self then
                     return {

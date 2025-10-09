@@ -857,6 +857,40 @@ return {
 					}
 				},
 			},
+			["j_hodge_flutterbat"] = {
+				["name"] = "Flutterbat",
+				["text"] = {
+					"Gains {X:mult,C:white}X#1#{} Mult per",
+					"scoring {C:attention}light suit{} card,",
+					"converts them to {C:attention}dark suits{}",
+					"{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive}){}"
+				},
+			},
+			["j_hodge_cheesesandwich"] = {
+				["name"] = "Cheese Sandwich",
+				["text"] = {
+					{
+						"Scored {C:attention}Elements of Harmony{}",
+						"give {X:mult,C:white}X#1#{} Mult per retrigger",
+						"{C:inactive,s:0.8}is that weird al{}"
+					}
+				},
+			},
+			["j_hodge_foreverweedbrownie"] = {
+				["name"] = "Forever Weed Brownie",
+				["text"] = {
+					{
+						"{C:red}At start of round,{}",
+						"{C:red}gains {C:dark_edition}Eternal{C:red}.{}"
+					},
+					{
+						"If eternal, {C:attention}all cards in shop{}",
+						"become {C:dark_edition}Polychrome{}.",
+						"Cards in {C:attention}first hand of round{}",
+						"become {C:dark_edition}Polychrome{}"
+					}
+				},
+			},
 			["j_hodge_bluelatro"] = {
 				["name"] = "{C:blue}Blue{}latro",
 				["text"] = {

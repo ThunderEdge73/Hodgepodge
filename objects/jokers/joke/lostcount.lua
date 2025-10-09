@@ -62,7 +62,7 @@ SMODS.Joker {
                     elseif rank == 14 or rank == 1 then rank = 'Ace'
                     end
                     
-                    SMODS.change_base(card,nil,rank)
+                    assert(SMODS.change_base(card,nil,rank))
                 return true end }))
             end  
             for i,rank in pairs(changed_cards) do

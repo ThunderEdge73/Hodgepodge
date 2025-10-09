@@ -17,11 +17,11 @@ HODGE.elements_of_harmony = {"hodge_kindness","hodge_honesty","hodge_loyalty","h
 
 HODGE.atlas_y = {
     misc      = { 0 },
-    joke      = { 2, 10 },
+    joke      = { 2, 12 },
     mlp       = { 4 },
     legendary = { 6 },
-    food      = { 8 },
-    utdr      = { 9 },
+    food      = { 10 },
+    utdr      = { 11 },
 
     soul      = { 1, 3, 5, 7 }
 }
@@ -529,6 +529,7 @@ HODGE.load_script("objects/jokers/misc/lumi.lua")
 HODGE.load_script("objects/jokers/joke/david.lua")
 HODGE.load_script("objects/jokers/misc/blip.lua")
 HODGE.load_script("objects/jokers/joke/jovialmerriment.lua")
+--HODGE.load_script("objects/jokers/misc/djungelskog.lua")
 
 HODGE.load_script("objects/jokers/pokemon/umbreon.lua")
 HODGE.load_script("objects/jokers/pokemon/missingno.lua")
@@ -538,7 +539,9 @@ HODGE.load_script("objects/jokers/pokemon/runerigus.lua")
 
 HODGE.load_script("objects/jokers/mlp/timeloop.lua") --this fucker is soooooo broken
 HODGE.load_script("objects/jokers/mlp/celestia.lua")
-
+HODGE.load_script("objects/jokers/mlp/flutterbat.lua")
+HODGE.load_script("objects/jokers/mlp/cheesesandwich.lua")
+HODGE.load_script("objects/jokers/mlp/foreverweedbrownie.lua")
 
 HODGE.load_script("objects/jokers/joke/bluelatro.lua")
 -- Page 5 - UTDR

@@ -33,7 +33,7 @@ SMODS.Joker {
                 G.E_MANAGER:add_event(Event({trigger = 'after',delay = 0.1,func = function()
                     if context.full_hand[i] then
                         local card = context.full_hand[i]                    
-                        SMODS.change_base(card,"hodge_suns")
+                        assert(SMODS.change_base(card,"hodge_suns"))
                     end
                 return true end }))
             end  
