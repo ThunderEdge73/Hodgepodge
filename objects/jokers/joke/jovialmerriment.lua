@@ -3,16 +3,16 @@ SMODS.Joker {
     loc_vars = function (self,info_queue,card)
         return {
             vars = {
-                card.ability.extra.x_mult,
-                card.ability.x_mult,
+                card.ability.extra.xmult_gain,
+                card.ability.extra.scaling_xmult,
                 G.GAME.round_scores.hand.amt
             }
         }
     end,
     config = {
-        x_mult = 1,
         extra = {
-            x_mult = 0.5
+            scaling_xmult = 1,
+            xmult_gain = 0.5
         }
     },
     atlas = "jokers_atlas",
@@ -21,16 +21,19 @@ SMODS.Joker {
     rarity = 4,
     cost = 20,
     calculate = function(self,card,context)
-        if context.after and context.cardarea == G.jokers then
-            print(hand_chips * mult, G.GAME.round_scores.hand.amt)
+        if context.after and context.cardarea == G.jokers and not context.blueprint then
             if hand_chips * mult >= G.GAME.round_scores.hand.amt then
-                card.ability.x_mult = card.ability.x_mult + card.ability.extra.x_mult
+                card.ability.extra.scaling_xmult = card.ability.extra.scaling_xmult + card.ability.extra.xmult_gain
                 return {
-                    message = "+"..card.ability.extra.x_mult.."X"
+                    message = "+"..card.ability.extra.xmult_gain.."X"
                 }
             end
         end
+        if context.joker_main then
+            return {xmult = card.ability.extra.scaling_xmult}
+        end
     end,
+    blueprint_compat = true,
     set_badges = function(self,card,badges)
         badges[#badges+1] = HODGE.badge('category','joke')
     end

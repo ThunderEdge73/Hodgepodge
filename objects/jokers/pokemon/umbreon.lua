@@ -3,13 +3,13 @@ SMODS.Joker {
     loc_vars = function (self,info_queue,card)
         return {
             vars = {
-                card.ability.extra.mult
+                card.ability.extra.card_mult
             }
         }
     end,
     config = {
         extra = {
-            mult = 10
+            card_mult = 10
         }
     },
     atlas = "jokers_atlas",
@@ -18,7 +18,7 @@ SMODS.Joker {
     rarity = 4,
     cost = 20,
     calculate = function(self,card,context)
-        if context.after then
+        if context.after and not context.blueprint then
             for i=1, #context.full_hand do
                 G.E_MANAGER:add_event(Event({trigger = 'after',delay = 0.15,func = function()
                     if context.full_hand[i] then
@@ -48,10 +48,11 @@ SMODS.Joker {
         end
         if context.individual and context.cardarea == G.play and context.other_card:is_suit("hodge_moons") then
             return {
-                mult = card.ability.extra.mult
+                mult = card.ability.extra.card_mult
             }
         end
     end,
+    blueprint_compat = true,
     set_badges = function(self,card,badges)
         badges[#badges+1] = HODGE.badge('category','pokemon')
     end

@@ -23,8 +23,8 @@ SMODS.Edition {
             for _,j in ipairs(G.jokers.cards) do
                 if j.ability and j.ability.name == "j_hodge_lumi" then
                     lumi = true
-                    if j.ability.extra > lumi_val then
-                        lumi_val = j.ability.extra
+                    if j.ability.extra.slime_floor > lumi_val then
+                        lumi_val = j.ability.extra.slime_floor
                     end
                 
                 end 
@@ -74,7 +74,7 @@ SMODS.Edition {
                 lumis = lumis + 1
             end 
         end
-        return G.GAME.edition_rate * self.weight * math.pow(2,lumis)
+        return G.GAME.edition_rate * self.weight * (2^lumis)
     end,
     extra_cost = 4,
     apply_to_float = false,
@@ -87,8 +87,8 @@ SMODS.Edition {
             for _,j in ipairs(G.jokers.cards) do
                 if j.ability and j.ability.name == "j_hodge_lumi" then
                     lumi = true
-                    if j.ability.extra > lumi_val then
-                        lumi_val = j.ability.extra
+                    if j.ability.extra.slime_floor > lumi_val then
+                        lumi_val = j.ability.extra.slime_floor
                     end
                
                 end 

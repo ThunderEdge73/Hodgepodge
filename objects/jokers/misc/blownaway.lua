@@ -28,14 +28,15 @@ SMODS.Joker {
     calculate = function(self,card,context)
         if context.before and context.cardarea == G.jokers then
             if (#context.poker_hands["Straight"] > 0) then
-                local create_champion_event = function()
+                
+                local create_event = function()
                     G.E_MANAGER:add_event(Event({
                         trigger = 'after',
                         delay = 0.8,
                         func = function()
                             if G.hand_text_area.blind_chips then
-                                local new_chips = math.floor(G.GAME.blind.chips * (1-card.ability.extra.blind_reduce))
-                                local mod_text = number_format(math.floor(G.GAME.blind.chips * (1-card.ability.extra.blind_reduce)-G.GAME.blind.chips))
+                                local new_chips = math.max(math.floor(G.GAME.blind.chips * (1-card.ability.extra.blind_reduce)),1)
+                                local mod_text = number_format(math.max(math.floor(G.GAME.blind.chips * (1-card.ability.extra.blind_reduce)-G.GAME.blind.chips),1))
                                 G.GAME.blind.chips = new_chips
                                 G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
                                 local chips_UI = G.hand_text_area.blind_chips
@@ -58,28 +59,31 @@ SMODS.Joker {
                         end
                     }))
                 end
-                create_champion_event()
+                create_event()
+                local temp_ID = 0
+                local highest_card = nil
+                
+                local low_ace = false
+                for i=1, #G.play.cards do
+                    if G.play.cards[i].base.id < 6 and not SMODS.has_no_rank(G.play.cards[i]) then 
+                        low_ace = true
+                    end
+                end
+                for i=1, #G.play.cards do
+                    local check_id = ((low_ace and G.play.cards[i].base.id == 14) and 1) or G.play.cards[i].base.id
+                    if temp_ID <= check_id and (not SMODS.has_no_rank(G.play.cards[i])) and not G.play.cards[i].hodge_highest then 
+                        temp_ID = check_id
+                        highest_card = G.play.cards[i]
+                    end
+                end
+                highest_card.hodge_highest = true
             end
         end
         
         if context.destroy_card and context.cardarea == G.play and #context.poker_hands["Straight"] > 0 then
-            local temp_ID = 0
-            local highest_card = nil
             
-            local low_ace = false
-            for i=1, #G.play.cards do
-                if G.play.cards[i].base.id < 6 and not SMODS.has_no_rank(G.play.cards[i]) then 
-                    low_ace = true
-                end
-            end
-            for i=1, #G.play.cards do
-                local check_id = ((low_ace and G.play.cards[i].base.id == 14) and 1) or G.play.cards[i].base.id
-                if temp_ID <= check_id and not SMODS.has_no_rank(G.play.cards[i]) then 
-                    temp_ID = check_id
-                    highest_card = G.play.cards[i]
-                end
-            end
-            if (context.destroy_card == highest_card) then
+            if (context.destroy_card.hodge_highest) then
+                context.destroy_card.hodge_highest = true
                 return {
                     remove = true
                 }

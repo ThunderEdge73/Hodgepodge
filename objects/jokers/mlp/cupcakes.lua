@@ -13,15 +13,15 @@ SMODS.Joker {
     loc_vars = function (self,info_queue,card)
         return {
             vars = {
-                card.ability.x_mult,
+                card.ability.extra.scaling_xmult,
                 card.ability.extra.mult_loss,
                 card.ability.extra.mult_gain
             }
         }
     end,
     config = {
-        x_mult = 2,
         extra = {
+            scaling_xmult = 2,
             mult_loss = 0.1,
             mult_gain = 0.5
         }
@@ -33,17 +33,22 @@ SMODS.Joker {
     cost = 7,
     calculate = function(self,card,context)
         if context.final_scoring_step and context.cardarea == G.jokers and not context.blueprint then
-            card.ability.x_mult = card.ability.x_mult - card.ability.extra.mult_loss
+            card.ability.extra.scaling_xmult = card.ability.extra.scaling_xmult - card.ability.extra.mult_loss
             return {
                 message = "-"..card.ability.extra.mult_loss.."X"
             }
         end
         if context.destroy_card and context.cardarea == G.play and context.destroy_card.seal == "hodge_loyalty" and not context.blueprint then
-            card.ability.x_mult = card.ability.x_mult + card.ability.extra.mult_gain
+            card.ability.extra.scaling_xmult = card.ability.extra.scaling_xmult + card.ability.extra.mult_gain
             return {
                 remove = true,
                 message = "+"..card.ability.extra.mult_gain.."X",
                 message_card = card
+            }
+        end
+        if context.joker_main then
+            return {
+                xmult = card.ability.extra.scaling_xmult
             }
         end
     end,

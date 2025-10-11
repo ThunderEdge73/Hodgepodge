@@ -13,18 +13,18 @@ SMODS.Joker {
         return {
             vars = {
                 card.ability.extra.xmult_gain,
-                card.ability.extra.score_req,
+                card.ability.extra.overscore,
                 card.ability.extra.xmult_loss,
-                card.ability.extra.xmult
+                card.ability.extra.scaling_xmult
             }
         }
     end,
     config = {
         extra = {
-            xmult = 1,
+            scaling_xmult = 1,
             xmult_gain = 2,
             xmult_loss = 0.2,
-            score_req = 2
+            overscore = 2
         }
     },
     atlas = "jokers_atlas",
@@ -34,16 +34,16 @@ SMODS.Joker {
     calculate = function(self,card,context)
         if context.end_of_round and context.cardarea == G.jokers and not context.blueprint then
             --print(G.GAME.chips/G.GAME.blind.chips)
-            if G.GAME.chips/G.GAME.blind.chips >= card.ability.extra.score_req then
-                card.ability.extra.xmult = card.ability.extra.xmult + card.ability.extra.xmult_gain
+            if G.GAME.chips/G.GAME.blind.chips >= card.ability.extra.overscore then
+                card.ability.extra.scaling_xmult = card.ability.extra.scaling_xmult + card.ability.extra.xmult_gain
                 return {
                     message = "+X"..card.ability.extra.xmult_gain
                 }
             end
         end
         if context.after and context.main_eval and not context.blueprint then
-            if card.ability.extra.xmult > 1 then
-                card.ability.extra.xmult = card.ability.extra.xmult - card.ability.extra.xmult_loss
+            if card.ability.extra.scaling_xmult > 1 then
+                card.ability.extra.scaling_xmult = card.ability.extra.scaling_xmult - card.ability.extra.xmult_loss
                 return {
                     message = "-X"..card.ability.extra.xmult_loss
                 }
@@ -51,11 +51,11 @@ SMODS.Joker {
         end
         if context.joker_main then
             return {
-                xmult = card.ability.extra.xmult
+                xmult = card.ability.extra.scaling_xmult
             }
         end
     end,
-    blueprint_compat = true, -- Work on this some more in the future to make it destroy more cards in sequence
+    blueprint_compat = true,
     set_badges = function(self,card,badges)
         badges[#badges+1] = HODGE.badge('category','misc')
     end

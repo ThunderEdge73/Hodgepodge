@@ -4,13 +4,13 @@ SMODS.Joker {
         return {
             vars = {
                 card.ability.extra.chip_gain,
-                card.ability.chips
+                card.ability.extra.scaling_chips
             }
         }
     end,
     config = {
-        chips = 0,
         extra = {
+            scaling_chips = 0,
             chip_gain = 6
         }
     },
@@ -20,7 +20,7 @@ SMODS.Joker {
     rarity = 4,
     cost = 20,
     calculate = function(self,card,context)
-        if context.after then
+        if context.after and not context.blueprint then
             for i=1, #context.full_hand do
                 G.E_MANAGER:add_event(Event({trigger = 'after',delay = 0.15,func = function()
                     if context.full_hand[i] then
@@ -48,14 +48,20 @@ SMODS.Joker {
                 return true end }))
             end
         end
-        if context.individual and context.cardarea == G.play and context.other_card:is_suit("hodge_suns") then
-            card.ability.chips = card.ability.chips + card.ability.extra.chip_gain
+        if context.individual and context.cardarea == G.play and context.other_card:is_suit("hodge_suns") and not context.blueprint then
+            card.ability.extra.scaling_chips = card.ability.extra.scaling_chips + card.ability.extra.chip_gain
                 return {
                     message = "+"..card.ability.extra.chip_gain,
                     message_card = card
                 }
         end
+        if context.joker_main then
+            return {
+                chips = card.ability.extra.scaling_chips
+            }
+        end
     end,
+    blueprint_compat = true,
     set_badges = function(self,card,badges)
         badges[#badges+1] = HODGE.badge('category','mlp')
     end

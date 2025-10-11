@@ -9,10 +9,6 @@ SMODS.Joker {
         }
     end,
     config = {
-        x_mult = 1,
-        extra = {
-            x_mult = 0.5
-        }
     },
     atlas = "jokers_atlas",
     pos = {x=9,y=HODGE.atlas_y.legendary[1]},
@@ -27,11 +23,14 @@ SMODS.Joker {
                     retriggers = retriggers + 1
                 end
             end
-            return {
-                repetitions = retriggers
-            }
+            if retriggers > 0 then
+                return {
+                    repetitions = retriggers
+                }
+            end
         end
     end,
+    blueprint_compat = true,
     set_badges = function(self,card,badges)
         badges[#badges+1] = HODGE.badge('category','pokemon')
     end

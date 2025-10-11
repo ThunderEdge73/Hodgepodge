@@ -25,7 +25,7 @@ SMODS.Joker {
     rarity = 2,
     cost = 6,
     calculate = function(self,card,context)
-        if context.before then
+        if context.before and not context.blueprint then
             local changed_cards = {}
             for i=1, #context.scoring_hand do
                 if context.scoring_hand[i].base.nominal > 4 then

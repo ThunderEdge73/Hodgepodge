@@ -1,7 +1,7 @@
 SMODS.Joker {
     key = "stopsign",
     loc_vars = function (self,info_queue,card)
-        local numerator, denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds, 'stopsign')
+        local numerator, denominator = SMODS.get_probability_vars(card, card.ability.extra.numerator, card.ability.extra.odds, 'stopsign')
         return {
             vars = {card.ability.extra.rank,numerator,denominator,card.ability.extra.permamult}
         }
@@ -10,6 +10,7 @@ SMODS.Joker {
         extra = {
             permamult = 8,
             odds = 8,
+            numerator = 1,
             rank = "8"
         }
     },
@@ -17,21 +18,21 @@ SMODS.Joker {
     pos = {x=7,y=HODGE.atlas_y.joke[1]},
     rarity = 2,
     cost = 6,
-    blueprint_compat = false,
+    blueprint_compat = true,
     calculate = function(self,card,context) --G.GAME.blind.config.blind.key
-        if context.setting_blind and G.GAME.blind.config.blind.key == "bl_hodge_pip" then
+        if context.setting_blind and G.GAME.blind.config.blind.key == "bl_hodge_pip" and not context.blueprint then
             card.config.center.pos.y = 3
             card.ability.extra.permamult = 6
             card.ability.extra.rank = "6"
         end
-        if context.end_of_round and G.GAME.blind.config.blind.key == "bl_hodge_pip" then
+        if context.end_of_round and G.GAME.blind.config.blind.key == "bl_hodge_pip" and not context.blueprint then
             card.config.center.pos.y = 2
             card.ability.extra.permamult = 8
             card.ability.extra.rank = "8"
         end
         if context.individual and context.cardarea == G.play then
             --if context.other_card.base.value == "8" and pseudorandom("stopsign") < (G.GAME.probabilities.normal or 1)/(card.ability.extra.odds) then
-            if context.other_card.base.value == card.ability.extra.rank and SMODS.pseudorandom_probability(card, 'stopsign', 1, card.ability.extra.odds, 'stopsign') then
+            if context.other_card.base.value == card.ability.extra.rank and SMODS.pseudorandom_probability(card, 'stopsign', card.ability.extra.numerator, card.ability.extra.odds, 'stopsign') then
                 --print("stopsign hit")
                 context.other_card.ability.perma_mult = context.other_card.ability.perma_mult + card.ability.extra.permamult
                 return {

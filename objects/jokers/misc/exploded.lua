@@ -15,13 +15,13 @@ SMODS.Joker {
                 card.ability.extra.xmult_gain,
                 card.ability.extra.poker_hand,
                 card.ability.extra.xmult_loss,
-                card.ability.extra.xmult
+                card.ability.extra.scaling_xmult
             }
         }
     end,
     config = {
         extra = {
-            xmult = 1,
+            scaling_xmult = 1,
             xmult_gain = 0.2,
             xmult_loss = 0.2,
             poker_hand = "High Card"
@@ -34,13 +34,13 @@ SMODS.Joker {
     calculate = function(self,card,context)
         if context.after and context.main_eval and not context.blueprint then
             if context.scoring_name == card.ability.extra.poker_hand then
-                card.ability.extra.xmult = card.ability.extra.xmult + card.ability.extra.xmult_gain
+                card.ability.extra.scaling_xmult = card.ability.extra.scaling_xmult + card.ability.extra.xmult_gain
                 return {
                     message = "+X"..card.ability.extra.xmult_gain
                 }
             else
-                if card.ability.extra.xmult > 1 then
-                    card.ability.extra.xmult = card.ability.extra.xmult - card.ability.extra.xmult_loss
+                if card.ability.extra.scaling_xmult > 1 then
+                    card.ability.extra.scaling_xmult = card.ability.extra.scaling_xmult - card.ability.extra.xmult_loss
                     return {
                         message = "-X"..card.ability.extra.xmult_loss
                     }
@@ -49,7 +49,7 @@ SMODS.Joker {
         end
         if context.joker_main then
             return {
-                xmult = card.ability.extra.xmult
+                xmult = card.ability.extra.scaling_xmult
             }
         end
     end,

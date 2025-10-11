@@ -2,11 +2,13 @@ SMODS.Joker {
     key = "disappearingguy",
     loc_vars = function (self,info_queue,card)
         return {
-            vars = {card.ability.xmult}
+            vars = {card.ability.extra.xmult}
         }
     end,
     config = {
-        xmult = 10
+        extra = {
+            xmult = 10 --ability.xmult isn't checked by blockbuster rn
+        }
     },
     atlas = "jokers_atlas",
     pos = {x=3,y=HODGE.atlas_y.joke[1]},
@@ -14,7 +16,7 @@ SMODS.Joker {
     cost = 6,
     blueprint_compat = false,
     calculate = function(self,card,context)
-        if context.joker_main then
+        if context.joker_main and not context.blueprint then
             local cards_to_destroy = {}
             local to_right = false
             for k,joker in ipairs(G.jokers.cards) do
@@ -34,7 +36,7 @@ SMODS.Joker {
                 return true end }))
             end
             return {
-                xmult = card.ability.xmult
+                xmult = card.ability.extra.xmult
             }
         end
     end,

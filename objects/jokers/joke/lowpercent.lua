@@ -11,16 +11,17 @@ SMODS.Joker {
             -- {n=G.UIT.O, config={object = DynaText({string = loc_chips, colours = {G.C.UI.TEXT_DARK},pop_in_rate = 9999999, silent = true, scale = 0.32})}}
         }
         return {
-            vars = {card.ability.chips,card.ability.extra.chip_gain},
+            vars = {card.ability.extra.scaling_chips,card.ability.extra.chip_gain},
             main_start = live_update_ui
         }
     end,
     config = {
         chips = 0,
         extra = {
-            last_checked_time = nil,
+            time_last_checked = nil,
             time_since_gain = 0,
             chip_gain = 0.25,
+            scaling_chips = 0,
             id_table = {}, -- This is used to identify the table in HODGE.lowpercent_vals, as all tables are unique.
             big_ignore = {
                 ["last_checked_time"] = true,
@@ -34,11 +35,11 @@ SMODS.Joker {
     soul_pos = {x=4,y=HODGE.atlas_y.soul[2]},
     rarity = 1,
     cost = 6,
-    blueprint_compat = false,
+    blueprint_compat = true,
     calculate = function(self,card,context)
         if context.joker_main then
             return {
-                chips = card.ability.chips
+                chips = card.ability.extra.scaling_chips
             }
         end
     end,
@@ -47,13 +48,13 @@ SMODS.Joker {
             if card.ability.extra.last_checked_time then
                 card.ability.extra.time_since_gain = card.ability.extra.time_since_gain + (G.TIMERS.REAL - card.ability.extra.last_checked_time)
                 while card.ability.extra.time_since_gain >= 1 do
-                    card.ability.chips = card.ability.chips + card.ability.extra.chip_gain
+                    card.ability.extra.scaling_chips = card.ability.extra.scaling_chips + card.ability.extra.chip_gain
                     card.ability.extra.time_since_gain = card.ability.extra.time_since_gain - 1
                 end
                 if not HODGE.lowpercent_vals then
                     HODGE.lowpercent_vals = {}
                 end
-                HODGE.lowpercent_vals[card.ability.extra.id_table] = card.ability.chips
+                HODGE.lowpercent_vals[card.ability.extra.id_table] = card.ability.extra.scaling_chips
             end
         end
         card.ability.extra.last_checked_time = G.TIMERS.REAL

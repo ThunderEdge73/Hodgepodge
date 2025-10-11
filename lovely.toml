@@ -22,7 +22,15 @@ for i = 1, #scoring_hand do
 end
 
 for i=1, #scoring_hand do
-    if has_blackhole_card and i ~= first_blackhole and not ((#SMODS.find_card("j_hodge_spaghettification") > 0) and SMODS.pseudorandom_probability(card, 'spaghettification', 1, 4, 'spaghettification')) then
+    local has_spaghettification = false
+    local highest_numerator = 1
+    for k,v in ipairs(G.jokers.cards) do
+        if v.id == "j_hodge_spaghettification" then
+            has_spaghettification = true
+            highest_numerator = math.max(highest_numerator,v.ability.extra.numerator)
+        end
+    end
+    if has_blackhole_card and i ~= first_blackhole and not (has_spaghettification and SMODS.pseudorandom_probability(card, 'spaghettification', highest_numerator, 4, 'spaghettification')) then
         cards_destroyed[#cards_destroyed+1] = scoring_hand[i]
         scoring_hand[i].destroyed = true
     end
@@ -365,6 +373,36 @@ if (#SMODS.find_card("j_hodge_blip") == 0) then
 end
 '''
 match_indent = true
+
+
+
+# [[patches]]
+# [patches.pattern]
+# target = "card.lua"
+# pattern = '''
+# function Card:set_ability(center, initial, delay_sprites)
+# '''
+# position = "at"
+# payload = '''
+# function Card:set_ability(center, initial, delay_sprites, no_add_to_deck)
+# '''
+# match_indent = true
+
+# [[patches]]
+# [patches.pattern]
+# target = "card.lua"
+# pattern = '''
+# if was_added_to_deck and not self.debuff then
+#     self:add_to_deck()
+# end
+# '''
+# position = "at"
+# payload = '''
+# if was_added_to_deck and (not self.debuff) and (not no_add_to_deck) then
+#     self:add_to_deck()
+# end
+# '''
+# match_indent = true
 
 # [[patches]]
 # [patches.pattern]

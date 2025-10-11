@@ -34,20 +34,22 @@ SMODS.Joker {
     rarity = 3,
     cost = 7,
     calculate = function(self,card,context)
-        if context.after then
+        if context.after and not context.blueprint then
             while card.ability.extra.remaining <= 0 do
                 local eligible_cards = {}
                 for i,card in pairs(context.scoring_hand) do
-                    if not card.destroyed then
+                    if not card.destroyed and not card.hodge_polychromed then
                         table.insert(eligible_cards,card)
                     end
                 end
                 if #eligible_cards > 0 then
                     card.ability.extra.remaining = card.ability.extra.remaining + card.ability.extra.card_count
                     local chosen_card = pseudorandom_element(eligible_cards, pseudoseed('rainbowfactory'))
+                    chosen_card.hodge_polychromed = true
                     G.E_MANAGER:add_event(Event({trigger = 'after',delay = 0.15,func = function()
                         chosen_card:set_edition({[card.ability.extra.edition] = true}, true)
                         chosen_card:juice_up(0.3, 0.3);
+                        chosen_card.hodge_polychromed = nil;
                         card:juice_up(0.3,0.3);
                         return true end
                     }))
@@ -64,7 +66,7 @@ SMODS.Joker {
             }
         end
     end,
-    blueprint_compat = true,
+    blueprint_compat = false,
     set_badges = function(self,card,badges)
         badges[#badges+1] = HODGE.badge('category','mlp')
     end

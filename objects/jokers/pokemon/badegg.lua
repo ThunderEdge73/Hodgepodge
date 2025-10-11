@@ -20,7 +20,7 @@ SMODS.Joker {
         return false
     end,
     calculate = function(self,card,context)
-        if context.setting_blind then
+        if context.setting_blind and not context.blueprint then
             if pseudorandom("bad_egg") < 1/255 then
                 local legendary = pseudorandom_element(G.P_JOKER_RARITY_POOLS[4],pseudoseed("bad_egg"))
                 
@@ -53,7 +53,7 @@ SMODS.Joker {
             end
         end
     end,
-    blueprint_compat = true,
+    blueprint_compat = false,
     -- add_to_deck = function(self,card,from_debuff)
     --     card.sell_cost = -256
     -- end,

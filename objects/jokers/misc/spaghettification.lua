@@ -10,7 +10,7 @@ SMODS.Joker {
     --     }
     -- },
     loc_vars = function (self,info_queue,card)
-        local numerator, denominator = SMODS.get_probability_vars(card, 1, 4, 'spaghettification')
+        local numerator, denominator = SMODS.get_probability_vars(card, card.ability.extra.numerator, card.ability.extra.odds, 'spaghettification')
         return {
             vars = {
                 numerator,
@@ -20,6 +20,8 @@ SMODS.Joker {
     end,
     config = {
         extra = {
+            odds = 4,
+            numerator = 1
         }
     },
     atlas = "jokers_atlas",

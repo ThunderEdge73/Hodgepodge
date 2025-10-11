@@ -18,12 +18,12 @@ SMODS.Joker {
     rarity = 4,
     cost = 20,
     calculate = function(self,card,context)
-        if context.setting_blind then
+        if context.setting_blind and not context.blueprint then
             SMODS.Stickers['eternal']:apply(card,true)
             card:juice_up()
             card.ability.extra.first_hand = true
         end
-        if context.before and card.ability.extra.first_hand then
+        if context.before and card.ability.extra.first_hand and not context.blueprint then
             card.ability.extra.first_hand = false
 
             local eligible_cards = {}
@@ -39,13 +39,13 @@ SMODS.Joker {
             end
         end
 
-        if (context.starting_shop or context.reroll_shop) and card.ability.eternal then
+        if (context.starting_shop or context.reroll_shop) and card.ability.eternal and not context.blueprint then
             for _,shop_card in ipairs(G.shop_jokers.cards) do
                 shop_card:set_edition({[card.ability.extra.edition] = true}, true)
             end
         end
     end,
-    blueprint_compat = true,
+    blueprint_compat = false,
     set_badges = function(self,card,badges)
         badges[#badges+1] = HODGE.badge('category','mlp')
     end

@@ -17,7 +17,7 @@ SMODS.Joker {
     --soul_pos = {x=13,y=HODGE.atlas_y.soul[2]},
     rarity = 2,
     cost = 6,
-    blueprint_compat = false,
+    blueprint_compat = true,
     calculate = function(self,card,context)
         if context.joker_main then
             if pseudorandom("biggamba") < 0.01 then

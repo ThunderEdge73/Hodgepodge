@@ -13,7 +13,7 @@ SMODS.Joker {
     rarity = 2,
     cost = 7,
     calculate = function(self,card,context)
-        if context.after then
+        if context.after and not context.blueprint then
             local loyalties = 0
             for i,c in ipairs(context.scoring_hand) do -- For card in hand
                 if c.seal == "hodge_loyalty" then
@@ -41,7 +41,7 @@ SMODS.Joker {
             end
         end
     end,
-    blueprint_compat = true,
+    blueprint_compat = false,
     in_pool = function(self,args)
         for k,card in ipairs(G.playing_cards) do
             if card.seal == "hodge_loyalty" then

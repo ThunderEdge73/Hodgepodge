@@ -10,7 +10,7 @@ SMODS.Joker {
     --     }
     -- },
     loc_vars = function (self,info_queue,card)
-        local numerator, denominator = SMODS.get_probability_vars(card, card.ability.extra.numerator, card.ability.extra.denominator, 'parappa')
+        local numerator, denominator = SMODS.get_probability_vars(card, card.ability.extra.numerator, card.ability.extra.odds, 'parappa')
         return {
             vars = {
                 numerator,
@@ -20,9 +20,9 @@ SMODS.Joker {
     end,
     config = {
         extra = {
-            retriggers = 1,
+            retriggers_static = 1,
             numerator = 3,
-            denominator = 4
+            odds = 4
         }
     },
     atlas = "jokers_atlas",
@@ -30,9 +30,9 @@ SMODS.Joker {
     rarity = 3,
     cost = 7,
     calculate = function(self,card,context)
-        if context.repetition and context.cardarea == G.play and SMODS.pseudorandom_probability(card, 'parappa', card.ability.extra.denominator, card.ability.extra.denominator, 'parappa') then
+        if context.repetition and context.cardarea == G.play and SMODS.pseudorandom_probability(card, 'parappa', card.ability.extra.odds, card.ability.extra.odds, 'parappa') then
             return {
-                repetitions = card.ability.extra.retriggers
+                repetitions = card.ability.extra.retriggers_static
             }
         end
     end,

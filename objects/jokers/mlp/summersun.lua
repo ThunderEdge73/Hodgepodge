@@ -11,10 +11,14 @@ SMODS.Joker {
     loc_vars = function (self,info_queue,card)
         return {
             vars = {
+                card.ability.extra.card_mult
             }
         }
     end,
     config = {
+        extra = {
+            card_mult = 3
+        }
     },
     atlas = "jokers_atlas",
     pos = {x=0,y=HODGE.atlas_y.mlp[1]},
@@ -23,7 +27,7 @@ SMODS.Joker {
     calculate = function(self,card,context)
         if context.individual and context.cardarea == G.play then
             if context.other_card.base.suit == "hodge_suns" then
-                return { mult = 3, message_card = context.other_card }
+                return { mult = card.ability.extra.card_mult, message_card = context.other_card }
             end
         end
     end,

@@ -9,10 +9,11 @@ SMODS.Joker {
     --     }
     -- },
     loc_vars = function (self,info_queue,card)
-        local numerator, denominator = SMODS.get_probability_vars(card, 1, 5, 'amber')
+        local numerator, denominator = SMODS.get_probability_vars(card, card.ability.extra.numerator, card.ability.extra.odds, 'amber')
         local example_count = 3
         return {
             vars = {
+                card.ability.extra.hands_gain,
                 numerator,
                 denominator,
                 example_count,
@@ -21,6 +22,11 @@ SMODS.Joker {
         }
     end,
     config = {
+        extra = {
+            odds = 5,
+            numerator = 1,
+            hands_gain = 1
+        }
     },
     atlas = "jokers_atlas",
     pos = {x=3,y=HODGE.atlas_y.mlp[1]},
@@ -34,8 +40,8 @@ SMODS.Joker {
                     suns = suns + 1
                 end
             end
-            if SMODS.pseudorandom_probability(card, 'amber', suns, 5, 'amber') then
-                ease_hands_played(1)
+            if SMODS.pseudorandom_probability(card, 'amber', suns*card.ability.extra.numerator, card.ability.extra.odds, 'amber') then
+                ease_hands_played(card.ability.extra.hands_gain)
             end
         end
     end,

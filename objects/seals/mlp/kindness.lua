@@ -2,7 +2,9 @@ SMODS.Seal {
     key = "kindness",
     badge_colour = HEX("F083B0"),
     config = {
-        extra = 2
+        extra = {
+            chips = 5
+        }
     },
     -- loc_txt = {
     --     label = "Element of Harmony",
@@ -19,18 +21,18 @@ SMODS.Seal {
         if G.playing_cards then
             for k,currentCard in pairs(G.playing_cards) do
                 if HODGE.table_contains(HODGE.elements_of_harmony,currentCard.seal) then
-                    total_chips = total_chips + 10
+                    total_chips = total_chips + (card.ability.seal.extra.chips)
                 end
             end
         end
-        return {vars={total_chips}}
+        return {vars={card.ability.seal.extra.chips,total_chips}}
     end,
     calculate = function(self,card,context)
         if context.cardarea == G.play and context.main_scoring then
             local total_chips = 0
             for k,currentCard in pairs(G.playing_cards) do
                 if HODGE.table_contains(HODGE.elements_of_harmony,currentCard.seal) then
-                    total_chips = total_chips + 10
+                    total_chips = total_chips + card.ability.seal.extra.chips
                 end
             end
             return {chips = total_chips}

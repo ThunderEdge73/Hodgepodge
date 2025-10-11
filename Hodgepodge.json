@@ -5,8 +5,14 @@
     "description": "Random nonsense for your enjoyment!",
     "prefix":"hodge",
     "main_file":"hodgepodge.lua",
+    "priority":10,
     "version": "0.1.0",
     "badge_colour": "444444",
     "badge_text_colour": "FFFF00",
-    "dump_loc": true
+    "dump_loc": false,
+    "dependencies": [
+        "Blockbuster-ValueManipulation"
+    ],
+    "conflicts": [
+    ]
 }

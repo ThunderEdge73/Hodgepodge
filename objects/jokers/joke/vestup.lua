@@ -2,14 +2,14 @@ SMODS.Joker {
     key = "vestup",
     loc_vars = function (self,info_queue,card)
         return {
-            vars = {card.ability.chips,card.ability.extra.chip_gain_bonus,card.ability.extra.increase}
+            vars = {card.ability.extra.chips,card.ability.extra.chip_gain_bonus,card.ability.extra.chip_gain_bonus_gain}
         }
     end,
     config = {
-        chips = 4,
         extra = {
+            chips = 4,
             chip_gain_bonus = 1,
-            increase = 1
+            chip_gain_bonus_gain = 1 --what a mouthful
         }
     },
     atlas = "jokers_atlas",
@@ -19,13 +19,13 @@ SMODS.Joker {
     cost = 7,
     blueprint_compat = false,
     calculate = function(self,card,context)
-        if context.joker_main then
+        if context.joker_main and not context.blueprint then
             return {
-                chips = card.ability.chips
+                chips = card.ability.extra.chips
             }
         end
         if context.end_of_round and context.cardarea == G.jokers and not context.blueprint then
-            card.ability.extra.chip_gain_bonus = card.ability.extra.chip_gain_bonus + card.ability.extra.increase
+            card.ability.extra.chip_gain_bonus = card.ability.extra.chip_gain_bonus + card.ability.extra.chip_gain_bonus_gain
             return {
                 message = "Vest Up!"
             }

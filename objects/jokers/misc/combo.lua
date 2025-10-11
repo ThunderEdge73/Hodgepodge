@@ -13,14 +13,14 @@ SMODS.Joker {
         return {
             vars = {
                 card.ability.extra.increase,
-                card.ability.x_mult
+                card.ability.extra.scaling_xmult
             }
         }
     end,
     config = {
-        x_mult = 1,
         extra = {
-            base = 1,
+            base_xmult = 1,
+            scaling_xmult = 1,
             increase = 0.2,
             last_hands_played = 0
         }
@@ -34,14 +34,19 @@ SMODS.Joker {
         if context.end_of_round and context.cardarea == G.jokers and not context.blueprint then
             local ret_message = ""
             if G.GAME.hands_played - card.ability.extra.last_hands_played <= 1 then
-                card.ability.x_mult = card.ability.x_mult + card.ability.extra.increase
+                card.ability.extra.scaling_xmult = card.ability.extra.scaling_xmult + card.ability.extra.increase
                 ret_message = "Upgrade!"
             else
-                card.ability.x_mult = card.ability.extra.base
+                card.ability.extra.scaling_xmult = card.ability.extra.base_xmult
                 ret_message = "Reset!"
             end
             card.ability.extra.last_hands_played = G.GAME.hands_played
             return {message = ret_message}
+        end
+        if context.joker_main then
+            return {
+                xmult = card.ability.extra.scaling_xmult
+            }
         end
     end,
     blueprint_compat = true,

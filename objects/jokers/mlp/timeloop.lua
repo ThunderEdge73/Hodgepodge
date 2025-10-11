@@ -21,7 +21,7 @@ SMODS.Joker {
         return {
             vars = {
                 loop_active_text,
-                card.ability.extra.charges
+                card.ability.extra.charges,
             },
             -- main_end = (card.area and card.area == G.jokers) and {
             --     {
@@ -152,6 +152,7 @@ SMODS.Joker {
             end
         end
     end, --TODO: make this joker survive the time loop. maybe hook save_run or maybye save to a profile (G.PROFILES[G.SETTINGS.profile].var_name)
+    blueprint_compat = false,
     set_badges = function(self,card,badges)
         badges[#badges+1] = HODGE.badge('category','mlp')
     end

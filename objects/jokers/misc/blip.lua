@@ -4,6 +4,7 @@ SMODS.Joker {
         info_queue[#info_queue+1] = G.P_CENTERS["c_"..card.ability.extra.consumable]
         return {
             vars = {
+                -card.ability.extra.hand_size_loss,
                 card.ability.extra.xmult_per_size,
                 (G.hand and math.max((G.hand.config.card_limit-8)*card.ability.extra.xmult_per_size,0)+1) or 1
             }
@@ -12,7 +13,8 @@ SMODS.Joker {
     config = {
         extra = {
             consumable = "hodge_crumb",
-            xmult_per_size = 0.1
+            xmult_per_size = 0.1,
+            hand_size_loss = 1
         }
     },
     atlas = "jokers_atlas",
@@ -20,10 +22,10 @@ SMODS.Joker {
     soul_pos = {x=2,y=HODGE.atlas_y.soul[4]},
     rarity = 4,
     cost = 20,
-    blueprint_compat = false,
+    blueprint_compat = true,
     calculate = function(self,card,context)
-        if context.before then
-            G.hand:change_size(-1)
+        if context.before and not context.blueprint then
+            G.hand:change_size(-card.ability.extra.hand_size_loss)
         end
         if context.end_of_round and context.cardarea == G.jokers then
             G.E_MANAGER:add_event(Event({

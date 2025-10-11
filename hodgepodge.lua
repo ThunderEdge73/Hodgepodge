@@ -26,6 +26,84 @@ HODGE.atlas_y = {
     soul      = { 1, 3, 5, 7 }
 }
 
+-----------------------
+----- BLOCKBUSTER -----
+-----------------------
+
+Blockbuster.ValueManipulation.CompatStandard {
+    key = "hodge_default",
+    source_mod = "hodge",
+    variable_conventions = {
+        full_vars = { --Specific variable names that won't get manipulated
+            "odds", --Variables named odds won't get manipulated
+            "count",
+            "slime_floor",
+            "overscore",
+            "self_copies",
+            "id_table",
+            "chip_gain_bonus",
+            "unrounded_sell_value",
+            "rank",
+            "remaining"
+        },
+        ends_on = { --Variable prefixes that won't get manipulated
+            "_loss", --Anything ending in _loss won't get manipulated
+            "_neg", --if its bad dont manipulate it
+            "_static", --if i specifically specify i want it to not change lol
+            "_rank",
+            "_count"
+        },
+        starts_with = {
+            "scaling_",
+            "base_",
+            "time_"
+        }
+    },
+
+    integer_only_variable_conventions = { -- WILL get manipulated, but will be rounded
+        full_vars = {
+
+        },
+        ends_on = {
+            
+        },
+        starts_with = {
+            "hands",
+            "discards",
+            "hand_size"
+        }
+    },
+
+    exempt_jokers = {
+        j_hodge_placeholder = true,
+        j_hodge_spaghettification = true,
+        j_hodge_catapult = true,
+        j_hodge_cocksley = true,
+        j_hodge_synccrystal = true,
+        j_hodge_mergedown = true,
+        j_hodge_lowpercent = true,
+        j_hodge_stopsign = true,
+        j_hodge_lostcount = true,
+        ["j_hodge_big gamba"] = true, --why did i put a space in this ones name
+        j_hodge_sou = true,
+        j_hodge_twilightsparkle = true,
+        j_hodge_rainbowdash = true,
+        j_hodge_pinkiepie = true,
+        j_hodge_applejack = true,
+        j_hodge_rainbowfactory = true,
+        j_hodge_butterflies = true,
+        j_hodge_littlemissrarity = true,
+        j_hodge_lumi = true,
+        j_hodge_david = true,
+        j_hodge_missingno = true,
+        j_hodge_badegg = true,
+        j_hodge_runerigus = true,
+        j_hodge_timeloop = true,
+        j_hodge_foreverweedbrownie = true,
+        j_hodge_bluelatro = true,
+    }
+}
+
 -----------------------------
 ----- UTILITY FUNCTIONS -----
 -----------------------------

@@ -2,23 +2,26 @@ SMODS.Joker {
     key = "nonejoker",
     loc_vars = function (self,info_queue,card)
         return {
-            vars = {card.ability.x_chips}
+            vars = {card.ability.extra.equals_mult,card.ability.extra.x_chips}
         }
     end,
     config = {
-        x_chips = 4
+        extra = {
+            x_chips = 4,
+            equals_mult = 1
+        }
     },
     atlas = "jokers_atlas",
     pos = {x=13,y=HODGE.atlas_y.joke[1]},
     soul_pos = {x=13,y=HODGE.atlas_y.soul[2]},
     rarity = 3,
     cost = 7,
-    blueprint_compat = false,
+    blueprint_compat = true,
     calculate = function(self,card,context)
         if context.joker_main then
             return {
-                mult = 1-mult,
-                xchips = card.ability.x_chips
+                mult = card.ability.extra.equals_mult-mult,
+                xchips = card.ability.extra.x_chips
             }
         end
     end,

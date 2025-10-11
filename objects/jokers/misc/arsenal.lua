@@ -14,13 +14,13 @@ SMODS.Joker {
             vars = {
                 card.ability.extra.xmult_gain,
                 card.ability.extra.xmult_loss,
-                card.ability.extra.xmult
+                card.ability.extra.scaling_xmult
             }
         }
     end,
     config = {
         extra = {
-            xmult = 1,
+            scaling_xmult = 1,
             xmult_gain = 1,
             xmult_loss = 0.2
         }
@@ -42,13 +42,13 @@ SMODS.Joker {
             end
             --print(_suitcount)
             if _suitcount >= 4 then
-                card.ability.extra.xmult = card.ability.extra.xmult + card.ability.extra.xmult_gain
+                card.ability.extra.scaling_xmult = card.ability.extra.scaling_xmult + card.ability.extra.xmult_gain
                 return {
                     message = "+X"..card.ability.extra.xmult_gain
                 }
             else
-                if card.ability.extra.xmult > 1 then
-                    card.ability.extra.xmult = card.ability.extra.xmult - card.ability.extra.xmult_loss
+                if card.ability.extra.scaling_xmult > 1 then
+                    card.ability.extra.scaling_xmult = card.ability.extra.scaling_xmult - card.ability.extra.xmult_loss
                     return {
                         message = "-X"..card.ability.extra.xmult_loss
                     }
@@ -57,7 +57,7 @@ SMODS.Joker {
         end
         if context.joker_main then
             return {
-                xmult = card.ability.extra.xmult
+                xmult = card.ability.extra.scaling_xmult
             }
         end
     end,

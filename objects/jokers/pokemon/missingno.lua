@@ -63,7 +63,7 @@ SMODS.Joker {
     rarity = 4,
     cost = 20,
     calculate = function(self,card,context)
-        if context.setting_blind then
+        if context.setting_blind and not context.blueprint then
             if G.jokers.cards[5] and G.jokers.cards[5].ability.name ~= "j_hodge_missingno" then
                 local selected_card = G.jokers.cards[5]
                 -- local all_copies = {}
@@ -103,6 +103,7 @@ SMODS.Joker {
             end
         end
     end,
+    blueprint_compat = false,
     set_badges = function(self,card,badges)
         badges[#badges+1] = HODGE.badge('category','pokemon')
     end

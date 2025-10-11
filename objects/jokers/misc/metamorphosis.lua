@@ -10,7 +10,7 @@ SMODS.Joker {
     --     }
     -- },
     loc_vars = function (self,info_queue,card)
-        local numerator, denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds, 'metamorphosis')
+        local numerator, denominator = SMODS.get_probability_vars(card, card.ability.extra.numerator, card.ability.extra.odds, 'metamorphosis')
         return {
             vars = {
                 numerator,
@@ -20,7 +20,8 @@ SMODS.Joker {
     end,
     config = {
         extra = {
-            odds = 4
+            odds = 4,
+            numerator = 1
         }
     },
     atlas = "jokers_atlas",
@@ -31,7 +32,7 @@ SMODS.Joker {
         if context.before then
             local triggered = false
             for k, v in ipairs(context.scoring_hand) do
-                if SMODS.pseudorandom_probability(card, 'metamorphosis', 1, card.ability.extra.odds, 'metamorphosis') then
+                if SMODS.pseudorandom_probability(card, 'metamorphosis', card.ability.extra.numerator, card.ability.extra.odds, 'metamorphosis') then
                     local enhancement = SMODS.poll_enhancement {
                         key = "metamorphosis",
                         guaranteed = true
@@ -54,7 +55,7 @@ SMODS.Joker {
                     "Nom!","Nom!",
                     "Gooped!","Gooped!",
                     "Owch!","Owch!",
-                    "Changed!", --plays Poison.ogg
+                    "Changed!", --plays Poison.ogg. lol. lmao, even
                     "Chaos, chaos!",
                 }
                 local message = pseudorandom_element(messages,pseudoseed("metamorphosis"))
@@ -69,7 +70,7 @@ SMODS.Joker {
             end
         end
     end,
-    blueprint_compat = true,
+    blueprint_compat = false,
     add_to_deck = function(self,card,from_debuff)
     end,
     set_badges = function(self,card,badges)

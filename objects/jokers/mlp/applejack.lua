@@ -32,7 +32,7 @@ SMODS.Joker {
     cost = 7,
     calculate = function(self,card,context)
     end,
-    blueprint_compat = true,
+    blueprint_compat = false,
     in_pool = function(self,args)
         for k,card in ipairs(G.playing_cards) do
             if card.seal == "hodge_honesty" then

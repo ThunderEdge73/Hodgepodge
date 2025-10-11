@@ -13,7 +13,7 @@ SMODS.Joker {
     loc_vars = function (self,info_queue,card)
         return {
             vars = {
-                G.david_rank or "(Rank)"
+                G.david_rank or "Ace"
             }
         }
     end,
@@ -58,7 +58,7 @@ SMODS.Joker {
                 return {message = "I want another David!"}
             end
         end
-        if context.individual and context.cardarea == G.play then
+        if context.individual and context.cardarea == G.play and not context.blueprint then
             if context.other_card.base.value == G.david_rank then
                 G.GAME.joker_buffer = G.GAME.joker_buffer - 1
                 G.E_MANAGER:add_event(Event({func = function()

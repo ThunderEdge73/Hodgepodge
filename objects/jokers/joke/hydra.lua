@@ -2,26 +2,28 @@ SMODS.Joker {
     key = "hydra",
     loc_vars = function (self,info_queue,card)
         return {
-            vars = {card.ability.x_mult}
+            vars = {card.ability.extra.xmult}
         }
     end,
     config = {
-        x_mult = 1.2,
-        extra = {max_amt = 2}
+        extra = {
+            self_copies = 2,
+            xmult = 1.2
+        }
     },
     atlas = "jokers_atlas",
     pos = {x=0,y=HODGE.atlas_y.joke[1]},
     rarity = 1,
     cost = 1,
-    blueprint_compat = false,
+    blueprint_compat = true,
     calculate = function(self,card,context)
         if context.joker_main then
             return {
-                xmult = card.ability.x_mult
+                xmult = card.ability.extra.xmult
             }
         end
-        if context.selling_self then
-            local amt = math.min(card.ability.extra.max_amt,G.jokers.config.card_limit + 1 - G.jokers.config.card_count)
+        if context.selling_self and not context.blueprint then
+            local amt = math.min(card.ability.extra.self_copies,G.jokers.config.card_limit + 1 - G.jokers.config.card_count)
             G.GAME.joker_buffer = G.GAME.joker_buffer + amt
             G.E_MANAGER:add_event(Event({
                 func = function() 
@@ -34,7 +36,7 @@ SMODS.Joker {
 
                     G.GAME.joker_buffer = 0
                     return true
-                end}))   
+                end}))
         end
     end,
     set_badges = function(self,card,badges)

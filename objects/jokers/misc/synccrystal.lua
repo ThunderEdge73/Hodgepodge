@@ -25,7 +25,7 @@ SMODS.Joker {
     rarity = 3,
     cost = 5,
     calculate = function(self,card,context)
-        if context.before then
+        if context.before and not context.blueprint then
             local total_rank = 0
             local count = 0
             for _,playing_card in pairs(context.scoring_hand) do

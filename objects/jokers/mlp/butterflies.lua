@@ -36,7 +36,7 @@ SMODS.Joker {
         --         }))
         --     end
         -- end
-        if context.after then
+        if context.after and not context.blueprint then
             for i,playing_card in pairs(context.scoring_hand) do
                 if playing_card.seal == "hodge_honesty" and not playing_card.destroyed then
                     G.E_MANAGER:add_event(Event({trigger = 'after',delay = 0.15,func = function()
@@ -49,7 +49,7 @@ SMODS.Joker {
             end
         end
     end,
-    blueprint_compat = true,
+    blueprint_compat = false,
     in_pool = function(self,args)
         for k,card in ipairs(G.playing_cards) do
             if card.seal == "hodge_honesty" then

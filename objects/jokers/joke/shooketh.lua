@@ -4,13 +4,13 @@ SMODS.Joker {
         return {
             vars = {
                 card.ability.extra.xmult_gain,
-                card.ability.extra.xmult,
+                card.ability.extra.scaling_xmult,
             }
         }
     end,
     config = {
         extra = {
-            xmult = 1,
+            scaling_xmult = 1,
             xmult_gain = 0.5,
         }
     },
@@ -18,11 +18,11 @@ SMODS.Joker {
     pos = {x=10,y=HODGE.atlas_y.joke[1]},
     rarity = 3,
     cost = 7,
-    blueprint_compat = false,
+    blueprint_compat = true,
     calculate = function(self,card,context)
         if context.after and context.main_eval and not context.blueprint then
             if (hand_chips * mult) < 0 then
-                card.ability.extra.xmult = card.ability.extra.xmult + card.ability.extra.xmult_gain
+                card.ability.extra.scaling_xmult = card.ability.extra.scaling_xmult + card.ability.extra.xmult_gain
                 return {
                     message = "+X"..card.ability.extra.xmult_gain
                 }
@@ -30,7 +30,7 @@ SMODS.Joker {
         end
         if context.joker_main then
             return {
-                xmult = card.ability.extra.xmult
+                xmult = card.ability.extra.scaling_xmult
             }
         end
     end,

@@ -318,10 +318,10 @@ return {
 				["name"] = "Element of Kindness",
 				["label"] = "Element of Harmony",
 				["text"] = {
-					"{C:chips}+10{} Chips for every",
+					"{C:chips}+#1#{} Chips for every",
 					"{C:attention}Element of Harmony{}",
 					"in your full deck",
-					"{C:inactive,s:0.9}Currently {C:chips,s:0.9}+#1#{}",
+					"{C:inactive,s:0.9}Currently {C:chips,s:0.9}+#2#{}",
 				},
 			},
 			["p_hodge_power_booster_jumbo"] = {
@@ -371,12 +371,20 @@ return {
 					"card when {C:attention}destroyed{}",
 				},
 			},
+			["compat_standard_hodge_default"] = {
+				name = "Hodgepodge",
+				text = {
+					"This card uses",
+					"Hodgepodge",
+					"Value Manipulation"
+				}
+			}
 		},
 		["Joker"] = {
 			["j_hodge_placeholder"] = {
 				["name"] = "Placeholder",
 				["text"] = {
-					"Does nothing.",
+					"TODO: Replace with", "a real {C:attention}Joker{C:dark_edition,E:1}...{}",
 				},
 			},
 			["j_hodge_brokenrecord"] = {
@@ -491,7 +499,7 @@ return {
 					"{C:green}#1# in #2#{} chance for",
 					"{C:attention}scored cards{} to become",
 					"a random {C:attention}enhancement{}",
-					"{C:inactive,s:0.85}Can replace existing enhancements{}"
+					"{C:inactive,s:0.9}Can replace existing enhancements{}"
 				},
 			},
 			["j_hodge_hydra"] = {
@@ -597,8 +605,8 @@ return {
 			["j_hodge_nonejoker"] = {
 				["name"] = "None Joker Left Chips",
 				["text"] = {
-					"Set {C:mult}Mult{} to {C:attention}1{}",
-					"{X:chips,C:white}X#1#{} Chips"
+					"Set {C:mult}Mult{} to {C:attention}#1#{}",
+					"{X:chips,C:white}X#2#{} Chips"
 				},
 			},
 			["j_hodge_parappa"] = {
@@ -614,7 +622,7 @@ return {
 				["text"] = {
 					"Played cards with",
 					"{C:hodge_suns}Sun{} suit give",
-					"{C:mult}+3{} Mult when scored",
+					"{C:mult}+#1#{} Mult when scored",
 				},
 			},
 			["j_hodge_nightmarenight"] = {
@@ -622,7 +630,7 @@ return {
 				["text"] = {
 					"Played cards with",
 					"{C:hodge_moons}Moon{} suit give",
-					"{C:mult}+3{} Mult when scored",
+					"{C:mult}+#1#{} Mult when scored",
 				},
 			},
 			["j_hodge_twilightsparkle"] = {
@@ -635,17 +643,17 @@ return {
 			["j_hodge_amber"] = {
 				["name"] = "Amber",
 				["text"] = {
-					"{C:green}0 in #2#{} chance to gain {C:chips}+1 Hand{} ",
-					"Increases by {C:green}#1# in #2#{} per", "scoring {C:hodge_suns}Sun{} card in played hand",
-					"{C:inactive,s:0.9}(eg. #3# scoring Suns = #4# in #2#){}"
+					"{C:green}0 in #3#{} chance to gain {C:chips}+#1# Hand{} ",
+					"Increases by {C:green}#2# in #3#{} per", "scoring {C:hodge_suns}Sun{} card in played hand",
+					"{C:inactive,s:0.9}(eg. #4# scoring Suns = #5# in #3#){}"
 				},
 			},
 			["j_hodge_moonrock"] = {
 				["name"] = "Moonstone",
 				["text"] = {
-					"{C:green}0 in #2#{} chance to gain {C:mult}+1 Discard{} ",
-					"Increases by {C:green}#1# in #2#{} per", "scoring {C:hodge_moons}Moon{} card in played hand",
-					"{C:inactive,s:0.9}(eg. #3# scoring Moons = #4# in #2#){}"
+					"{C:green}0 in #3#{} chance to gain {C:mult}+#1# Discard{} ",
+					"Increases by {C:green}#2# in #3#{} per", "scoring {C:hodge_moons}Moon{} card in played hand",
+					"{C:inactive,s:0.9}(eg. #4# scoring Moons = #5# in #3#){}"
 				},
 			},
 			["j_hodge_rainbowdash"] = {
@@ -745,16 +753,15 @@ return {
 					"On Blind selected:",
 					"{C:green}90%{} to create Negative Ice Cream",
 					"{C:green}10%{} to create Negative David",
-					"If {C:attention}#1#{} scored, {C:attention}destroy{} this card",
-					"{C:inactive,s:0.85}Rank chosen on Blind selected{}",
-					"{C:inactive,s:0.8}WHERE IS MY BALL???{}"
+					"If {C:attention}#1#{} scored, {C:attention}destroy{} all Davids",
+					"{C:inactive,s:0.9}Rank chosen on Blind selected{}",
 				},
 			},
 			["j_hodge_blip"] = {
 				["name"] = "Blip",
 				["text"] = {
 					{
-						"{C:attention}-1{} hand size",
+						"{C:attention}#1#{} hand size",
 						"per hand played"
 					},
 					{
@@ -762,9 +769,9 @@ return {
 						"at end of round"
 					},
 					{
-						"{X:mult,C:white}X#1#{} Mult per",
+						"{X:mult,C:white}X#2#{} Mult per",
 						"{C:attention}hand size{} above {C:attention}8{}",
-						"{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive}){}",
+						"{C:inactive}(Currently {X:mult,C:white}X#3#{C:inactive}){}",
 						"{C:inactive,s:0.8}play windowkill immediately{}"
 					}
 				},
@@ -797,7 +804,7 @@ return {
 					"Creates a {C:dark_edition}Negative{} copy of {C:attention}5th{} Joker",
 					"{C:green}#1#%{} to become {C:attention}Bad EGG{} instead",
 					"Chance doubles per copy owned",
-					"{C:inactive,S:0.85}(Cannot copy MissingNo.){}",
+					"{C:inactive,S:0.9}(Cannot copy MissingNo.){}",
 					"{C:inactive}(#2#){}",
 				},
 			},
@@ -827,6 +834,13 @@ return {
 				["name"] = "Day 734",
 				["text"] = {
 					{
+						"If not the {C:attention}rightmost{} joker,",
+						"{C:attention}destroy{} joker to the right",
+						"and {C:attention}gain 1 charge{}.",
+						"{C:inactive}(Currently {C:attention}#2#{C:inactive}){}"
+
+					},
+					{
 						"After {C:attention}Boss Blind{} is defeated,",
 						"consume 1 {C:attention}charge{}, else",
 						"rewind to start of the Ante.",
@@ -835,11 +849,10 @@ return {
 						"{C:inactive,s:0.9}#1#{}"
 					},
 					{
-						"If not the {C:attention}rightmost{} joker,",
-						"{C:attention}destroy{} joker to the right",
-						"and {C:attention}gain 1 charge{}.",
-						"{C:inactive}(Currently {C:attention}#2#{C:inactive}){}"
-
+						"{C:inactive,s:0.8}I know this one isn't great{}",
+						"{C:inactive,s:0.8}but I'm too stubborn to scrap it.{}",
+						"{C:inactive,s:0.8}Will probably be reworked some day.{}",
+						"{C:inactive,s:08}-Ren{}"
 					}
 				}
 			},
@@ -917,10 +930,10 @@ return {
 					"When scored, destroy",
 					"other played cards and",
 					"gain their values.",
-					"{C:inactive,s:0.85}Currently:",
-					"{C:chips,s:0.85}+#1#{s:0.85} Chips",
-					"{C:mult,s:0.85}+#2#{s:0.85} Mult",
-					"{X:mult,C:white,s:0.85}X#3#{s:0.85} Mult",
+					"{C:inactive,s:0.9}Currently:",
+					"{C:chips,s:0.9}+#1#{s:0.9} Chips",
+					"{C:mult,s:0.9}+#2#{s:0.9} Mult",
+					"{X:mult,C:white,s:0.9}X#3#{s:0.9} Mult",
 				},
 			},
 			["m_hodge_asbestos"] = {
@@ -931,8 +944,8 @@ return {
 					"Loses {X:mult,C:white}X#2#{} per hand played",
 					"{E:2,C:mult}Can go negative{}",
 					"{E:1,C:mult}Negative values DON'T cancel out{}",
-					"{C:mult,s:0.85}Discards and destructions may fail{}",
-					"{C:mult,s:0.85}and increase degradation rate{}",
+					"{C:mult,s:0.9}Discards and destructions may fail{}",
+					"{C:mult,s:0.9}and increase degradation rate{}",
 				},
 			},
 			["m_hodge_waterdamage"] = {
@@ -942,7 +955,7 @@ return {
 					"{C:chips}+#1#{} bonus chips",
 					"{C:green}#2#/100{} chance to",
 					"destroy card",
-					"{C:chips,s:0.85}+10{s:0.85} and {C:green,s:0.85}+5/100{s:0.85} when scored{}",
+					"{C:chips,s:0.9}+10{s:0.9} and {C:green,s:0.9}+5/100{s:0.9} when scored{}",
 				},
 			},
 		},
@@ -953,7 +966,7 @@ return {
 				["text"] = {
 					"Takes {C:dark_edition}2{} #1#",
 					"{C:attention}Doubles{} all* values",
-					"{s:0.85,C:inactive}*Where possible",
+					"{s:0.9,C:inactive}*Where possible",
 				},
 			},
 			["e_hodge_parasite"] = {
@@ -962,16 +975,16 @@ return {
 				["text"] = {
 					"{X:mult,C:white}X#1#{} Mult",
 					"{X:mult,C:white}-X#2#{} every round",
-					"{s:0.85}At {s:0.85,X:mult,C:white}X#3#{s:0.85}, destroy this joker",
-					"{s:0.85}and apply {s:0.85,C:attention}Parasite{s:0.85} to{}",
-					"{s:0.85}an editionless joker{}",
+					"{s:0.9}At {s:0.9,X:mult,C:white}X#3#{s:0.9}, destroy this joker",
+					"{s:0.9}and apply {s:0.9,C:attention}Parasite{s:0.9} to{}",
+					"{s:0.9}an editionless joker{}",
 				},
 			},
 			["e_hodge_terry"] = {
 				["label"] = "Slime",
 				["name"] = "Slime",
 				["text"] = {
-					"{s:0.85,C:inactive}Random XMult{}",
+					"{s:0.9,C:inactive}Random XMult{}",
 				},
 			},
 		},

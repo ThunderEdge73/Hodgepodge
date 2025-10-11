@@ -4,13 +4,13 @@ SMODS.Joker {
         return {
             vars = {
                 card.ability.extra.xmult_gain,
-                card.ability.x_mult
+                card.ability.extra.scaling_xmult
             }
         }
     end,
     config = {
-        xmult = 1,
         extra = {
+            scaling_xmult = 1,
             xmult_gain = 0.25
         }
     },
@@ -44,12 +44,17 @@ SMODS.Joker {
             end
             
             if #light > 0 then
-                card.ability.x_mult = card.ability.x_mult + card.ability.extra.xmult_gain * #light
+                card.ability.extra.scaling_xmult = card.ability.extra.scaling_xmult + card.ability.extra.xmult_gain * #light
                 return {
                     message = "+"..(card.ability.extra.xmult_gain * #light).."X",
                     colour = G.C.MULT
                 }
             end
+        end
+        if context.joker_main then
+            return {
+                xmult = card.ability.extra.scaling_xmult
+            }
         end
     end,
     blueprint_compat = true,

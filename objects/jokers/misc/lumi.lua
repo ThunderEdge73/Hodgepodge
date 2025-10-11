@@ -6,7 +6,9 @@ SMODS.Joker {
         }
     end,
     config = {
-        extra = 2
+        extra = {
+            slime_floor = 2
+        }
     },
     atlas = "jokers_atlas",
     pos = {x=0,y=HODGE.atlas_y.legendary[1]},

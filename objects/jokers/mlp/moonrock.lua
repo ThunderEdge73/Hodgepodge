@@ -1,10 +1,11 @@
 SMODS.Joker {
     key = "moonrock",
     loc_vars = function (self,info_queue,card)
-        local numerator, denominator = SMODS.get_probability_vars(card, 1, 5, 'moonrock')
+        local numerator, denominator = SMODS.get_probability_vars(card, card.ability.extra.numerator, card.ability.extra.odds, 'moonrock')
         local example_count = 3
         return {
             vars = {
+                card.ability.extra.discards_gain,
                 numerator,
                 denominator,
                 example_count,
@@ -13,6 +14,11 @@ SMODS.Joker {
         }
     end,
     config = {
+        extra = {
+            odds = 5,
+            numerator = 1,
+            discards_gain = 1
+        }
     },
     atlas = "jokers_atlas",
     pos = {x=4,y=HODGE.atlas_y.mlp[1]},
@@ -26,8 +32,8 @@ SMODS.Joker {
                     moons = moons + 1
                 end
             end
-            if SMODS.pseudorandom_probability(card, 'moonrock', moons, 5, 'moonrock') then
-                ease_discard(1)
+            if SMODS.pseudorandom_probability(card, 'moonrock', moons*card.ability.extra.numerator, card.ability.extra.odds, 'moonrock') then
+                ease_discard(card.ability.extra.discards_gain)
             end
         end
     end,

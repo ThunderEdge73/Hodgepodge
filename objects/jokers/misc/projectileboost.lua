@@ -15,13 +15,13 @@ SMODS.Joker {
                 card.ability.extra.xmult_gain,
                 card.ability.extra.poker_hand,
                 card.ability.extra.xmult_loss,
-                card.ability.extra.xmult
+                card.ability.extra.scaling_xmult
             }
         }
     end,
     config = {
         extra = {
-            xmult = 1,
+            scaling_xmult = 1,
             xmult_gain = 0.4,
             xmult_loss = 0.2,
             poker_hand = "Pair",
@@ -36,7 +36,7 @@ SMODS.Joker {
         if context.pre_discard and not context.blueprint then
             local text, _ = G.FUNCS.get_poker_hand_info(G.hand.highlighted)
             if text == card.ability.extra.poker_hand then
-                card.ability.extra.xmult = card.ability.extra.xmult + card.ability.extra.xmult_gain
+                card.ability.extra.scaling_xmult = card.ability.extra.scaling_xmult + card.ability.extra.xmult_gain
                 _poker_hands = {}
                 for k,v in pairs(G.GAME.hands) do
                     if v.visible and k ~= card.ability.extra.poker_hand and not HODGE.table_contains(card.ability.extra.banned_hands,k) then
@@ -50,8 +50,8 @@ SMODS.Joker {
             end
         end
         if context.after and context.main_eval and not context.blueprint then
-            if card.ability.extra.xmult > 1 then
-                card.ability.extra.xmult = card.ability.extra.xmult - card.ability.extra.xmult_loss
+            if card.ability.extra.scaling_xmult > 1 then
+                card.ability.extra.scaling_xmult = card.ability.extra.scaling_xmult - card.ability.extra.xmult_loss
                 return {
                     message = "-X"..card.ability.extra.xmult_loss
                 }
@@ -59,7 +59,7 @@ SMODS.Joker {
         end
         if context.joker_main then
             return {
-                xmult = card.ability.extra.xmult
+                xmult = card.ability.extra.scaling_xmult
             }
         end
     end,
