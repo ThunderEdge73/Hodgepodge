@@ -95,6 +95,7 @@ Blockbuster.ValueManipulation.CompatStandard {
         j_hodge_littlemissrarity = true,
         j_hodge_lumi = true,
         j_hodge_david = true,
+        j_hodge_djungelskog = true,
         j_hodge_missingno = true,
         j_hodge_badegg = true,
         j_hodge_runerigus = true,
@@ -607,7 +608,7 @@ HODGE.load_script("objects/jokers/misc/lumi.lua")
 HODGE.load_script("objects/jokers/joke/david.lua")
 HODGE.load_script("objects/jokers/misc/blip.lua")
 HODGE.load_script("objects/jokers/joke/jovialmerriment.lua")
---HODGE.load_script("objects/jokers/misc/djungelskog.lua")
+HODGE.load_script("objects/jokers/misc/djungelskog.lua")
 
 HODGE.load_script("objects/jokers/pokemon/umbreon.lua")
 HODGE.load_script("objects/jokers/pokemon/missingno.lua")

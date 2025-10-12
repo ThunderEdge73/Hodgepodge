@@ -830,6 +830,14 @@ return {
 					"held in hand"
 				},
 			},
+			["j_hodge_djungelskog"] = {
+				["name"] = "Djungelskog",
+				["text"] = {
+					"{C:attention}Doubles{} strength of",
+					"adjacent {C:attention}Jokers{}",
+					"{C:inactive,s:0.9}(If compatible){}"
+				},
+			},
 			["j_hodge_timeloop"] = {
 				["name"] = "Day 734",
 				["text"] = {
