@@ -1,3 +1,10 @@
+SMODS.Atlas {
+    key = "celestia_atlas",
+    path = "celestia_atlas.png",
+    px = 135,
+    py = 95
+}
+
 SMODS.Joker {
     key = "celestia",
     loc_vars = function (self,info_queue,card)
@@ -14,9 +21,10 @@ SMODS.Joker {
             chip_gain = 6
         }
     },
-    atlas = "jokers_atlas",
-    pos = {x=11,y=HODGE.atlas_y.legendary[1]},
-    soul_pos = {x=11,y=HODGE.atlas_y.soul[4]},
+    atlas = "celestia_atlas",
+    pos = {x=0,y=0},
+    soul_pos = {x=1,y=0},
+    display_size = {w = 135, h = 95},
     rarity = 4,
     cost = 20,
     calculate = function(self,card,context)

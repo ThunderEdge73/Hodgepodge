@@ -860,7 +860,7 @@ return {
 						"{C:inactive,s:0.8}I know this one isn't great{}",
 						"{C:inactive,s:0.8}but I'm too stubborn to scrap it.{}",
 						"{C:inactive,s:0.8}Will probably be reworked some day.{}",
-						"{C:inactive,s:08}-Ren{}"
+						"{C:inactive,s:0.8}-Ren{}"
 					}
 				}
 			},

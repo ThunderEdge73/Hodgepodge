@@ -26,37 +26,39 @@ SMODS.Joker {
                 if joker == card then
                     if i-1 >= 1 then
                         if G.jokers.cards[i-1] ~= card.ability.extra.last_left_joker then
-                            --print(i-1)
+                            --print("left "..i-1)
                             if card.ability.extra.last_left_joker then
-                                --print(card.ability.extra.last_left_joker.ability.name)
+                                --print("left reset "..card.ability.extra.last_left_joker.ability.name)
                                 Blockbuster.manipulate_value(card.ability.extra.last_left_joker,"hodge_djungelskog",1)
                             end
-                            --print(G.jokers.cards[i-1].ability.name)
+                            --print("left double "..G.jokers.cards[i-1].ability.name)
                             Blockbuster.manipulate_value(G.jokers.cards[i-1],"hodge_djungelskog",2)
                             card.ability.extra.last_left_joker = G.jokers.cards[i-1]
                         end
                     elseif card.ability.extra.last_left_joker then
-                        --print("nil")
-                        --print(card.ability.extra.last_left_joker.ability.name)
+                        --print("left nil")
+                        --print("left nil reset "..card.ability.extra.last_left_joker.ability.name)
                         Blockbuster.manipulate_value(card.ability.extra.last_left_joker,"hodge_djungelskog",1)
                         card.ability.extra.last_left_joker = nil
                     end
 
                     if i+1 <= #G.jokers.cards then
                         if G.jokers.cards[i+1] ~= card.ability.extra.last_right_joker then
-                            --print(i+1)
+                            --print("right "..i+1)
                             if card.ability.extra.last_right_joker and card.ability.extra.last_right_joker ~= card.ability.extra.last_left_joker then
-                                --print(card.ability.extra.last_right_joker.ability.name)
+                                --print("right reset "..card.ability.extra.last_right_joker.ability.name)
                                 Blockbuster.manipulate_value(card.ability.extra.last_right_joker,"hodge_djungelskog",1)
                             end
-                            --print(G.jokers.cards[i+1].ability.name)
+                            --print("right double "..G.jokers.cards[i+1].ability.name)
                             Blockbuster.manipulate_value(G.jokers.cards[i+1],"hodge_djungelskog",2)
                             card.ability.extra.last_right_joker = G.jokers.cards[i+1]
                         end
                     elseif card.ability.extra.last_right_joker ~= nil then
-                        --print("nil")
-                        --print(card.ability.extra.last_right_joker.ability.name)
-                        Blockbuster.manipulate_value(card.ability.extra.last_right_joker,"hodge_djungelskog",1)
+                        --print("right nil")
+                        --print("right nil reset "..card.ability.extra.last_right_joker.ability.name)
+                        if card.ability.extra.last_right_joker ~= card.ability.extra.last_left_joker then
+                            Blockbuster.manipulate_value(card.ability.extra.last_right_joker,"hodge_djungelskog",1)
+                        end
                         card.ability.extra.last_right_joker = nil
                     end
 
